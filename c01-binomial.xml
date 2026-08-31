@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="count-binomial" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Binomial Theorem</title>
+	<introduction>
+		<p>
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+		<exercise>
+			<title>Nested Sets</title>
+			<idx><h>Nested Sets</h></idx>
+			<statement>
+				<p>
+In this problem, you will prove the following identity in two different ways
+<me>
+3^n = \sum_{k=0}^n 2^k { n \choose k}
+</me>
+
+			<ol>
+				<li>
+					<p>
+ Prove this equation using the binomial theorem.
+
+<!--solution>
+<p>
+Take <m>x=2</m> and <m>y=1</m> to get
+<me>
+(2+1)^n = \sum_{k=0}^n { n \choose k} 2^k
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Give a combinatorial proof of this equation by showing that each side counts the number of ways to choose sets <m>A,B</m> where <m>\emptyset \subseteq A \subseteq B \subseteq [n]</m>.
+
+
+			<ol>
+
+				<li>
+					<p>
+ The left hand side is <m>3^n</m>. Explain why there are three choices for where to place every element of <m>[n]</m>.
+
+<!--solution>
+<p>
+
+For each of the <m>n</m> elements, there are three possible places it can go:  <m>A</m>, <m>B \backslash A</m> or <m>\overline{B}</m>. We must make this choice a total on <m>n</m> times, so the number of ways to do this is <m>3^n</m> by the product principle.
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ The right hand is <m>\sum_{k=0}^n 2^k { n \choose k}.</m> This time, we create the sets <m>A \subseteq B</m> in a different way. Namely, first we decide what the size of <m>B</m> will be, and use <m>k</m> to denote this size. With this in mind, interpret the right hand side of this equation.
+
+
+<!--solution>
+<p>
+Here is the recipe.
+		<ul>
+			<li>
+			<p>
+ First, choose a value for <m>k</m> where <m>0 \leq k \leq n</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Next, choose the <m>k</m> elements in <m>B</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Finally, choose a subset <m>A</m> of the <m>k</m>-set <m>B</m>
+			</p>
+			</li>
+		</ul>
+
+
+The summation sign (addition principle) considers all possible choices for the size <m>k</m>. Once we have determined <m>k</m>, there are <m>{n \choose k}</m> ways to pick the subset <m>B</m>. Then there are <m>2^k</m> ways to choose the subset <m>A \subset B</m>.
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Rectangles Galore</title>
+			<idx><h>Rectangles Galore</h></idx>
+			<statement>
+				<p>
+			<ol>
+				<li>
+					<p>
+  The following  <m>2 \times 2</m> grid contains 9 rectangles (many of them are squares). Draw them all.
+
+
+
+			<image width="25%" xml:id="fig-img-count-binomial0">
+				<latex-image>
+\begin{tikzpicture}[scale=.8] %mathbook width=25%
+
+\draw[very thick] (0,0) -!- (2,0) -!- (2,1) -!- (0,1) -!- (0,2) -!- (2,2) -!- (2,1);
+\draw[very thick] (1,2) -!- (1,0);
+\draw[very thick] (0,0) -!- (0,1);
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+<!--solution>
+<p>
+
+			<image width="90%" xml:id="fig-img-count-binomial1">
+				<latex-image>
+\begin{tikzpicture}[scale=.8] %mathbook width=90%
+
+\draw[very thick] (0,0) -!- (2,0) -!- (2,1) -!- (0,1) -!- (0,2) -!- (2,2) -!- (2,1);
+\draw[very thick] (1,2) -!- (1,0);
+\draw[very thick] (0,0) -!- (0,1);
+
+\begin{scope}[shift={(4,0)}]
+\draw[very thick] (0,0) -!- (2,0) -!-  (2,2) -!- (0,2) -!- (0,0);
+\end{scope}
+
+
+\begin{scope}[shift={(7,-.1)}]
+\draw[very thick] (0,0) -!- (2,0) -!-  (2,1) -!- (0,1) -!- (0,0);
+\end{scope}
+
+
+
+\begin{scope}[shift={(7,.1)}]
+\draw[very thick] (0,2) -!- (2,2) -!-  (2,1) -!- (0,1) -!- (0,2);
+\end{scope}
+
+
+\begin{scope}[shift={(9.9,0)}]
+\draw[very thick] (0,0) -!- (0,2) -!-  (1,2) -!- (1,0) -!- (0,0);
+\end{scope}
+
+\begin{scope}[shift={(10.1,0)}]
+\draw[very thick] (2,0) -!- (2,2) -!-  (1,2) -!- (1,0) -!- (2,0);
+\end{scope}
+
+\begin{scope}[shift={(13,-.1)}]
+\draw[very thick] (0,0) -!- (1,0) -!-  (1,1) -!- (0,1) -!- (0,0);
+\end{scope}
+
+\begin{scope}[shift={(13,.1)}]
+\draw[very thick] (0,2) -!- (1,2) -!-  (1,1) -!- (0,1) -!- (0,2);
+\end{scope}
+
+\begin{scope}[shift={(14.2,-.1)}]
+\draw[very thick] (0,0) -!- (1,0) -!-  (1,1) -!- (0,1) -!- (0,0);
+\end{scope}
+
+\begin{scope}[shift={(14.2,.1)}]
+\draw[very thick] (0,2) -!- (1,2) -!-  (1,1) -!- (0,1) -!- (0,2);
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution-->
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Prove that  an <m>m \times n</m> grid contains <m>{m+1 \choose 2}{n+1 \choose 2}</m> rectangles.
+
+<!--solution>
+<p>
+Creating a rectangle requires choosing two vertical lines (to be the left and right boundaries) and two horizontal lines (to be the upper and lower boundaries). There are a total of <m>n+1</m> vertical lines and <m>m+1</m> horizontal lines. Therefore the total number of rectangles is    <m>{m+1 \choose 2}{n+1 \choose 2}</m>.
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Diagonals in an <m>n</m>-gon</title>
+			<idx><h>Diagonals in an <m>n</m>-gon</h></idx>
+			<statement>
+				<p>
+Consider a convex <m>n</m>-gon with its vertices labeled by the elements of <m>[n]</m>.
+
+			<ol>
+				<li>
+					<p>
+ How many distinct diagonals are are there?
+
+<!--solution>
+<p>
+
+In order to create a diagonal, we must chose two vertices that are not adjacent. We have <m>n</m> choices for our first vertex, and then <m>n-3</m> choices for our second vertex (since we cannot re-pick our vertex, or choose one of its two neighbors. The order that we pick these vertices does not matter, so we must divide by 2. The answer is
+<me>
+\frac{n(n-3)}{2}.
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ How may pairs of crossing diagonals are there?
+
+
+<!--solution>
+<p>
+
+The answer is
+<me>
+{ n \choose 4}.
+</me>
+Once you have picked 4 vertices, there is a unique way to draw a pair of crossing diagonals between them.
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+			</ol>
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+</chapter>

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="logic2" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Logical Arguments</title>
+	<introduction>
+		<p>
+
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+
+		<exercise>
+			<title>Implications</title>
+			<idx><h>Implications</h></idx>
+			<statement>
+				<p>
+				Let <m>x \in \mathbb{R}</m> be a real number.
+				<ol>
+				<li>
+Write down the contrapositive, converse and inverse of the implication: "if <m>x &lt; 3</m> then <m>x^2 &lt; 9</m>." Which of these four statements are <em> true</em>? Which ones are <em> false</em>?
+
+<!--solution>
+<p>
+		<ul>
+			<li>
+			<p>
+ statement: <m>x &lt; 3</m> then <m>x^2 &lt; 9</m>. This is <em> false</em>, since <m>-4 &lt; 3</m> and <m>(-4)^2 = 16 &gt; 9</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ contrapositive: if <m>x^2 \geq 9</m> then <m>x \geq 3</m>. This is <em> false</em> for the same reason.
+			</p>
+			</li>
+			<li>
+			<p>
+ converse: if <m>x^2 &lt; 9</m> then <m>x &lt; 3</m>.  This is <em> true</em> because the first statement forces <m>-3 \leq x \leq 3</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ inverse: if  <m>x \geq 3</m> then <m>x^2 \geq 9</m> .  This is <em> true</em>.
+			</p>
+			</li>
+		</ul>
+</p>
+</solution-->
+				</li>
+				<li>
+Write down the contrapositive, converse and inverse of the implication: "If it is warm and sunny then I go swimming."
+
+<!--solution>
+<p>
+		<ul>
+			<li>
+			<p>
+ statement: If it is warm and sunny then I  go swimming.
+			</p>
+			</li>
+			<li>
+			<p>
+ contrapositive: If I do not go swimming then it is cold or it is cloudy.
+			</p>
+			</li>
+			<li>
+			<p>
+ converse: If I go swimming then it is warm and sunny.
+			</p>
+			</li>
+			<li>
+			<p>
+ inverse: If it is cold or it is cloudy then I do not go swimming.
+			</p>
+			</li>
+		</ul>
+</p>
+</solution-->
+				</li>
+				</ol>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise>
+			<title>Equivalent Statements</title>
+			<idx><h>Equivalent Statements</h></idx>
+			<statement>
+				<p>
+
+			<ol>
+				<li>
+					<p>
+ Use a truth table to show that <m>\neg (P \Rightarrow Q)</m> is equivalent to <m>P \wedge \neg Q</m>.
+
+<me>
+\begin{array}{c|c||c|c|c|c}
+P &amp; Q &amp; P \Rightarrow Q &amp; \neg(P \Rightarrow Q)  &amp; \neg Q &amp; P \wedge \neg Q \\
+\hline
+T &amp; T &amp;  &amp;  &amp; &amp; \\
+T &amp; F &amp;  &amp; &amp; &amp; \\
+F &amp; T &amp;  &amp; &amp; &amp;\\
+F &amp; F &amp;  &amp; &amp;  &amp;\\
+\end{array}
+</me>
+
+<!--solution>
+<p>
+<me>
+\begin{array}{c|c||c|c|c|c}
+P &amp; Q &amp; P \Rightarrow Q &amp; \neg(P \Rightarrow Q)  &amp; \neg Q &amp; P \wedge \neg Q \\
+\hline
+T &amp; T &amp; T &amp; F &amp; F&amp; F\\
+T &amp; F &amp; F &amp;T &amp; T&amp; T\\
+F &amp; T &amp; T &amp;F &amp; F&amp;F\\
+F &amp; F &amp; T &amp;F &amp; T &amp;F\\
+\end{array}
+</me>
+The columns for <m>\neg(P \Rightarrow Q) </m> and <m>P \wedge \neg Q</m> are identical. So these statements are equivalent.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Use a truth table to show that <m>P \Leftrightarrow Q</m> is equivalent to <m>(P \wedge Q) \vee (\neg P \wedge \neg Q)</m>.
+
+<me>
+\begin{array}{c|c||c|c|c|c|c}
+P &amp; Q &amp; P \Leftrightarrow Q  
+&amp; \neg P &amp; \neg Q &amp; P \wedge  Q  &amp; \neg P \wedge \neg Q &amp; (P \wedge Q) \vee (\neg P \wedge \neg Q)\\
+\hline
+T &amp; T &amp;  &amp;  &amp; &amp; &amp; &amp;  \\
+T &amp; F &amp;  &amp; &amp; &amp; &amp;  &amp; \\
+F &amp; T &amp;  &amp; &amp; &amp; &amp; &amp; \\
+F &amp; F &amp;  &amp; &amp;  &amp; &amp; &amp; \\
+\end{array}
+</me>
+
+<!--solution>
+<p>
+<me>
+\begin{array}{c|c||c|c|c|c|c}
+P &amp; Q &amp; P \Leftrightarrow Q 
+&amp; \neg P &amp; \neg Q &amp; P \wedge  Q  &amp; \neg P \wedge \neg Q &amp; (P \wedge Q) \vee (\neg P \wedge \neg Q)\\
+\hline
+T &amp; T &amp; T &amp; F &amp; F &amp; T &amp; F &amp; T\\
+T &amp; F &amp; F &amp; F &amp; T &amp; F &amp; F &amp; F\\
+F &amp; T &amp; F &amp; T &amp; F &amp; F &amp; F &amp; F\\
+F &amp; F &amp; T &amp; T &amp; T &amp; F &amp; T &amp; T\\
+\end{array}
+</me>
+The columns for <m>\neg(P \Rightarrow Q) </m> and <m>P \wedge \neg Q</m> are identical. So these statements are equivalent.
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Two Logic Puzzles</title>
+			<idx><h>Two Logic Puzzles</h></idx>
+			<statement>
+				<p>
+
+			<ol>
+				<li>
+					<p>
+ Each of the four cards below has a digit printed on one side and a letter printed on the other side.
+
+
+			<image width="50%" xml:id="fig-img-count-pigeonhole0">
+				<latex-image>
+\begin{tikzpicture}
+
+
+\draw (0,0) node [draw] {E};
+\draw (2,0) node [draw] {D};
+\draw (4,0) node [draw] {2};
+\draw (6,0) node [draw] {3};
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+A classmate makes the following claim:
+"If there is a vowel on one side of a card then there is an odd number  on the other side."
+Which cards must be turned over to check whether this statement is true?
+
+<!--solution>
+<p>
+You must turn over the "E" card to ensure that there is an odd number, and you must turn over the "2" card to ensure that there is not a vowel on the other side.
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Suppose that four women are drinking in a bar. The owner  wants to enforce the rule that no one under twenty-one is allowed to drink alcohol. The owner asks each person to tell him either (1) what she is drinking, or (2) how old they are. Here are their truthful answers:
+
+</p>
+<table>
+<tabular top="minor" left="minor" bottom="minor" right="minor">
+<row>
+<cell>
+Alice
+</cell>
+<cell>
+Barbara
+</cell>
+<cell>
+Clarice
+</cell>
+<cell>
+Daria
+</cell>
+</row>
+<row>
+<cell>
+"I am drinking Coke."
+</cell>
+<cell>
+"I am sixteen."
+</cell>
+<cell>
+"I am drinking beer."
+</cell>
+<cell>
+"I am twenty-five."
+</cell>
+</row>
+</tabular>
+</table>
+<p>
+
+
+Which of the people have to answer the additional question (that they haven't answered yet) in order for the owner to ensure that the law is being observed?
+
+
+<!--solution>
+<p>
+The owner must find out what Barbara is drinking, and the owner must find out the age of Clarice.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Which of the previous questions was easier, (a) or (b)? Why?
+
+<!--solution>
+<p>
+Most people will find question (b) to be easier because it matches a context that we are already familiar with: the drinking age in the United States is 21. Meanwhile, the rule in part (a) is unfamiliar and we don't really know why the rule exists.
+
+			</p><p>
+But in fact, these two questions are variations of the same process: we are checking the validity of a statement of the form <m>P \rightarrow Q</m>. That also means that we have to check situations where <m>\neg Q \rightarrow \neg P</m> would apply.
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>		
+		<exercise>
+			<title>Evaluating an Argument</title>
+			<idx><h>Evaluating an Argument</h></idx>
+			<statement>
+				<p>
+Determine the validity of the following arguments. Include a truth table to justify your conclusion.
+
+			<ol>
+
+				<li>
+					<p>
+ If I stay up late at night, then I will be tired in the morning. I am tired this morning. Therefore, I stayed up late last night.
+
+<!--solution>
+<p>
+Let <m>P = </m> "I stay up late" and let  <m>Q = </m> "I am tired in the morning."
+
+<me>
+\begin{array}{c|c|c|c|c}
+P &amp; Q &amp; P \rightarrow Q &amp; Q \wedge (P \rightarrow Q) &amp; \big( Q \wedge (P \rightarrow Q) \big) \rightarrow P \\
+\hline
+T &amp; T &amp; T &amp; T &amp; T  \\
+T &amp; F &amp; F &amp; F &amp;  T \\
+F &amp; T &amp; T &amp; T &amp;  F \\
+F &amp; F &amp; T &amp; F &amp;  T \\
+\end{array}
+</me>
+The third line of the final column is <em> false</em>. Therefore the argument is not valid. This is because there are other reasons that I might be tired (perhaps I ran a marathon yesterday).
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ If I stay up late at night, then I will be tired in the morning. I am not tired this morning. Therefore, I did not stay up late last night.
+
+<!--solution>
+<p>
+Once again, let <m>P = </m> "I stay up late" and let  <m>Q = </m> "I am tired in the morning."
+
+<me>
+\begin{array}{c|c|c|c|c|c|c}
+P &amp; Q &amp; P \rightarrow Q &amp; \neg Q  &amp; \neg Q \wedge (P \rightarrow Q) &amp; \neg P &amp; \big( \neg Q \wedge (P \rightarrow Q) \big) \rightarrow \neg P \\
+\hline
+T &amp; T &amp; T &amp; F &amp; F &amp; F &amp; T  \\
+T &amp; F &amp; F &amp; T &amp; F &amp; F &amp; T \\
+F &amp; T &amp; T &amp; F &amp; T &amp; T &amp;  T \\
+F &amp; F &amp; T &amp; T &amp; F &amp; T &amp; T \\
+\end{array}
+</me>
+
+The final column only contains <em> true</em> values. Therefore the argument is valid.
+</p>
+</solution-->
+
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Evaluating Another Argument</title>
+			<idx><h>Evaluating Another Argument</h></idx>
+			<statement>
+				<p>
+Determine the validity of the following argument. Include a truth table to justify your conclusion.
+
+			</p><p>
+
+If I work hard, then I earn lots of money. If I earn lots of money, then I pay high taxes. Therefore, if I pay high taxes, then I have worked hard.
+
+
+<!--solution>
+<p>
+
+
+Let <m>P = </m> "I work hard" and <m>Q = </m> "I earn lots of money" and  <m>R = </m> "I pay high taxes."
+
+
+<me>
+\begin{array}{c|c|c|c|c|c|c|c}
+P &amp; Q &amp; R &amp; P \rightarrow Q &amp; Q \rightarrow R  &amp; (P \rightarrow Q) \wedge (Q \rightarrow R) &amp;R \rightarrow P &amp;
+\big( (P \rightarrow Q) \wedge (Q \rightarrow R) \big) \rightarrow (R \rightarrow P)\\
+\hline
+T &amp; T &amp; T &amp; T &amp; T &amp; T &amp; T  &amp; T\\
+T &amp; T &amp; F &amp; T &amp; F &amp; F &amp; T &amp; T\\
+T &amp; F &amp; T &amp; F &amp; T &amp; F &amp;  T &amp; T\\
+T &amp; F &amp; F &amp; F &amp; T &amp; F &amp; T &amp; T\\
+F &amp; T &amp; T &amp; T &amp; T &amp; T &amp; F  &amp; F\\
+F &amp; T &amp; F &amp; T &amp; F &amp; F &amp; T  &amp; T\\
+F &amp; F &amp; T &amp; T &amp; T &amp; T &amp;  F &amp; F\\
+F &amp; F &amp; F &amp; T &amp; T &amp; T &amp; T &amp; T\\
+\end{array}
+</me>
+
+The fifth and seven lines in the final column are <em> false</em>, so the argument is invalid. This line captures the fact that there are other reasons (besides working hard) that I can pay high taxes. For example, I could win the lottery.
+
+
+
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+</chapter>

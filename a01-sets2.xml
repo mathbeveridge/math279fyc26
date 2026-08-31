@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="sets2" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Unions and Intersections</title>
+	<introduction>
+		<p>
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Making Sets From Other Sets</title>
+			<idx><h>Making Sets From Other Sets</h></idx>
+			<statement>
+				<p>
+Let <m>A= \{ x \mid 1 &lt; x &lt; 5 \}</m>, <m>B = \{ x \mid 5 \leq x \leq 7 \}</m> and <m>C= \{ x \mid 2 &lt; x &lt; 8 \}</m>, where <m>x</m> represents a real number. Write the following sets in "set builder" notation.
+
+			<ol>
+
+				<li>
+					<p>
+ <m>A \cup C </m>.
+
+<!--solution>
+<p>
+\[
+A \cup C = \{ x \mid 1 &lt; x &lt; 8 \}
+\]
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>A \cap B</m>.
+
+<!--solution>
+<p>
+\[
+A \cap B = \emptyset \
+\]
+</p>
+</solution-->
+
+					</p>
+				</li>				
+				<li>
+					<p>
+ <m>(A \cup B ) \cap C</m>.
+
+<!--solution>
+<p>
+\[
+(A \cup B) \cap C = \{ x \mid 2 &lt; x &lt; 8 \} 
+\]
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>A \cap \overline{C}</m>.
+
+<!--solution>
+<p>
+\[
+A \cap \overline{C} = \{ x \mid 1 &lt;  x  \leq 2 \} \
+\]
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>		
+
+		<exercise>
+			<title>Union and Intersection</title>
+			<idx><h>Union and Intersection</h></idx>
+			<statement>
+				<p>
+The concepts of union and intersection naturally correspond to the concepts of "or" and "and." 
+Let's make this more concrete. Let <m>P(x)</m> and <m>Q(x)</m> be statements, and define
+<m>A = \{ x \mid P(x) \mbox{ is true} \}</m> and <m>B = \{ x \mid Q(x) \mbox{ is true} \}</m>.
+Find a simple way to write each of  <m>A \cup B</m> and <m>A \cap B</m> using set builder notation.
+Next, how would you write <m>A \backslash B</m>?
+<!--solution>
+<p>
+<me>
+\begin{array}{rcl}
+A \cup B &amp;=&amp; \{ x \mid P(x) \vee Q(x) \, \mbox{ is true}  \} \\
+A \cap B &amp;=&amp; \{ x \mid P(x) \wedge Q(x) \, \mbox{ is true} \} \\
+A \backslash B &amp;=&amp; \{ x \mid P(x) \wedge  \neg Q(x) \, \mbox{ is true} \} \\
+\end{array}
+</me>
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise>
+			<title>DeMorgan's Law</title>
+			<idx><h>DeMorgan's Law</h></idx>
+			<statement>
+				<p>
+Consider the following DeMorgan Law:
+
+\[
+\overline{(A \cap B)} = \overline{A} \cup \overline{B}.
+\]
+
+			<ol>
+				<li>
+					<p>
+ Prove this law using a Venn diagram
+
+			</p><p>
+
+<!--solution>
+<p>
+
+Both of your Venn diagrams will look  like this:
+
+
+			<image width="50%" xml:id="fig-img-sets10">
+				<latex-image>
+\begin{tikzpicture}
+
+\draw[thick, fill=blue!50, opacity=.5] (0,4) rectangle (5.5,0);
+
+
+\begin{scope}
+\clip (2,2) circle (1.5);
+\clip (3.5,2) circle (1.5);
+
+\fill[white] (0,4) rectangle (5.5,0);
+
+\end{scope}
+
+\draw[very thick] (2,2) circle (1.5);
+\draw[very thick] (3.5,2) circle (1.5);
+
+\node at (1.5,2) {<m>A</m>};
+\node at (4,2) {<m>B</m>};
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Prove this law using a carefully argued double inclusion proof.
+
+<!--solution>
+<p>
+First, we prove that if <m>x \in \overline{(A \cap B)}</m> then <m>x \in \overline{A} \cup \overline{B}</m>.
+
+<me>
+\begin{array}{rcl}
+x \in \overline{(A \cap B)}
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \cap B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \mbox{ AND } x \in  B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } (  x \in A) \mbox{ OR } \mbox{NOT } ( x \in  B) \\
+&amp; \Rightarrow &amp;   x \in \overline{A} \mbox{ OR }  x \in  \overline{B} \\
+&amp; \Rightarrow &amp;   x \in \overline{A}  \cup  \overline{B} \\
+\end{array}
+</me>
+
+Let's talk about that third step, since this is a new idea. We know that the statement "<m>x  \in A</m> AND <m>x \in B</m>" is FALSE. So (at least) one of these statements is FALSE. In other words, either <m>x \notin A</m> or <m>x \notin B</m>.
+
+			</p><p>
+
+Next, we prove that if <m>x \in \overline{A} \cup \overline{B}</m> then <m>x \in \overline{(A \cap B)}</m>. If you look carefully, this is just the previous argument in reverse. (This happens for simpler problems.)
+<me>
+\begin{array}{rcl}
+x \in \overline{A}  \cup  \overline{B}  &amp; \Rightarrow &amp;   x \in \overline{A} \mbox{ OR }  x \in  \overline{B} \\
+&amp; \Rightarrow &amp; \mbox{ NOT } (  x \in A) \mbox{ OR } \mbox{NOT } ( x \in  B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \mbox{ AND } x \in  B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \cap B) \\
+&amp; \Rightarrow &amp;  x \in \overline{(A \cap B)}  \\
+\end{array}
+</me>
+Let's talk about the third step in this case. We know that either <m>x \notin A</m> or <m>x \notin B</m>. Therefore is is NOT true that "<m>x \in A</m> and <m>x \in B</m> are both true".
+
+
+
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>	
+
+
+
+		<exercise>
+			<title>Distributive Laws</title>
+			<idx><h>Distributive Laws</h></idx>
+			<statement>
+				<p>
+Prove the following <em>distributive laws</em> in two ways. First, using a Venn diagram, and then using a double inclusion proof.
+
+			<ol>
+				<li>
+					<p>
+ <m>A \cap (B \cup C) = (A \cap B) \cup (A \cap C)</m>
+
+<!--solution>
+<p>
+This argument works backwards and forward. So this proves the double inclusion of these sets.
+
+<me>
+\begin{array}{rcl}
+x \in A \cap (B \cup C)
+&amp;\Longleftrightarrow&amp;
+x \in A \mbox{ AND } (x \in B \mbox{ OR } x \in C)  \\
+&amp;\Longleftrightarrow&amp;
+x \in A \cap B  \mbox{ OR } x \in A \cap C  \\
+&amp;\Longleftrightarrow&amp;
+x \in (A \cap B) \cup ( A \cap C)  \\
+\end{array}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>A \cup (B \cap C) = (A \cup B) \cap (A \cup C)</m>
+
+<!--solution>
+<p>
+Once again, this argument works backwards and forward. So this proves the double inclusion of these sets.
+
+<me>
+\begin{array}{rcl}
+x \in A \cup (B \cap C)
+&amp;\Longleftrightarrow&amp;
+x \in A \mbox{ OR }   ( x \in B \mbox{ AND } x \in C)  \\
+&amp;\Longleftrightarrow&amp;
+(x \in  A \mbox{ OR }    x \in B) \mbox{ AND }  (x \in  A \mbox{ OR }   x \in C)  \\
+&amp;\Longleftrightarrow&amp;
+x \in (A \cup B) \cap (A \cup C)
+\end{array}
+</me>
+
+This argument does work, but it does have one subtlety. If <m>x \notin A</m> then each condition forces <m>x</m> to be an element of both <m>B</m> and <m>C</m>.
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+</chapter>

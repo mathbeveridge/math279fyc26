@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="function2" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Injections and Surjections</title>
+	<introduction>
+		<p>
+
+
+Let <m>X,Y,Z</m> be finite sets, perhaps of different sizes. Let <m>f:X \rightarrow Y</m> and <m>g:Y \rightarrow Z</m>.
+
+Decide whether each of the following statements is <em> true</em> or <em> false</em>.
+		<ul>
+			<li>
+			<p>
+ If the statement is <em> true</em>, provide a proof. (It will be easier to prove the contrapositive.)
+			</p>
+			</li>
+			<li>
+			<p>
+ If the statement is <em> false</em>, provide a counterexample.
+			</p>
+			</li>
+		</ul>
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<statement>
+				<p>
+ If <m>g \circ f</m> is injective then <m>f</m> is injective.
+
+<!--solution>
+<p>
+
+<em> true</em>. We will give TWO proofs.
+
+<em>First, we prove the contrapositive statement.</em>
+
+If <m>f</m> is not injective then <m>g \circ f</m> is not injective.
+
+<em> Know:</em> There exist <m> x_1, x_2 \in X</m> such that <m>x_1 \neq x_2</m> and <m>f(x_1) = f(x_2)</m>.
+
+<em> Show:</em> There exist <m> a_1, a_2 \in X</m> such that <m>a_1 \neq a_2</m> and <m>g \circ f(a_1) = g \circ  f(a_2)</m>.
+
+
+		<ul>
+			<li>
+			<p>
+ Pick  <m>x_1, x_2 \in X</m> such that <m>x_1 \neq x_2</m> and <m>f(x_1) = f(x_2)</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Then we have <m>x_1 \neq x_2</m> and
+\[
+g \circ f (x_1) = g(f(x_1)) = g(f(x_2)) = g \circ f(x_2).
+\]
+			</p>
+			</li>
+			<li>
+			<p>
+ In other words, taking <m>a_1=x_1</m> and <m>a_2=x_2</m> satisfies our <em> Show</em> statement.
+			</p>
+			</li>
+			<li>
+			<p>
+ Therefore <m>g \circ f: X \rightarrow Z</m> is not injective.
+
+
+			</p>
+			</li>
+		</ul>
+
+<em>Next, we prove the original statement.</em>
+
+<em> Know:</em> If <m> x_1 \neq x_2 </m> then  <m>g \circ f(x_1) \neq g \circ f(x_2)</m>.
+
+<em> Show:</em> If <m> x_1 \neq x_2 </m> then  <m> f(x_1) \neq   f(x_2)</m>.
+
+		<ul>
+			<li>
+			<p>
+ Pick any <m>x_1 \neq x_2</m>. We know that <m>g \circ f(x_1) \neq g \circ f(x_2).</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ Let <m>y_1=f(x_1)</m> and <m>y_2 =   f(x_2)</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Then <m>g \circ f(x_1) \neq g \circ f(x_2)</m> is equivalent to <m>g (y_1) \neq g (y_2).</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ Since <m>g</m> is well defined function, we must have <m>y_1 \neq y_2</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ This is the same as saying that <m>f(x_1) \neq f(x_2)</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Therefore <m>f: X \rightarrow Y</m> is  injective.
+
+
+			</p>
+			</li>
+		</ul>
+
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ If <m>g \circ f</m> is injective then <m>g</m> is injective.
+
+
+<!--solution>
+<p>
+
+<em> false</em>. Here is a counterexample.
+
+			<image width="50%" xml:id="fig-img-function20">
+				<latex-image>
+\begin{tikzpicture}[scale=.8]
+
+
+\draw (-4,0) ellipse (1 and 1.75);
+
+\draw (-4,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (-4,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (-4,-1) node[circle,draw] {{\tiny <m>3</m>}};
+
+\draw[arrows={-latex}, very thick] (-3.75,1) -!- (-.25,1);
+\draw[arrows={-latex}, very thick] (-3.75,0) -!- (-.25,0);
+\draw[arrows={-latex}, very thick] (-3.75,-1) -!- (-.25,-1);
+
+
+\draw (-4,-2.75) node {<m>X= [3]</m>};
+
+
+\draw (0,-.5) ellipse (1 and 2.25);
+
+\draw (0,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (0,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (0,-1) node[circle,draw] {{\tiny <m>3</m>}};
+\draw (0,-2) node[circle,draw] {{\tiny <m>4</m>}};
+
+\draw (0,-3.5) node {<m>Y = [4]</m>};
+
+
+\draw (4,0) ellipse (1 and 1.75);
+
+\draw (4,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (4,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (4,-1) node[circle,draw] {{\tiny <m>3</m>}};
+
+
+
+
+\draw[arrows={-latex}, very thick] (.25,1) -!- (3.8,1);
+\draw[arrows={-latex}, very thick] (.25,0) -!- (3.8,0);
+\draw[arrows={-latex}, very thick] (.25,-1) -!- (3.75,-.8);
+\draw[arrows={-latex}, very thick] (.25,-2) -!- (3.75,-1.2);
+
+\draw (4,-2.75) node {<m>Z= [3]</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ If <m>g \circ f</m> is surjective then <m>f</m> is surjective.
+
+
+<!--solution>
+<p>
+
+<em> false</em>. Here is a counterexample.
+
+			<image width="50%" xml:id="fig-img-function21">
+				<latex-image>
+\begin{tikzpicture}[scale=.8]
+
+
+\draw (-4,0) ellipse (1 and 1.75);
+
+\draw (-4,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (-4,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (-4,-1) node[circle,draw] {{\tiny <m>3</m>}};
+
+\draw[arrows={-latex}, very thick] (-3.75,1) -!- (-.25,1);
+\draw[arrows={-latex}, very thick] (-3.75,0) -!- (-.25,0);
+\draw[arrows={-latex}, very thick] (-3.75,-1) -!- (-.25,-1);
+
+
+\draw (-4,-2.75) node {<m>X= [3]</m>};
+
+
+\draw (0,-.5) ellipse (1 and 2.25);
+
+\draw (0,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (0,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (0,-1) node[circle,draw] {{\tiny <m>3</m>}};
+\draw (0,-2) node[circle,draw] {{\tiny <m>4</m>}};
+
+\draw (0,-3.5) node {<m>Y = [4]</m>};
+
+
+\draw (4,0) ellipse (1 and 1.75);
+
+\draw (4,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (4,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (4,-1) node[circle,draw] {{\tiny <m>3</m>}};
+
+
+
+
+\draw[arrows={-latex}, very thick] (.25,1) -!- (3.8,1);
+\draw[arrows={-latex}, very thick] (.25,0) -!- (3.8,0);
+\draw[arrows={-latex}, very thick] (.25,-1) -!- (3.75,-.8);
+\draw[arrows={-latex}, very thick] (.25,-2) -!- (3.75,-1.2);
+
+\draw (4,-2.75) node {<m>Z= [3]</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ If <m>g \circ f</m> is surjective then <m>g</m> is surjective.
+
+
+<!--solution>
+<p>
+
+
+<em> true.</em> We give two proofs.
+
+<em>First, we prove the contrapositive:</em>
+
+
+If <m>g</m> is not surjective then <m>g \circ f</m> is not surjective.
+
+
+<em> Know:</em> There exists <m>z \in Z</m> such that for all <m>y \in Y</m>, <m>g(y) \neq z</m>.
+
+<em> Show:</em> There exists <m>z \in Z</m> such that for all <m>x \in X</m>, <m>g \circ f (x) \neq z</m>.
+
+		<ul>
+			<li>
+			<p>
+ Let <m>f(X) = \{ f(x) \mid x \in X \}</m> be the image of <m>f</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Obviously <m>f(X)</m> is a subset of <m>Y</m>. So for all <m>y \in f(X)</m>, we know that <m>f(y) \neq z</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Pick any <m>x \in X</m>. Then <m>g \circ f(x) = g(f(x))</m>. We have <m>f(x) \in Y</m>, and therefore <m>g(f(x)) \neq z</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ This proves that <m>g \circ f: X \rightarrow Z</m> is not surjective.
+
+			</p>
+			</li>
+		</ul>
+
+
+			</p><p>
+
+<em>Next, we prove the original statement:</em>
+
+
+
+
+
+<em> Know:</em> For all  <m>z \in Z</m> there exists <m>x \in X</m> such that <m>g \circ f(x) = z</m>.
+
+<em> Show:</em> For all  <m>z \in Z</m> there exists <m>y \in Y</m> such that <m>g (y) = z</m>.
+
+		<ul>
+			<li>
+			<p>
+ Pick any <m>z \in Z</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ There is an <m>x \in X</m> such that <m>g \circ f(x) = z</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Let <m>y= f(x)</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Then <m>g(y) = g(f(x)) = g \circ f(x) =z</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ We found a <m>y \in Y</m> such that <m>g(y)=z</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Therefore <m>g</m> is surjective.
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+
+</chapter>

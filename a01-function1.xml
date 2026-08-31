@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="function1" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Functions</title>
+	<introduction>
+		<p>
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Listing all functions</title>
+			<idx><h>Listing all functions</h></idx>
+			<statement>
+				<p>
+List all the functions from <m>\{a,b,c \}</m> to <m>\{ x,y \}</m>. For example, one function <m>f_1</m> is given by <m>f_1(a)=x</m> and <m>f_1(b)=y</m> and <m>f_1(c)=y</m>.
+
+<!--solution>
+<p>
+There are 8 such functions. Here they are, where each row corresponds to one function.
+<me>
+\begin{array}{c|c|c}
+a  &amp; b &amp; c \\
+\hline
+x &amp; x &amp; x  \\
+x &amp; x &amp;  y \\
+x  &amp; y  &amp; x  \\
+y &amp; x &amp; x  \\
+x &amp;  y &amp; y \\
+y  &amp;  x &amp; y \\
+y &amp; y &amp; x \\
+y &amp; y &amp; y
+\end{array}
+</me>
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Counting  functions</title>
+			<idx><h>Counting  functions</h></idx>
+			<statement>
+				<p>
+How many functions are there from <m>\{a,b,c,d \}</m> to <m>\{x,y,z \}</m>? This time, justify your answer with an argument rather than listing all possible functions.
+
+<!--solution>
+<p>
+There are <m>3^4</m> functions. Each of the four elements in the domain can map to any of the three elements in the target. The result follows from the product principle.
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>More counting functions</title>
+			<idx><h>More counting functions</h></idx>
+			<statement>
+				<p>
+Without making lists or drawing pictures, how many functions are there <m>\ldots</m>
+
+			<ol>
+				<li>
+					<p>
+ from a four-element set to a ten-element set?
+
+<!--solution>
+<p>
+<m>10^4</m>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ 	from a ten-element set to a four-element set?
+
+<!--solution>
+<p>
+<m>4^{10}</m>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+  from an <m>r</m>-element set to an <m>s</m>-element set?
+
+<!--solution>
+<p>
+<m>s^r</m>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise>
+			<title>Different Kinds of Functions</title>
+			<idx><h>Different Kinds of Functions</h></idx>
+			<statement>
+				<p>
+In each of the following problems, give an example of a function <m>f: [n] \rightarrow [m]</m> of the specified type. <em>You get to pick the values for <m>n</m> and <m>m</m>.</em> Describe your function by using a picture. Then decide if there is a required relationship between <m>n</m> and <m>m</m>, the sizes of the domain and the codomain (also called the "target").
+
+
+
+			<ol>
+
+				<li>
+					<p>
+ Create a function <m>f: [n] \rightarrow [m]</m> that is injective (one-to-one) but NOT surjective (onto). What is the required relationship between <m>n</m> and <m>m</m>? (One of: <m>n  &gt;m</m> or <m>n &lt; m</m> or <m>n = m</m> or "none.")
+
+
+<!--solution>
+<p>
+
+			<image width="50%" xml:id="fig-img-function10">
+				<latex-image>
+\begin{tikzpicture}[scale=.8]
+
+
+\draw (0,0) ellipse (1 and 1.75);
+
+\draw (0,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (0,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (0,-1) node[circle,draw] {{\tiny <m>3</m>}};
+
+\draw (0,-2.5) node {<m>X = [3]</m>};
+
+
+\draw (4,0) ellipse (1 and 2.25);
+
+\draw (4,1.5) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (4,.5) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (4,-.5) node[circle,draw] {{\tiny <m>3</m>}};
+\draw (4,-1.5) node[circle,draw] {{\tiny <m>4</m>}};
+
+
+
+\draw[arrows={-latex}, very thick] (.25,1) -!- (3.8,.6);
+\draw[arrows={-latex}, very thick] (.25,0) -!- (3.8,-.4);
+\draw[arrows={-latex}, very thick] (.25,-1) -!- (3.75,-1.5);
+
+\draw (4,-2.75) node {<m>Y= [4]</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+{Required Relationship: <m>n &lt; m</m>}
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Create a function <m>f: [n] \rightarrow [m]</m> that is injective (one-to-one) and surjective (onto). What is the required relationship between <m>n</m> and <m>m</m>? (One of: <m>n  &gt;m</m> or <m>n &lt; m</m> or <m>n = m</m> or "none.")
+
+
+<!--solution>
+<p>
+			<image width="50%" xml:id="fig-img-function11">
+				<latex-image>
+\begin{tikzpicture}[scale=.8]
+
+
+\draw (0,0) ellipse (1 and 1.75);
+
+\draw (0,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (0,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (0,-1) node[circle,draw] {{\tiny <m>3</m>}};
+
+\draw (0,-2.5) node {<m>X = [3]</m>};
+
+
+\draw (4,0) ellipse (1 and 1.75);
+
+\draw (4,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (4,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (4,-1) node[circle,draw] {{\tiny <m>3</m>}};
+
+
+
+
+\draw[arrows={-latex}, very thick] (.25,1) -!- (3.8,1);
+\draw[arrows={-latex}, very thick] (.25,0) -!- (3.8,0);
+\draw[arrows={-latex}, very thick] (.25,-1) -!- (3.75,-1);
+
+\draw (4,-2.75) node {<m>Y= [3]</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+Required Relationship:  <m>n = m</m>
+			</p><p>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Create a function <m>f: [n] \rightarrow [m]</m> that is NOT injective (one-to-one) but is surjective (onto). What is the required relationship between <m>n</m> and <m>m</m>? (One of: <m>n  &gt;m</m> or <m>n &lt; m</m> or <m>n = m</m> or "none.")
+
+
+<!--solution>
+<p>
+			<image width="50%" xml:id="fig-img-function12">
+				<latex-image>
+\begin{tikzpicture}[scale=.8]
+
+
+\draw (0,-.5) ellipse (1 and 2.25);
+
+\draw (0,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (0,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (0,-1) node[circle,draw] {{\tiny <m>3</m>}};
+\draw (0,-2) node[circle,draw] {{\tiny <m>4</m>}};
+
+\draw (0,-3.5) node {<m>X = [4]</m>};
+
+
+\draw (4,0) ellipse (1 and 1.75);
+
+\draw (4,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (4,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (4,-1) node[circle,draw] {{\tiny <m>3</m>}};
+
+
+
+
+\draw[arrows={-latex}, very thick] (.25,1) -!- (3.8,1);
+\draw[arrows={-latex}, very thick] (.25,0) -!- (3.8,0);
+\draw[arrows={-latex}, very thick] (.25,-1) -!- (3.75,-.8);
+\draw[arrows={-latex}, very thick] (.25,-2) -!- (3.75,-1.2);
+
+\draw (4,-2.75) node {<m>Y= [3]</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+Required Relationship: <m> n &gt; m</m>
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Create a function <m>f: [n] \rightarrow [m]</m> that is NOT injective (one-to-one) and NOT surjective (onto). What is the required relationship between <m>n</m> and <m>m</m>? (One of: <m>n  &gt;m</m> or <m>n &lt; m</m> or <m>n = m</m> or "none.")
+
+<!--solution>
+<p>
+			<image width="50%" xml:id="fig-img-function13">
+				<latex-image>
+\begin{tikzpicture}[scale=.8]
+
+
+\draw (0,-.5) ellipse (1 and 2.25);
+
+\draw (0,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (0,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (0,-1) node[circle,draw] {{\tiny <m>3</m>}};
+\draw (0,-2) node[circle,draw] {{\tiny <m>4</m>}};
+
+\draw (0,-3.5) node {<m>X = [4]</m>};
+
+
+\draw (4,0) ellipse (1 and 1.75);
+
+\draw (4,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (4,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (4,-1) node[circle,draw] {{\tiny <m>3</m>}};
+
+
+
+
+\draw[arrows={-latex}, very thick] (.25,1) -!- (3.8,.2);
+\draw[arrows={-latex}, very thick] (.25,0) -!- (3.8,-.2);
+\draw[arrows={-latex}, very thick] (.25,-1) -!- (3.75,-.8);
+\draw[arrows={-latex}, very thick] (.25,-2) -!- (3.75,-1.2);
+
+\draw (4,-2.75) node {<m>Y= [3]</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+Required Relationship: none
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise>
+			<title>Injective? Surjective?</title>
+			<idx><h>Injective? Surjective?</h></idx>
+			<statement>
+				<p>
+For each of the functions below, decide whether it is injective and/or surjective. If it does not satisfy the property, explain why by giving an example that violates the property. If it does satisfy the property, then provide a proof.
+
+
+
+			<ol>
+
+				<li>
+					<p>
+ <m>f: \Z \rightarrow \Z</m> given by <m>\displaystyle{f(n) = \left\lfloor \frac{n}{2} \right\rfloor}</m> where
+<m>\left\lfloor x \right\rfloor</m> is the floor function, which "rounds down" to the nearest integer.
+
+<!--solution>
+<p>
+		<ul>
+
+			<li>
+			<p>
+ The function is not injective. For example, <m>f(0) = 0 = f(1)</m>
+
+			</p>
+			</li>
+			<li>
+			<p>
+ The function is surjective. Given any <m>n \in Z</m>, we have <m>f(2n)=n</m>.
+
+			</p>
+			</li>
+		</ul>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>g: \Z \rightarrow \Z</m> given by <m>g(n) = 4n -1</m>
+
+<!--solution>
+<p>
+		<ul>
+
+			<li>
+			<p>
+ The function is  injective. Suppose that <m>g(n) = g(m)</m>. This means that <m>4n-1=4m-1</m>, so <m>4n=4m</m> and finally <m>n=m</m>.
+
+			</p>
+			</li>
+			<li>
+			<p>
+ The function is not surjective. It certainly misses all of the even numbers since the right hand side is odd. But we just need one counter example, so let's show that <m>g(n) \neq 0</m> for all <m>n \in \Z</m>. AFSOC (assume for the sake of contradiction) that <m>g(n) =0</m>. Then <m>0=4n-1</m> which means that <m>n=1/4</m>. But <m>1/4 \notin \Z</m>. Therefore, no element maps to <m>0</m>.
+
+			</p>
+			</li>
+		</ul>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>h: \R \backslash \{ 0 \} \rightarrow \R</m> given by <m>\displaystyle{h(x) = \frac{x+1}{x}}</m>.
+
+<!--solution>
+<p>
+		<ul>
+
+			<li>
+			<p>
+ The function is  injective. This function is equivalent to <m>\displaystyle{h(x) = 1+\frac{1}{x}}</m>. Suppose that <m>f(a) = f(b)</m>. This means that
+<me>
+\begin{array}{rcl}
+1+\frac{1}{a} &amp;=&amp; 1+\frac{1}{b} \\
+\frac{1}{a} &amp;=&amp; \frac{1}{b} \\
+a &amp;=&amp; b.
+\end{array}
+</me>
+
+			</p>
+			</li>
+			<li>
+			<p>
+ The function is not surjective. It misses the point <m>y=1</m>. Indeed, if <m>h(x)=1</m> then
+<me>
+\begin{array}{rcl}
+1 &amp;=&amp; 1+\frac{1}{x} \\
+0 &amp;=&amp; \frac{1}{x}, \\
+\end{array}
+</me>
+which is impossible.
+
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+
+
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+</chapter>

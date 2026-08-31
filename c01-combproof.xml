@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="combproof" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Combinatorial Proof</title>
+	<introduction>
+		<p>
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<statement>
+				<p>
+ Give a combinatorial proof for the identity
+<me>
+ {3n \choose 3} = 3 {n \choose 3} + 6n {n \choose 2} + n^3.
+</me>
+
+			</p>
+<!--solution>
+		<ul>
+			<li>
+			<p>
+ LHS:<m>{3n \choose 3}</m> counts the number of ways to choose a 3-set from <m>[3n]</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ RHS: Split <m>[3n]</m> into 3 sets of size <m>n</m>. There are 3 different cases (addition principle)
+		<ul>
+			<li>
+			<p>
+ <m>3 {n \choose 3}</m>:  Choose one of the <m>n</m>-sets and pick all 3 elements from that set.
+			</p>
+			</li>
+			<li>
+			<p>
+ <m> 6n {n \choose 2}</m>: Pick one of the three <m>n</m>-sets and take 2 elements from that set: number of ways is <m>3{n \choose 2}</m>. Next, pick one of the remaining two <m>n</m>-sets and take 1 element from that set: number of ways is <m>2 n</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ <m> n^3</m>: Choose one element from each of the three <m>n</m>-sets.
+			</p>
+			</li>
+		</ul>
+			</p>
+			</li>
+		</ul>
+</solution-->	
+			</statement>
+		</exercise>	
+		<exercise>
+			<statement>
+			<p>
+			Give a combinatorial proof for the identity
+<me> 
+\sum_{k=0}^n \left( {n \choose k} \right)^2 = { 2n \choose n}.
+</me> 
+Hint: you will need the identity <m>{r \choose s} = {r \choose r-s}</m>.
+<!--solution>
+We rewrite this as
+<me>
+\sum_{k=0}^n  {n \choose k}  {n \choose n-k}  = { 2n \choose n}.
+</me>
+
+		<ul>
+			<li>
+			<p>
+ RHS: the number of ways to choose an <m>n</m>-set from <m>[2n]</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ LHS: Split <m>[2n]</m> into two sets of size <m>n</m>.  We then consider <m>n+1</m> cases, depending on how many elements we pick from the first set. We can choose <m>0 \leq k \leq n</m> elements from the first set and then pick the remaining <m>n-k</m> from the second set. For a fixed <m>k</m>, the number of ways to do this is
+<m>{ n \choose k} {n \choose n-k}</m>. We then sum over all possible <m>k</m>.
+			</p>
+			</li>
+		</ul>
+</solution-->
+			</p>
+			</statement>
+		</exercise>	
+		<exercise>
+			<statement>
+			<p>
+Give a combinatorial proof for the identity
+<me>
+{n + m \choose r} =
+\sum_{i=0}^r  {n \choose i} {m \choose r-i}.
+</me>
+
+<!--solution>
+
+
+This is a more general version of the previous problem.
+
+		<ul>
+			<li>
+			<p>
+ RHS: the number of ways to choose an <m>r</m>-set from <m>[n+m]</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ LHS: Split <m>[n+m]</m> into two sets, one of size <m>n</m> and the other of size <m>m</m>.  We then consider <m>r+1</m> cases, depending on how many elements we pick from the first set. We can choose <m>0 \leq i \leq r</m> elements from the first set and then pick the remaining <m>r-i</m> from the second set. For a fixed <m>i</m>, the number of ways to do this is
+<m>{n \choose i} {m \choose n-i}</m>. We then sum over all possible <m>i</m>.
+			</p>
+			</li>
+		</ul>
+
+</solution-->
+</p>
+
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+			<p>
+Give a combinatorial proof for the identity
+<me>
+{k \choose k} + {k+1 \choose k} + {k+2 \choose k} + \cdots + {n \choose k} = {n+1 \choose k+1}.
+</me>
+Hint: For the LHS, we have split into cases according to the LARGEST ELEMENT in our <m>(k+1)</m>-set of 
+<m>[n+1]</m>.
+</p>
+<!--solution>
+Both sides count the number of ways to choose <m>k+1</m> numbers from the set <m>n+1</m>
+
+		<ul>
+			<li>
+			<p>
+ RHS: the number of ways to choose a <m>k+1</m>-set from <m>[n]</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ LHS: We partition the subsets according to the largest element in the subset <m>A \subseteq [n+1]</m>.
+ If the largest element of <m>A</m> is <m>k+1</m>, then we still must choose <m>k</m> elements from <m>[k]</m>, 
+ and there are <m>{k \choose k}</m> ways to do this. 
+ If the largest element of <m>A</m> is <m>k+2</m>, then we still must choose <m>k</m> elements from <m>[k+1]</m>, 
+ and there are <m>{k+1 \choose k}</m> ways to do this. 
+  If the largest element of <m>A</m> is <m>k+3</m>, then we still must choose <m>k</m> elements from <m>[k+2]</m>, 
+ and there are <m>{k+2 \choose k}</m> ways to do this. 
+ This same argument holds for each case. The largest possible maximum element in <m>n+1</m>. In this case, 
+ we still must choose <m>k</m> elements from <m>[n]</m>, 
+ and there are <m>{n \choose k}</m> ways to do this. 
+			</p>
+			</li>
+		</ul>
+</solution-->
+			</statement>
+		</exercise>
+
+	</exercises>
+
+
+
+
+</chapter>

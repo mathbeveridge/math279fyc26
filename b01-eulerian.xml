@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="eulerian" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Eulerian Graphs</title>
+	<introduction>
+		<p>
+
+
+
+
+Here are some basic definitions for a graph <m>G=(V,E)</m> with <m>n</m> vertices and <m>m</m> edges that we learned a while ago.
+		<ul>
+			<li>
+			<p>
+ A <em>walk</em> is a sequence of vertices <m>v_0, v_1, v_2, \ldots. v_k</m> such that <m>v_i v_{i+1} \in E</m> for <m>0 \leq i \leq k-1</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ A <em>trail</em> is a walk with distinct edges (no repeated edges)
+			</p>
+			</li>
+			<li>
+			<p>
+ A <em>path</em> is a walk with distinct vertices (and hence distinct edges)
+			</p>
+			</li>
+			<li>
+			<p>
+ A <em>circuit</em> is a closed walk (meaning that <m>v_0=v_k</m>, we start and end at the same vertex)
+			</p>
+			</li>
+			<li>
+			<p>
+ A <em>cycle</em> is a circuit with distinct vertices (and hence distinct edges)
+			</p>
+			</li>
+		</ul>
+
+And here are the definitions that we need for today.
+		<ul>
+			<li>
+			<p>
+ An <em>Eulerian circuit</em> is a circuit that contains every edge exactly once.
+			</p>
+			</li>
+			<li>
+			<p>
+ An <em>Eulerian trail</em> is a trail that contains every edge exactly once (but starts and ends at different vertices).
+			</p>
+			</li>
+			<li>
+			<p>
+ An <em>Eulerian graph</em> is a graph that has an Eulerian circuit.
+			</p>
+			</li>
+		</ul>
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+		<exercise>
+			<title>Eulerian Examples and Non-Examples</title>
+			<idx><h>Eulerian Examples and Non-Examples</h></idx>
+			<statement>
+				<p>
+Which if these graph have  an Eulerian circuit? An Eulerian trail?
+
+			<image width="90%" xml:id="fig-img-eulerian0">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+
+
+\begin{scope}[shift={(0,0)}]
+
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (2,0) circle (2pt);
+\draw[fill] (2,1) circle (2pt);
+\draw[fill] (2,2) circle (2pt);
+\draw[fill] (1,2) circle (2pt);
+\draw[fill] (0,2) circle (2pt);
+\draw[fill] (0,1) circle (2pt);
+
+\draw (0,0) -!- (2,0) -!- (2,2) -!- (0,2) -!- cycle;
+\draw (0,1) -!- (1,0);
+\draw (1,2) -!- (2,1);
+
+\node at (1,-1) {(a)};
+
+\end{scope}
+
+
+\begin{scope}[shift={(5,0)}]
+
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (2,0) circle (2pt);
+\draw[fill] (2,1) circle (2pt);
+\draw[fill] (2,2) circle (2pt);
+\draw[fill] (1,2) circle (2pt);
+\draw[fill] (0,2) circle (2pt);
+\draw[fill] (0,1) circle (2pt);
+
+\draw (0,0) -!- (2,0) -!- (2,2) -!- (0,2) -!- cycle;
+\draw (1,0) -!- (1,2);
+
+\node at (1,-1) {(b)};
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (2,0) circle (2pt);
+\draw[fill] (2,1) circle (2pt);
+\draw[fill] (2,2) circle (2pt);
+\draw[fill] (1,2) circle (2pt);
+\draw[fill] (0,2) circle (2pt);
+\draw[fill] (0,1) circle (2pt);
+
+\draw (0,0) -!- (2,0) -!- (2,2) -!- (0,2) -!- cycle;
+\draw (0,1) -!- (1,0) -!- (2,1) -!- (1,2) -!-cycle;
+
+
+\node at (1,-1) {(c)};
+
+\end{scope}
+
+
+
+
+\begin{scope}[shift={(0,-5)}]
+
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (2,0) circle (2pt);
+\draw[fill] (2,1) circle (2pt);
+\draw[fill] (2,2) circle (2pt);
+\draw[fill] (1,2) circle (2pt);
+\draw[fill] (0,2) circle (2pt);
+\draw[fill] (0,1) circle (2pt);
+
+\draw (1,1) circle (1.417);
+
+
+\draw (0,0) -!- (2,0) -!- (0,2) -!- (2,2);
+\draw (0,1) -!- (1,0) -!- (2,1) -!- (1,2) -!-cycle;
+\draw (1,2) -!- (2,1);
+
+
+\node at (1,-1) {(d)};
+
+\end{scope}
+
+\begin{scope}[shift={(5,-5)}]
+
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (2,0) circle (2pt);
+\draw[fill] (2,1) circle (2pt);
+\draw[fill] (2,2) circle (2pt);
+\draw[fill] (1,2) circle (2pt);
+\draw[fill] (0,2) circle (2pt);
+
+
+\draw (1,1) circle (1.417);
+
+
+\draw (0,0) -!- (2,0) -!- (2,2) -!- (0,2);
+
+\draw (0,0) -!- (1,2) -!- (2,1);
+
+\draw (0,2) -!- (0,0) -!-  (2,1);
+
+\node at (1,-1) {(e)};
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,-5)}]
+
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (2,0) circle (2pt);
+\draw[fill] (2,1) circle (2pt);
+\draw[fill] (2,2) circle (2pt);
+\draw[fill] (1,2) circle (2pt);
+\draw[fill] (0,2) circle (2pt);
+\draw[fill] (0,1) circle (2pt);
+
+\draw (1,1) circle (1.417);
+
+
+\draw (0,0) -!- (2,0) -!- (2,2) -!- (0,2) -!- cycle;
+\draw (2,0) -!- (0,2);
+\draw (0,0) -!- (2,2);
+
+
+
+\node at (1,-1) {(f)};
+
+\end{scope}
+
+
+
+
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+<!--solution>
+<p>
+
+			<ol>
+				<li>
+					<p>
+ Neither
+					</p>
+				</li>
+				<li>
+					<p>
+ Eulerian Trail
+					</p>
+				</li>
+				<li>
+					<p>
+ Eulerian Circuit
+					</p>
+				</li>
+				<li>
+					<p>
+ Eulerian Trail
+					</p>
+				</li>
+				<li>
+					<p>
+ Eulerian Circuit
+					</p>
+				</li>
+				<li>
+					<p>
+ Neither
+					</p>
+				</li>
+			</ol>
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>DIY Eulerian Properties</title>
+			<idx><h>DIY Eulerian Properties</h></idx>
+			<statement>
+				<p>
+Given what you have learned in the previous question, can you draw another graph that has an Eulerian circuit? An Eulerian trail? That has neither an Eulerian circuit or an Eulerian trail?
+(Hint: pay attention to the parity (even or odd) of all the vertex degrees!)
+
+<!--solution>
+<p>
+
+Here are the conclusions that we seems to draw from these examples:
+		<ul>
+			<li>
+			<p>
+ <m>G</m> has an Eulerian Cycle <m>\longleftrightarrow</m> all vertices have even degree
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>G</m> has an Eulerian Trail <m>\longleftrightarrow</m> exactly two vertices of odd degree
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Graphs With an Eulerian Circuit</title>
+			<idx><h>Graphs With an Eulerian Circuit</h></idx>
+			<statement>
+				<p>
+Make a conjecture about what structural property guarantees that <m>G</m> has an Eulerian circuit.   We will call this <em>Property EC</em>.
+
+<!--solution>
+<p>
+
+Property EC = every vertex has even degree
+
+</p>
+</solution-->
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Graphs With an Eulerian Trail</title>
+			<idx><h>Graphs With an Eulerian Trail</h></idx>
+			<statement>
+				<p>
+Make a conjecture about what structural property guarantees that <m>G</m> has an Eulerian trail. We will call this <em>Property ET</em>.
+
+<!--solution>
+<p>
+
+Property ET = exactly two vertices have odd degree
+
+</p>
+</solution-->
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Using EC condition to prove ET condition</title>
+			<idx><h>Using EC condition to prove ET condition</h></idx>
+			<statement>
+				<p>
+Assume that your <em>Property EC</em> guarantees that a graph has an Eulerian circuit. (We will prove it below). Use that fact to prove that <em>Property ET</em> guarantees that a graph has an Eulerian trail. In other words, prove that
+
+			</p><p>
+[ Property EC <m>\rightarrow</m>  Eulerian circuit ]
+<m>\rightarrow</m>
+[ Property ET <m>\rightarrow</m>  Eulerian trail ].
+
+			</p><p>
+
+<em>Hint:</em> What small change could you make to a graph <m>G</m> with the ET property so that it becomes a graph <m>H</m> with the EC property?
+
+<!--solution>
+<p>
+
+Let <m>G</m> be a graph with exactly two vertices with odd degree. Add an edge <m>e</m> between these two vertices. Then <m>G+e</m> has an Eulerian circuit (by Property EC). Removing the edge <m>e</m> once more gives us an Eulerian trail in the original graph <m>G</m>.
+
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Eulerian Circuit Implies EC condition holds</title>
+			<idx><h>Eulerian Circuit Implies EC condition holds</h></idx>
+			<statement>
+				<p>
+Prove that if <m>G</m> has an Eulerian circuit then <m>G</m> has Property EC.
+
+
+<!--solution>
+<p>
+As we travel along the Eulerian circuit, every entrance is paired with an exit. So all vertices have even degree.
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>EC condition implies <m>G</m> has an Eulerian Circuit</title>
+			<idx><h>EC condition implies <m>G</m> has an Eulerian Circuit</h></idx>
+			<statement>
+				<p>
+We need strong induction on <m>m=|E|</m> to give a rigorous proof that if   <m>G</m> has Property EC then <m>G</m> has an Eulerian circuit. For now, brainstorm about how you might prove this by strong induction. Write down your strategy.
+
+<!--solution>
+<p>
+
+Let <m>G</m> be a connected graph vertices where every degree is even.
+		<ul>
+			<li>
+			<p>
+ <em>Base Case:</em> <m>G</m> is a cycle, so <m>m=n</m>. Clearly a cycle is an Eulerian circuit.
+			</p>
+			</li>
+			<li>
+			<p>
+ <em>Inductive Hypothesis:</em> Assume that a connected graph <m>G</m> where every degree is even and <m>|E| &lt; m</m> has an Eulerian cycle.
+			</p>
+			</li>
+			<li>
+			<p>
+ <em>Inductive Step:</em> Consider a graph <m>G</m> where every degree is even and <m>|E|=m</m>. Start at any vertex <m>v</m> and walk without repeating edges until you return to <m>v</m>. You cannot get stuck along the way since every vertex has even degree: if you enter a vertex then there must be an edge available to leave the vertex. Call this resulting circuit <m>W</m>.
+
+Now look at <m>H=G-W</m>. Every vertex of graph <m>H</m> has even degree, but it may have multiple components. Each component has fewer than <m>m</m> edges, so these components each have an Eulerian Circuit. We can splice these together along with the circuit <m>W</m> to create an Eulerian Circuit for <m>G</m>.
+
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Guan's Postman Problem</title>
+			<idx><h>Guan's Postman Problem</h></idx>
+			<statement>
+				<p>
+
+The Postman Problem  is an example of a <em>combinatorial optimization problem</em>:
+
+			</p><p>
+
+<em>The Postman Problem</em>: Given a connected (and possibly weighted) graph,
+find the shortest closed walk that covers every edge at least once.
+
+			</p><p>
+
+In other words, you want to repeat the fewest number of (weighted) edges in a circuit that contains all the edges.
+
+			<ol>
+
+				<li>
+					<p>
+ Find the shortest closed postman route for the following graphs. Indicate the edges that must be repeated.
+
+
+
+
+			<image width="70%" xml:id="fig-img-eulerian1">
+				<latex-image>
+\begin{tikzpicture}[scale=1.5] %mathbook width=70%
+
+
+\begin{scope}[shift={(0,0)}]
+
+
+\draw (0,0) -!- (0,2) -!- (2,2) -!- (2,0) -!- cycle;
+\draw (0,1) -!- (2,1);
+\draw (1,0) -!- (2,1);
+
+\foreach \i in {0,1,2}
+{
+\foreach \j in {0,1,2}
+{
+\draw[fill] (\i,\j) circle (3pt);
+}
+}
+
+\node at (-1,1) {(a)};
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-6)}]
+
+
+
+\draw[fill] (0,1) circle (3pt);
+\draw[fill] (4,1) circle (3pt);
+\draw[fill] (2.5,2) circle (3pt);
+\draw[fill] (3,-.5) circle (3pt);
+
+\draw (0,1) -!- (4,1) -!- (2.5,2) -!- (3, -.5) -!- cycle;
+\draw (4,1) -!-  (3, -.5);
+\draw (0,1) -!- (2.5,2);
+
+
+
+\node at (1,0) {3};
+\node at (1,1.75) {4};
+\node at (2,1.25) {6};
+\node at (3,.5) {5};
+\node at (3.7,0) {2};
+\node at (3.7,1.6) {2};
+
+
+\node at (-1,1) {(c)};
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(1,-3)}]
+
+
+\draw (-1,0) -!- (-1,2) -!- (3,2) -!- (3,0) -!- cycle;
+\draw (0,2) -!- (1,1) -!- (3,1) -!- (2,0);
+
+\draw (0,1) -!- (-1,1);
+
+\draw (2,1) -!- (3,2);
+
+\draw (1,1) -!- (0,1);
+\draw (2,0) -!- (2,1);
+
+\foreach \i in {-1,0,1,2,3}
+{
+\foreach \j in {0,1,2}
+{
+\draw[fill] (\i,\j) circle (3pt);
+}
+}
+
+\node at (-2,1) {(b)};
+
+\end{scope}
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{scope}[shift={(0,-9)}]
+
+\node at (-1,0) {(d)};
+
+\draw (0,0) -!- (1.5, 1.5) -!-  (4, 1.5) -!- (5,0) -!- (2, -1.5) -!- cycle;
+
+\draw (0,0) -!- (5,0) -!- (3,0.75) -!- (2.5, 0);
+
+
+\draw (0,0) -!- (1.5, -.5) -!- (2.5,0) -!- (2,-1.5) -!- (1.5, -.5);
+
+\draw (1.5,1.5) -!- (2.5,0);
+
+\draw (3, .75) -!- (4, 1.5);
+
+\draw (3.5, 0) -!- (3, 0.75);
+
+\draw[fill] (0,0) circle (3pt);
+
+\draw[fill] (1.5,1.5) circle (3pt);
+\draw[fill] (4,1.5) circle (3pt);
+
+\draw[fill] (5,0) circle (3pt);
+
+\draw[fill] (3.5,0) circle (3pt);
+
+\draw[fill] (2,-1.5) circle (3pt);
+
+\draw[fill] (1.5,-0.5) circle (3pt);
+\draw[fill] (2.5,0) circle (3pt);
+\draw[fill] (3,.75) circle (3pt);
+
+\node at (.7,.9)  {5};
+
+\node at (2.75,1.65)  {6};
+\node at (2.1,.9)  {4};
+
+\node at (1.25, .25) {5};
+\node at (1, -.5) {3};
+\node at (2, -.45) {2};
+\node at (1.9, -.9) {2};
+
+\node at (2.4, -.75) {3};
+
+\node at (1.25, -1.2) {4};
+
+\node at (2.6, .4) {1};
+\node at (3.1, .35) {1};
+\node at (4, .6) {3};
+\node at (4.5, 1) {3};
+
+\node at (3.6, 1) {2};
+
+
+\node at (3,-.15) {1};
+\node at (4,-.15) {2};
+
+\node at (3.5,-.9) {8};
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+
+<!--solution>
+<p>
+
+			<image width="50%" xml:id="fig-img-eulerian2">
+				<latex-image>
+\begin{tikzpicture}[scale=1.5]
+
+
+\begin{scope}[shift={(0,0)}]
+
+\draw[ultra thick, red] (0,1) -!- (0,0) -!- (1,0);
+
+\draw (0,0) -!- (0,2) -!- (2,2) -!- (2,0) -!- cycle;
+\draw (0,1) -!- (2,1);
+\draw (1,0) -!- (2,1);
+
+\foreach \i in {0,1,2}
+{
+\foreach \j in {0,1,2}
+{
+\draw[fill] (\i,\j) circle (3pt);
+}
+}
+
+\node at (-1,1) {(a)};
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-6)}]
+
+
+\draw[ultra thick, red] (0,1) -!- (3, -.5);
+\draw[ultra thick, red] (4,1) -!- (2.5, 2);
+
+\draw[fill] (0,1) circle (3pt);
+\draw[fill] (4,1) circle (3pt);
+\draw[fill] (2.5,2) circle (3pt);
+\draw[fill] (3,-.5) circle (3pt);
+
+\draw (0,1) -!- (4,1) -!- (2.5,2) -!- (3, -.5) -!- cycle;
+\draw (4,1) -!-  (3, -.5);
+\draw (0,1) -!- (2.5,2);
+
+
+
+\node at (1,0) {3};
+\node at (1,1.75) {4};
+\node at (2,1.25) {6};
+\node at (3,.5) {5};
+\node at (3.7,0) {2};
+\node at (3.7,1.6) {2};
+
+
+\node at (-1,1) {(c)};
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(1,-3)}]
+
+\draw[ultra thick, red] (0,2) -!- (-1, 2) -!- (-1,1);
+\draw[ultra thick, red] (3,2) -!- (2, 1) -!- (1,1);
+
+\draw (-1,0) -!- (-1,2) -!- (3,2) -!- (3,0) -!- cycle;
+\draw (0,2) -!- (1,1) -!- (3,1) -!- (2,0);
+
+\draw (0,1) -!- (-1,1);
+
+\draw (2,1) -!- (3,2);
+
+\draw (1,1) -!- (0,1);
+\draw (2,0) -!- (2,1);
+
+\foreach \i in {-1,0,1,2,3}
+{
+\foreach \j in {0,1,2}
+{
+\draw[fill] (\i,\j) circle (3pt);
+}
+}
+
+\node at (-2,1) {(b)};
+
+\end{scope}
+
+
+
+
+\begin{scope}[shift={(0,-9)}]
+
+
+\draw[ultra thick, red] (1.5,1.5) -!- (2.5,0) -!- (1.5,-.5);
+\draw[ultra thick, red] (4,1.5) -!- (3, .75) -!- (3.5,0);
+
+\node at (-1,0) {(d)};
+
+\draw (0,0) -!- (1.5, 1.5) -!-  (4, 1.5) -!- (5,0) -!- (2, -1.5) -!- cycle;
+
+\draw (0,0) -!- (5,0) -!- (3,0.75) -!- (2.5, 0);
+
+
+\draw (0,0) -!- (1.5, -.5) -!- (2.5,0) -!- (2,-1.5) -!- (1.5, -.5);
+
+\draw (1.5,1.5) -!- (2.5,0);
+
+\draw (3, .75) -!- (4, 1.5);
+
+\draw (3.5, 0) -!- (3, 0.75);
+
+\draw[fill] (0,0) circle (3pt);
+
+\draw[fill] (1.5,1.5) circle (3pt);
+\draw[fill] (4,1.5) circle (3pt);
+
+\draw[fill] (5,0) circle (3pt);
+
+\draw[fill] (3.5,0) circle (3pt);
+
+\draw[fill] (2,-1.5) circle (3pt);
+
+\draw[fill] (1.5,-0.5) circle (3pt);
+\draw[fill] (2.5,0) circle (3pt);
+\draw[fill] (3,.75) circle (3pt);
+
+\node at (.7,.9)  {5};
+
+\node at (2.75,1.65)  {6};
+\node at (2.1,.9)  {4};
+
+\node at (1.25, .25) {5};
+\node at (1, -.5) {3};
+\node at (2, -.45) {2};
+\node at (1.9, -.9) {2};
+
+\node at (2.4, -.75) {3};
+
+\node at (1.25, -1.2) {4};
+
+\node at (2.6, .4) {1};
+\node at (3.1, .35) {1};
+\node at (4, .6) {3};
+\node at (4.5, 1) {3};
+
+\node at (3.6, 1) {2};
+
+
+\node at (3,-.15) {1};
+\node at (4,-.15) {2};
+
+\node at (3.5,-.9) {8};
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Try to come up with a procedure for finding the shortest closed postman route of a graph. What are the "problem vertices?" How should we deal with them?
+
+<!--solution>
+<p>
+
+		<ul>
+			<li>
+			<p>
+ Find all of the vertices of odd degree. There must be an even number of them
+			</p>
+			</li>
+			<li>
+			<p>
+ Calculate the distances between each pair of odd degree vertices.
+			</p>
+			</li>
+			<li>
+			<p>
+ Find a perfect matching of these odd degree vertices that minimizes the total distance.
+			</p>
+			</li>
+			<li>
+			<p>
+ Double the edges in the graph that correspond to the paths connecting these pairs of odd degree vertices.
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Try out your procedure on this graph which connects US states that share a border. How many "problem" vertices are there? How many edges do you need to add?
+
+			<image width="100%" xml:id="fig-img-eulerian3" source="images/ContiguousUSAGraph.png" />
+
+
+<!--solution>
+<p>
+
+The states with odd degrees are (from left to right):
+CA, NV, UT, ND, TX, MO, LA, IL, KY, OH, WV,
+GA, MD, NC, VT, NY, NJ, DE, NH, MA, CT, ME.
+Observe that ND is at least 3 steps away from all the other odd degree vertices. We can pair it up with UT at a cost of 3, and we cannot do any better. So we can double the edges
+(ND, MT), (MT, ID), (ID, UT)
+(or we can pick another path of length 3 between ND and UT).
+
+			</p><p>
+
+We can pair the remaining odd states with an odd neighboring state as follows:
+(CA, NV)
+(UT,  ND)
+(MO, IL)
+(TX, LA)
+(VT, NY)
+(NJ, DE) 
+(MA, CT)
+(NH, ME)
+(KY, OH)
+(WV, MD)
+(GA,  NC)
+
+We must double a total of 14 edges to solve the Postman Problem.
+
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+			</ol>
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+</chapter>

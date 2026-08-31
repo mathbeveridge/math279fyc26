@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="count-pigeonhole" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Pigeonhole Principle</title>
+	<introduction>
+		<p>
+
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+
+
+
+		<exercise>
+			<title>First to Four Wins</title>
+			<idx><h>First to Four Wins</h></idx>
+			<statement>
+				<p>
+Two teams play basketball games until one team wins four games. What is the fewest number of games that they must play to be guaranteed that one team will  four games? (What are your pigeons? What are your pigeonholes?)
+
+<!--solution>
+<p>
+The pigeonholes are the two teams, and the pigeons are the games being played. In order to ensure that one pigeonhole gets 4 pigeons, we need at least 7 total pigeons. This is the generalized pigeonhole principle.
+
+			</p><p>
+
+Therefore, in the worst case scenario, we must play 7 games to determine the winner.
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>What's Your Birth Stone?</title>
+			<idx><h>What's Your Birth Stone?</h></idx>
+			<statement>
+				<p>
+There are 28 students enrolled in a math course. What is the largest number of these students that you can guarantee are  born in the same month?  (What are your pigeons? What are your pigeonholes?)
+
+<!--solution>
+<p>
+Keep in mind that our worst enemy gets to decide when the birthdays are. So we must consider the worst case scenario, that the birthdays are as evenly divided as possible.
+
+			</p><p>
+
+In this case, we have 12 pigeonholes (months) and 28 pigeons (students). The generalized pigeonhole principle guarantees that some month contains <m>\lceil 28/12 \rceil =  3</m> birthdays.
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Tables and Chairs</title>
+			<idx><h>Tables and Chairs</h></idx>
+			<statement>
+				<p>
+A conference room contains 8 tables and 99 chairs. What is the smallest possible number of chairs at a table having the most chairs? (What are your pigeons? What are your pigeonholes?)
+
+<!--solution>
+<p>
+
+In this case, the pigeonholes are the tables and the pigeons are chairs. Some table must get
+<m>\lceil 99/8 \rceil = 13</m> chairs by the generalized pigeonhole principle.
+
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Coin Flips</title>
+			<idx><h>Coin Flips</h></idx>
+			<statement>
+				<p>
+A coin is flipped 3 times and the outcomes are recorded (in order). For example, if heads comes up the first two times and tails the third time, then we write <m>HHT</m>. How many times must we flip a coin three time to be guaranteed that we have at least two outcomes that are identical? Remember: an <em>outcome</em> is an ordered list of the 3 flips. (What are your pigeons? What are your pigeonholes?)
+
+<!--solution>
+<p>
+
+We have 8 pigeonholes labeled by the possible outcomes.
+<me>
+HHH  HHT  HTH  HTT  THH  THT  TTH  TTT
+</me>
+The pigeons are the outcomes of our flips. By the pigeonhole principle, we must perform the flipping 9 times to be guaranteed that two of the outcomes are identical.
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Midpoint Madness</title>
+			<idx><h>Midpoint Madness</h></idx>
+			<statement>
+				<p>
+Suppose that we have  5 points <m>(x,y)</m> in <m>\R^2</m> with integer coordinates. This means that both the <m>x</m>-coordinate and the <m>y</m>-coordinate are integers. Prove that the midpoint of the segment joining some pair of points also has integer coordinates. (Hint: this is a pigeonhole problem. The five "pigeons" are the points. What are the four "pigeonholes?")
+
+
+<!--solution>
+<p>
+This time, we have four pigeonholes, labeled by
+<me>
+\begin{array}{cccc}
+\mbox{(even, even)} &amp; \mbox{(even, odd)} &amp; \mbox{(odd, even)} &amp; \mbox{(odd, odd)}.
+\end{array}
+</me>
+The pigeons in this case are the points in <m>\R^2</m> with integer coordinates. We place a given point in the box that describes the parity (even/odd) of its two coordinates. By the pigeonhole principle, we must choose 5 points to guarantee that two end up in the same pigeonhole.
+
+Suppose that these two points are <m>(x_1, y_1)</m> and <m>(x_2,y_2)</m>. The midpoint is
+<me>
+\left( \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2} \right).
+</me>
+This point has integer coordinates because the sum of two odd numbers is even, and the sum of two even numbers is even. So either way, the first and second coordinates of this midpoint are integer values.
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Points Inside a Square</title>
+			<idx><h>Points Inside a Square</h></idx>
+			<statement>
+				<p>
+Suppose that we have 10 points <m>(x,y)</m> in the unit square <m>[0,1] \times [0,1]</m>. In other words, <m>0 \leq x \leq 1</m> and <m>0 \leq y \leq 1</m>. Prove that there are two points that are at distance at most <m>\sqrt{2}/3</m> from one another? (Hint: this time we have 10 pigeons. Create 9 pigeonholes in the unit square using a simple, geometric way.)
+
+<!--solution>
+<p>
+Once again, we must be clever about creating pigeonholes. This time, we will divide the unit square into 9 squares with side length <m>1/3</m>. By the pigeonhole principle, when we place 10 points in the unit square, one of these 9 squares must receive 2 (or more) points. The largest distance between these points is given by the length of the diagonal, which is
+<me>
+\sqrt{\left(  \frac{1}{3} \right)^2 + \left( \frac{1}{3} \right)^2} = \sqrt{ \frac{2}{9} } = \frac{\sqrt{2}}{3}.
+</me>
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+
+
+</chapter>

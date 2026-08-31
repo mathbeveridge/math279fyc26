@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="induction1" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Induction</title>
+	<introduction>
+		<p>
+
+
+
+
+
+
+			</p><p>
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Patterns</title>
+			<idx><h>Patterns</h></idx>
+			<statement>
+				<p>
+				Use summation notation to write a formula for the <m>n</m>th equation for the given pattern.
+				<ol>
+
+			
+
+				<li>
+<me>
+\begin{array}{ccr}
+1 &amp;=&amp; 1 \cdot 1 \\
+1 + 5 &amp;=&amp; 2 \cdot 3 \\
+1 + 5 + 9 &amp;=&amp; 3 \cdot 5 \\
+1 + 5 + 9 + 13 &amp;=&amp; 4 \cdot 7 \\
+\end{array}	
+</me>				
+<!--solution>
+<me>
+\sum_{i=0}^n (4i+1) = (n+1) \cdot (2n+1)
+</me>
+</solution-->				
+				</li>
+
+				<li>
+<me>
+\begin{array}{rccr}
+(n=2) &amp; \dfrac{1}{1 \cdot 2} &amp;=&amp; \dfrac{1}{2} \\
+(n=3) &amp; \dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} &amp;=&amp; \dfrac{2}{3}\\
+(n=4) &amp; \dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + \dfrac{1}{3 \cdot 4} &amp;=&amp; \dfrac{3}{4} \\
+(n=5) &amp; \dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + \dfrac{1}{3 \cdot 4} + \dfrac{1}{4 \cdot 5} &amp;=&amp; \dfrac{4}{5}
+\end{array}
+</me>
+<!--solution>
+<me>
+\sum_{i=1}^n \frac{1}{i \cdot (i+1)} = \frac{n}{n+1}
+</me>
+</solution-->	
+				</li>				
+
+				</ol>
+				</p>
+			</statement>
+		</exercise>
+
+
+		<exercise>
+			<title>A Formula for a Sum</title>
+			<idx><h>A Formula for a Sum</h></idx>
+			<statement>
+				<p>
+Use induction to prove that
+<me>
+\sum_{i=0}^{n} 2^i = 2^{n+1} -1
+</me>
+for all <m>n \geq 0</m>.
+
+
+			<ol>
+
+				<li>
+					<p>
+ <em> Base Case:</em> Check for <m>n=0,1,2</m> to make sure you believe it. You actually only need to check for <m>n=0</m>.
+
+<!--solution>
+<p>
+
+		<ul>
+
+			<li>
+			<p>
+ For <m>n=1</m> we have <m>\sum_{i=0}^{1} 2^i = 2^0 + 2^1 = 1 + 2 = 3</m> and
+<m>2^2 -1 = 4 -1 =3</m>. So the statement is true for <m>n=1</m>.
+
+			</p>
+			</li>
+			<li>
+			<p>
+ For <m>n=2</m> we have <m>\sum_{i=0}^{2} 2^i = 2^0 + 2^1 +2^2= 1 + 2 + 4 = 7</m> and
+<m>2^3 -1 = 8 -1 =7</m>. So the statement is true for <m>n=2</m>.
+
+			</p>
+			</li>
+			<li>
+			<p>
+ For <m>n=3</m> we have <m>\sum_{i=0}^{3} 2^i = 2^0 + 2^1 +2^2 + 2^3= 1 + 2 + 4 +8 = 15</m> and
+<m>2^4 -1 = 16 -1 =15</m>. So the statement is true for <m>n=3</m>.
+
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Inductive Hypothesis:</em> Write down your inductive hypothesis for <m>k</m>.
+
+<!--solution>
+<p>
+Assume that
+<m>\sum_{i=0}^{k} 2^i = 2^{k+1} -1</m>   <m>(\star)</m>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Inductive Step:</em> Write down what you want to SHOW for <m>k+1</m>. Then try to find "a copy of the size <m>n</m> problem" in the size <m>n+1</m> problem. Rearrange and use your inductive hypothesis to prove the result!
+
+<!--solution>
+<p>
+
+We must show that  <m>\sum_{i=0}^{k+1} 2^i = 2^{k+2} -1</m>.
+
+			</p><p>
+
+Starting with the left hand side, we have
+<me>
+\begin{array}{rcl}
+\sum_{i=0}^{k+1} 2^i &amp;=&amp; \sum_{i=0}^{k} 2^i + 2^{k+1} \\
+&amp;=&amp; \left( 2^{k+1}  -1 \right) + 2^{k+1}   \mbox{by} \,  (\star)\\
+&amp;=&amp; 2 \cdot 2^{k+1} - 1 \\
+&amp;=&amp; 2^{k+2} -1.
+\end{array}
+</me>
+
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<!--exercise>
+			<title>The Number of Edges in <m>K_n</m></title>
+			<idx><h>The Number of Edges in <m>K_n</m></h></idx>
+			<statement>
+				<p>
+Use induction to prove that the complete graph <m>K_n</m> has
+<m>\displaystyle{\frac{n(n-1)}{2}}</m> edges.
+
+
+
+
+			<ol>
+				<li>
+					<p>
+ <em> Base Case:</em> (Check for <m>n=1,2,3</m> to make sure you believe it. You actually only need to check for <m>n=1</m>.)
+
+
+<!-Q-solution>
+<p>
+
+		<ul>
+
+			<li>
+			<p>
+ A <m>K_1</m> has 0 edges, and <m>1 \times (1-1)/2=0</m>.
+
+			</p>
+			</li>
+			<li>
+			<p>
+ A <m>K_2</m> has 1 edge, and <m>2\times (2-1)/2=1</m>.
+
+			</p>
+			</li>
+			<li>
+			<p>
+ A <m>K_3</m> has 3 edges, and <m>3 \times (3-1)/2=3</m>.
+
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-Q->
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Inductive Hypothesis:</em> Write down your inductive hypothesis for <m>n</m>.
+
+<!-Q-solution>
+<p>
+Assume that
+<m>K_n</m> has <m>n(n-1)/2</m> edges.  <m>(\star)</m>
+</p>
+</solution-Q->
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Inductive Step:</em> Write down what you want to SHOW for <m>n+1</m>. Then try to find "a copy of the size <m>n</m> problem" in the size <m>n+1</m> problem.
+Rearrange and use your inductive hypothesis to prove the result!
+
+			</p><p>
+Hint: You have a <m>K_{n+1}</m>, so start by looking at a subgraph on <m>n</m> of the vertices.
+
+<!-Q-solution>
+<p>
+We have a <m>K_{n+1}</m>, so pick any vertex <m>v</m> and separate it from the rest of the vertices. This results in a <m>K_n</m> with vertex <m>v</m> adjacent to all <m>n</m> vertices.
+
+By induction <m>(\star)</m>, there are <m>n(n-1)/2</m> edges in the <m>K_n</m> and we have <m>n</m> more edges incident with <m>v</m>. This gives a total of
+<me>
+\frac{n(n-1)}{2} + n = \frac{n^2-n}{2} + \frac{2n}{2} = \frac{n^2+n}{2} = \frac{n(n+1)}{2}
+</me>
+edges in the <m>K_{n+1}</m>.
+</p>
+</solution-Q->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise-->
+		<exercise>
+			<title>A Divisibility Problem</title>
+			<idx><h>A Divisibility Problem</h></idx>
+			<statement>
+				<p>
+Use induction to prove that
+<m>4</m> divides <m>(5^n -1)</m> for <m>n \geq 1</m>.
+
+
+			<ol>
+				<li>
+					<p>
+ <em> Base Case:</em> (Check for <m>n=1,2,3</m> to make sure you believe it. You actually only need to check for <m>n=1</m>.)
+
+<!--solution>
+<p>
+		<ul>
+			<li>
+			<p>
+ For <m>n=1</m> we have <m>5^1-1=4</m> is divisible by 4.
+			</p>
+			</li>
+			<li>
+			<p>
+ For <m>n=2</m> we have <m>5^2-1=24= 4 \times 6</m> is divisible by 4.
+			</p>
+			</li>
+			<li>
+			<p>
+ For <m>n=3</m> we have <m>5^3-1=124 = 4 \times 31</m> is divisible by 4.
+			</p>
+			</li>
+		</ul>
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Inductive Hypothesis:</em> Write down your inductive hypothesis for <m>k</m>.
+
+			</p><p>
+
+Pro Tip: A nice way to write "4 divides <m>(5^k-1)</m>" is the statement "<m>5^k-1 = 4r</m> for some <m>r</m>."
+
+<!--solution>
+<p>
+Assume that <m>5^k-1= 4r</m> for some integer <m>r</m>.
+</p>
+</solution-->
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Inductive Step:</em> Write down what you want to SHOW for <m>k+1</m>. Then try to find "a copy of the size <m>k</m> problem" in the size <m>k+1</m> problem.
+Rearrange and use your inductive hypothesis to prove the result!
+
+			</p><p>
+Hint: For this problem, the easiest thing to do is "add 0 in a smart way." Namely, add <m>(5^k - 5^k)</m> and then rearrange.
+
+
+<!--solution>
+<p>
+Use <m>(\star)</m> to show that <m>5^{k+1}-1= 4\ell</m> for some integer <m>\ell</m>.
+
+			</p><p>
+Using the hint, we have
+<me>
+\begin{array}{rcl}
+5^{k+1}-1 &amp;=&amp; 5^{k+1}-1 + 5^k - 5^k \\
+&amp;=&amp; (5^{k+1} - 5^k) + (5^k-1) \\
+&amp;=&amp; 5^k(5-1) + (5^k-1) \\
+&amp;=&amp; 5^k \cdot  4 + (5^k-1) \\
+&amp;=&amp; 5^k \cdot 4 + 4r  \mbox{by } (\star) \\
+&amp;=&amp; 4 (5^k + r)
+\end{array}
+</me>
+and so <m>5^{k+1}-1</m> is divisible by 4. (Namely: <m>5^{k+1}-1 = 4 \ell</m> where <m>\ell = 5^k + r</m>.)
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Tiling with <m>L</m>-Shaped Triominos</title>
+			<idx><h>Tiling with <m>L</m>-Shaped Triominos</h></idx>
+			<statement>
+				<p>
+An <m>L</m>-shaped triomino is a <m>2 \times 2</m> tile with one square missing. It looks like this:
+
+			<image width="20%" xml:id="fig-img-induction10">
+				<latex-image>
+\begin{tikzpicture}[scale=.25] %mathbook width=20%
+\draw (0,0) -!- (0,2) -!- (2,2) -!- (2,1)-!-  (0,1) -!- cycle;
+\draw (0,0) -!- (1,0) -!- (1,2);
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+			<ol>
+				<li>
+					<p>
+ Consider the following <m>4 \times 4</m> checkerboards with one square missing (shown in black). For each board, show that you can cover the rest of the squares using <m>L</m>-shaped triominoes.
+
+
+
+
+			<image width="80%" xml:id="fig-img-induction11">
+				<latex-image>
+\begin{tikzpicture}[scale=.5] %mathbook width=80%
+\begin{scope}
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw (0,\x) -!- (4,\x);
+\draw (\x,0) -!- (\x,4);
+}
+
+\fill (0,0) -!- (0,1) -!- (1,1) -!- (1,0) -!- cycle;
+
+\end{scope}
+
+
+\begin{scope}[shift={(8,0)}]
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw (0,\x) -!- (4,\x);
+\draw (\x,0) -!- (\x,4);
+}
+
+\fill (2,2) -!- (3,2) -!- (3,3) -!- (2,3) -!- cycle;
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(16,0)}]
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw (0,\x) -!- (4,\x);
+\draw (\x,0) -!- (\x,4);
+}
+
+\fill (1,3) -!- (1,4) -!- (2,4) -!- (2,3) -!- cycle;
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+<!--solution>
+<p>
+
+
+			<image width="80%" xml:id="fig-img-induction12">
+				<latex-image>
+\begin{tikzpicture}[scale=.5] %mathbook width=80%
+\begin{scope}
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw (0,\x) -!- (4,\x);
+\draw (\x,0) -!- (\x,4);
+}
+
+\fill (0,0) -!- (0,1) -!- (1,1) -!- (1,0) -!- cycle;
+
+\draw[ultra thick,blue] (.5,1.5) -!- (1.5,1.5) -!- (1.5,.5);
+\draw[ultra thick,blue] (1.5,2.5) -!- (2.5,2.5) -!- (2.5,1.5);
+\draw[ultra thick,blue] (.5,2.5) -!- (.5,3.5) -!- (1.5,3.5);
+\draw[ultra thick,blue] (2.5,3.5) -!- (3.5,3.5) -!- (3.5,2.5);
+\draw[ultra thick,blue] (2.5,.5) -!- (3.5,.5) -!- (3.5,1.5);
+
+
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(8,0)}]
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw (0,\x) -!- (4,\x);
+\draw (\x,0) -!- (\x,4);
+}
+
+\fill (2,2) -!- (3,2) -!- (3,3) -!- (2,3) -!- cycle;
+
+\draw[ultra thick,blue] (.5,1.5) -!- (.5,.5) -!- (1.5,.5);
+\draw[ultra thick,blue] (1.5,2.5) -!- (1.5,1.5) -!- (2.5,1.5);
+\draw[ultra thick,blue] (.5,2.5) -!- (.5,3.5) -!- (1.5,3.5);
+\draw[ultra thick,blue] (2.5,3.5) -!- (3.5,3.5) -!- (3.5,2.5);
+\draw[ultra thick,blue] (2.5,.5) -!- (3.5,.5) -!- (3.5,1.5);
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(16,0)}]
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw (0,\x) -!- (4,\x);
+\draw (\x,0) -!- (\x,4);
+}
+
+\fill (1,3) -!- (1,4) -!- (2,4) -!- (2,3) -!- cycle;
+
+\draw[ultra thick,blue] (.5,1.5) -!- (.5,.5) -!- (1.5,.5);
+\draw[ultra thick,blue] (1.5,1.5) -!- (2.5,1.5) -!- (2.5,2.5);
+\draw[ultra thick,blue] (.5,3.5) -!- (.5,2.5) -!- (1.5,2.5);
+\draw[ultra thick,blue] (2.5,3.5) -!- (3.5,3.5) -!- (3.5,2.5);
+\draw[ultra thick,blue] (2.5,.5) -!- (3.5,.5) -!- (3.5,1.5);
+
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Now consider the following <m>8 \times 8</m> checkerboard with one square missing (shown in black). Show that you can cover the rest of the squares using <m>L</m>-shaped triominoes as follows (and shown in the right diagram below). (1) Place your first triomino in the gray squares as shown. (2) Use part (a) to fill in the four <m>4 \times 4</m> sub-boards.
+
+
+
+			<image width="80%" xml:id="fig-img-induction13">
+				<latex-image>
+\begin{tikzpicture}[scale=.5] %mathbook width=80%
+
+
+
+\begin{scope}
+
+
+
+\foreach \x in {0,1,2,3,4,5,6,7,8}
+{
+\draw (0,\x) -!- (8,\x);
+\draw (\x,0) -!- (\x,8);
+}
+
+\fill (6,2) -!- (6,3) -!- (7,3) -!- (7,2) -!- cycle;
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(12,0)}]
+
+
+\fill[gray] (3,3) -!- (4,3) -!- (4,4) -!- (5,4) -!- (5,5) -!- (3,5) -!- cycle;
+
+\foreach \x in {0,1,2,3,4,5,6,7,8}
+{
+\draw (0,\x) -!- (8,\x);
+\draw (\x,0) -!- (\x,8);
+}
+
+\fill (6,2) -!- (6,3) -!- (7,3) -!- (7,2) -!- cycle;
+
+\draw [very thick] (4,0) -!- (4,8);
+\draw [very thick] (0,4) -!- (8,4);
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+<!--solution>
+<p>
+
+
+
+			<image width="50%" xml:id="fig-img-induction14">
+				<latex-image>
+\begin{tikzpicture}[scale=.5] %mathbook width=50%
+
+
+
+
+\fill[gray] (3,3) -!- (4,3) -!- (4,4) -!- (5,4) -!- (5,5) -!- (3,5) -!- cycle;
+
+\foreach \x in {0,1,2,3,4,5,6,7,8}
+{
+\draw (0,\x) -!- (8,\x);
+\draw (\x,0) -!- (\x,8);
+}
+
+\fill (6,2) -!- (6,3) -!- (7,3) -!- (7,2) -!- cycle;
+
+\draw [very thick] (4,0) -!- (4,8);
+\draw [very thick] (0,4) -!- (8,4);
+
+
+
+
+\begin{scope}[shift={(4,4)}]
+
+
+
+
+\draw[ultra thick, blue] (.5,1.5) -!- (1.5, 1.5) -!- (1.5, .5);
+\draw[ultra thick, blue] (1.5,2.5) -!- (2.5, 2.5) -!- (2.5, 1.5);
+\draw[ultra thick, blue] (.5,2.5) -!- (.5, 3.5) -!- (1.5, 3.5);
+\draw[ultra thick, blue] (2.5,3.5) -!- (3.5, 3.5) -!- (3.5, 2.5);
+\draw[ultra thick, blue] (2.5,.5) -!- (3.5, .5) -!- (3.5, 1.5);
+
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(4,4)}, rotate=180]
+
+
+
+\draw[ultra thick, blue] (.5,1.5) -!- (1.5, 1.5) -!- (1.5, .5);
+\draw[ultra thick, blue] (1.5,2.5) -!- (2.5, 2.5) -!- (2.5, 1.5);
+\draw[ultra thick, blue] (.5,2.5) -!- (.5, 3.5) -!- (1.5, 3.5);
+\draw[ultra thick, blue] (2.5,3.5) -!- (3.5, 3.5) -!- (3.5, 2.5);
+\draw[ultra thick, blue] (2.5,.5) -!- (3.5, .5) -!- (3.5, 1.5);
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(4,4)}, rotate=90]
+
+
+
+\draw[ultra thick, blue] (.5,1.5) -!- (1.5, 1.5) -!- (1.5, .5);
+\draw[ultra thick, blue] (1.5,2.5) -!- (2.5, 2.5) -!- (2.5, 1.5);
+\draw[ultra thick, blue] (.5,2.5) -!- (.5, 3.5) -!- (1.5, 3.5);
+\draw[ultra thick, blue] (2.5,3.5) -!- (3.5, 3.5) -!- (3.5, 2.5);
+\draw[ultra thick, blue] (2.5,.5) -!- (3.5, .5) -!- (3.5, 1.5);
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(4,0)}]
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw (0,\x) -!- (4,\x);
+\draw (\x,0) -!- (\x,4);
+}
+
+\fill (2,2) -!- (3,2) -!- (3,3) -!- (2,3) -!- cycle;
+
+
+\draw[ultra thick, blue] (.5,1.5) -!- (.5, .5) -!- (1.5, .5);
+\draw[ultra thick, blue] (1.5,2.5) -!- (1.5, 1.5) -!- (2.5, 1.5);
+\draw[ultra thick, blue] (.5,2.5) -!- (.5, 3.5) -!- (1.5, 3.5);
+\draw[ultra thick, blue] (2.5,3.5) -!- (3.5, 3.5) -!- (3.5, 2.5);
+\draw[ultra thick, blue] (2.5,.5) -!- (3.5, .5) -!- (3.5, 1.5);
+
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Reflect on how you solved the <m>8 \times 8</m> problem by  turning it into four instances of <m>4 \times 4</m> problems. Then go back to your answers in part (a) and show how you solved each <m>4 \times 4</m> problem by turning it into four instances of <m>2 \times 2</m> problems.
+
+<!--solution>
+<p>
+By splitting the board down the middle (both horizontally and vertically), we now have the option to think of this one board as four independent boards. In particular, if we place a triomino in the middle so that it has one square in each of the three smaller boards that have  one missing square, then we end up with 4 independent instances of <m>4 \times 4</m> boards.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ If I gave you a <m>16 \times 16</m> checkerboard with one square missing, could you cover the rest with <m>L</m>-shaped triominoes? How would you do it?
+
+
+<!--solution>
+<p>
+Draw horizontal and vertical lines that split the <m>16 \times 16</m> boards into 4 separate <m>8 \times 8</m> board. Now place a triomino in the middle so that it has one square in each of the three boards that are not missing a  square.
+
+Now we have 4 independent <m>8 \times 8</m> boards, all missing one square. We can cover each of those by triominos, as decribed in the previous section.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Use induction to prove the following statement:
+
+			</p><p>
+
+For <m>n \geq 1</m>, any <m>2^n \times 2^n</m> checkerboard with one square missing can be covered by <m>L</m>-shaped dominoes.
+
+			</p><p>
+
+			<ol>
+
+				<li>
+					<p>
+ <em>Base Case:</em> What is your base case?
+
+<!--solution>
+<p>
+A <m>2 \times 2</m> board missing a square is a trionimo. So of course we can cover it with one triomino.
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em>Inductive Hypothesis:</em> State your inductive hypothesis for <m>k</m>.
+
+<!--solution>
+<p>
+Assume that any <m>2^k \times 2^k</m> board that is missing one square can be covered by triominoes. <m>(\star)</m>
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+  <em>Inductive Step:</em>  Write down what you want to SHOW for <m>k+1</m>. Then try to find "a copy of the size <m>k</m> problem" in the size <m>k+1</m> problem.
+Rearrange and use your inductive hypothesis to prove the result!
+
+
+<!--solution>
+<p>
+Use <m>(\star)</m> to prove that any <m>2^{k+1} \times 2^{k+1}</m> board that is missing one square can be covered by triominoes.
+
+			</p><p>
+
+By splitting the board down the middle (both horizontally and vertically), we now have the option to think of this one board as four independent <m>2^k \times 2^k</m> boards. In particular, if we place a triomino in the middle so that it has one square in each of the three smaller boards that have  no missing square, then we end up with 4 independent instances of the problem using  <m>2^k \times 2^k</m> boards  (each missing one square).
+
+			</p><p>
+
+By <m>(\star)</m>, we can cover each of these four boards using triominoes. When we put them all together, we get a covering of the <m>2^{k+1} \times 2^{k+1}</m> board that is missing one square.
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+			</ol>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Nearest Neighbor Pie Fight</title>
+			<idx><h>Nearest Neighbor Pie Fight</h></idx>
+			<statement>
+				<p>
+Consider a pie fight between an odd number of people in which everyone throws a pie at her nearest neighbor. Assume that all pairwise distances are distinct. Prove that in such a pie fight between <m>2r+1</m> people with <m>r \geq 1</m>, there is at least one person who is not hit by a pie.
+
+			<ol>
+
+				<li>
+					<p>
+  <em> Base Case:</em> (Check for <m>r=1</m>.) Hint: Start by considering the two people who are the smallest distance from one another.
+
+
+<!--solution>
+<p>
+Consider a pie fight between <m>2 \cdot 1 + 1=3</m> people. Let Alice and Bob be the two people separated by the minimum distance. Alice and Bob throw pies at each other. This means that the third person is not hit by a pie.
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Inductive Hypothesis:</em> Write down your inductive hypothesis for <m>k</m>.
+
+<!--solution>
+<p>
+Assume true for <m>k</m>. That is, assume that in a pie fight between <m>2k+1</m> people, there is at least one person who is not hit by a pie.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Inductive Step:</em> Write down what you want to SHOW for <m>k+1</m>.
+
+			</p><p>
+
+As in your base case,  start by considering the two people (Alice and Bob) who are the smallest distance from one another. There are 2 cases to consider
+
+
+		<ul>
+
+			<li>
+			<p>
+ <em> Case 1:</em> Suppose that someone else throws a pie at Alice or Bob. In this case, you can immediately find a person who is not hit by a pie. Why?
+
+
+
+
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em> Case 2:</em> No one else throws a pie at Alice or Bob. In this case, you need to use the induction hypothesis!
+
+
+
+			</p>
+			</li>
+		</ul>
+
+
+<!--solution>
+<p>
+Show that in a pie fight between <m>2(k+1)+1=2k+3</m> people, then there is at least one person who is not hit by a pie.
+
+			</p><p>
+
+Consider a pie fight between <m>2(k+1)+1 =2k+3</m> people. Again, let Alice and Bob be the two people separated by the minimum distance. There are two cases.
+
+		<ul>
+			<li>
+			<p>
+ <em>Case 1:</em> No one else throws a pie at Alice or Bob. Excluding Alice and Bob, we have a pie fight between <m>2k+1</m> people. By induction, there is at least one person who is not hit by a pie.
+			</p>
+			</li>
+			<li>
+			<p>
+ <em>Case 2:</em> Someone else throws a pie at Alice or Bob. Excluding Alice and Bob, there are <m>2k</m> pies left to be thrown, and <m>2k+1</m> people. Therefore at least one person is not hit by a pie.
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+</chapter>

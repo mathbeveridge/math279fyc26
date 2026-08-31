@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="induction2" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Strong Induction</title>
+	<introduction>
+		<p>
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+
+
+		<exercise>
+			<title>Splitting a Chocolate Bar</title>
+			<idx><h>Splitting a Chocolate Bar</h></idx>
+			<statement>
+				<p>
+We have a <m>r \times s</m> chocolate bar that has <m>n=rs</m> squares of chocolate. Here is an example for <m>r=4</m> and <m>s=9</m>:
+
+
+			<image width="50%" xml:id="fig-img-induction20">
+				<latex-image>
+\begin{tikzpicture}[scale=.5] %mathbook width=50%
+
+\foreach \y in {0,1,2,3,4}
+{
+\draw (0,\y) -!- (9,\y);
+}
+
+\foreach \x in {0,1,2,3,4,5,6,7,8,9}
+{
+\draw (\x,0) -!- (\x,4);
+}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+I can <em>break</em> a chocolate bar by splitting it along between any adjacent  rows or any adjacent columns. For example, here are two possibilities:
+
+
+
+			<image width="80%" xml:id="fig-img-induction21">
+				<latex-image>
+\begin{tikzpicture}[scale=.5] %mathbook width=80%
+
+
+\begin{scope}
+
+\foreach \y in {0,1,2,3,4}
+{
+\draw (0,\y) -!- (3,\y);
+\draw (4,\y) -!- (10,\y);
+}
+
+\foreach \x in {0,1,2,3}
+{
+\draw (\x,0) -!- (\x,4);
+}
+
+
+\foreach \x in {4,5,6,7,8,9,10}
+{
+\draw (\x,0) -!- (\x,4);
+}
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(15,0)}]
+
+\foreach \y in {0,1}
+{
+\draw (0,\y-.5) -!- (9,\y-.5);
+}
+
+\foreach \x in {0,1,2,3,4,5,6,7,8,9}
+{
+\draw (\x,-.5) -!- (\x,.5);
+\draw (\x,1.5) -!- (\x,4.5);
+}
+
+
+\foreach \y in {2,3,4,5}
+{
+\draw (0,\y-.5) -!- (9,\y-.5);
+}
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+Making one break at a time, I want to split the chocolate bar into its <m>n=rs</m> squares.
+
+
+			<ol>
+
+				<li>
+					<p>
+ Start with a <m>3 \times 2</m> chocolate bar. Convince yourself that <em>regardless of the sequence of breaks that you choose</em>, it will take you exactly 5 breaks to split the chocolate bar into its squares.
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Now use <em>strong induction</em> on <m>n \geq 1</m> to show that
+a rectangular chocolate bar with <m>n</m> squares requires <m>n-1</m> breaks to split it into <m>n</m> pieces, no matter what order of breaks you choose.
+
+<em>Fill in the details of this proof.</em>
+
+
+			<ol>
+
+				<li>
+					<p>
+ <em> Base Case:</em>  <m>n=1</m>. The base case is a chocolate bar with <m>n=1</m> squares. (So it must be <m>1 \times 1</m>.)
+
+<!--solution>
+<p>
+
+The chocolate bar is already "split" into squares. It takes <m>0 = 1-1</m> moves.
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Inductive Hypothesis:</em> Assume the statement is true for <m>1 \leq k &lt; n</m>. Explicitly  write down this statement.
+
+<!--solution>
+<p>
+
+Assume: <m>(\star)</m> For <m>1 \leq k &lt; n</m>, splitting  a rectangular chocolate bar with <m>k</m> squares requires exactly <m>k-1</m> breaks.
+
+</p>
+</solution-->
+
+
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Inductive Step:</em> Use <m>(\star)</m> to prove true for <m>n</m>.
+
+<!--solution>
+<p>
+
+Prove: Use <m>(\star)</m> to prove that splitting  a rectangular chocolate bar with <m>n</m> squares requires exactly <m>n-1</m> breaks.
+
+
+			</p><p>
+
+Break the chocolate bar along the <m>i</m>th column to get two chocolate bars: one <m>i \times s</m> and one <m>(r-i) \times s</m>. By strong induction, it takes <m>is-1</m> breaks to finish the left bar and it takes <m>(r-i)s -1</m> breaks to finish the right one. The total number of breaks used is
+<me>
+1 + (is-1) + ((r-i)s-1) = rs -1.
+</me>
+
+Note that <m>r</m> and <m>s</m> reference the dimensions of the chocolate bar, given <m>n=rs</m>.
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+			</ol>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Splitting Squares</title>
+			<idx><h>Splitting Squares</h></idx>
+			<statement>
+				<p>
+Given a square, you can cut the square into smaller squares by cutting along lines parallel to the sides of the original square
+(these lines do not need to travel the entire side length of the original square).
+For example, by cutting along the lines below, you will divide a square into 6 smaller squares:
+
+
+			<image width="33%" xml:id="fig-img-induction22">
+				<latex-image>
+\begin{tikzpicture}[scale=.85] %mathbook width=33%
+
+\draw(0,0) -!-(3,0) -!- (3,3) -!- (0,3) -!- cycle;
+\draw (2,0) -!- (2,3);
+\draw (2,1) -!- (3,1);
+\draw (2,2) -!- (3,2);
+\draw (1,2) -!- (1,3);
+\draw (0,2) -!- (2,2);
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+Using strong induction to prove that you can  cut a square into <m>n</m> smaller squares for any  <m>n \geq 6</m>.
+
+
+<em> Hint</em>: You will need three base cases. This is a very good hint actually, as it suggests that to prove
+<m>P(n)</m>  is true, you would want to use the fact that
+<m>P(n-3)</m> is true. So somehow you need to increase the number of squares by 3.
+
+<!--solution>
+<p>
+
+		<ul>
+
+			<li>
+			<p>
+ <em> Base Cases:</em> <m>n=6,7,8</m>
+
+			<image width="80%" xml:id="fig-img-induction23">
+				<latex-image>
+\begin{tikzpicture}[scale=.85] %mathbook width=80%
+
+
+\begin{scope}
+
+\draw(0,0) -!-(3,0) -!- (3,3) -!- (0,3) -!- cycle;
+\draw (2,0) -!- (2,3);
+\draw (2,1) -!- (3,1);
+\draw (2,2) -!- (3,2);
+\draw (1,2) -!- (1,3);
+\draw (0,2) -!- (2,2);
+
+\end{scope}
+
+
+\begin{scope}[shift={(5,0)}]
+
+\draw(0,0) -!-(3,0) -!- (3,3) -!- (0,3) -!- cycle;
+\draw (1.5,0) -!- (1.5,3);
+\draw (0,1.5) -!- (3,1.5);
+\draw (.75,0) -!- (.75,1.5);
+\draw (0,.75) -!- (1.5,.75);
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+\draw(0,0) -!-(3,0) -!- (3,3) -!- (0,3) -!- cycle;
+\draw (9/4,0) -!- (9/4,3);
+\draw (9/4,3/4) -!- (3,3/4);
+\draw (9/4,6/4) -!- (3,6/4);
+
+\draw (0,9/4) -!- (3,9/4);
+\draw (3/4,9/4) -!- (3/4,3);
+\draw (6/4,9/4) -!- (6/4,3);
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em> Inductive Hypothesis</em>. For <m>6 \leq k &lt; n</m>, a square can be split into <m>k</m> smaller squares.
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em> Inductive Step:</em>
+
+We want to split the square into <m>n</m> smaller squares. First, we split it into <m>n-3</m> smaller squares (which works by the inductive hypothesis). Next, pick any square and split it into 4 smaller squares by drawing the horizontal and vertical bisectors.
+
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>The Angles of a Polygon</title>
+			<idx><h>The Angles of a Polygon</h></idx>
+			<statement>
+				<p>
+So a 3-gon is a triangle,  a 4-gon is a square, a 5-gon is a pentagon, and so on.
+
+			</p><p>
+
+Use <em>strong induction</em> to prove that the sum of the angles in an <m>n</m>-gon is equal to <m>180 (n-2)</m>. Here is how to start your inductive step:
+
+		<ul>
+
+			<li>
+			<p>
+ Label the vertices as <m>1,2, \ldots, n</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Pick some vertex <m>k</m> where <m>3 \leq k \leq n-1</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Draw the diagonal connecting vertex 1 to vertex <m>k</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Break the polygon apart along this diagonal to create two smaller polygons, and now use strong induction.
+			</p>
+			</li>
+		</ul>
+
+<!--solution>
+<p>
+
+		<ul>
+
+			<li>
+			<p>
+ <em> Base Case:</em> A <m>3-gon</m> is  a triangle, whose angles sum to <m>180 = (3-2) \cdot 180</m> degrees.
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em> Inductive Hypothesis:</em> Assume that for <m>3 \leq k &lt; n</m>, the
+sum of the angles in a <m>k</m>-gon is equal to <m>180 (k-2).</m>
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em> Inductive Step:</em> Prove that  the
+sum of the angles in an <m>n</m>-gon is equal to <m>180 (n-2).</m>
+
+Label the vertices as <m>1,2, \ldots, n</m>. Pick the diagonal connecting vertex 1 to vertex <m>k</m> where <m>3 \leq k \leq n-1</m>.
+Break the polygon apart along this diagonal. This creates a <m>k</m>-gon <m>P_1</m> and an <m>(n-k+2)</m>-gon <m>P_2</m>, where <m>k \geq 3</m>. (Note that we have added one more edge which is used twice: once in each polygon. So vertices 1 and <m>k</m> appear in both <m>P_1</m> and <m>P_2</m>.)
+
+By induction, the sum of the angles in these polygons is
+<me>
+180 (k-2) + 180 (n-k+2 - 2) = 180 (n-2).
+</me>
+When we add these angles, we get the sum of the angles in the original polygon.
+
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Factoring a Number</title>
+			<idx><h>Factoring a Number</h></idx>
+			<statement>
+				<p>
+Use <em>strong induction</em> to prove that any integer <m>n \geq 1</m> can be written as <m>n=2^r m</m> where <m>m</m> is an odd integer (possibly <m>m=1</m>) and <m>r \geq 0</m>. Your inductive step will have two cases, depending on whether <m>n</m> is odd or even.
+
+
+<!--solution>
+<p>
+		<ul>
+
+			<li>
+			<p>
+ <em> Base Case:</em> <m>n=1</m>. We have <m>1 = 2^0 \cdot 1</m>.
+
+
+
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em> Inductive Hypothesis:</em> Assume that for <m>1 \leq k &lt; n</m>,
+the positive integer <m>k \geq 1</m> can be written as <m>k=2^s \ell</m> where <m>\ell</m> is an odd integer (possibly <m>\ell=1</m>) and <m>s \geq 0</m>.
+
+
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em> Inductive Step:</em> Prove that  <m>n \geq 1</m> can be written as <m>n=2^r m</m> where <m>m</m> is an odd integer (possibly <m>m=1</m>) and <m>r \geq 0</m>.
+
+			</p><p>
+There are two cases. If <m>n</m> is odd then <m>n=2^0 \cdot n</m>, and we are done (taking <m>r=0</m> and <m>m=n</m>).
+
+If <m>n</m> is even then <m>n=2k</m>. By induction, <m>k=2^s \ell</m> where <m>\ell</m> is an odd integer (possibly <m>\ell=1</m>) and <m>s \geq 0</m>. Therefore <m>n=2^{s+1} \ell</m>. Taking <m>r=s+1</m> and <m>m=\ell</m>, we are done.
+
+
+
+			</p>
+			</li>
+		</ul>
+
+
+</p>
+</solution-->
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Coin Removal Problem</title>
+			<idx><h>Coin Removal Problem</h></idx>
+			<statement>
+				<p>
+
+Let's play a coin flipping game. Start with <m>n</m> coins arranged in a row. Some show heads and some show tails. On each move, you must:
+
+		<ul>
+			<li>
+			<p>
+ Pick a heads-up coin and remove it.
+			</p>
+			</li>
+			<li>
+			<p>
+ Then flip the coins still present in the (at most) two neighbor spots surrounding it.
+			</p>
+			</li>
+		</ul>
+
+This diagram shows all three valid moves from this starting postion:
+
+			<image width="90%" xml:id="fig-img-induction24">
+				<latex-image>
+\begin{tikzpicture}[scale=.85] %mathbook width=90%
+
+\node[draw,circle] (a1) at (0,0) {H};
+\node[draw,circle] (a2) at (1,0) {H};
+\node[draw,circle] (a3) at (2,0) {T};
+\node[draw,circle] (a4) at (3,0) {H};
+\node[draw,circle] (a5) at (4,0) {T};
+
+\draw[-latex] (-.5, -.5)  -!- (-2.5,-1.5);
+\draw[-latex] (2, -.55)  -!- (2,-1.45);
+\draw[-latex] (4.5, -.5)  -!- (6.5,-1.5);
+
+
+\begin{scope}[shift={(-7,-2)}]
+
+\draw[fill] (0,0) circle (4pt);
+\node[draw,circle] (b2) at (1,0) {T};
+\node[draw,circle] (b3) at (2,0) {T};
+\node[draw,circle] (b4) at (3,0) {H};
+\node[draw,circle] (b5) at (4,0) {T};
+\end{scope}
+
+
+
+\begin{scope}[shift={(0,-2)}]
+
+\node[draw,circle] (c1) at (0,0) {T};
+\draw[fill] (1,0) circle (4pt);
+\node[draw,circle] (c3) at (2,0) {H};
+\node[draw,circle] (c4) at (3,0) {H};
+\node[draw,circle] (c5) at (4,0) {T};
+\end{scope}
+
+\begin{scope}[shift={(7,-2)}]
+
+\node[draw,circle] (d1) at (0,0) {H};
+\node[draw,circle] (d2) at (1,0) {H};
+\node[draw,circle] (d3) at (2,0) {H};
+\draw[fill] (3,0) circle (4pt);
+\node[draw,circle] (d5) at (4,0) {H};
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+Note that <em>removing a coin leaves an empty space</em>. So that coin is now missing, so the coins you flipped are now missing a neighbor.
+
+			</p><p>
+
+<em>The Question:</em> For which arrangements of heads and tails can we remove all coins?
+
+
+
+
+
+			<ol>
+				<li>
+					<p>
+ Play the coin removal game with <m>n</m> coins for <m>n=1,2,3</m>. For each <m>n</m>, list the starting configurations that are winning and losing. Can you see the pattern?
+
+
+<!--solution>
+<p>
+
+<me>
+\begin{array}{c||c|c}
+<m>n</m> &amp; \mbox{winning} &amp; \mbox{losing} \\
+\hline
+1 &amp; H &amp;  T \\
+2 &amp; HT  TH &amp; HH  TT  \\
+3 &amp; HTT  THT  TTH  HHH &amp; HHT  HTH  THH  TTT \\
+\end{array}
+</me>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Now play some games on <m>n=4,5,6</m> coins. Make a conjecture about which starting positions are winning and which ones are losing.
+
+<!--solution>
+<p>
+		<ul>
+			<li>
+			<p>
+ A starting position with an even number of heads is \underline{losing}.
+			</p>
+			</li>
+			<li>
+			<p>
+ A starting position with an odd number of heads is  \underline{winning}.
+			</p>
+			</li>
+		</ul>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ We now prove this by induction.
+
+
+			</p><p>
+
+<em> Base Case:</em> Your answers from part (a) are your base case for <m>n=1,2,3</m> (of course, you only need the base case <m>n=1</m> for a full proof).
+
+			</p><p>
+
+<em> Inductive Hypothesis:</em> When <m>k &lt; n</m>, the winning positions and losing positions are as described in part (b).
+
+			</p><p>
+
+<em> Inductive Step:</em> Consider a starting position with <m>n&gt;1</m> coins.
+
+
+			<ol>
+				<li>
+					<p>
+ <em>Case 1:</em> You start with an odd number of heads. Remove the leftmost heads up coin and flip its neighbors. This leaves two smaller lists of coins, <m>L</m> and <m>R</m>, which are to the left and right of the coin you removed. One of these sets could be empty; why? What can you say about the configuration of coins in each of <m>L</m> and <m>R</m>? Explain why this proves that the original configuration was winning/losing.
+
+<!--solution>
+<p>
+		<ul>
+			<li>
+			<p>
+ We start with an odd number of <m>H</m> in our game.
+			</p>
+			</li>
+			<li>
+			<p>
+ Find the leftmost <m>H</m>. There are zero heads to the left of this coin, and an even number to the right of it.
+			</p>
+			</li>
+			<li>
+			<p>
+ When you remove this coin, it creates two disjoint games (unless <m>H</m> is the first or last coin, in which case there is only one game after your move). The left game has a single <m>H</m> (because the rightmost coin changed from <m>T</m> to <m>H</m>. The right game has an odd number of <m>H</m> since the leftmost coin changed state.
+			</p>
+			</li>
+			<li>
+			<p>
+ Both of these games are smaller than the original game. By the induction hypothesis, both of these games are winning configurations. Therefore the original game has a winning strategy.
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em>Case 2:</em> You start with an even number of heads. Pick any heads-up coin, remove it and flip its neighbors. Once again, this leaves two smaller lists of coins, <m>L</m> and <m>R</m>. Explain why one of these sets must contain an even number of heads-up coins. Explain why this proves that the original configuration was winning/losing.
+
+<!--solution>
+<p>
+		<ul>
+			<li>
+			<p>
+ We start with an even number of <m>H</m> in our game.
+			</p>
+			</li>
+			<li>
+			<p>
+ Pick any <m>H</m>. Since the total number of <m>H</m>'s is even, there must be an odd number <m>H's</m> either to the left or to the right of this coin.
+			</p>
+			</li>
+			<li>
+			<p>
+ When you remove this coin, it creates two disjoint games (unless <m>H</m> is the first or last coin, in which case there is only one game after your move). One of these two games now has an even number of heads.
+			</p>
+			</li>
+			<li>
+			<p>
+ The game with an even number of heads is smaller than <m>n</m>. By induction, this configuration is losing.
+			</p>
+			</li>
+			<li>
+			<p>
+ So no matter what coin we remove, we are sure to lose.
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+
+</chapter>

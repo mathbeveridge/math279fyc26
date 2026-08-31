@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="proof1" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Proofs</title>
+	<introduction>
+		<p>
+ Here are the  definitions of even and odd.
+<ul>
+<li>
+An integer <m>n \in \mathbb{Z}</m> is even when there exists <m>k \in \mathbb{Z}</m> such that <m>n = 2k</m>.
+</li>
+<li>
+An integer <m>n \in \mathbb{Z}</m> is odd when there exists <m>k \in \mathbb{Z}</m> such that <m>n = 2k+1</m>.
+</li>
+</ul>
+</p>
+<p>
+Here are the definitions of divisible and not divisible.
+Let <m>n,d \in \mathbb{Z}</m> be  integers.
+<ul>
+<li>
+ We say that
+<m>d \mid n</m> when there exists <m>k \in \mathbb{Z}</m> such that <m>n=dk</m>. 
+</li>
+<li>
+Otherwise, we say that <m>d \nmid n</m>. This means that
+<m>n \neq dk</m> for all <m>k \in \mathbb{Z}</m>.
+
+</li>
+</ul>
+</p>
+<p>
+Use these definitions to prove the following statements.
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+
+
+
+		<exercise>
+			<title>Odd to Even</title>
+			<idx><h>Odd to Even</h></idx>
+			<statement>
+				<p>
+Prove that for all integers <m>n \in \mathbb{Z}</m>, if <m>n</m> is odd, then <m>5n + 3 </m> is even.
+
+
+
+				</p>
+			</statement>
+					
+			<!--solution>
+			<p>
+			We have <m>n=2r+1</m> for some <m>r \in \mathbb{Z}</m>. 
+			Therefore 
+			<me>
+			5n+3 = 5(2r+1)+3 = 10r+8 = 2(5r+4).
+			</me>
+			Taking <m>s=5r+4</m>, we have <m>5n+3=2s</m>, which proves that <m>5n+3</m> is even.
+			</p>
+			</solution-->
+		</exercise>
+		<exercise>
+			<title>Any to Odd</title>
+			<idx><h>Any to Odd</h></idx>
+			<statement>
+				<p>
+Prove that if <m>n \in \mathbb{Z}</m>, then <m>5n^2+3n+7</m> is odd.
+
+
+
+				</p>
+			</statement>
+			<!--solution>
+			<p>There are two cases: when <m>n</m> is odd and when <m>n</m> is even.</p>
+			<p>
+			<strong>Case 1:</strong> <m>n</m> is odd. We have <m>n=2r+1</m> for some <m>r \in \mathbb{Z}</m>. 
+			Therefore 
+			<md>
+			<mrow>
+			5n^2+3n+7 &amp; = 5(2r+1)^2+3(2r+1)+7 
+			= (20r^2 + 20r+ 5) + (6r+3) + 7
+			</mrow>
+			<mrow>		
+			&amp; = 20r^2 + 26r+15
+			= 2(10r^2+13r+7) +1.
+			</mrow>
+			</md>
+			Taking <m>s=10r^2+13r+7</m>, we have <m>5n^2+3n+7=2s+1</m>, 
+			which proves that <m>5n^2+3n+7</m> is odd.
+			</p>	
+			<p>
+			<strong>Case 2:</strong> <m>n</m> is even. We have <m>n=2r</m> for some <m>r \in \mathbb{Z}</m>. 
+			Therefore 
+			<me>
+			5n^2+3n+7 = 5(2r)^2+3(2r)+7 
+			= 20r^2  + 6r + 7 
+			= 2(10r^2+3r+3) +1.
+			</me>
+			Taking <m>s=10r^2+3r+3</m>, we have <m>5n^2+3n+7=2s+1</m>, 
+			which proves that <m>5n^2+3n+7</m> is odd.
+			</p>				
+			</solution-->
+		</exercise>
+		<exercise>
+			<title>Even/Odd Combo</title>
+			<idx><h>Even/Odd Combo</h></idx>
+			<statement>
+				<p>
+Prove that if <m>a</m> is any odd integer and <m>b</m> is any even integer, then <m>2a+3b</m> is an even integer.
+
+
+
+				</p>
+			</statement>
+			<!--solution>
+			<p>
+			We have <m>a=2r+1</m> for some <m>r \in \mathbb{Z}</m>,
+			and <m>b=2s</m> for some <m>s \in \mathbb{Z}</m>.
+			Therefore 
+			<me>
+			2a+3b = 2(2r+1) + 3(2s) = 4r+6s+2 = 2(2r+3s+1)
+			</me>
+			Taking <m>t=2r+3s+1</m>, we have <m>2a+3b=2t</m>, 
+			which proves that <m>5n^2+3n+7</m> is even.
+			</p>	
+			</solution-->
+		</exercise>  
+
+        <exercise>
+			<title>Summing Squares </title>
+			<idx><h>Summing Squares </h></idx>
+			<statement>
+				<p>
+Prove that if <m>a</m> is any odd integer and <m>b</m> is any even integer, then <m>a^2+b^2</m> is an odd integer.
+
+
+
+				</p>
+			</statement>
+			<!--solution>
+			<p>
+			We have <m>a=2r+1</m> for some <m>r \in \mathbb{Z}</m>,
+			and <m>b=2s</m> for some <m>s \in \mathbb{Z}</m>.
+			Therefore 
+			<me>
+			a^2 + b^2 = (2r+1)^2 + (2s)^2 = 4r^2 +  4r + 4s^2 + 1
+			= 2(2r^2+ 2r+2s^2) +1
+			</me>
+			Taking <m>t=2r^2+ 2r+2s^2</m>, we have <m>a^2+b^2=2t+1</m>, 
+			which proves that <m>5n^2+3n+7</m> is odd.
+			</p>	
+			</solution-->
+		</exercise> 
+
+        <exercise>
+			<title>Proof by Contrapositive</title>
+			<idx><h>Proof by Contrapositive</h></idx>
+			<statement>
+				<p>
+Use a proof by contrapositive to show that for all integers <m>m,n \in \mathbb{Z}</m>, 
+if  <m>mn</m> is even then <m>m</m> is even or <m>n</m> is even.
+
+				</p>
+			</statement>
+			<!--solution>
+			<p>
+			The contrapositive of the statement is: if <m>m</m> is odd and <m>n</m> is odd then <m>mn</m> is odd.
+			Let's prove this statment. We have <m>m=2r+1</m> and <m>n=2s+1</m> for some <m>r,s \in \mathbb{Z}</m>.
+			Then
+			<me>
+			mn = (2r+1)(2s+1) = 4rs+2r+2s+1 = 2(2rs+r+s)+1.
+			</me>
+			Taking <m>t=2rs+r+s</m>, we have <m>mn= 2t+1</m> and therefore <m>mn</m> is odd.
+			We have proved the contrapositive, so the original statement is also true 
+			(because an implication and its contrapositive have the same truth values).
+			</p>
+			</solution-->
+		</exercise> 
+
+        <exercise>
+			<title>Proof by Contradiction</title>
+			<idx><h>Proof by Contradiction</h></idx>
+			<statement>
+				<p>
+Use a proof by contradiction to show that for any integer <m>n \in \mathbb{Z}</m>, 
+we have <m>4 \nmid n^2-2.</m>
+
+				</p>
+			</statement>
+			<!--solution>
+			<p>
+			Assume for the sake of contradiction (AFSOC) that <m>4 \mid n^2-2.</m> This means that 
+			<m>n^2-2 = 4k</m> for some <m>k \in \mathbb{Z}</m>.
+			We have two cases.
+			</p>
+			<p>
+			<strong>Case 1:</strong> <m>n</m> is odd. We have <m>n=2r+1</m> for some <m>r \in \mathbb{Z}</m>. 
+			We now have
+			<md>
+			<mrow>
+			(2r+1)^2-2 &amp; = 4k
+			</mrow>
+			<mrow>
+			4r^2+4r-1 &amp; = 4k
+			</mrow>
+			<mrow>
+			4r^2+4r-4k &amp; = 1
+			</mrow>	
+			<mrow>
+			2(2r^2+2r-2k) &amp; = 1
+			</mrow>		
+			<mrow>
+			2r^2+2r-2k &amp; = \frac{1}{2}
+			</mrow>					
+			</md>
+			which is a contradiction because the left hand size is an integer, while the right hand side is not.
+			Therefore <m>4 \nmid n^2-2</m> when <m>n</m> is odd.
+			</p>
+			<p>
+			<strong>Case 2:</strong> <m>n</m> is even. We have <m>n=2r</m> for some <m>r \in \mathbb{Z}</m>. 
+			We now have
+			<md>
+			<mrow>
+			(2r)^2-2 &amp; = 4k
+			</mrow>
+			<mrow>
+			4r^2-2 &amp; = 2k
+			</mrow>
+			<mrow>
+			4r^2-4k &amp; = 2
+			</mrow>	
+			<mrow>
+			2(r^2-k) &amp; = 1
+			</mrow>		
+			<mrow>
+			r^2-k &amp; = \frac{1}{2}
+			</mrow>					
+			</md>
+			which is a contradiction because the left hand size is an integer, while the right hand side is not.
+			Therefore <m>4 \nmid n^2-2</m> when <m>n</m> is even.
+			</p>			
+			</solution-->
+		</exercise> 
+
+        <exercise>
+			<title>Your Choice</title>
+			<idx><h>Your Choice</h></idx>
+			<statement>
+				<p>
+Prove the following statement using either proof by contrapositive, or proof by contradiction.
+				</p>
+                <p>
+                For positive integers <m>a,b,n \in \mathbb{N}</m>, if <m>ab = n</m>, then either 
+                <m>a \geq \sqrt{n}</m> or <m>b \geq \sqrt{n}</m>.
+                </p>
+			</statement>
+
+			<!--solution>
+			<p>
+			Here is a proof by contrapositive.
+			We must prove that if <m>a &lt; \sqrt{n}</m> and <m>b &lt; \sqrt{n}</m> then
+			<m>ab \neq n</m>.
+			</p>
+			<p>
+			So assume that <m>a &lt; \sqrt{n}</m> and <m>b &lt; \sqrt{n}</m>. We have
+			<me>
+			ab &lt; \sqrt{n} \cdot \sqrt{n} = n.
+			</me>
+			Now, we have <m>ab &lt; n</m>, so of course <m>ab \neq n</m>. We have proved that the 
+			contrapositive statement is true, so the original implication is true as well.
+			</p>			
+			</solution-->
+		</exercise> 
+
+	</exercises>
+
+
+
+
+
+</chapter>

@@ -1,0 +1,1733 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="matching" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Bipartite Matchings</title>
+	<introduction>
+		<p>
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Bipartite Graphs and Neighborhoods</title>
+			<idx><h>Bipartite Graphs and Neighborhoods</h></idx>
+			<statement>
+				<p>
+A graph <m>G = (V,E)</m> is bipartite if <m>V= A \cup B</m> where <m>A \cap B = \emptyset</m> and every edge <m>e \in E</m>  runs between these two sets. Equivalently: we can color the vertices  with two colors, (red and blue) so that adjacent vertices receive different colors.
+
+			<ol>
+
+				<li>
+					<p>
+  Let <m>G</m> be any bipartite graph on vertices <m>V = A \cup B</m>.
+Explain why
+<me>
+\sum_{v \in A} \deg (v) = \sum_{w \in B} \deg(w).
+</me>
+
+<!--solution>
+<p>
+Since the edges run between <m>A</m> and <m>B</m>, each of these sums counts every edge once. That is,
+<me>
+\sum_{v \in A} \deg (v) = |E| = \sum_{w \in B} \deg(w).
+</me>
+</p>
+</solution-->
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Recall that a graph is <em><m>d</m>-regular</em> when every vertex has degree <m>d</m>. Let <m>G</m> be a <m>d</m>-regular bipartite graph on partite sets <m>A,B</m>. Prove that  <m>|A|=|B|</m>. (Hint: use part (a).)
+
+<!--solution>
+<p>
+Since every vertex has degree equal to <m>d</m>, Problem 1(b) means that
+<me>d |A| = \sum_{v \in A} \deg (v) = |E| = \sum_{w \in B} \deg(w) =  d |B|</me>
+and therefore <m>|A|=|B|</m>.
+</p>
+</solution-->
+
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Let <m>G=(V,E)</m> be a bipartite graph on vertices <m>V=A \cup B</m>. Given a set of vertices <m>S \subset A</m>, we define the <em>neighborhood</em> <m>N(S) \subset B</m> to be the set of vertices that are adjacent to some vertex in <m>S</m>. That is,
+<me>
+\mbox{if } S \subset A \mbox{ then } N(S) = \{ b \in B : \exists a \in S, (a,b) \in E \} .
+</me>
+For each  of the examples  below, find the neighborhood <m>N(S) \subset B</m>:
+
+
+
+			<image width="100%" xml:id="fig-img-matching0">
+				<latex-image>
+\begin{tikzpicture}[scale=1]
+
+\begin{scope}
+
+
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (2,0) -!- (1,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (4,0) -!- (4,1.5);
+\draw (4,0) -!- (5,1.5);
+\draw (5,0) -!- (3,1.5);
+\draw (5,0) -!- (5,1.5);
+
+\draw (2,0) ellipse (1.5 and .3);
+
+\node at (2,-.75) {$S$};
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(8,0)}]
+
+
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (2,0) -!- (2,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (3,0) -!- (3,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (3,1.5);
+\draw (4,0) -!- (5,1.5);
+\draw (5,0) -!- (3,1.5);
+\draw (5,0) -!- (5,1.5);
+\draw (5,0) -!- (4,1.5);
+
+
+\draw (2,0) ellipse (1.5 and .3);
+\node at (2,-.75) {$S$};
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-4)}]
+
+
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (2,0) -!- (1,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (4,0) -!- (4,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (5,0) -!- (3,1.5);
+\draw (5,0) -!- (5,1.5);
+
+
+
+\draw (2,0) ellipse (1.5 and .3);
+\node at (2,-.75) {$S$};
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(8,-4)}]
+
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (4,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (2,0) -!- (5,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (3,1.5);
+\draw (5,0) -!- (4,1.5);
+\draw (5,0) -!- (5,1.5);
+
+
+
+\draw (2,0) ellipse (1.5 and .3);
+\node at (2,-.75) {$S$};
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+<!--solution>
+<p>
+
+			<image width="100%" xml:id="fig-img-matching1">
+				<latex-image>
+\begin{tikzpicture}[scale=1]
+
+\begin{scope}
+
+
+\fill[gray!50] (2,1.5) ellipse (1.5 and .3);
+\fill[gray!50] (4,2) ellipse (.85 and .25);
+
+\begin{scope}[shift={(4.85,1.7)}, rotate=-45]
+
+\fill[gray!50] (0,0) ellipse (.6 and .3);
+
+\end{scope}
+
+\begin{scope}[shift={(3.2,1.7)}, rotate=45]
+
+\fill[gray!50] (0,0) ellipse (.5 and .3);
+
+\end{scope}
+
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (2,0) -!- (1,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (4,0) -!- (4,1.5);
+\draw (4,0) -!- (5,1.5);
+\draw (5,0) -!- (3,1.5);
+\draw (5,0) -!- (5,1.5);
+
+\draw (2,0) ellipse (1.5 and .3);
+
+\node at (2,-.75) {$S$};
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(8,0)}]
+
+\fill[gray!50] (2.5,1.5) ellipse (1 and .3);
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (2,0) -!- (2,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (3,0) -!- (3,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (3,1.5);
+\draw (4,0) -!- (5,1.5);
+\draw (5,0) -!- (3,1.5);
+\draw (5,0) -!- (5,1.5);
+\draw (5,0) -!- (4,1.5);
+
+
+\draw (2,0) ellipse (1.5 and .3);
+\node at (2,-.75) {$S$};
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-4)}]
+
+\fill[gray!50] (3,1.5) ellipse (2.5 and .3);
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (2,0) -!- (1,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (4,0) -!- (4,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (5,0) -!- (3,1.5);
+\draw (5,0) -!- (5,1.5);
+
+
+
+\draw (2,0) ellipse (1.5 and .3);
+\node at (2,-.75) {$S$};
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(8,-4)}]
+
+
+\fill[gray!50] (4.5,1.5) ellipse (1 and .3);
+\fill[gray!50] (2.5,2) ellipse (1.25 and .25);
+
+\begin{scope}[shift={(3.75,1.7)}, rotate=-45]
+
+\fill[gray!50] (0,0) ellipse (.5 and .25);
+
+\end{scope}
+
+\begin{scope}[shift={(1.2,1.7)}, rotate=45]
+
+\fill[gray!50] (0,0) ellipse (.5 and .3);
+
+\end{scope}
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (4,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (2,0) -!- (5,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (3,1.5);
+\draw (5,0) -!- (4,1.5);
+\draw (5,0) -!- (5,1.5);
+
+
+
+\draw (2,0) ellipse (1.5 and .3);
+\node at (2,-.75) {$S$};
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Perfect Matchings</title>
+			<idx><h>Perfect Matchings</h></idx>
+			<statement>
+				<p>
+Given a bipartite graph <m>G= (V,E)</m> where <m>V=A \cup B</m> and <m>|A|=|B|</m>, a <em>perfect matching</em> <m>M</m>  is a disjoint set of edges that uses every vertex.
+
+			<ol>
+
+
+				<li>
+					<p>
+ For each of the graphs below, find a perfect matching or explain why no such matching exists.
+
+
+
+			<image width="75%" xml:id="fig-img-matching2">
+				<latex-image>
+\begin{tikzpicture}[scale=1]
+
+\begin{scope}
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (2,0) -!- (1,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (4,0) -!- (4,1.5);
+\draw (4,0) -!- (5,1.5);
+\draw (5,0) -!- (3,1.5);
+\draw (5,0) -!- (5,1.5);
+
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(8,0)}]
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (2,0) -!- (2,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (3,0) -!- (3,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (3,1.5);
+\draw (4,0) -!- (5,1.5);
+\draw (5,0) -!- (3,1.5);
+\draw (5,0) -!- (5,1.5);
+\draw (5,0) -!- (4,1.5);
+
+
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-3)}]
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (2,0) -!- (1,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (4,0) -!- (4,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (5,0) -!- (3,1.5);
+\draw (5,0) -!- (5,1.5);
+
+
+
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(8,-3)}]
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (4,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (2,0) -!- (5,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (3,1.5);
+\draw (5,0) -!- (4,1.5);
+\draw (5,0) -!- (5,1.5);
+
+
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+<!--solution>
+<p>
+
+			<image width="75%" xml:id="fig-img-matching3">
+				<latex-image>
+\begin{tikzpicture}[scale=1]
+
+\begin{scope}
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+}
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\draw(1,0) -!- (2,1.5);
+\draw[ultra thick] (1,0) -!- (3,1.5);
+\draw[ultra thick] (2,0) -!- (1,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw[ultra thick]  (3,0) -!- (2,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw[ultra thick]  (4,0) -!- (4,1.5);
+\draw (4,0) -!- (5,1.5);
+\draw (5,0) -!- (3,1.5);
+\draw[ultra thick]  (5,0) -!- (5,1.5);
+
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(8,0)}]
+
+
+
+\fill[gray!50] (2,0) ellipse (1.25 and .25);
+\fill[gray!50] (2.5,1.5) ellipse (.75 and .25);
+
+
+\foreach \x in {1,2,3,4,5}
+{
+
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+}
+
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (2,0) -!- (2,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (3,0) -!- (3,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (3,1.5);
+\draw (4,0) -!- (5,1.5);
+\draw (5,0) -!- (3,1.5);
+\draw (5,0) -!- (5,1.5);
+\draw (5,0) -!- (4,1.5);
+
+
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-3)}]
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+
+}
+
+
+\draw[ultra thick] (1,0) -!- (2,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw[ultra thick]  (2,0) -!- (1,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw[ultra thick]  (3,0) -!- (5,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw[ultra thick]  (4,0) -!- (4,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw[ultra thick]  (5,0) -!- (3,1.5);
+\draw (5,0) -!- (5,1.5);
+
+
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(8,-3)}]
+
+
+
+\fill[gray!50]  (4,0) ellipse (.3 and .2);
+\fill[gray!50] (1,1.5) ellipse  (.3 and .2);
+\fill[gray!50] (3,1.5) ellipse  (.3 and .2);
+
+\foreach \x in {1,2,3,4,5}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+
+}
+
+\draw (1,0) -!- (2,1.5);
+\draw (1,0) -!- (4,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (2,0) -!- (5,1.5);
+\draw (3,0) -!- (2,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (3,1.5);
+\draw (5,0) -!- (4,1.5);
+\draw (5,0) -!- (5,1.5);
+
+
+
+
+\node at (6,0) {$A$};
+\node at (6,1.5) {$B$};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Hall's Matching Theorem for a <m>d</m>-regular graph</title>
+			<idx><h>Hall's Matching Theorem for a <m>d</m>-regular graph</h></idx>
+			<statement>
+				<p>
+Here is <em>Hall's Matching Theorem:</em> Given a bipartite graph with <m>V = A \cup B</m> and  <m>|A|=|B|</m>. Then
+				</p>
+				<p>
+					<m>G</m> has a perfect matching 
+					<m>\Longleftrightarrow</m> for every <m>S \subset A</m>, we have <m>|S| \leq |N(S)|</m>.	
+				</p>
+				<p>
+					The last statement is called <em>Hall's Condition.</em> It means that "<m>G</m> has no bottlenecks."			
+				</p>
+				<p>
+			<ol>
+
+
+				<li>
+					<p>
+ Let <m>G=(V,E)</m> be a <m>d</m>-regular bipartite graph. By Problem 1(b), we have <m>|A|=|B|</m>. You will  show that Hall's condition holds for <m>G</m>.
+This means that a <m>d</m>-regular bipartite graph always has a perfect matching.
+
+
+			<ol>
+				<li>
+					<p>
+ Pick any subset <m>S \subset A</m>. What is <m>\sum_{v \in S} \deg(v)</m>?
+
+<!--solution>
+<p>
+<me>
+\sum_{v \in S} \deg(v) = d |S|
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Explain why <m>\displaystyle{\sum_{v \in S} \deg(v)  \leq \sum_{v \in N(S)} \deg(v)}</m>.
+
+			</p><p>
+
+<!--solution>
+<p>
+Every edge from a vertex in set <m>S</m> ends at a vertex in <m>N(S)</m>. This confirms that
+<me>
+\sum_{v \in S} \deg(v)  \leq \sum_{v \in N(S)} \deg(v).
+</me>
+Note that this inequality can be strict: vertices in <m>N(S)</m> may have neighbors outside of the set <m>S</m>.
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Why does part (ii) guarantee that <m>|S| \leq |N(S)|</m>?
+
+<!--solution>
+<p>
+<me>
+d |S| = \sum_{v \in S} \deg(v)  \leq \sum_{v \in N(S)} \deg(v)  =  d|N(S)|
+</me>
+and so <m>|S| \leq |N(S)|</m>.
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Here is a 3-regular bipartite graph <m>G</m> on 6 vertices.
+
+
+			<image width="75%" xml:id="fig-img-matching4">
+				<latex-image>
+\begin{tikzpicture}[scale=1.25]
+
+
+\draw (1,0) -!- (1,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (1,0) -!- (5,1.5);
+\draw (2,0) -!- (2,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (3,0) -!- (1,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (3,0) -!- (6,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (2,1.5);
+\draw (4,0) -!- (6,1.5);
+\draw (5,0) -!- (2,1.5);
+\draw (5,0) -!- (4,1.5);
+\draw (5,0) -!- (6,1.5);
+\draw (6,0) -!- (3,1.5);
+\draw (6,0) -!- (4,1.5);
+\draw (6,0) -!- (5,1.5);
+
+\foreach \x in {1,2,3,4,5,6}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+\node[below] at (\x,0) {$a_{\x}$};
+\node[above] at (\x,1.5) {$b_{\x}$};
+}
+
+\node at (8,0) {$A$};
+\node at (8,1.5) {$B$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+			<ol>
+
+				<li>
+					<p>
+ Find a perfect matching <m>M</m> in the graph <m>G</m>.
+
+<!--solution>
+<p>
+			<image width="75%" xml:id="fig-img-matching5">
+				<latex-image>
+\begin{tikzpicture}[scale=1.25]
+
+
+\draw[ultra thick] (1,0) -!- (1,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (1,0) -!- (5,1.5);
+\draw[ultra thick] (2,0) -!- (2,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (3,0) -!- (1,1.5);
+\draw[ultra thick] (3,0) -!- (5,1.5);
+\draw (3,0) -!- (6,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (2,1.5);
+\draw[ultra thick] (4,0) -!- (6,1.5);
+\draw (5,0) -!- (2,1.5);
+\draw[ultra thick] (5,0) -!- (4,1.5);
+\draw (5,0) -!- (6,1.5);
+\draw[ultra thick] (6,0) -!- (3,1.5);
+\draw (6,0) -!- (4,1.5);
+\draw (6,0) -!- (5,1.5);
+
+\foreach \x in {1,2,3,4,5,6}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+\node[below] at (\x,0) {$a_{\x}$};
+\node[above] at (\x,1.5) {$b_{\x}$};
+}
+
+\node at (8,0) {$A$};
+\node at (8,1.5) {$B$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+  Now draw the graph <m>H=G-M</m> where you remove the edges in your matching <m>M</m>.
+
+<!--solution>
+<p>
+
+			<image width="75%" xml:id="fig-img-matching6">
+				<latex-image>
+\begin{tikzpicture}[scale=1.25]
+
+
+
+\draw(1,0) -!- (3,1.5);
+\draw (1,0) -!- (5,1.5);
+
+\draw (2,0) -!- (3,1.5);
+\draw  (2,0) -!- (4,1.5);
+\draw (3,0) -!- (1,1.5);
+
+\draw (3,0) -!- (6,1.5);
+\draw  (4,0) -!- (1,1.5);
+\draw (4,0) -!- (2,1.5);
+
+\draw  (5,0) -!- (2,1.5);
+
+\draw (5,0) -!- (6,1.5);
+
+\draw (6,0) -!- (4,1.5);
+\draw  (6,0) -!- (5,1.5);
+
+\foreach \x in {1,2,3,4,5,6}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+\node[below] at (\x,0) {$a_{\x}$};
+\node[above] at (\x,1.5) {$b_{\x}$};
+}
+
+\node at (8,0) {$A$};
+\node at (8,1.5) {$B$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Find a perfect matching in  <m>H</m>. Why does part (a) guarantee that <m>H = G-M</m> has a perfect matching?
+
+
+<!--solution>
+<p>
+			<image width="75%" xml:id="fig-img-matching7">
+				<latex-image>
+\begin{tikzpicture}[scale=1.25]
+
+
+
+\draw[ultra thick] (1,0) -!- (3,1.5);
+\draw (1,0) -!- (5,1.5);
+
+\draw (2,0) -!- (3,1.5);
+\draw[ultra thick]  (2,0) -!- (4,1.5);
+\draw (3,0) -!- (1,1.5);
+
+\draw[ultra thick]  (3,0) -!- (6,1.5);
+\draw[ultra thick]  (4,0) -!- (1,1.5);
+\draw (4,0) -!- (2,1.5);
+
+\draw [ultra thick] (5,0) -!- (2,1.5);
+
+\draw (5,0) -!- (6,1.5);
+
+\draw (6,0) -!- (4,1.5);
+\draw[ultra thick]  (6,0) -!- (5,1.5);
+
+\foreach \x in {1,2,3,4,5,6}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+\node[below] at (\x,0) {$a_{\x}$};
+\node[above] at (\x,1.5) {$b_{\x}$};
+}
+
+\node at (8,0) {$A$};
+\node at (8,1.5) {$B$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+			</p><p>
+<m>G-M</m> is a 2-regular graph. So it has a perfect matching.
+
+
+</p>
+</solution-->
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Let <m>G</m> be a <m>d</m>-regular bipartite graph where <m>|A|=|B|=n</m>.  Use (regular) induction on <m>d \geq 1</m> to prove that a <m>d</m>-regular bipartite graph  has <m>d</m> <em>disjoint</em> perfect matchings. This means that we can color the edges of <m>G</m> using <m>d</m> colors so that every vertex is incident with exactly one edge from each of the <m>d</m> colors.
+
+
+<!--solution>
+<p>
+
+		<ul>
+
+			<li>
+			<p>
+ <em> Base Case: </em> <m>d=1</m>.
+
+			</p><p>
+A 1-regular graph is a perfect matching!
+
+			</p><p>
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em> Inductive Hypothesis: </em> Assume that if <m>G</m> is a <m>(d-1)</m>-regular bipartite graph where <m>|A|=|B|=n</m>, then <m>G</m> has <m>d-1</m> disjoint perfect matchings. <m>(\star)</m>
+
+			</p><p>
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em> Inductive Step: </em> Use  <m>(\star)</m> to prove that if <m>G</m> is a <m>d</m>-regular bipartite graph where <m>|A|=|B|=n</m>, then <m>G</m> has <m>d</m> disjoint perfect matchings.
+
+			</p>
+			</li>
+		</ul>
+
+			</p><p>
+
+By part (a), The <m>d</m>-regular bipartite graph <m>G</m> has a perfect matching <m>M</m>. Let's remove these edges. The graph <m>G-M</m> is <m>(d-1)</m>-regular. By <m>(\star)</m>, <m>G-M</m> has <m>d-1</m> disjoint perfect matchings. So we have found <m>d</m> disjoint perfect matchings.
+
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>A Mathematical Card Trick</title>
+			<idx><h>A Mathematical Card Trick</h></idx>
+			<statement>
+				<p>
+Here is a mathematical card trick whose secret uses a perfect matching in a bipartite graph!
+
+In a standard deck of 52 cards, each card has a suit and a value. There are 4 suits (clubs, diamonds, hearts, spades) and 13 values (A, 2, 3, . . . , 10, J, Q, K).
+
+
+			</p><p>
+
+Ask a volunteer (or your worst enemy) to lay out the cards into a grid of 4 rows and 13 columns. Show that you can <em>always</em> pick out 13 cards, one from each column of the grid, so that you end up with a card for every possible value <m>A, 2, 3, \ldots , 10 , J, Q, K</m>. Wow!!!
+
+
+Here is an example. The 13 cards I've chosen are highlighted.
+
+			<image width="100%" xml:id="fig-img-matching8">
+				<latex-image>
+					\begin{tikzpicture}
+
+
+
+
+					\node[draw,rectangle,fill=yellow!50] at (1,2.25) {5 $\!\!\spadesuit$};
+					\node[draw,rectangle] at (2,2.25) {2 $\!\!\heartsuit$};
+					\node[draw,rectangle] at (3,2.25) {Q $\!\!\clubsuit$};
+					\node[draw,rectangle] at (4,2.25) {A $\!\! \diamondsuit$};
+					
+					\node[draw,rectangle] at (7,2.25) {A $\!\! \clubsuit$};
+					\node[draw,rectangle,fill=red!50] at (11,2.25) {2 $\!\!\diamondsuit$};
+					\node[draw,rectangle] at (8,2.25) {5 $\!\!\heartsuit$};
+					\node[draw,rectangle] at (12,2.25) {6 $\!\!\diamondsuit$};
+					\node[draw,rectangle] at (13,2.25) {8 $\!\!\clubsuit$};
+					\node[draw,rectangle] at (6,2.25) {10 $\!\!\clubsuit$};
+					\node[draw,rectangle] at (10,2.25) {J $\!\!\clubsuit$};
+					\node[draw,rectangle] at (9,2.25) {Q $\!\!\heartsuit$};
+					\node[draw,rectangle] at (5,2.25) {K $\!\!\clubsuit$};
+					
+					
+					\node[draw,rectangle] at (1,1.5) {9 $\!\!\spadesuit$};
+					\node[draw,rectangle,fill=green!50] at (2,1.5) {7 $\!\!\heartsuit$};
+					\node[draw,rectangle,fill=orange!50] at (3,1.5) {3 $\!\!\spadesuit$};
+					\node[draw,rectangle] at (4,1.5) {4 $\!\!\clubsuit$};
+					
+					\node[draw,rectangle] at (7 ,1.5) {3 $\!\!\diamondsuit$};
+					\node[draw,rectangle,fill=orange!50] at (13,1.5) {4 $\!\!\diamondsuit$};
+					\node[draw,rectangle] at (11,1.5) {6 $\!\!\diamondsuit$};
+					\node[draw,rectangle] at (9,1.5) {7 $\!\!\clubsuit$};
+					\node[draw,rectangle] at (5,1.5) {8 $\!\!\diamondsuit$};
+					\node[draw,rectangle] at (6,1.5) {9 $\!\!\heartsuit$};
+					\node[draw,rectangle,fill=blue!50] at (12,1.5) {10 $\!\!\diamondsuit$};
+					\node[draw,rectangle,fill=blue!50] at (10,1.5) {J $\!\!\spadesuit$};
+					\node[draw,rectangle,fill=violet!50] at (8,1.5) {K $\!\!\diamondsuit$};
+					
+					
+					
+					
+					\node[draw,rectangle] at (1,0.75) {Q $\!\!\diamondsuit$};
+					\node[draw,rectangle] at (2,0.75) {7 $\!\!\heartsuit$};
+					\node[draw,rectangle] at (3,0.75) {3 $\!\!\clubsuit$};
+					\node[draw,rectangle,fill=green!50] at (4,0.75) {9 $\!\!\heartsuit$};
+					
+					\node[draw,rectangle,fill=red!50] at (7,.75) {A $\!\! \heartsuit$};
+					\node[draw,rectangle] at (13,.75) {2 $\!\!\clubsuit$};
+					\node[draw,rectangle] at (10,.75) {3 $\!\!\heartsuit$};
+					\node[draw,rectangle] at (12,.75) {5 $\!\!\clubsuit$};
+					\node[draw,rectangle] at (8,.75) {7 $\!\!\spadesuit$};
+					\node[draw,rectangle,fill=green!50] at (5,.75) {8 $\!\!\heartsuit$};
+					\node[draw,rectangle] at (9,.75) {J $\!\!\clubsuit$};
+					\node[draw,rectangle,fill=violet!50] at (6,.75) {Q $\!\!\spadesuit$};
+					\node[draw,rectangle] at (11,.75) {K $\!\!\heartsuit$};
+					
+					
+					\node[draw,rectangle] at (1,0) {9 $\!\!\diamondsuit$};
+					\node[draw,rectangle] at (2,0) {4 $\!\!\heartsuit$};
+					\node[draw,rectangle] at (3,0) {10 $\!\!\heartsuit$};
+					\node[draw,rectangle] at (4,0) {6 $\!\!\spadesuit$};
+					
+					\node[draw,rectangle] at (11,0) {A $\!\! \spadesuit$};
+					\node[draw,rectangle] at (8,0) {2 $\!\!\spadesuit$};
+					\node[draw,rectangle] at (6,0) {4 $\!\!\spadesuit$};
+					\node[draw,rectangle] at (13,0) {5 $\!\!\diamondsuit$};
+					\node[draw,rectangle,fill=yellow!50] at (9,0) {6 $\!\!\clubsuit$};
+					\node[draw,rectangle] at (12,0) {8 $\!\!\spadesuit$};
+					\node[draw,rectangle] at (7,0) {10 $\!\!\diamondsuit$};
+					\node[draw,rectangle] at (5,0) {J $\!\!\spadesuit$};
+					\node[draw,rectangle] at (10,0) {K $\!\!\spadesuit$};
+					
+					
+					\end{tikzpicture}
+				</latex-image>
+			</image>
+
+			<ol>
+
+				<li>
+					<p>
+ You can model this trick using a bipartite graph <m>G</m>  with <m>|A| = |B| = 13</m>.
+		<ul>
+			<li>
+			<p>
+ Let <m>A</m> be the set of 13 card values <m>\{A, 2, 3, \ldots, 10, J, Q, K \}</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ Let <m>B</m> be the set of columns <m>\{1, 2, 3, \ldots, 13\}</m>.
+			</p>
+			</li>
+		</ul>
+
+When should a card in set <m>A</m> have an edge to a column in set <m>B</m>? What is the degree of a vertex in <m>A</m>? What is the degree of a vertex in <m>B</m>?
+
+			</p><p>
+
+<!--solution>
+<p>
+
+Add an edge from a value <m>v</m> to a column <m>c</m> whenever a card with  value <m>v</m> appears in column <m>c</m>. Crucially, we will need to create a <em>multigraph</em> where we can have multiple edges between vertices. This results in a 4-regular bipartite multigraph.
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Use a  previous problem from this activity to show that your graph <m>G</m> always has a perfect matching. Then explain why this matching finds 13 cards with distinct values spread among the 13 columns.
+
+<!--solution>
+<p>
+Problem 1(b) applies to a <m>d</m>-regular multigraph. So we can find a perfect matching in our graph. This perfect matching corresponds to the 13 cards that we desire.
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Are you guaranteed to be able to do it again? That is, from the remaining 39 cards, can you find <m>A, 2, \ldots, K</m>, one card in each column? Why or why not?
+
+<!--solution>
+<p>
+
+Yes! Removing this matching results in a 3-regular graph. So we can do it again to find a disjoint set of 13 cards with the same property. In fact we can do it a final two times as well!
+
+So we can find four disjoint solutions to the magic trick!
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Finding a Perfect Matching</title>
+			<idx><h>Finding a Perfect Matching</h></idx>
+			<statement>
+				<p>
+Use this algorithm to find a perfect matching in  a bipartite graph <m>G</m> with <m>V=A \cup B</m>.
+
+
+
+
+		<ul>
+			<li>
+			<p>
+ Start with <m>M = \emptyset</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Greedy Phase
+		<ul>
+			<li>
+			<p>
+ Add disjoint  edges to <m>M</m> until you get stuck.
+			</p>
+			</li>
+			<li>
+			<p>
+ If you have a perfect matching, then  you are done!
+			</p>
+			</li>
+			<li>
+			<p>
+ If not, then move onto the Augmenting Phase.
+			</p>
+			</li>
+		</ul>
+			</p>
+			</li>
+			<li>
+			<p>
+ Augmenting phase
+		<ul>
+			<li>
+			<p>
+ Pick any unmatched vertex <m>a \in A</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Try to find an <em>alternating path</em> <m>P</m> to an unmatched vertex <m>b \in B</m>. The edges in path <m>P</m> alternately come from the set <m>E \backslash M</m> and the set <m>M</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ If you cannot find such a path, then you are stuck.  There is no matching.
+			</p>
+			</li>
+			<li>
+			<p>
+ If you find such a path, then swap the matching edges of <m>P</m> and the non-matching edges of <m>P</m> to get a bigger matching.
+			</p>
+			</li>
+			<li>
+			<p>
+ Repeat (a) - (d) until you are either stuck, or all vertices are matched!
+			</p>
+			</li>
+		</ul>
+			</p>
+			</li>
+		</ul>
+
+
+Here is an example. We start with the following bipartite graph
+
+			<image width="50%" xml:id="fig-img-matching9">
+				<latex-image>
+\begin{tikzpicture}[scale=1]
+
+
+
+\node at (-.4,0) {$A$};
+\node at (-.4,1) {$B$};
+
+
+\draw[thick, gray] (0,0) -!- (0,1);
+\draw[thick, gray] (0,0) -!- (1,1);
+
+
+\draw[thick, gray] (1,0) -!- (0,1);
+\draw[thick, gray] (1,0) -!- (2,1);
+
+\draw[thick, gray] (2,0) -!- (0,1);
+\draw[thick, gray] (2,0) -!- (1,1);
+
+
+\draw[thick, gray] (3,0) -!- (1,1);
+\draw[thick, gray] (3,0) -!- (2,1);
+\draw[thick, gray] (3,0) -!- (3,1);
+
+
+
+\draw[thick, gray] (4,0) -!- (3,1);
+\draw[thick, gray] (4,0) -!- (4,1);
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1) circle (2pt);
+}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+In the greedy phase, we add edges until we are stuck, meaning that the neighbors of the unmatched vertices are taken. In our case, we pick the four edges shown. We are stuck because all of the neighbors of <m>a</m> are already matched.
+
+
+			<image width="50%" xml:id="fig-img-matching10">
+				<latex-image>
+\begin{tikzpicture}[scale=1]
+
+
+
+\node at (-.4,0) {$A$};
+\node at (-.4,1) {$B$};
+
+
+\draw[thick, gray] (0,0) -!- (0,1);
+\draw[thick, gray] (0,0) -!- (1,1);
+
+
+\draw[ultra thick] (1,0) -!- (0,1);
+\draw[thick, gray] (1,0) -!- (2,1);
+
+\draw[thick, gray] (2,0) -!- (0,1);
+\draw[ultra thick] (2,0) -!- (1,1);
+
+
+\draw[thick, gray] (3,0) -!- (1,1);
+\draw[ultra thick] (3,0) -!- (2,1);
+\draw[thick, gray] (3,0) -!- (3,1);
+
+
+
+\draw[ultra thick] (4,0) -!- (3,1);
+\draw[thick, gray] (4,0) -!- (4,1);
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1) circle (2pt);
+}
+
+\node[right] at (0,0) {$a$};
+\node[right] at (4,1) {$b$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+Next we try to find a path from <m>a</m> to <m>b</m> that alternates between edges in <m>E \backslash M</m> and edges in <m>M</m>. We can find one, and it edges are alternately colored red and blue.
+
+
+
+
+			<image width="50%" xml:id="fig-img-matching11">
+				<latex-image>
+\begin{tikzpicture}[scale=1]
+
+
+
+\node at (-.4,0) {$A$};
+\node at (-.4,1) {$B$};
+
+
+\draw[thick, red] (0,0) -!- (0,1);
+\draw[thick, gray] (0,0) -!- (1,1);
+
+
+\draw[ultra thick,blue] (1,0) -!- (0,1);
+\draw[thick, red] (1,0) -!- (2,1);
+
+\draw[thick, gray] (2,0) -!- (0,1);
+\draw[ultra thick] (2,0) -!- (1,1);
+
+
+\draw[thick, gray] (3,0) -!- (1,1);
+\draw[ultra thick,blue] (3,0) -!- (2,1);
+\draw[thick, red] (3,0) -!- (3,1);
+
+
+
+\draw[ultra thick, blue] (4,0) -!- (3,1);
+\draw[thick, red] (4,0) -!- (4,1);
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1) circle (2pt);
+}
+
+\node[right] at (0,0) {$a$};
+\node[right] at (4,1) {$b$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+Swapping red and blue edges gives a perfect matching! If there were more unmatched vertices, we would repeat this process.
+
+			<image width="50%" xml:id="fig-img-matching12">
+				<latex-image>
+\begin{tikzpicture}[scale=1]
+
+
+
+\node at (-.4,0) {$A$};
+\node at (-.4,1) {$B$};
+
+
+\draw[ultra thick] (0,0) -!- (0,1);
+\draw[thick, gray] (0,0) -!- (1,1);
+
+
+\draw[thick, gray] (1,0) -!- (0,1);
+\draw[ultra thick] (1,0) -!- (2,1);
+
+\draw[thick, gray] (2,0) -!- (0,1);
+\draw[ultra thick] (2,0) -!- (1,1);
+
+
+\draw[thick, gray] (3,0) -!- (1,1);
+\draw[thick, gray] (3,0) -!- (2,1);
+\draw[ultra thick] (3,0) -!- (3,1);
+
+
+
+\draw[thick, gray] (4,0) -!- (3,1);
+\draw[ultra thick] (4,0) -!- (4,1);
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1) circle (2pt);
+}
+
+\node[right] at (0,0) {$a$};
+\node[right] at (4,1) {$b$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+			<ol>
+
+
+				<li>
+					<p>
+ Use the alternating path algorithm to find a perfect matching for this graph, starting from the 4-edge matching shown in the first graph.
+
+
+			<image width="75%" xml:id="fig-img-matching13">
+				<latex-image>
+\begin{tikzpicture}[scale=1.25]
+
+
+\draw[ultra thick] (1,0) -!- (1,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (1,0) -!- (5,1.5);
+\draw[ultra thick] (2,0) -!- (2,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (3,0) -!- (1,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (3,0) -!- (6,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (2,1.5);
+\draw (4,0) -!- (6,1.5);
+\draw (5,0) -!- (2,1.5);
+\draw (5,0) -!- (4,1.5);
+\draw[ultra thick] (5,0) -!- (6,1.5);
+\draw (6,0) -!- (3,1.5);
+\draw (6,0) -!- (4,1.5);
+\draw[ultra thick] (6,0) -!- (5,1.5);
+
+\foreach \x in {1,2,3,4,5,6}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+}
+
+\node at (8,0) {$A$};
+\node at (8,1.5) {$B$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+<!--solution>
+<p>
+
+			<image width="75%" xml:id="fig-img-matching14">
+				<latex-image>
+\begin{tikzpicture}[scale=1.25]
+
+
+\draw[ultra thick] (1,0) -!- (1,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (1,0) -!- (5,1.5);
+\draw[ultra thick] (2,0) -!- (2,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (3,0) -!- (1,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (3,0) -!- (6,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw (4,0) -!- (2,1.5);
+\draw (4,0) -!- (6,1.5);
+\draw (5,0) -!- (2,1.5);
+\draw (5,0) -!- (4,1.5);
+\draw[ultra thick] (5,0) -!- (6,1.5);
+\draw (6,0) -!- (3,1.5);
+\draw (6,0) -!- (4,1.5);
+\draw[ultra thick] (6,0) -!- (5,1.5);
+
+\foreach \x in {1,2,3,4,5,6}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+}
+
+\node at (8,0) {$A$};
+\node at (8,1.5) {$B$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+			</p><p>
+
+			<image width="75%" xml:id="fig-img-matching15">
+				<latex-image>
+\begin{tikzpicture}[scale=1.25]
+
+
+\draw[ultra thick] (1,0) -!- (1,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (1,0) -!- (5,1.5);
+\draw[ultra thick] (2,0) -!- (2,1.5);
+\draw[ultra thick, red] (2,0) -!- (3,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (3,0) -!- (1,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (3,0) -!- (6,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw[ultra thick, red] (4,0) -!- (2,1.5);
+\draw (4,0) -!- (6,1.5);
+\draw (5,0) -!- (2,1.5);
+\draw (5,0) -!- (4,1.5);
+\draw[ultra thick] (5,0) -!- (6,1.5);
+\draw (6,0) -!- (3,1.5);
+\draw (6,0) -!- (4,1.5);
+\draw[ultra thick] (6,0) -!- (5,1.5);
+
+\foreach \x in {1,2,3,4,5,6}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+}
+
+\node at (8,0) {$A$};
+\node at (8,1.5) {$B$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+			</p><p>
+
+
+			<image width="75%" xml:id="fig-img-matching16">
+				<latex-image>
+\begin{tikzpicture}[scale=1.25]
+
+
+\draw[ultra thick] (1,0) -!- (1,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (1,0) -!- (5,1.5);
+\draw[ultra thick] (2,0) -!- (3,1.5);
+\draw (2,0) -!- (4,1.5);
+\draw (3,0) -!- (1,1.5);
+\draw (3,0) -!- (5,1.5);
+\draw (3,0) -!- (6,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw[ultra thick] (4,0) -!- (2,1.5);
+\draw (4,0) -!- (6,1.5);
+\draw (5,0) -!- (2,1.5);
+\draw (5,0) -!- (4,1.5);
+\draw[ultra thick] (5,0) -!- (6,1.5);
+\draw (6,0) -!- (3,1.5);
+\draw (6,0) -!- (4,1.5);
+\draw[ultra thick] (6,0) -!- (5,1.5);
+
+\foreach \x in {1,2,3,4,5,6}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+}
+
+\node at (8,0) {$A$};
+\node at (8,1.5) {$B$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+			</p><p>
+
+
+			<image width="75%" xml:id="fig-img-matching17">
+				<latex-image>
+\begin{tikzpicture}[scale=1.25]
+
+
+\draw[ultra thick] (1,0) -!- (1,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (1,0) -!- (5,1.5);
+\draw[ultra thick] (2,0) -!- (3,1.5);
+\draw[ultra thick, red] (2,0) -!- (4,1.5);
+\draw (3,0) -!- (1,1.5);
+\draw[ultra thick, red] (3,0) -!- (5,1.5);
+\draw (3,0) -!- (6,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw[ultra thick] (4,0) -!- (2,1.5);
+\draw (4,0) -!- (6,1.5);
+\draw (5,0) -!- (2,1.5);
+\draw (5,0) -!- (4,1.5);
+\draw[ultra thick] (5,0) -!- (6,1.5);
+\draw[ultra thick, red] (6,0) -!- (3,1.5);
+\draw (6,0) -!- (4,1.5);
+\draw[ultra thick] (6,0) -!- (5,1.5);
+
+\foreach \x in {1,2,3,4,5,6}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+}
+
+\node at (8,0) {$A$};
+\node at (8,1.5) {$B$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+			</p><p>
+
+			<image width="75%" xml:id="fig-img-matching18">
+				<latex-image>
+\begin{tikzpicture}[scale=1.25]
+
+
+\draw[ultra thick] (1,0) -!- (1,1.5);
+\draw (1,0) -!- (3,1.5);
+\draw (1,0) -!- (5,1.5);
+\draw (2,0) -!- (3,1.5);
+\draw[ultra thick] (2,0) -!- (4,1.5);
+\draw (3,0) -!- (1,1.5);
+\draw[ultra thick] (3,0) -!- (5,1.5);
+\draw (3,0) -!- (6,1.5);
+\draw (4,0) -!- (1,1.5);
+\draw[ultra thick] (4,0) -!- (2,1.5);
+\draw (4,0) -!- (6,1.5);
+\draw (5,0) -!- (2,1.5);
+\draw (5,0) -!- (4,1.5);
+\draw[ultra thick] (5,0) -!- (6,1.5);
+\draw[ultra thick] (6,0) -!- (3,1.5);
+\draw (6,0) -!- (4,1.5);
+\draw (6,0) -!- (5,1.5);
+
+\foreach \x in {1,2,3,4,5,6}
+{
+\draw[fill] (\x,0) circle (2pt);
+\draw[fill] (\x,1.5) circle (2pt);
+}
+
+\node at (8,0) {$A$};
+\node at (8,1.5) {$B$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+</chapter>

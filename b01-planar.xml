@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="planar" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Planar Graphs</title>
+	<introduction>
+		<p>
+
+
+A <em>planar graph</em> is a graph that can be drawn in the plane without crossing edges. Such a <em>plane drawing</em> of <m>G</m> has three characteristics.
+		<ul>
+			<li>
+			<p>
+ <m>v</m> = number of vertices of <m>G</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>e</m> = number of edges of <m>G</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>f</m> = number of faces (regions) created by cycles in <m>G</m>, <em>including the outer face</em>.
+			</p>
+			</li>
+		</ul>
+Here is a graph with <m>v=8</m> and <m>e=9</m> and <m>f=3</m>. The  regions are colored yellow, red and blue.
+
+
+
+			<image width="80%" xml:id="fig-img-planar0">
+				<latex-image>
+\begin{tikzpicture}[scale=.9] %mathbook width=80%
+
+\draw[dotted, fill=yellow!25] (0,0) ellipse (4 and 2);
+
+\begin{scope}[shift={(-1.72,0)}]
+
+\draw[thick, fill=red!25](1,0) -!- (0,1) -!- (-1,0) -!- (0,-1) -!- cycle;
+
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (0,1) circle (2pt);
+\draw[fill] (-1,0) circle (2pt);
+\draw[fill] (0,-1) circle (2pt);
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(1.72,0)}]
+
+\draw[thick, fill=blue!25] (1,0) -!- (0,1) -!- (-1,0) -!- (0,-1) -!- cycle;
+
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (0,1) circle (2pt);
+\draw[fill] (-1,0) circle (2pt);
+\draw[fill] (0,-1) circle (2pt);
+
+
+
+\end{scope}
+
+
+
+\draw[thick] (-.72,0) -!- (.72,0);
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Planar Graph Examples</title>
+			<idx><h>Planar Graph Examples</h></idx>
+			<statement>
+				<p>
+Fill in the following table for the given connected and planar graphs. Then make a conjecture!
+
+
+			<image width="90%" xml:id="fig-img-planar1">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+\begin{scope}[shift={(1, 0)}]
+
+\foreach \i in {0,60,120, 180,240, 300} {
+
+\draw[fill] (\i:.75) circle (2pt);
+\draw (\i:.75) -!- (\i + 60: .75);
+\node at (0, -1.2) {$C_6$};
+
+}
+
+\end{scope}
+
+\begin{scope}[shift={(3.5, -.66)}]
+
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (0,1) circle (2pt);
+\draw[fill] (1,1) circle (2pt);
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (.5,1.5) circle (2pt);
+
+\draw (0,0) -!- (0,1) -!- (1,1) -!- (1,0) -!- cycle;
+\draw (1,1) -!- (.5, 1.5) -!- (0,1);
+
+\node at (.5, -.5) {$G$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(7, -.66)}]
+
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (0,1) circle (2pt);
+\draw[fill] (1,1) circle (2pt);
+\draw[fill] (1,0) circle (2pt);
+
+
+\draw (0,0) -!- (0,1) -!- (1,1) -!- (1,0) -!- cycle;
+\draw (0,0) -!- (1,1);
+
+\draw (1,0) .. controls (1.75,1.75) ..  (0,1);
+
+\node at (.5, -.5) {$K_4$};
+
+\end{scope}
+
+\begin{scope}[shift={(0, -4.66)}]
+
+\draw[fill] (.5,.5) circle (2pt);
+\draw[fill] (.5,1) circle (2pt);
+\draw[fill] (1,1) circle (2pt);
+\draw[fill] (1,.5) circle (2pt);
+
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (0,1.5) circle (2pt);
+\draw[fill] (1.5,1.5) circle (2pt);
+\draw[fill] (1.5,0) circle (2pt);
+
+
+\draw (0,0) -!- (0,1.5) -!- (1.5,1.5) -!- (1.5,0) -!- cycle;
+\draw (.5,.5) -!- (.5,1) -!- (1,1) -!- (1,.5) -!- cycle;
+
+\draw (0,0) -!- (.5,.5);
+\draw (1.5,0) -!- (1,.5);
+\draw (1.5,1.5) -!- (1,1);
+\draw (0,1.5) -!- (.5,1);
+
+
+\node at (.75, -.5) {$Q$};
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(3, -4.66)}]
+
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (.6, .6) circle (2pt);
+\draw[fill] (0, .75) circle (2pt);
+\draw[fill] (.75, 0) circle (2pt);
+
+\draw[fill] (1.2,1.2) circle (2pt);
+\draw[fill] (1.5,.6) circle (2pt);
+\draw[fill] (2,0) circle (2pt);
+\draw[fill] (.5,1.8) circle (2pt);
+\draw[fill] (1.9,1.8) circle (2pt);
+
+
+\draw (0,0) -!- (.6,.6) -!- (0,.75);
+\draw (.75,0) -!- (.6,.6) -!- (1.2, 1.2) -!- (1.5, .6) -!- (2,0);
+\draw (.5, 1.8) -!- (1.2, 1.2) -!- (1.9, 1.8);
+
+
+\node at (1, -.5) {$T$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(6.5, -4.66)}]
+
+\draw[fill] (-.5,0) circle (2pt);
+\draw[fill] (2.5,0) circle (2pt);
+\draw[fill] (1,2.2) circle (2pt);
+
+\draw[fill] (0,.5) circle (2pt);
+\draw[fill] (1,.5) circle (2pt);
+\draw[fill] (2,.5) circle (2pt);
+\draw[fill] (0,1.5) circle (2pt);
+\draw[fill] (1,1.5) circle (2pt);
+\draw[fill] (2,1.5) circle (2pt);
+
+
+
+\draw (0,.5) -!- (0,1.5) -!- (2,1.5) -!- (2,.5) -!- cycle;
+
+\draw (1,.5) -!- (1,2.2);
+\draw (-.5,0) -!- (0,.5);
+\draw (2.5,0) -!- (2,.5);
+
+
+\node at (.75, -.5) {$H$};
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+<me>
+\begin{array}{c|c|c|c|c}
+\mbox{Graph} &amp; v \mbox{ (vertices)} &amp; e \mbox{ (edges)} &amp; f \mbox{ (faces)} &amp; v - e + f \\
+\hline
+
+C_6 &amp;&amp;&amp;&amp;\\
+G &amp;&amp;&amp;&amp;\\
+K_4 &amp;&amp;&amp;&amp;\\
+Q &amp;&amp;&amp;&amp;\\
+T &amp;&amp;&amp;&amp;\\
+H &amp;&amp;&amp;&amp;\\
+\end{array}
+</me>
+
+<!--solution>
+<p>
+
+
+<me>
+\begin{array}{c|c|c|c|c}
+\mbox{Graph} &amp; v \mbox{ (vertices)} &amp; e \mbox{ (edges)} &amp; f \mbox{ (faces)} &amp; v - e + f \\
+\hline
+C_6 &amp; 6 &amp; 6 &amp; 2 &amp; 6-6+2=2\\
+G &amp; 5 &amp; 6 &amp; 3 &amp; 5-6+3=2\\
+K_4 &amp; 4 &amp; 6 &amp; 4 &amp; 4-6+4=2\\
+Q &amp; 8 &amp; 12 &amp; 6 &amp; 8-12+6=2\\
+T &amp; 9 &amp; 8 &amp; 1 &amp; 9-8+1=2\\
+H &amp; 9 &amp; 10 &amp; 3 &amp; 9-10+3=2\\
+\end{array}
+</me>
+
+			</p><p>
+
+
+We conjecture that <m>v - e + f =2</m>.
+
+</p>
+</solution-->
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Let <m>G</m> be a connected planar graph with <m>v_G</m> vertices and <m>e_G</m> edges and <m>f_G</m> faces. You will use <em>strong induction</em> on the number of cycles <m>k \geq 0</m>  to prove that any plane drawing of <m>G</m> satisfies
+<me>
+v_G -e_G +f_G = 2.
+</me>
+
+
+			<ol>
+
+				<li>
+					<p>
+ <em> Base Case: <m>k=0</m></em>. A connected graph with no cycles is a tree. We know that a tree on <m>v_G</m> vertices has <m>v_G-1</m> edges. Explain why <m>v_G -e_G +f_G = 2.</m>
+
+
+<!--solution>
+<p>
+A tree on <m>n_G</m> vertices has <m>v_G-1</m> edges and 1 region. We have
+<me>
+v_G - (v_G  -1) + 1 = 2.
+</me>
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Strong Inductive Hypothesis: </em> Assume that a plane drawing of a connected planar graph <m>H</m> with fewer than <m>k</m> cycles satisfies
+<me>
+v_H - e_H + f_H = 2. \qquad \qquad {(\star)}
+</me>
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <em> Inductive Step:</em> Use <m>(\star)</m> to prove that a graph <m>G</m> with <m>k</m> cycles satisfies
+<me>
+v_G - e_G + f_G = 2.
+</me>
+Start with a plane drawing of <m>G</m>. Pick any edge <m>e</m> that is in a cycle of <m>G</m>. Let <m>H=G-e</m> be the graph you obtain by removing the edge <m>e</m> (but keeping the vertices).
+
+			<ol>
+				<li>
+					<p>
+ What can you say about the number of cycles in the graph <m>H=G-e</m>?
+
+
+			</p><p>
+We have removed an edge that was part of one or more cycles. So the number of cycles in <m>H=G-e</m> is strictly smaller than <m>k</m>.
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+  What are the following values:
+<me>
+v_H =  \qquad \qquad e_H =  \qquad \qquad f_H =
+</me>
+
+
+<!--solution>
+<p>
+<me>
+v_H = v_G \qquad \qquad e_H =  e_G-1 \qquad \qquad f_H =  f_G - 1\qquad \phantom{,}
+</me>
+because when we remove the edge <m>e</m>, two of the regions merge into one region.
+</p>
+</solution-->
+
+			</p><p>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Now complete the inductive step.
+
+<!--solution>
+<p>
+
+By induction <m>(\star)</m>, we know that
+</p>
+<md>
+<mrow>
+v_H - e_H + f_H &amp;= 2
+</mrow>
+<mrow>
+v_G - (e_G -1) + (f_G -1) &amp;= 2
+</mrow>
+<mrow>
+v_G - e_G + f_G &amp;= 2.
+</mrow>
+</md>
+<p>
+
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Adding the lengths of all cycles</title>
+			<idx><h>Adding the lengths of all cycles</h></idx>
+			<statement>
+				<p>
+Let <m>G</m> be a planar graph whose plane drawing has regions <m>A_1, A_2, \ldots, A_r</m>. Let <m>\mbox{len}(A_i)</m> denote the <em>number of steps you take</em> when you walk around the boundary of region <m>A_i</m>. Explain why
+<me>
+\sum_{i=1}^f \mbox{len}(A_i) = 2 e.
+</me>
+Start by looking at a small example planar graph to understand what this combinatorial identity is saying.
+
+<!--solution>
+<p>
+If edge <m>e</m> is in a cycle, then it is on the boundary of two regions. If <m>e</m> is not in a cycle, then it is one one region. But when we walk around the boundary of that region, we traverse the edge <m>e</m> twice! So when we add up all the lengths of the regions, we count every edge twice.
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>An upper bound on the number of faces</title>
+			<idx><h>An upper bound on the number of faces</h></idx>
+			<statement>
+				<p>
+Let <m>G</m> be a simple  (no loops, no multiple edges), connected plane graph on <m>v \geq 3</m> vertices. Use Problem 3 to  prove that
+<me>
+3f \leq 2e.
+</me>
+Hint: what is a <em>lower bound</em> on the number of edges in the boundary of each region?
+
+<!--solution>
+<p>
+Every region is bounded by at least 3 edges. So
+<me>
+3f \leq  \sum_{i=1}^f \mbox{len}(A_i) = 2 e.
+</me>
+</p>
+</solution-->
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>An upper bound on the number of edges</title>
+			<idx><h>An upper bound on the number of edges</h></idx>
+			<statement>
+				<p>
+Use the fact that <m>v-e+f=2</m> and <m>3f \leq 2e</m> to prove that if <m>G</m> is a planar graph then
+<me>
+e \leq 3v -6.
+</me>
+In other words, if <m>G</m> is planar it cannot have "too many" edges.
+
+
+<!--solution>
+<p>
+
+We have
+<me>
+f \leq \frac{2}{3} e.
+</me>
+Plugging this into <m>v-e+f= 2</m> gives
+<me>
+\begin{array}{lcr}
+v-e +  \frac{2}{3} f &amp;\geq&amp; 2 \\
+v - \frac{1}{3} f &amp;\geq&amp; 2 \\
+v - 2 &amp; \geq&amp; \frac{1}{3}e \\
+3v -6 &amp; \geq&amp; e.
+\end{array}
+</me>
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title><m>K_5</m> is not planar</title>
+			<idx><h><m>K_5</m> is not planar</h></idx>
+			<statement>
+				<p>
+In the previous problem, we  showed that for any planar graph, we have <m>e \leq 3v-6</m>. Use this inequality to prove that <m>K_5</m> is not planar.
+
+
+<!--solution>
+<p>
+<m>K_5</m> has <m>v=5</m> vertices and <m>e=10</m> edges. But <m>e = 10 &gt; 9 = 3 \cdot 5 -6</m>. So <m>K_5</m> is not planar.
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title><m>K_{3,3}</m> is not planar</title>
+			<idx><h><m>K_{3,3}</m> is not planar</h></idx>
+			<statement>
+				<p>
+The argument from Problem 5 can be generalized when we know that the planar graph <m>G</m> does not have any triangles (3-cycles). In this case, we must have
+<me>
+e \leq 2v -4.
+</me>
+
+
+			<ol>
+
+
+				<li>
+					<p>
+ Use this inequality to prove that <m>K_{3,3}</m> is not planar.
+
+<!--solution>
+<p>
+<m>K_{3,3}</m> has <m>v=6</m> vertices and <m>e=9</m> edges. But <m>e = 9 &gt; 8 = 2 \cdot 6 -4</m>. So <m>K_{3,3}</m> is not planar.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Adapt your argument from Problem 5 to prove the following statement.
+
+			</p><p>
+
+Let <m>G</m> be a simple connected planar graph with <m>v</m> vertices, <m>e</m> edges and <m>f</m> faces where every face is bounded by at least 4 edges. Prove that <m>e \leq 2v -4</m>.
+
+<!--solution>
+<p>
+Since <m>G</m> has no 3-cycles, every region is bounded by at least 4 edges. This means that
+<me>
+4f  \leq  \sum_{i=1}^r \mbox{len}(A_i) = 2 e,
+</me>
+or equivalently,
+<me>
+r \leq \frac{1}{2}e.
+</me>
+Plugging this into <m>v-e+f = 2</m> gives
+</p>
+<md>
+<mrow>
+v-e +  \frac{1}{2} e &amp;\geq 2
+</mrow>
+<mrow>
+v - \frac{1}{2} e &amp;\geq 2
+</mrow>
+<mrow>
+v - 2 &amp; \geq \frac{1}{2}e
+</mrow>
+<mrow>
+2v -4 &amp; \geq e.
+</mrow>
+</md>
+<p>
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Drawing <m>K_5</m> and <m>K_{3,3}</m> on a Torus</title>
+			<idx><h>Drawing <m>K_5</m> and <m>K_{3,3}</m> on a Torus</h></idx>
+			<statement>
+				<p>
+If you start with a square and we glue the opposite sides to one another, we get a <em>torus</em> (a surface in the shape of a donut). So we can think of this square as a torus, if we identify points on opposite sides. (For example, in some classic video games, walking off the right side of the screen makes you appear at the same height on the left side of the screen.)
+
+			<image width="60%" xml:id="fig-img-planar2" source="images/quotient_torus.png" />
+
+For example, we can draw the 4-cycle <m>C_4</m> using a square with opposite sides identified like so:
+
+			<image width="30%" xml:id="fig-img-planar3">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=30%
+
+
+\draw[gray, thick] (2,1.5) -!- (1.67,2.5);
+\draw[gray, thick] (1,.5) -!- (1.67,-1.5);
+
+\draw[gray, thick] (2,1.5) -!- (3,.5) -!- (2, -.5) -!- (1, .5);
+
+\begin{scope}[shift={(2,.5)}]
+
+
+
+
+
+\foreach \x in {0,1,2,3}
+{
+\draw[fill] (\x*90:1) circle (3pt);
+}
+
+\end{scope}
+
+
+\draw[very thick, -latex] (0,2.5) -!- (4, 2.5);
+\draw[very thick, -latex] (0,-1.5) -!- (4, -1.5);
+
+\draw[very thick, color=red, -latex] (0,-1.5) -!- (0, 2.5);
+\draw[very thick, color=red, -latex] (4,-1.5) -!- (4, 2.5);
+
+\node at (2,-2.5) {$C_{4}$ on a torus};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+Using a square with opposite sides identified, show that you can draw both <m>K_5</m> and <m>K_{3,3}</m> on a torus without any crossing edges!
+
+			<image width="90%" xml:id="fig-img-planar4">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+
+
+\begin{scope}[shift={(2,.5)}]
+
+
+
+
+
+
+\foreach \x in {0,1,2,3,4}
+{
+
+\draw[fill] (\x*72+18:1) circle (3pt);
+
+
+}
+
+\end{scope}
+
+
+\draw[very thick, -latex] (0,2.5) -!- (4, 2.5);
+\draw[very thick, -latex] (0,-1.5) -!- (4, -1.5);
+
+\draw[very thick, color=red, -latex] (0,-1.5) -!- (0, 2.5);
+\draw[very thick, color=red, -latex] (4,-1.5) -!- (4, 2.5);
+
+\node at (2,-2.5) {$K_{5}$ on a torus};
+
+
+\begin{scope}[shift={(8,0)}]
+
+
+
+
+
+\foreach \x in {1,2,3}
+{
+
+\draw[thick, fill=gray!50] (\x,0) circle (3pt);
+\draw[fill] (\x,1) circle (3pt);
+}
+
+
+\draw[very thick, -latex] (0,2.5) -!- (4, 2.5);
+\draw[very thick, -latex] (0,-1.5) -!- (4, -1.5);
+
+\draw[very thick, color=red, -latex] (0,-1.5) -!- (0, 2.5);
+\draw[very thick, color=red, -latex] (4,-1.5) -!- (4, 2.5);
+
+\node at (2,-2.5) {$K_{3,3}$ on a torus};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+<!--solution>
+<p>
+
+			<image width="90%" xml:id="fig-img-planar5">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+
+
+\begin{scope}[shift={(2,.5)}]
+
+
+\draw[thick, gray]  (90:1) -!- (90+144:1);
+\draw[thick, gray]  (90:1) -!- (90-144:1);
+\draw[thick, gray] (162:1) -!- (-2, .4);
+\draw[thick, gray] (18:1) -!- (2, .4);
+
+
+\draw[thick, gray] (162:1)  -!-  (-2,-.2);
+\draw[thick, gray] (2,-.2)  -!-  (-54:1);
+
+\draw[thick, gray] (18:1)  -!-  (0,2);
+\draw[thick, gray] (234:1)  -!-  (0,-2);
+
+
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw[thick, gray] (\x*72+18:1)  -!- (\x*72+90:1);
+\draw[fill] (\x*72+18:1) circle (3pt);
+
+
+}
+
+\end{scope}
+
+
+\draw[very thick, -latex] (0,2.5) -!- (4, 2.5);
+\draw[very thick, -latex] (0,-1.5) -!- (4, -1.5);
+
+\draw[very thick, color=red, -latex] (0,-1.5) -!- (0, 2.5);
+\draw[very thick, color=red, -latex] (4,-1.5) -!- (4, 2.5);
+
+\node at (2,-2.5) {$K_{5}$ on a torus};
+
+
+\begin{scope}[shift={(8,0)}]
+
+
+\draw[thick, gray] (2,0) -!- (1,1);
+\draw[thick, gray] (2,0) -!- (3,1);
+
+\draw[thick, gray] (1,0) -!- (1.5,-1.5);
+\draw[thick, gray] (2,1) -!- (1.5,2.5);
+
+\draw[thick, gray] (3,0) -!- (2.5,-1.5);
+\draw[thick, gray] (2,1) -!- (2.5,2.5);
+
+\draw[thick, gray] (1,0) -!- (0,.5);
+\draw[thick, gray] (3,1) -!- (4,.5);
+
+
+\draw[thick, gray] (3,0) -!- (4,-1.5);
+\draw[thick, gray] (1,1) -!- (0,2.5);
+
+
+\foreach \x in {1,2,3}
+{
+
+\draw[thick, gray] (\x,0) -!- (\x,1);
+\draw[thick, fill=gray!50] (\x,0) circle (3pt);
+\draw[fill] (\x,1) circle (3pt);
+}
+
+
+\draw[very thick, -latex] (0,2.5) -!- (4, 2.5);
+\draw[very thick, -latex] (0,-1.5) -!- (4, -1.5);
+
+\draw[very thick, color=red, -latex] (0,-1.5) -!- (0, 2.5);
+\draw[very thick, color=red, -latex] (4,-1.5) -!- (4, 2.5);
+
+\node at (2,-2.5) {$K_{3,3}$ on a torus};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution-->
+
+
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+
+</chapter>

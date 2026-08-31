@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="count-balls-in-boxes2" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Balls in Boxes Part 2</title>
+	<introduction>
+		<p>
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<statement>
+				<p>
+ Last class, we filled in the following table:
+
+
+			</p><p>
+
+
+<em><m>n</m> distinct boxes, <m>k</m> balls, boxes <em> CAN</em> be empty</em>
+
+			</p><p>
+
+</p>
+<tabular top="minor" left="minor" bottom="minor" right="minor">
+<row>
+<cell>
+
+</cell>
+<cell>
+balls identical
+</cell>
+<cell>
+balls distinct
+</cell>
+<cell>
+conditions?
+</cell>
+</row>
+<row>
+<cell>
+no repetition
+</cell>
+<cell>
+<m>\displaystyle{{ n \choose k}}</m>
+</cell>
+<cell>
+<m>(n)_k</m>
+</cell>
+<cell>
+<m>k \leq n</m>
+</cell>
+</row>
+<row>
+<cell>
+with repetition
+</cell>
+<cell>
+<m>\displaystyle{{n+k-1 \choose k}}</m>
+</cell>
+<cell>
+<m>n^k</m>
+</cell>
+<cell>
+none
+</cell>
+</row>
+</tabular>
+<p>
+
+
+			</p><p>
+We consider another variation on this problem: now the boxes cannot be empty. Try to fill in the following table. You will be able to determine 3 out of 4 of the answers. We will talk about the last one as a group.
+
+
+			</p><p>
+
+
+<em><m>n</m> distinct boxes, <m>k</m> balls, boxes CANNOT be empty</em>
+
+			</p><p>
+
+</p>
+<tabular top="minor" left="minor" bottom="minor" right="minor">
+<row>
+<cell>
+
+</cell>
+<cell>
+balls identical
+</cell>
+<cell>
+balls distinct
+</cell>
+<cell>
+conditions?
+</cell>
+</row>
+<row>
+<cell>
+no repetition
+</cell>
+<cell>
+<m>\phantom{\displaystyle{{a+b+c \choose d}}}</m>
+</cell>
+<cell>
+<m>\phantom{\displaystyle{{a+b+c \choose d}}}</m>
+</cell>
+<cell>
+<m>\phantom{\displaystyle{{a+b+c \choose d}}}</m>
+</cell>
+</row>
+<row>
+<cell>
+with repetition
+</cell>
+<cell>
+<m>\phantom{\displaystyle{{a+b+c \choose d}}}</m>
+</cell>
+<cell>
+<m>\phantom{\displaystyle{{a+b+c \choose d}}}</m>
+</cell>
+<cell>
+<m>\phantom{\displaystyle{{a+b+c \choose d}}}</m>
+</cell>
+</row>
+</tabular>
+<p>
+
+
+<!--solution>
+<p>
+
+
+</p>
+<tabular top="minor" left="minor" bottom="minor" right="minor">
+<row>
+<cell>
+
+</cell>
+<cell>
+balls identical
+</cell>
+<cell>
+balls distinct
+</cell>
+<cell>
+conditions?
+</cell>
+</row>
+<row>
+<cell>
+no repetition
+</cell>
+<cell>
+<m>\displaystyle{\phantom{{ a \choose b}}}</m>  <m>1</m> <m>\displaystyle{\phantom{{ a \choose b}}}</m>
+</cell>
+<cell>
+<m>n!=k!</m>
+</cell>
+<cell>
+<m>n=k</m>
+</cell>
+</row>
+<row>
+<cell>
+with repetition
+</cell>
+<cell>
+<m>\displaystyle{{ k -1 \choose n-1}}</m>
+</cell>
+<cell>
+<m>n! S(k,n)</m>
+</cell>
+<cell>
+<m>k \geq n</m>
+</cell>
+</row>
+</tabular>
+<p>
+
+
+
+The formula <m>n! S(k,n)</m> uses the number <m>S(k,n)</m> which is called the <em>Stirling Number of the Second Kind</em>. It turns out that we've asked a very hard problem!
+
+			</p><p>
+
+We do have the tools at our disposal to give and understand the formula for <m>S(k,n)</m>. However, the argument is a little more abstract than I usually like to cover in MATH 279. So you can just write down "<m>n! S(k,n)</m>" as the answer to this question (when it comes up) without knowing the particular formula for <m>S(k,n)</m>.
+
+			</p><p>
+
+Some more details: the number <m>S(k,n)</m> counts the number of ways to put <m>n</m> <em>distinct balls</em> into <m>k</m> <em>identical boxes</em> where <em>boxes cannot be empty</em> and <em>repetition is allowed</em>. Can you explain why we must multiply by <m>n!</m> in order to get the number of ways to use <m><em>distinct boxes</em></m> instead?
+
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ In this problem, you will count sets of functions from <m>[r]</m> to <m>[s]</m>. You will map each one  to a balls-in-boxes problem. Decide each of the following questions (and write down your answers):
+
+		<ul>
+			<li>
+			<p>
+ Are the balls distinct?
+			</p>
+			</li>
+			<li>
+			<p>
+ Are the boxes distinct?
+			</p>
+			</li>
+			<li>
+			<p>
+ Can boxes be empty?
+			</p>
+			</li>
+			<li>
+			<p>
+ Is repetition allowed?
+			</p>
+			</li>
+			<li>
+			<p>
+ What is the constraint on <m>r</m> and <m>s</m>?
+			</p>
+			</li>
+		</ul>
+Then write down the formula for the size of the set of functions.
+
+			<ol>
+				<li>
+					<p>
+ <m>\mathcal{A} = \{ </m> all possible functions from <m>[r]</m> to <m>[s] \}</m>.
+
+
+<!--solution>
+<p>
+<me>
+| \mathcal{A}| =  s^r
+</me>
+</p>
+</solution-->
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\mathcal{B} = \{ </m> all injective functions from <m>[r]</m> to <m>[s] \}</m>.
+
+
+
+<!--solution>
+<p>
+<me>
+| \mathcal{B}| =  (s)_r
+</me>
+</p>
+</solution-->
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\mathcal{C} = \{ </m> all surjective functions from <m>[r]</m> to <m>[s] \}</m>.
+
+
+<!--solution>
+<p>
+<me>
+| \mathcal{C}| =  r! S(s,r)
+</me>
+</p>
+</solution-->
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\mathcal{D} = \{ </m> all bijective functions from <m>[r]</m> to <m>[s] \}</m>.
+
+
+<!--solution>
+<p>
+<me>
+| \mathcal{D}| = s!=r!
+</me>
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+
+</chapter>

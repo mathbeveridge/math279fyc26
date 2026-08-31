@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+<chapter xml:id="games-nimble" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>The Game of Nimble</title>
+	<introduction>
+		<p>
+
+
+
+
+
+			</p><p>
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+
+		<exercise>
+			<statement>
+				<p>
+ Alice and Bob play the following games of Nimble. Alice goes first. Decide who has a winning strategy. Mark each game as "Alice Win" or "Bob Win"  next to each board, as appropriate.
+
+
+			<image width="100%" xml:id="fig-img-games-nimble0">
+				<latex-image>
+\begin{tikzpicture}[scale=.9] %mathbook width=100%
+
+\begin{scope}
+
+\node at (-.5,1) {(a)};
+
+\nimbleboard{6};
+\coin{(3,1)};
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-2.5)}]
+
+\node at (-.5,1) {(b)};
+
+\nimbleboard{6};
+\coin{(2,1)};
+
+\coin{(2.05,1.1)};
+
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-5)}]
+
+\node at (-.5,1) {(c)};
+
+\nimbleboard{6};
+\coin{(1,1)};
+
+\coin{(3,1)};
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(9,0)}]
+
+\node at (-.5,1) {(d)};
+
+\nimbleboard{6};
+\coin{(1,1)};
+
+\coin{(4,1)};
+
+\coin{(3.95,1.12)};
+
+\coin{(5,1)};
+
+
+\end{scope}
+
+
+
+
+
+\begin{scope}[shift={(9,-2.5)}]
+
+\node at (-.5,1) {(e)};
+
+\nimbleboard{6};
+\coin{(1,1)};
+
+\coin{(2,1)};
+
+\coin{(3,1)};
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(9,-5)}]
+
+\node at (-.5,1) {(f)};
+
+\nimbleboard{6};
+
+\coin{(1,1)};
+
+\coin{(2,1)};
+
+\coin{(5,1)};
+
+\node at (5,1.75) {Alice Win};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+<solution>
+<p>
+
+			<ol>
+				<li>
+					<p>
+ Alice win
+					</p>
+				</li>
+				<li>
+					<p>
+ Bob win
+					</p>
+				</li>
+				<li>
+					<p>
+ Alice win
+					</p>
+				</li>
+				<li>
+					<p>
+ Alice win
+					</p>
+				</li>
+				<li>
+					<p>
+ Bob win
+					</p>
+				</li>
+				<li>
+					<p>
+ Alice win
+					</p>
+				</li>
+			</ol>
+
+</p>
+</solution>
+
+			</p><p>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Create the complete game trees for  positions (a) and  (b) above. Label the leaves (terminal positions) as <m>\cP</m> and then work your way up the tree, marking each position with an <m>\cN</m> or a <m>\cP</m>. Remember to follow the two rules:
+		<ul>
+			<li>
+			<p>
+ An <m>\cN</m>-position must have at least one follower that is a <m>\cP</m>-position.
+			</p>
+			</li>
+			<li>
+			<p>
+ Every follower of a <m>\cP</m>-position  must be an <m>\cN</m>-position.
+			</p>
+			</li>
+		</ul>
+
+<solution>
+<p>
+
+
+
+
+
+
+			<image width="70%" xml:id="fig-img-games-nimble1">
+				<latex-image>
+\begin{tikzpicture}[level/.style={sibling distance=45mm/#1}, scale=.8, every node/.style = {font=\sffamily\small}] %mathbook width=70%
+
+\node (G0)    {$\{ 3 \}$}
+child { node (G1a) {$\{ 2 \} $}
+child { node (G1a1) { $\emptyset$ }}
+child { node (G1a2) { $\{ 1 \}$ }
+child { node (G1a1a) { $\emptyset$ }}
+}
+}
+child { node (G1b) {$\{ 1 \} $}
+child { node (G1b1) { $\emptyset$ }}
+}
+child { node (G1c) { $\emptyset$ }};
+
+
+\node (G0S) [above=.1pt of G0] {$\cN$};
+\node (G1aS) [left=1pt of G1a] {$\cN$};
+\node (G1a1S) [below=1pt of G1a1] {$\cP$};
+\node (G1a2S) [left=1pt of G1a2] {$\cN$};
+\node (G1a1aS) [below=1pt of G1a1a] {$\cP$};
+
+\node (G1bS) [left=1pt of G1b] {$\cP$};
+\node (G1b1S) [below=1pt of G1b1] {$\cP$};
+
+\node (G1cS) [right=1pt of G1c] {$\cP$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+			<image width="50%" xml:id="fig-img-games-nimble2">
+				<latex-image>
+\begin{tikzpicture}[level/.style={sibling distance=60mm/#1}, scale=.8, every node/.style = {font=\sffamily\small}]
+
+\node (G0)    {$\{ 2,2 \}$}
+child { node (G1a) {$\{ 2 \} $}
+child { node (G1a1) { $\emptyset$ }}
+child { node (G1a2) { $\{ 1 \}$ }
+child { node (G1a1a) { $\emptyset$ }}
+}
+}
+child { node (G1b) {$\{ 2,1 \} $}
+child { node (G1b3) { $\{1 \}$  }
+child { node (G1b3a) { $\emptyset$ }}
+}
+child { node (G1b1) { $\{ 2 \}$ }
+child { node (G1b1a) { $\emptyset $ }}
+child { node (G1b1b) { $\{ 1 \}$ }
+child { node (G1b1b1) { $\emptyset$ }}
+}
+}
+child { node (G1b2) { $\{1,1 \}$ }
+child { node (G1b2a) { $\{ 1 \}$ }
+child { node (G1b2a1) { $\emptyset$ }}
+}
+}
+};
+
+
+
+\node (G0S) [above=.1pt of G0] {$\cP$};
+\node (G1aS) [left=1pt of G1a] {$\cN$};
+\node (G1a1S) [below=1pt of G1a1] {$\cP$};
+\node (G1a2S) [left=1pt of G1a2] {$\cN$};
+\node (G1a1aS) [below=1pt of G1a1a] {$\cP$};
+
+\node (G1bS) [left=1pt of G1b] {$\cN$};
+\node (G1b1S) [right=1pt of G1b1] {$\cN$};
+\node (G1b2S) [right=1pt of G1b2] {$\cP$};
+\node (G1b3S) [right=1pt of G1b3] {$\cN$};
+
+\node (G1b1aS) [below=1pt of G1b1a] {$\cP$};
+\node (G1b1bS) [right=1pt of G1b1b] {$\cN$};
+\node (G1b1baS) [below=1pt of G1b1a] {$\cP$};
+\node (G1b1baS) [below=1pt of G1b1b1] {$\cP$};
+
+\node (G1b3S) [below=1pt of G1b3a] {$\cP$};
+\node (G1b1baS) [right=1pt of G1b2a] {$\cN$};
+\node (G1b1baS) [below=1pt of G1b2a1] {$\cP$};
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+</p>
+</solution>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Create the complete game tree for  position (c) above, as you did in problem 2. Mark each position with an <m>\cN</m> or a <m>\cP</m>.
+Once you are done, compare your answer to this problem with the trees in problem 2. Make any useful observations that you can.
+
+<solution>
+<p>
+			<image width="100%" xml:id="fig-img-games-nimble3">
+				<latex-image>
+\begin{tikzpicture}[level/.style={sibling distance=50mm/#1}, scale=.7, every node/.style = {font=\sffamily\small}] %mathbook width=100%
+
+\node (G0)    {$\{ 3,1 \}$}
+child { node (G1a) {$\{ 3 \} $}
+child { node (G1a3) { $\{ 2 \}$ }
+child { node (G1a1a) { $\emptyset$ }}
+}
+child { node (G1a2) { $\{ 1 \}$ }
+child { node (G1a2a) { $\emptyset$ }}
+}
+child { node (G1a1) { $\emptyset$ }}
+}
+child { node (G1d) {$\{ 1 \} $}
+child { node (G1d1) { $\emptyset$ }}
+}
+child { node (G1c) {$\{ 1,1 \} $}
+child { node (G1c1) { $\{ 1 \}$ }
+child { node (G1c1a) { $\emptyset$ }}
+}
+}
+child { node (G1b) {$\{ 2,1 \} $}
+child { node (G1b3) { $\{1 \}$  }
+child { node (G1b3a) { $\emptyset$ }}
+}
+child { node (G1b1) { $\{ 2 \}$ }
+child { node (G1b1a) { $\emptyset $ }}
+child { node (G1b1b) { $\{ 1 \}$ }
+child { node (G1b1b1) { $\emptyset$ }}
+}
+}
+child { node (G1b2) { $\{1,1 \}$ }
+child { node (G1b2a) { $\{ 1 \}$ }
+child { node (G1b2a1) { $\emptyset$ }}
+}
+}
+};
+
+
+
+
+
+
+\node (G0S) [above=.1pt of G0] {$\cN$};
+\node (G1aS) [left=1pt of G1a] {$\cN$};
+\node (G1a1S) [below=1pt of G1a1] {$\cP$};
+\node (G1a2S) [left=1pt of G1a2] {$\cN$};
+\node (G1a1aS) [below=1pt of G1a1a] {$\cP$};
+\node (G1a3) [left=1pt of G1a3] {$\cN$};
+\node (G1a2a) [below=1pt of G1a2a] {$\cN$};
+
+\node (G1bS) [left=1pt of G1b] {$\cN$};
+\node (G1b1S) [right=1pt of G1b1] {$\cN$};
+\node (G1b2S) [right=1pt of G1b2] {$\cP$};
+\node (G1b3S) [right=1pt of G1b3] {$\cN$};
+
+\node (G1b1aS) [below=1pt of G1b1a] {$\cP$};
+\node (G1b1bS) [right=1pt of G1b1b] {$\cN$};
+\node (G1b1baS) [below=1pt of G1b1a] {$\cP$};
+\node (G1b1baS) [below=1pt of G1b1b1] {$\cP$};
+
+\node (G1b3S) [below=1pt of G1b3a] {$\cP$};
+\node (G1b1baS) [right=1pt of G1b2a] {$\cN$};
+\node (G1b1baS) [below=1pt of G1b2a1] {$\cP$};
+
+
+\node (G1cS) [right=1pt of G1c] {$\cP$};
+\node (G1c1S) [right=1pt of G1c1] {$\cN$};
+\node (G1c1aS) [below=1pt of G1c1a] {$\cP$};
+
+\node (G1dS) [right=1pt of G1d] {$\cN$};
+\node (G1d1S) [below=1pt of G1d1] {$\cP$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+
+</chapter>

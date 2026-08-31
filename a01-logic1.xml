@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="logic1" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Logical Connectors</title>
+	<introduction>
+		<p>
+
+
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+		<exercise>
+			<title>Statements</title>
+			<idx><h>Statements</h></idx>
+			<statement>
+				<p>
+Consider the following two statements:
+<ul>
+<li>
+<m>P = </m> The rent increases.
+</li>
+<li>
+<m>Q = </m> I will renew my lease.
+</li>
+</ul>
+Express the following statements in words.
+				</p>
+				<p>
+<ol>
+	<li>
+		<p>
+		<m>P \vee Q</m>
+		</p>		
+	</li>
+	<li>
+		<p>
+		<m>(\neg P) \wedge Q</m>
+		</p>		
+	</li>	
+	<li>
+		<p>
+		<m>(\neg P) \Rightarrow Q</m>
+		</p>		
+	</li>
+	<li>
+		<p>
+		<m>P \Rightarrow (\neg Q)</m>
+		</p>		
+	</li>
+</ol>
+				
+
+<!--solution>
+<p>
+<ol>
+	<li>
+		<p>
+		The rent increases or I will renew my lease.
+		</p>		
+	</li>
+	<li>
+		<p>
+		 The rent does not increase and I will renew my lease.
+		</p>		
+	</li>	
+	<li>
+		<p>
+		 If the rent does not increase then I will renew my lease.
+		</p>		
+	</li>
+	<li>
+		<p>
+		If the rent increases then I will not renew my lease.
+		</p>		
+	</li>
+</ol></p>
+</solution-->
+
+
+
+				</p>
+			</statement>
+		</exercise>
+
+
+
+		<exercise>
+			<title>Implications</title>
+			<idx><h>Implications</h></idx>
+			<statement>
+				<p>
+Each of the following statements is an implication <m>P \Rightarrow Q</m>. For each statement,
+indicate what <m>P</m> and <m>Q</m> are, then rephrase the statment as "if <m>P</m> then <m>Q</m>."
+				</p>
+				<p>
+(Hint: an implication <m>P \Rightarrow Q</m> is only false when <m>P</m> is true and <m>Q</m> is false. Thus, it
+may help you to imagine what it would mean for each of these statements to be false.)
+
+
+<ol>
+	<li>
+		<p>
+		I think, therefore I am.
+		</p>		
+	</li>
+	<li>
+		<p>
+		You can drive from Minneapolis to Madison if your car has a full tank of gas.
+		</p>		
+	</li>	
+	<li>
+		<p>
+		I’m only going to my class reunion if I get a promotion at work.
+		</p>		
+	</li>
+	<li>
+		<p>
+		I will take you to the pool as long as you do your afternoon chores.
+		</p>		
+	</li>
+	<li>
+		<p>
+		Passing Linear Algebra is necessary to register for Algebraic Structures.
+		</p>		
+	</li>
+</ol>
+				
+
+<!--solution>
+<p>
+<ol>
+	<li>
+		<p>
+		If I think, then I exist.
+		</p>		
+	</li>
+	<li>
+		<p>
+		 If your car has a full tank of gas then you can drive from Minneapolis to Madison.
+		</p>		
+	</li>	
+	<li>
+		<p>
+		 If I get a promotion at work then I will go to my class reunion.
+		</p>		
+	</li>
+	<li>
+		<p>
+		If you do your afternoon chores then I will take you to the pool.
+		</p>		
+	</li>
+	<li>
+		<p>
+		If you register for Algebraic Structures then you must pass Linear Algebra.
+		</p>		
+	</li>
+</ol></p>
+</solution-->
+
+
+
+				</p>
+			</statement>
+		</exercise>
+
+
+		<exercise>
+			<title>Two Truth Tables</title>
+			<idx><h>Two Truth Tables</h></idx>
+			<statement>
+				<p>
+
+			<ol>
+				<li>
+					<p>
+ Fill in this truth table.
+
+<me>
+\begin{array}{c|c|c|c}
+P &amp; Q &amp; P \wedge Q &amp; \neg (P \wedge Q) \\
+\hline
+T &amp; T &amp;  &amp;  \\
+T &amp; F &amp;  &amp; \\
+F &amp; T &amp;  &amp; \\
+F &amp; F &amp;  &amp; \\
+\end{array}
+</me>
+
+<!--solution>
+<p>
+
+<me>
+\begin{array}{c|c|c|c} %mathbook tabular
+P &amp; Q &amp; P \wedge Q &amp; \neg (P \wedge Q) \\
+\hline
+T &amp; T &amp;  T&amp;  F\\
+T &amp; F &amp; F &amp; T\\
+F &amp; T &amp; F &amp; T\\
+F &amp; F &amp; F &amp; T\\
+\end{array}
+</me>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Now fill in this truth table.
+
+<me>
+\begin{array}{c|c|c|c|c}
+P &amp; Q &amp; \neg P &amp; \neg  Q &amp; \neg P \vee \neg Q  \\
+\hline
+T &amp; T &amp; &amp; &amp;  \\
+T &amp; F &amp; &amp;  &amp; \\
+F &amp; T &amp; &amp; &amp;  \\
+F &amp; F &amp; &amp; &amp;  \\
+\end{array}
+</me>
+
+
+<!--solution>
+<p>
+<me>
+\begin{array}{c|c|c|c|c}
+P &amp; Q &amp; \neg P &amp; \neg  Q &amp; \neg P \vee \neg Q  \\
+\hline
+T &amp; T &amp; F&amp; F&amp; F \\
+T &amp; F &amp; F &amp; T &amp; T\\
+F &amp; T &amp; T &amp; F &amp;  T\\
+F &amp; F &amp; T &amp;  T &amp; T \\
+\end{array}
+</me>
+
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Look at the last column of each of the two tables above. What do you conclude? Write a mathematical statement (using symbols) that summarizes your observation.
+
+<!--solution>
+<p>
+
+These two statements are equivalent. In other words,
+\[
+\neg (P \wedge Q) \Longleftrightarrow \neg P \vee \neg Q.
+\]
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Truth Table for <m> \neg (P \vee Q)</m> </title>
+			<idx><h>Truth Table for <m> \neg (P \vee Q)</m> </h></idx>
+			<statement>
+				<p>
+Fill in the following truth table. Using the previous problems as inspiration,  find <em>another compound statement</em> that is equivalent to <m>\neg (P \vee Q)</m>. Add columns to your truth table to show that you are correct.
+
+
+<me>
+\begin{array}{c|c|c|c}
+P &amp; Q &amp; P \vee Q &amp; \neg (P \vee Q)  \\
+\hline
+T &amp; T &amp;  &amp;   \\
+T &amp; F &amp;  &amp;   \\
+F &amp; T &amp;  &amp;  \\
+F &amp; F &amp;  &amp;   \\
+\end{array}
+</me>
+
+<!--solution>
+<p>
+
+<me>
+\begin{array}{c|c|c|c|c|c|c} %mathbook tabular
+P &amp; Q &amp; P \vee Q &amp; \neg (P \vee Q)  &amp; \neg P &amp; \neg Q &amp; \neg P \wedge \neg Q \\
+\hline
+T &amp; T &amp; T &amp; F &amp; F &amp; F &amp; F \\
+T&amp; F &amp; T&amp; F &amp; F &amp; T&amp; F \\
+F &amp; T&amp; T&amp; F &amp; T &amp; F &amp; F \\
+F &amp; F &amp; F &amp; T &amp; T &amp; T &amp; T \\
+\end{array}
+</me>
+
+</p>
+</solution-->
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>The Effect of Negation</title>
+			<idx><h>The Effect of Negation</h></idx>
+			<statement>
+				<p>
+Look back at the last two problems. What is the effect of <em>negation</em> on the AND operator? The OR operator?
+
+<!--solution>
+<p>
+Under negation, AND becomes OR, while OR becomes AND.
+</p>
+</solution-->
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<!--exercise>
+			<title>16 Compound Statements using <m>P</m> and <m>Q</m></title>
+			<idx><h>16 Compound Statements using <m>P</m> and <m>Q</m></h></idx>
+			<statement>
+				<p>
+
+The table below shows that are 16 possible outcomes for a compound statement involving <m>P</m> and/or <m>Q</m>. Find a statement corresponding to each of these 16 possibilities! Most of your statements will depend on both <m>P</m> and <m>Q</m>, but some will only depend on one or the other.
+
+			</p><p>
+You will need one final connector: the exclusive or <m>P \oplus Q</m> which is true when <em>exactly one</em> of <m>P</m> and <m>Q</m> is <em> true</em>.
+
+<me>
+\begin{array}{c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+P &amp; Q &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;
+&amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;
+&amp;  \\
+\hline
+T&amp;T&amp;T&amp;T&amp;T&amp;T&amp;T&amp;T&amp;T&amp;T&amp;F&amp;F&amp;F&amp;F&amp;F&amp;F&amp;F&amp;F\\
+T&amp;F&amp;T&amp;T&amp;T&amp;T&amp;F&amp;F&amp;F&amp;F&amp;T&amp;T&amp;T&amp;T&amp;F&amp;F&amp;F&amp;F\\
+F&amp;T&amp;T&amp;T&amp;F&amp;F&amp;T&amp;T&amp;F&amp;F&amp;T&amp;T&amp;F&amp;F&amp;T&amp;T&amp;F&amp;F\\
+F&amp;F&amp;T&amp;F&amp;T&amp;F&amp;T&amp;F&amp;T&amp;F&amp;T&amp;F&amp;T&amp;F&amp;T&amp;F&amp;T&amp;F
+\end{array}
+</me>
+
+<xsolution>
+<p>
+
+I'll split this into two tables for readability. We have
+<me>
+\begin{array}{c|c||c|c|c|c|c|c|c|c}
+P &amp; Q &amp; P \vee \neg P &amp; P \vee Q  &amp; P \vee \neg Q  &amp; P &amp;  \neg P \vee Q &amp; Q  &amp;  P \Leftrightarrow Q  &amp; P \wedge \neg Q \\
+\hline
+T&amp;T&amp;T&amp;T&amp;T&amp;T&amp;T&amp;T&amp;T&amp;T\\
+T&amp;F&amp;T&amp;T&amp;T&amp;T&amp;F&amp;F&amp;F&amp;F\\
+F&amp;T&amp;T&amp;T&amp;F&amp;F&amp;T&amp;T&amp;F&amp;F\\
+F&amp;F&amp;T&amp;F&amp;T&amp;F&amp;T&amp;F&amp;T&amp;F
+\end{array}
+</me>
+and
+<me>
+\begin{array}{c|c||c|c|c|c|c|c|c|c}
+P &amp; Q &amp; P \wedge \neg P &amp; P \oplus Q  &amp; \neg Q  &amp; P \wedge \neg Q  &amp; \neg P  &amp; \neg P \wedge  Q  &amp; \neg P \wedge \neg Q  &amp; P \wedge \neg P \\
+\hline
+T&amp;T&amp;F&amp;F&amp;F&amp;F&amp;F&amp;F&amp;F&amp;F\\
+T&amp;F&amp;T&amp;T&amp;T&amp;T&amp;F&amp;F&amp;F&amp;F\\
+F&amp;T&amp;T&amp;T&amp;F&amp;F&amp;T&amp;T&amp;F&amp;F\\
+F&amp;F&amp;T&amp;F&amp;T&amp;F&amp;T&amp;F&amp;T&amp;F
+\end{array}
+</me>
+
+Hopefully, you noticed that there is an "anti-symmetry" to this table. The first column is the negation of the last column. The second column is the negation of the second-to-last column, and so on! So you can negate the  <m>k</m>th statement <m>k</m> to find the <m>(17-k)</m>th statement.
+
+</p>
+</xsolution>
+
+				</p>
+			</statement>
+		</exercise-->
+
+	</exercises>
+
+
+
+
+</chapter>

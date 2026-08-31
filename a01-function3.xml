@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="function3" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Fun with Functions</title>
+	<introduction>
+		<p>
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>A function from <m>\R^2</m> to <m>\R^2</m></title>
+			<idx><h>A function from <m>\R^2</m> to <m>\R^2</m></h></idx>
+			<statement>
+				<p>
+Let <m>f: \R \times \R \rightarrow \R \times \R</m> be defined by <m>f(x,y) = (2y, x-y)</m>. Is <m>f</m> injective? surjective? Justify your answer with either a proof or a counterexample.
+
+<!--solution>
+<p>
+
+<em>The function <m>f</m> is injective.</em> Suppose that <m>f(x_1, y_1) = f(x_2, y_2)</m>. This means that <m>(2y_1, x_1-y_1) = (2y_2, x_2 - y_2)</m>. We  find that
+\begin{eqnarray*}
+2y_1 &amp;=&amp; 2y_2 \\
+y_1 &amp;=&amp; y_2
+\end{eqnarray*}
+and then
+\begin{eqnarray*}
+x_1 - y_1 &amp;=&amp; x_2 - y_2 \\
+x_1 - y_1 &amp;=&amp; x_2 - y_1 \\
+x_1 &amp;=&amp; x_2
+\end{eqnarray*}
+Therefore <m>(x_1, y_1) = (x_2, y_2)</m>.
+
+			</p><p>
+<em>The function <m>f</m> is surjective.</em> Pick any <m>(a,b) \in \R \times \R)</m>. We must find <m>(x,y) \in \R \times \R</m> such that <m>f(x,y)=(a,b)</m>. In order for this to hold, we need
+\begin{eqnarray*}
+2y &amp;=&amp; a \\
+x-y &amp;=&amp; b
+\end{eqnarray*}
+Solving this linear systems gives <m>x= b+ \frac{a}{2}</m> and <m>y=\frac{a}{2}</m>. We can then check that
+<me>
+f \left(b+ \frac{a}{2},  \frac{a}{2} \right) = \left( 2 \cdot \frac{a}{2}, b+ \frac{a}{2} - \frac{a}{2} \right) = (a,b).
+</me>
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Another function from <m>\R^2</m> to <m>\R^2</m></title>
+			<idx><h>Another function from <m>\R^2</m> to <m>\R^2</m></h></idx>
+			<statement>
+				<p>
+Let <m>f: \R \times \R \rightarrow \R \times \R</m> be defined by <m>f(x,y) = (5x+5y, x+y)</m>. Is <m>f</m> injective? surjective? Justify your answer with either a proof or a counterexample.
+
+<!--solution>
+<p>
+<em>The function <m>f</m> is not injective.</em> We just need to find two different points in the domain that map to the same point in the target. There are lots of choices here. One example is <m>f(1,0) = (5,1)</m> and <m>f(1/2, 1/2) = (5,1)</m>.
+
+<em>The function <m>f</m> is not surjective.</em> We can see that every point in the image is of the form <m>(5b, b)</m> where <m>b \in \R</m>. So there are lots of points in the target <m>\R \times \R</m> that are missed. For example, no point maps to <m>(1,0)</m>.
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Functions from <m>\Z</m> to <m>\Z</m></title>
+			<idx><h>Functions from <m>\Z</m> to <m>\Z</m></h></idx>
+			<statement>
+				<p>
+			<ol>
+				<li>
+					<p>
+ Create a function <m>f: \Z \rightarrow \Z</m> that is bijective.
+
+<!--solution>
+<p>
+<me>
+f(x) = x
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Create a function <m>f: \Z \rightarrow \Z</m> that is injective but not surjective.
+
+<!--solution>
+<p>
+<me>
+f(x) = 2x
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Create a function <m>f: \Z \rightarrow \Z</m> that is surjective but not injective.
+
+<!--solution>
+<p>
+<me>
+f(x) = \left\lfloor \frac{x}{2} \right\rfloor
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Create a function <m>f: \Z \rightarrow \Z</m> that is not injective and not surjective.
+
+<!--solution>
+<p>
+<me>
+f(x) = x^2
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Even and Odd Subsets</title>
+			<idx><h>Even and Odd Subsets</h></idx>
+			<statement>
+				<p>
+Let <m>\mathcal{E} = \{S \subseteq [7] : |S| \text{ is even}\}</m> and let 
+<m>\mathcal{O} = \{S \subseteq [7] : |S| \text{ is odd}\}</m>. 
+Consider the function <m>\mathcal{C}:\mathcal{E} \to \mathcal{O}</m> defined by the rule 
+<m>\mathcal{C}(S) = \overline{S}</m>, the complement of <m>S</m>.
+<ol>
+<li>
+Give an example of an element <m>S</m> of the domain of this function, then compute <m>\mathcal{C}(S)</m>.
+<!--solution>
+One example is <m>S = \{ 1,2,3 \}</m> and <m>\mathcal{C}(S) = \{4,5,6,7\}</m>.
+</solution-->
+</li>
+
+<li>
+How do we know that <m>\mathcal{C}</m> is well-defined; that is, given <m>S \in \mathcal{E}</m>, 
+how do we know <m>\mathcal{C}(S) \in \mathcal{O}</m>? Is there anything special about the 
+choice of the number <m>7</m> in this problem?
+<!--solution>
+Since <m>S \in \mathcal{E}</m>, we know that <m>|S|</m> is an even number. 
+So the size of <m>\overline{S} = 7 - |S|</m> is an odd number. This means that the function is well defined.
+What is special about 7 is that it is odd. This mapping from odd subsets to even subsets will work for any
+set <m>[2k+1]</m>.
+</solution-->
+</li>
+<li>
+What are the steps to prove that <m>\mathcal{C}</m> is injective?
+<!--solution>
+Let's prove the contrapositive. Suppose that <m>A,B \in \mathcal{E}</m>, and that 
+<m>A \neq B</m>. Without loss of generality, there exists <m>a \in A</m> such that <m>a \notin B</m>.
+Equivalently, we have <m>a \notin \overline{A}</m> and <m>a \in \overline{B}</m>. Therefore 
+<m>\overline{A} \neq \overline{B}</m>. We can now conclude that when
+<m>A \neq B</m>, we have <m>\mathcal{C}(A) = \overline{A} \neq \overline{B}  = \mathcal{C}(B)</m>.
+This shows that <m>\mathcal{C}</m> is injective.
+</solution-->
+</li>
+<li>
+What are the steps to prove that <m>\mathcal{C}</m> is surjective? 
+<!--solution>
+Pick any set <m>B \in \mathcal{O}</m>, so that <m>|B|</m> is odd. Then <m>|\overline{B}|</m> is even, 
+and therefore <m>\overline{B} \in \mathcal{E}</m>. Finally, we have
+<m>\mathcal{C}(\overline{B}) = B</m>. This proves that  <m>\mathcal{C}</m> is surjective.
+</solution-->
+</li>
+</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>		
+		<exercise>
+			<title>The Image of a Subset</title>
+			<idx><h>The Image of a Subset</h></idx>
+			<statement>
+				<p>
+Let <m>f : X \rightarrow Y</m> be a function. Let <m>A \subseteq X</m> and <m>B \subseteq X</m>. For a subset <m>S \subseteq X</m>, define the subset <m>f(S) \subseteq Y</m> by
+<me>
+f(S) = \{ y \in Y \mid \exists s \in S, f(s) = y \}
+</me>
+
+			<ol>
+
+				<li>
+					<p>
+ Prove that if <m>A \subseteq B</m> then <m>f(A) \subseteq f(B)</m>
+
+<!--solution>
+<p>
+		<ul>
+			<li>
+			<p>
+ <em> Know:</em> If <m>x \in A</m> then <m>x \in B</m> \qquad <m>(\star)</m>
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em> Show:</em> If <m>y \in f(A)</m> then <m>y \in f(B)</m>.
+			</p>
+			</li>
+		</ul>
+
+			</p><p>
+
+		<ul>
+
+			<li>
+			<p>
+ Given <m>y \in f(A)</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>\Longrightarrow</m> There exists <m>x \in A</m> such that <m>f(x) = y</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Note that <m>x \in B</m> by <m>(\star)</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>\Longrightarrow</m> <m>f(x) \in f(B)</m>
+			</p>
+			</li>
+		</ul>
+
+			</p><p>
+
+In other words, <m>y \in f(B)</m>.
+</p>
+</solution-->
+
+			</p><p>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Draw an example for which <m>A \not\subseteq B</m>, but <m>f(A) \subseteq f(B)</m>.
+
+<!--solution>
+<p>
+			<image width="50%" xml:id="fig-img-function30">
+				<latex-image>
+\begin{tikzpicture}[scale=.8]
+
+
+\draw (0,0) ellipse (1.5 and 2.25);
+
+\draw (0,1) ellipse (.75 and 1);
+
+\draw (0,-.6) ellipse (.75 and 1.5);
+
+\draw[fill] (0,1.5) circle (3pt);
+\draw[fill] (0,.5) circle (3pt);
+\draw[fill] (0,-.5) circle (3pt);
+\draw[fill] (0,-1.5) circle (3pt);
+
+
+
+\draw (4,0) ellipse (1.5 and 2.25);
+
+\draw[fill] (4,1) circle (3pt);
+\draw[fill]  (4,0) circle (3pt);
+\draw[fill]  (4,-1) circle (3pt);
+
+
+
+
+\draw[arrows={-latex}, very thick] (.2,1.5) -!- (3.9,1.1);
+\draw[arrows={-latex}, very thick] (.2,.5) -!- (3.9,0.1);
+\draw[arrows={-latex}, very thick] (.1,-.5) -!- (3.9, 0.9);
+\draw[arrows={-latex}, very thick] (.1,-1.5) -!- (3.9,-0.1);
+
+\node at (-.4, 1.25) {<m>A</m>};
+\node at (-.4, -1) {<m>B</m>};
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Prove that <m>f(A \cap B) \subseteq f(A) \cap f(B)</m>.
+
+<!--solution>
+<p>
+		<ul>
+			<li>
+			<p>
+ <em> Know:</em> <m>y \in f(A \cap B)</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ <em> Show:</em> <m>y \in f(A) \cap f(B)</m>
+			</p>
+			</li>
+		</ul>
+
+			</p><p>
+
+		<ul>
+			<li>
+			<p>
+ Suppose that <m>y \in f(A \cap B)</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>\Longrightarrow</m> There exists <m>x \in A \cap B</m> such that <m>y = f(x)</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>\Longrightarrow</m> <m>x \in A</m> and <m>x \in B</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>\Longrightarrow</m> <m>f(x) \in f(A)</m> and <m>f(x) \in f(B)</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>\Longrightarrow</m> <m>f(x)  \in f(A) \cap f(B)</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>\Longrightarrow</m> <m>y  \in f(A) \cap f(B)</m>
+			</p>
+			</li>
+		</ul>
+</p>
+</solution-->
+
+			</p><p>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Draw an example for which <m>f(A \cap B) \neq f(A) \cap f(B)</m>
+
+<!--solution>
+<p>
+			<image width="50%" xml:id="fig-img-function31">
+				<latex-image>
+\begin{tikzpicture}[scale=.8]
+
+
+\draw (0,0) ellipse (1.5 and 2.25);
+
+\draw (0,1) ellipse (.75 and 1);
+
+\draw (0,-.6) ellipse (.75 and 1.5);
+
+\draw[fill] (0,1.5) circle (3pt);
+\draw[fill] (0,.5) circle (3pt);
+\draw[fill] (0,-.5) circle (3pt);
+\draw[fill] (0,-1.5) circle (3pt);
+
+
+
+\draw (4,0) ellipse (1.5 and 2.25);
+
+\draw[fill] (4,1) circle (3pt);
+\draw[fill]  (4,0) circle (3pt);
+\draw[fill]  (4,-1) circle (3pt);
+
+
+
+
+\draw[arrows={-latex}, very thick] (.2,1.5) -!- (3.9,1.1);
+\draw[arrows={-latex}, very thick] (.2,.5) -!- (3.9,0.1);
+\draw[arrows={-latex}, very thick] (.1,-.5) -!- (3.9, 0.9);
+\draw[arrows={-latex}, very thick] (.1,-1.5) -!- (3.9,-0.1);
+
+\node at (-.4, 1.25) {<m>A</m>};
+\node at (-.4, -1) {<m>B</m>};
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<!--exercise>
+			<title>The Identity Function</title>
+			<idx><h>The Identity Function</h></idx>
+			<statement>
+				<p>
+The <em>identity function</em> <m>\mbox{Id}_X: X \rightarrow X</m> is given by <m>\mbox{Id}_X(x) = x</m>. (So every element just maps to itself.)
+Let <m>f : X \rightarrow Y</m> and <m>g: Y \rightarrow X</m> be  functions so that <m>g \circ f = \mbox{Id}_X</m>.
+
+			<ol>
+
+				<li>
+					<p>
+ Give an example where <m>g \circ f = \mbox{Id}_X</m> but <m>f \circ g \neq \mbox{Id}_Y</m>.
+
+<!-x-solution>
+<p>
+			<image width="50%" xml:id="fig-img-function32">
+				<latex-image>
+\begin{tikzpicture}[scale=.8]
+
+
+\draw (-4,0) ellipse (1 and 1.75);
+
+\draw (-4,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (-4,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (-4,-1) node[circle,draw] {{\tiny <m>3</m>}};
+
+\draw[arrows={-latex}, very thick] (-3.75,1) -!- (-.25,1);
+\draw[arrows={-latex}, very thick] (-3.75,0) -!- (-.25,0);
+\draw[arrows={-latex}, very thick] (-3.75,-1) -!- (-.25,-1);
+
+
+\draw (-4,-2.75) node {<m>X= [3]</m>};
+
+
+\draw (0,-.5) ellipse (1 and 2.25);
+
+\draw (0,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (0,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (0,-1) node[circle,draw] {{\tiny <m>3</m>}};
+\draw (0,-2) node[circle,draw] {{\tiny <m>4</m>}};
+
+\draw (0,-3.5) node {<m>Y = [4]</m>};
+
+
+\draw (4,0) ellipse (1 and 1.75);
+
+\draw (4,1) node[circle,draw] {{\tiny <m>1</m>}};
+\draw (4,0) node[circle,draw] {{\tiny <m>2</m>}};
+\draw (4,-1) node[circle,draw] {{\tiny <m>3</m>}};
+
+
+
+
+\draw[arrows={-latex}, very thick] (.25,1) -!- (3.8,1);
+\draw[arrows={-latex}, very thick] (.25,0) -!- (3.8,0);
+\draw[arrows={-latex}, very thick] (.25,-1) -!- (3.75,-.8);
+\draw[arrows={-latex}, very thick] (.25,-2) -!- (3.75,-1.2);
+
+\draw (4,-2.75) node {<m>X= [3]</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+</p>
+</solution-x->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Prove that if <m>g \circ f = \mbox{Id}_X</m> then  <m>f</m> is injective.
+
+<!-x-solution>
+<p>
+
+<em>First Proof:</em> Let's prove the contrapositive:
+
+If <m>f</m> is not injective then <m>g \circ f \neq \mbox{Id}_X</m>.
+
+Since <m>f</m> is not injective, there exist <m>x_1 \neq x_2</m> such that <m>f(x_1) = f(x_2)</m>. AFSOC that
+<m>g \circ f = \mbox{Id}_X.</m>
+But then
+<me>
+x_1 = g \circ f (x_1) = g(f(x_1)) = g(f(x_2)) = g \circ f(x_2) = x_2.
+</me>
+But this means that <m>x_1 = x_2</m>, a contradiction. Therefore,  <m>g \circ f \neq \mbox{Id}_X.</m>
+
+
+<em>Second Proof:</em>
+
+We must show that if <m>x_1 \neq x_2</m> then <m>f(x_1) \neq f(x_2)</m>. We have
+\begin{eqnarray*}
+x_1 &amp; \neq &amp;  x_2 \\
+\mbox{Id}_X(x_1) &amp; \neq  &amp;\mbox{Id}_X(x_2) \\
+g \circ f(x_1) &amp; \neq &amp; g \circ f(x_2) \\
+g ( f(x_1) )&amp; \neq  &amp; g ( f(x_2)).
+\end{eqnarray*}
+Because <m>g</m> is a well-defined function, we must have <m>f(x_1) \neq f(x_2)</m> because these elements (which are in <m>Y</m>) map to different  elements in <m>Z</m>.
+
+</p>
+</solution-x->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Prove that if <m>g \circ f = \mbox{Id}_X</m> then  <m>g</m> is surjective.
+
+<!-x-solution>
+<p>
+Given <m>x \in X</m> we must find a <m>y \in Y</m> such that <m>g(y)=x</m>.
+
+We have
+\[
+x = \mbox{Id}_X(x) = g \circ f (x) = g(f(x)).
+\]
+This says that the element <m>y = f(x)</m> (which is in <m>Y</m>) satisfies <m>g(y)=x</m>.
+
+</p>
+</solution-x->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise-->
+		<exercise>
+			<title>Clock Math</title>
+			<idx><h>Clock Math</h></idx>
+			<statement>
+				<p>
+For a fixed <m>n</m>, let <m>\Z_n = \{ 0,1,2, \ldots, n-1 \}</m>. We define a function <m>f: \Z \rightarrow \Z_n</m> by <m>f(k) = k \mbox{ mod } n</m>, which is the integer remainder when <m>k</m> is divided by <m>n</m>.
+
+			<ol>
+
+
+
+				<li>
+					<p>
+ Consider the function <m>f: \Z \rightarrow \Z_{5}</m> given by <m>f(k) = k \mbox{ mod } 5.</m>  Is <m>f</m> injective? Is <m>f</m> surjective? Justify your answers.
+
+<!--solution>
+<p>
+The function <m>f</m> is surjective because <m>f(k)=k</m> for <m>0 \leq k \leq 4.</m> The function is not injective: every multiple of 5 maps to 0.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Consider the function <m>g: \Z_{6} \rightarrow \Z_{6}</m> given by <m>g(k) = 2k \mbox{ mod } 6</m>. Is <m>g</m> injective? Is <m>g</m> surjective? Justify your answer.
+
+<!--solution>
+<p>
+The function is:
+<me>
+f(0)=0, \qquad f(1) = 2, \qquad f(2) = 4, \qquad f(3) = 0, \qquad f(4) = 2, \qquad f(5)=4.
+</me>
+Clearly, this function is not injective and it is not surjective.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+  Consider the function <m>h: \Z_{7} \rightarrow \Z_{7}</m> given by <m>g(k) = 2k \mbox{ mod } 7</m>. Is <m>h</m> injective? Is <m>f</m> surjective? Justify your answer.
+
+<!--solution>
+<p>
+The function is:
+<me>
+f(0)=0, \qquad f(1) = 2, \qquad f(2) = 4, \qquad f(4) = 6, \qquad f(4) = 1, \qquad f(5)=3, \qquad f(6) = 5
+</me>
+Clearly, this function is both injective and  surjective.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+  Fix a positive integer <m>n</m>, and consider the function the function <m>g: \Z_{n} \rightarrow \Z_{n}</m> given by <m>g(k) = 2k \mbox{ mod } n</m>. Prove that this function is injective if and only if <m>n</m> is odd. Then prove that this function is surjective if and only if <m>n</m> is odd.
+
+<!--solution>
+<p>
+First, we prove that if <m>n=2k</m> is even then <m>g: \Z_{n} \rightarrow \Z_{n}</m>  is not injective and not surjective
+		<ul>
+			<li>
+			<p>
+ We have <m>g(0) = 0</m> and <m>g(k) = 2k \mbox{ mod } (2k) = 0</m>. Therefore <m>g</m> is not injective.
+			</p>
+			</li>
+			<li>
+			<p>
+ If <m>m</m> is odd, <m>g(i) \neq m</m> for all <m>i \in \Z_n</m> because <m>g(i)</m> is always even. Therefore <m>g</m> is not surjective.
+			</p>
+			</li>
+		</ul>
+
+Next, we prove that if <m>n=2k+1</m> is odd, then <m>g: \Z_{n} \rightarrow \Z_{n}</m> is bijective.
+		<ul>
+			<li>
+			<p>
+ First, we show that <m>g</m> is surjective. If <m>m=2r</m> is even (where <m>0 \leq r \leq k</m>), then <m>g(r)=2r=m</m>. If <m>m=2r+1 \in \Z_n</m> is odd (where <m>0 \leq r \leq k</m>) then
+\begin{eqnarray*}
+g(k+r+1) &amp;=&amp; 2(k+r+1) \mbox{ mod } (2k+1) \\
+&amp;=&amp; \left( ( 2k+1) + (2r+1) \right) \mbox{ mod } (2k+1) \\
+&amp;=&amp; 2r+1.
+\end{eqnarray*}
+			</p>
+			</li>
+			<li>
+			<p>
+ We now know that <m>g</m> is surjective. Since both the domain and the target (codomain) have the same size, the function <m>g</m> must also be bijective. We prove this by contradiction.
+
+Suppose that the function is not injective. This means that there are <m>k_1 \neq k_2</m> such that <m>g(k_1)=g(k_2)</m>.  But this would mean that the size of the image <m>g([n])</m> must be smaller than the size of <m>[n]</m>. Therefore the function is not surjective.
+
+But this contradicts the fact that we already know: <m>g</m> is surjective. Therefore <m>g</m> must also be injective.
+
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+</chapter>

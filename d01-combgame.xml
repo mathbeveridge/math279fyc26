@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+
+
+
+<chapter xml:id="games-combgame" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Combinatorial Games</title>
+	<introduction>
+		<p>
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<statement>
+				<p>
+ We use the terms <m>\cN</m>-position (<em>next</em> player win)  and <m>\cP</m>-position (<em>previous</em> player win) to describe a winning position and a losing position, respectively. In other words,
+		<ul>
+			<li>
+			<p>
+ An <m>\cN</m>-position has <em>at least one</em> winning move.
+			</p>
+			</li>
+			<li>
+			<p>
+ A <m>\cP</m>-position has <em>no</em> winning moves.
+			</p>
+			</li>
+		</ul>
+
+Keep in mind, that after a player's turn, the "next" and "previous" roles switch! On Alice's turn, Alice is the <em>next</em> player (that is, she is about to move). On Bob's turn, Alice is the <em>previous</em> player, (that is, she just moved).
+
+Finally, note that we are partitioning  the set <m>\cX</m> of game positions into two sets named <m>\cN</m> and <m>\cP</m>.
+
+
+
+
+
+			<ol>
+				<li>
+					<p>
+ Rule #1 says that "an <m>\cN</m>-position must have at least one follower that is a <m>\cP</m>-position."
+Restate this rule incorporating "for all" and/or "there exists" quantifiers. Then prove Rule #1 by contradiction.
+
+<solution>
+<p>
+<me>
+X \in \cN \Longleftrightarrow \exists Y \in \cF(X) \mbox{ such that } Y \in \cP.
+</me>
+
+			</p><p>
+
+AFSOC that  <m>X</m> does not have a follower <m>Y</m> such that <m>Y \in \cP</m>. 
+Let Alice be the "next player" and Bob be the "previous player." Since every follower is an <m>\cN</m>-position, Alice must move to a <m>\cN</m>-position. However, now Bob becomes is the "next player" and therefore Bob has a winning strategy, no matter what Alice's first move was. Therefore Alice does not have a winning strategy, a contradiction.
+</p>
+</solution>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Rule #2 says that "every follower of a <m>\cP</m>-position must be an <m>\cN</m>-position." Restate this rule incorporating "for all" and/or "there exists" quantifiers. Then prove Rule # 2 by contradiction.
+
+<solution>
+<p>
+We have
+<me>
+X \in \cP \Longleftrightarrow \forall Y \in \cF(X), \mbox{ we have } Y \in \cN,
+</me>
+or equivalently
+<me>
+X \in \cP \Longleftrightarrow  \cF(X) \subset \cN.
+</me>
+</p>
+<p>
+ASFOC that <m>X</m> has a follower <m>Y</m> that is a <m>\cP</m> position. 
+Let Alice be the "next player" and Bob be the "previous player." Then Alice can move from <m>X</m> to <m>Y</m>.
+It is now Bob's turn, so he becomes the "next" player, and he is a losing postion. So this move from <m>X</m> to <m>Y</m> 
+was a winning move for Alice, a contradiction.
+</p>
+</solution>
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ If we can partition the set <m>\cX</m> of game  positions into sets <m>\cA</m> and <m>\cB</m> such that
+		<ul>
+			<li>
+			<p>
+ If <m> Y \in \cB</m> then <m>\exists Z \in \cF(Y)</m> such that <m>Z \in \cA</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ If <m>Z \in \cA</m> then <m>\cF(Z) \subset \cB</m>
+			</p>
+			</li>
+		</ul>
+then <m>\cA</m> is the set of <m>\cP</m>-positions and <m>\cB</m> is the set of <m>\cN</m>-positions.
+
+
+
+Consider a one coin game of nimble, where you are only allowed to move an <em>odd</em> number of squares. For example, <m>\cF(\{3 \}) = \{ \emptyset, \{2\} \}</m> and <m>\cF(\{6 \}) = \{  \{1\}, \{3\}, \{5\} \}</m>
+
+Find sets <m>\cA</m> and <m>\cB</m> that satisfy the properties above.
+
+<solution>
+<p>
+
+
+Let <m>\cA</m> be all of the even squares and <m>\emptyset</m> and let <m>\cB</m> be all of the odd squares. Note that <m>\cA</m> satisfies Rule 2 and <m>\cB</m> satisfies Rule 1.
+
+</p>
+</solution>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Play these games of Nim, and decide whether each is an <m>\cN</m>-position or a <m>\cP</m>-position. Write <m>\cN</m> or <m>\cP</m> next to each game, as appropriate.
+
+
+			<image width="100%" xml:id="fig-img-games-combgame0">
+				<latex-image>
+\begin{tikzpicture}[scale=.8] %mathbook width=100%
+
+\begin{scope}[shift={(-1,0)}]
+
+
+\node at (-2,0) {(a)};
+
+\heap{(0,0)}{1};
+\bean{(-.23, 0)}{10};
+\bean{(.6, .2)}{-20};
+\bean{(-.1, -.6)}{-15};
+
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(-1,-2.5)}]
+
+
+
+\node at (-2,0) {(b)};
+
+\heap{(0,0)}{1};
+\bean{(0, 0)}{10};
+
+
+
+\heap{(3,0)}{1};
+\bean{(2.5, 0)}{-10};
+\bean{(3.3, .3)}{-30};
+
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(-1,-5)}]
+
+\node at (-2,0) {(c)};
+
+\heap{(0,0)}{1};
+\bean{(0, -.3)}{44};
+\bean{(.3, .3)}{-25};
+
+
+\heap{(3,0)}{1};
+\bean{(3, 0)}{10};
+\bean{(3.6, .2)}{-20};
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(8,0)}]
+
+\node at (-2,0) {(d)};
+
+
+
+\heap{(0,0)}{1};
+\bean{(0, 0)}{10};
+
+
+
+\heap{(2.5,0)}{1};
+\bean{(2.5, 0)}{10};
+\bean{(3.1, .2)}{-20};
+\bean{(2.3, .5)}{-20};
+\bean{(2.1, -.4)}{-20};
+
+\heap{(5,0)}{1};
+\bean{(5.3, -.1)}{10};
+\bean{(4.8, .2)}{-120};
+\bean{(5.3, .5)}{-20};
+\bean{(4.7, -.4)}{20};
+
+
+\heap{(7.5,0)}{1};
+\bean{(7.4, 0)}{140};
+\bean{(8.1, .2)}{15};
+\bean{(7.3, .5)}{-25};
+\bean{(7.1, -.4)}{-10};
+\bean{(7.9, -.3)}{-50};
+
+
+
+\end{scope}
+
+
+
+
+
+
+
+\begin{scope}[shift={(8,-2.5)}]
+
+
+\node at (-2,0) {(e)};
+
+\heap{(0,0)}{1};
+\bean{(0, 0)}{10};
+
+
+
+\heap{(2.5,0)}{1};
+\bean{(2.3, 0)}{10};
+\bean{(3.1, .2)}{-20};
+
+
+\heap{(5,0)}{1};
+\bean{(4.7, 0)}{10};
+\bean{(5.6, -.2)}{90};
+\bean{(5.3, .5)}{-20};
+
+
+
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(8,-5)}]
+
+\node at (-2,0) {(f)};
+
+\heap{(0,0)}{1};
+\bean{(0, 0)}{10};
+
+\heap{(2.5,0)}{1};
+\bean{(2.5, 0)}{10};
+\bean{(3.1, .2)}{-20};
+
+
+\heap{(5,0)}{1};
+\bean{(4.6, .2)}{-10};
+\bean{(5.6, -.2)}{90};
+\bean{(5.3, .5)}{-20};
+\bean{(5.1, .1)}{20};
+\bean{(4.8, -.5)}{50};
+
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+<solution>
+<p>
+
+			<ol>
+				<li>
+					<p>
+ <m>\cN</m>-position
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\cN</m>-position
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\cP</m>-position
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\cN</m>-position
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\cP</m>-position
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\cN</m>-position
+					</p>
+				</li>
+			</ol>
+</p>
+</solution>
+
+
+
+
+			</p><p>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ There is an exact correspondence between games of Nim and games of Nimble (the game we played last time). Can you figure out what the relationship is? Draw the corresponding Nimble games for each of the size Nim games above.
+
+
+<solution>
+<p>
+
+A nim heap of size <m>k</m> corresponds to a coin on square <m>k</m>.
+
+
+</p>
+</solution>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+</chapter>

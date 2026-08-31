@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<chapter xml:id="count-warmup" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Basic Counting Problems</title>
+	<introduction>
+		<p>
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+
+		<exercise>
+			<title>Packing a Lunch</title>
+			<idx><h>Packing a Lunch</h></idx>
+			<statement>
+				<p>
+A healthy lunch box contains a sandwich, a piece of fruit and a drink.
+There are  six different types of sandwiches,   five kinds of fruit, and three drink flavors. How many different possible lunch boxes are there?
+
+<!--solution>
+<p>
+We are making three independent decisions. We need to multiply the number of options for each decision.
+<me>
+\underbrace{6}_{\mbox{sandwich}} \times
+\underbrace{5}_{\mbox{fruit}} \times
+\underbrace{3}_{\mbox{drink}}  = 90
+</me>
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Buying Ice Cream</title>
+			<idx><h>Buying Ice Cream</h></idx>
+			<statement>
+				<p>
+An ice cream store has five flavors of ice cream: vanilla, chocolate, strawberry, peppermint and bubble gum. When you order a cone, your options are sugar cone, waffle cone and cake cone.
+
+			<ol>
+				<li>
+					<p>
+  What is the total number of ways to order a single-scoop ice cream cone?
+
+<!--solution>
+<p>
+<me>
+\underbrace{3}_{\mbox{cone}} \times \underbrace{5}_{\mbox{scoop}} = 15
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Suppose that we want to order a triple-scoop cone at this ice cream store. Stacking scoops of ice cream is important: a peppermint-vanilla-vanilla cone tastes different from a vanilla-peppermint-vanilla cone. What is the total number of ways to order a triple-scoop ice cream cone?
+
+<!--solution>
+<p>
+<me>
+\underbrace{3}_{\mbox{cone}} \times
+\underbrace{5}_{\mbox{first scoop}} \times
+\underbrace{5}_{\mbox{second scoop}} \times
+\underbrace{5}_{\mbox{third scoop}} = 3 \times 5^3
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ The ice cream store also sells quarts of ice cream. When you buy quarts of ice cream, the order that you buy the quarts does not matter: they just go into your shopping bag anyway!
+How many ways can you buy two quarts of ice cream when ...
+
+			<ol>
+
+				<li>
+					<p>
+ Both quarts are the same flavor?
+
+<!--solution>
+<p>
+There are 5 ways to do this.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ The quarts are different flavors? (Remember that the order of the flavors doesn't matter!)
+
+<!--solution>
+<p>
+There are 5 ways choose the the first quart, and then 4 ways to choose the last quart. So there are
+<m>5 \times 4 = 20</m> ways. To do this.
+
+			</p><p>
+However, the order that we choose the flavors doesn't matter: "peppermint  and strawberry" is the same
+as "strawberry and peppermint." So we have to divide by 2 because we just counted each option twice! So the answer is
+<me>
+\frac{5 \cdot 4}{2} = 10.
+</me>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Ultimate Frisbee Tournament</title>
+			<idx><h>Ultimate Frisbee Tournament</h></idx>
+			<statement>
+				<p>
+Four teams attend an Ultimate frisbee tournament.
+
+
+			<ol>
+
+				<li>
+					<p>
+ If each team plays each other team exactly once, how many games are played?
+
+
+<!--solution>
+<p>
+
+How many ways can we choose two teams to play a game? My recipe for setting up a game will be: "choose the first team and then choose the second team." The total number of ways to do this is
+<me>
+4 \times 3.
+</me>
+However, we <em>double count</em> each game, since choosing (Team A,Team B) is the same as choosing (Team B, Team A). Therefore we must divide our answer above by 2. The final answer is
+<me>
+\frac{4 \times 3}{2}.
+</me>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ These four Ultimate teams decide to play a game for fun by mixing up the teams. They put red, blue, yellow and green armbands into a bag, and each player closes her eyes and grabs an armband to determine her team.
+
+			<ol>
+				<li>
+					<p>
+ How many armbands must be grabbed to ensure that one of the teams has two players?
+
+<!--solution>
+<p>
+This must happen on or before the fifth armband. You have four categories (red, blue, yellow and green) and five armbands. So one category must have at least 2. Note that this is the smallest number for which this is true: if we only pull out 4 armbands, then we could possibly have one of each color.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ How many armbands must be grabbed to ensure that one of the teams has five players?
+
+<!--solution>
+<p>
+This must happen on or before the 17th arm band. Again, you have 4 categories, so one category must have 5 or more arm bands. This is the smallest number for which this is true: if you only have 16 armbands, we could have 4 red and 4 blue and 4 yellow and 4 green.
+</p>
+</solution-->
+					</p>
+				</li>
+			</ol>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+</chapter>

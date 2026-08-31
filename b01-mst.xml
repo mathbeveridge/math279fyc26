@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="mst" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Minimum Spanning Trees</title>
+	<introduction>
+		<p>
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Prim's Algorithm</title>
+			<idx><h>Prim's Algorithm</h></idx>
+			<statement>
+				<p>
+Prim's Algorithm "grows a minimum edge into a MST."
+
+Given weighted graph <m>G=(V,E)</m>:
+		<ul>
+			<li>
+			<p>
+ Initialize <m>T</m> to be a vertex <m>v</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ At each step, grow the tree:
+		<ul>
+			<li>
+			<p>
+ Add the minimum weight edge adjacent to <m>T</m> that doesn't create a cycle.
+			</p>
+			</li>
+		</ul>
+			</p>
+			</li>
+			<li>
+			<p>
+ Stop when you can't add more edges.
+			</p>
+			</li>
+		</ul>
+Use Prim's Algorithm to find the MST of the following weighted graph.
+
+
+			<image width="80%" xml:id="fig-img-mst0">
+				<latex-image>
+\begin{tikzpicture}[scale=2]
+
+
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X1) at (0,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X2) at (2,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X3) at (3,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X4) at (3.67,.5) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X5) at (3,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X6) at (2,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X7) at (0,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X8) at (-.67,.5) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X9) at (1,.5) {};
+
+\draw[very thick] (X1) -!- (X2) -!- (X3) -!- (X4) -!- (X5) -!- (X6) -!- (X7) -!- (X8) -!- (X1);
+\draw[very thick] (X7) -!- (X1) -!- (X6) -!- (X3) -!- (X5);
+\draw[very thick] (X9) -!- (X2);
+
+\node at (1, -.2) {4};
+\node at (2.5, -.2) {3};
+\node at (3.4, .1) {3};
+\node at (3.4, .9) {3};
+\node at (2.5, 1.2) {1};
+\node at (1, 1.2) {5};
+\node at (-.4, .9) {3};
+\node at (-.4, .1) {2};
+
+\node at (-.1, .5) {1};
+\node at (.5, .4) {3};
+\node at (1.4, .85) {1};
+\node at (1.6, .35) {2};
+\node at (2.5, .7) {4};
+\node at (3.1, .5) {2};
+
+\node at (-.9, .5) {$v$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+<!--solution>
+<p>
+
+			<image width="80%" xml:id="fig-img-mst1">
+				<latex-image>
+\begin{tikzpicture}[scale=2]
+
+
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X1) at (0,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X2) at (2,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X3) at (3,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X4) at (3.67,.5) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X5) at (3,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X6) at (2,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X7) at (0,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X8) at (-.67,.5) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X9) at (1,.5) {};
+
+\draw[dashed] (X1) -!- (X2) -!- (X3) -!- (X4) -!- (X5) -!- (X6) -!- (X7) -!- (X8) -!- (X1);
+\draw[dashed] (X7) -!- (X1) -!- (X6) -!- (X3) -!- (X5);
+\draw[dashed] (X9) -!- (X2);
+
+
+
+\draw[ultra thick, red] (X8) -!- (X1);
+\draw[ultra thick, orange] (X7) -!- (X1);
+\draw[ultra thick, yellow] (X9) -!- (X1);
+\draw[ultra thick, green] (X9) -!- (X6);
+\draw[ultra thick, blue] (X5) -!- (X6);
+\draw[ultra thick, violet] (X5) -!- (X3);
+\draw[ultra thick, purple] (X9) -!- (X2);
+\draw[ultra thick, black] (X5) -!- (X4);
+
+\node at (-.7, -.6) {edge order:};
+
+\fill[red] (0,-.5) rectangle (.2,-.7);
+\fill[orange] (.3,-.5) rectangle (.5,-.7);
+\fill[yellow] (.6,-.5) rectangle (.8,-.7);
+\fill[green] (.9,-.5) rectangle (1.1,-.7);
+\fill[blue] (1.2,-.5) rectangle (1.4,-.7);
+\fill[violet] (1.5,-.5) rectangle (1.7,-.7);
+\fill[purple] (1.8,-.5) rectangle (2.0,-.7);
+\fill[black] (2.1,-.5) rectangle (2.3,-.7);
+
+\node at (1, -.2) {4};
+\node at (2.5, -.2) {3};
+\node at (3.4, .1) {3};
+\node at (3.4, .9) {3};
+\node at (2.5, 1.2) {1};
+\node at (1, 1.2) {5};
+\node at (-.4, .9) {3};
+\node at (-.4, .1) {2};
+
+\node at (-.1, .5) {1};
+\node at (.5, .4) {3};
+\node at (1.4, .85) {1};
+\node at (1.6, .35) {2};
+\node at (2.5, .7) {4};
+\node at (3.1, .5) {2};
+
+\node at (-.9, .5) {$v$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Kruskal's Algorithm</title>
+			<idx><h>Kruskal's Algorithm</h></idx>
+			<statement>
+				<p>
+Kruskal's Algorithm grows a minimum forest until it is a MST.
+Given weighted graph <m>G=(V,E)</m>:
+		<ul>
+			<li>
+			<p>
+ Initialize <m>T</m> to contain all the vertices of <m>G</m>, but no edges.
+			</p>
+			</li>
+			<li>
+			<p>
+ At each step, grow the forest:
+		<ul>
+			<li>
+			<p>
+ Add the minimum weight edge to <m>T</m> that doesn't create a cycle.
+			</p>
+			</li>
+		</ul>
+			</p>
+			</li>
+			<li>
+			<p>
+ Stop when you can't add more edges.
+			</p>
+			</li>
+		</ul>
+
+
+
+			<image width="80%" xml:id="fig-img-mst2">
+				<latex-image>
+\begin{tikzpicture}[scale=2]
+
+
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X1) at (0,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X2) at (2,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X3) at (3,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X4) at (3.67,.5) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X5) at (3,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X6) at (2,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X7) at (0,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X8) at (-.67,.5) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X9) at (1,.5) {};
+
+\draw[very thick] (X1) -!- (X2) -!- (X3) -!- (X4) -!- (X5) -!- (X6) -!- (X7) -!- (X8) -!- (X1);
+\draw[very thick] (X7) -!- (X1) -!- (X6) -!- (X3) -!- (X5);
+\draw[very thick] (X9) -!- (X2);
+
+\node at (1, -.2) {4};
+\node at (2.5, -.2) {3};
+\node at (3.4, .1) {3};
+\node at (3.4, .9) {3};
+\node at (2.5, 1.2) {1};
+\node at (1, 1.2) {5};
+\node at (-.4, .9) {3};
+\node at (-.4, .1) {2};
+
+\node at (-.1, .5) {1};
+\node at (.5, .4) {3};
+\node at (1.4, .85) {1};
+\node at (1.6, .35) {2};
+\node at (2.5, .7) {4};
+\node at (3.1, .5) {2};
+
+\node at (-.9, .5) {$v$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+<!--solution>
+<p>
+
+			<image width="80%" xml:id="fig-img-mst3">
+				<latex-image>
+\begin{tikzpicture}[scale=2]
+
+
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X1) at (0,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X2) at (2,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X3) at (3,0) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X4) at (3.67,.5) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X5) at (3,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X6) at (2,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X7) at (0,1) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X8) at (-.67,.5) {};
+\node[draw,circle,fill=black,minimum size=6pt, inner sep=0pt] (X9) at (1,.5) {};
+
+\draw[dashed] (X1) -!- (X2) -!- (X3) -!- (X4) -!- (X5) -!- (X6) -!- (X7) -!- (X8) -!- (X1);
+\draw[dashed] (X7) -!- (X1) -!- (X6) -!- (X3) -!- (X5);
+\draw[dashed] (X9) -!- (X2);
+
+
+
+\draw[ultra thick, violet] (X8) -!- (X1);
+\draw[ultra thick, red] (X7) -!- (X1);
+\draw[ultra thick, purple] (X9) -!- (X1);
+\draw[ultra thick, orange] (X9) -!- (X6);
+\draw[ultra thick, yellow] (X5) -!- (X6);
+\draw[ultra thick, blue] (X5) -!- (X3);
+\draw[ultra thick, green] (X9) -!- (X2);
+\draw[ultra thick, black] (X5) -!- (X4);
+
+\node at (-.7, -.6) {edge order:};
+
+\fill[red] (0,-.5) rectangle (.2,-.7);
+\fill[orange] (.3,-.5) rectangle (.5,-.7);
+\fill[yellow] (.6,-.5) rectangle (.8,-.7);
+\fill[green] (.9,-.5) rectangle (1.1,-.7);
+\fill[blue] (1.2,-.5) rectangle (1.4,-.7);
+\fill[violet] (1.5,-.5) rectangle (1.7,-.7);
+\fill[purple] (1.8,-.5) rectangle (2.0,-.7);
+\fill[black] (2.1,-.5) rectangle (2.3,-.7);
+
+\node at (1, -.2) {4};
+\node at (2.5, -.2) {3};
+\node at (3.4, .1) {3};
+\node at (3.4, .9) {3};
+\node at (2.5, 1.2) {1};
+\node at (1, 1.2) {5};
+\node at (-.4, .9) {3};
+\node at (-.4, .1) {2};
+
+\node at (-.1, .5) {1};
+\node at (.5, .4) {3};
+\node at (1.4, .85) {1};
+\node at (1.6, .35) {2};
+\node at (2.5, .7) {4};
+\node at (3.1, .5) {2};
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution-->
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>MST Examples</title>
+			<idx><h>MST Examples</h></idx>
+			<statement>
+				<p>
+Give an example of a weighted graph on 6 vertices that <m>\ldots</m>
+
+
+			<ol>
+
+				<li>
+					<p>
+  has a unique minimum spanning tree.
+
+<!--solution>
+<p>
+
+			<image width="50%" xml:id="fig-img-mst4">
+				<latex-image>
+\begin{tikzpicture}
+
+\draw[thick] (-1,0) -!- (1,0) -!- (2,1) -!- (3,0) -!- (2,-1) -!- (1,0);
+
+
+\draw[fill] (-1,0) circle (2pt);
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (2,1) circle (2pt);
+\draw[fill] (2,-1) circle (2pt);
+\draw[fill] (3,0) circle (2pt);
+
+\node at (-.5,.3) {3};
+\node at (.5,.3) {2};
+\node at (1.4,.8) {1};
+\node at (2.6,.8) {2};
+\node at (1.4,-.7) {4};
+\node at (2.6,-.7) {3};
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ has exactly 2  minimum spanning trees.
+
+<!--solution>
+<p>
+			<image width="50%" xml:id="fig-img-mst5">
+				<latex-image>
+\begin{tikzpicture}
+
+\draw[thick] (-1,0) -!- (1,0) -!- (2,1) -!- (3,0) -!- (2,-1) -!- (1,0);
+
+
+\draw[fill] (-1,0) circle (2pt);
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (2,1) circle (2pt);
+\draw[fill] (2,-1) circle (2pt);
+\draw[fill] (3,0) circle (2pt);
+
+\node at (-.5,.3) {3};
+\node at (.5,.3) {2};
+\node at (1.4,.8) {1};
+\node at (2.6,.8) {4};
+\node at (1.4,-.7) {4};
+\node at (2.6,-.7) {3};
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ has more than 2  minimum spanning trees.
+
+<!--solution>
+<p>
+			<image width="50%" xml:id="fig-img-mst6">
+				<latex-image>
+\begin{tikzpicture}
+
+\draw[thick] (-1,0) -!- (1,0) -!- (2,1) -!- (3,0) -!- (2,-1) -!- (1,0);
+
+
+\draw[fill] (-1,0) circle (2pt);
+\draw[fill] (0,0) circle (2pt);
+\draw[fill] (1,0) circle (2pt);
+\draw[fill] (2,1) circle (2pt);
+\draw[fill] (2,-1) circle (2pt);
+\draw[fill] (3,0) circle (2pt);
+
+\node at (-.5,.3) {3};
+\node at (.5,.3) {2};
+\node at (1.4,.8) {1};
+\node at (2.6,.8) {1};
+\node at (1.4,-.7) {1};
+\node at (2.6,-.7) {1};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>A Minimum Edge</title>
+			<idx><h>A Minimum Edge</h></idx>
+			<statement>
+				<p>
+					Let <m>G=(V,E)</m> be a weighted graph.
+			<ol>
+				<li>
+					<p>
+						Suppose that <m>G</m> contains a unique edge <m>e</m> of minimum weight in <m>G</m>. Prove that <m>e</m> is contained in every minimum spanning tree of <m>G</m>.
+
+<!--solution>
+<p>
+AFSOC that <m>T</m> is a minimum spanning tree that does not contain <m>e</m>. Then <m>T+e</m> contains a cycle <m>C</m>. The edge <m>e</m> has the unique minimum weight in this cycle.
+So let <m>f</m> be any other edge in <m>C</m>. The spanning tree <m>T-f+e</m> has smaller weight than <m>T</m>, a contradiction.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Suppose that <m>G</m> contains an edge <m>e</m> such that for every cycle <m>C</m> containing <m>e</m>, the weight <m>w(e)</m> is smaller than all the other edge weights in <m>C-e</m>. Prove that <m>e</m> is contained in every minimum spanning tree of <m>G</m>.
+
+<!--solution>
+<p>
+The proof is exactly the same as the previous part.
+</p>
+</solution-->
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Minimum Spanning Forest</title>
+			<idx><h>Minimum Spanning Forest</h></idx>
+			<statement>
+				<p>
+					Extend the concept of a minimum spanning tree to a disconnected, weighted graph. Define a "minimum spanning forest" and describe how you would find it.
+
+<!--solution>
+<p>
+A minimum spanning forest for a graph with components <m>G_1, G_2, \ldots, G_k</m> is a forest <m>T_1, T_2, \ldots, T_k</m> where <m>T_i</m> is a minimum spanning tree for component <m>G_i</m>.
+Kruskal's algorithm actually creates a minimum spanning forest for a disconnected graph.
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+</chapter>

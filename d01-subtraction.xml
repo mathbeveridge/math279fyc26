@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<chapter xml:id="games-subtract" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Subtraction Games</title>
+	<introduction>
+		<p>
+
+
+
+<em>Calculating the mex of a set of whole numbers.</em>
+
+			</p><p>
+
+Recall that <m>\W = \{ 0,1,2,3, \ldots \}</m>. For a subset <m>S \subset \W</m> the <em>mex</em> of <m>S</m> is the <em>minimum excluded value</em>
+<me>
+\mex (S) = \min \{ i \in \W \mid i \notin S\}.
+</me>
+
+			</p><p>
+
+<em>Calculating the Sprague-Grundy value of a game position.</em>
+
+			</p><p>
+
+Given a position <m>X</m> of a game with followers <m>\cF(X) = \{ Y_1, Y_2, \ldots , Y_k \}</m>
+The <em>Sprague-Grundy value</em> of the position is
+<me>
+g(X) = \mex  \{ g(Y_1), g (Y_2), \ldots g(Y_k) \} \big\}.
+</me>
+This formula for the Sprague-Grundy value recursive: you is calculate the value for <m>X</m> by looking at the values of the followers.  This is a lot like working your way back up a game tree to figure out whether <m>X</m> is an <m>\cN</m>-position or a <m>\cP</m>-position.
+
+			</p><p>
+
+<em>Subtraction Games.</em>
+
+			</p><p>
+
+A subtraction game <m>S(k_1, k_2, \ldots , k_r)</m> is a nim game with a single heap in which you are only allowed to remove <m>k_1, k_2, \ldots , k_r</m> beans on any given turn. We will use
+<me>
+\pile{n}
+</me>
+to denote a heap of <m>n</m> beans. It will be helpful to be able to differentiate between the number <m>n</m> and the pile <m>\pile{n}</m>.
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+		<exercise>
+			<title>Subtraction <m>S(1,2,3,4)</m></title>
+			<idx><h>Subtraction <m>S(1,2,3,4)</m></h></idx>
+			<statement>
+				<p>
+			<ol>
+				<li>
+					<p>
+ Play <m>S(1,2,3, 4)</m> with pile sizes <m>n=1,2,3, \ldots</m>. Determine which pile sizes are <m>\cP</m>-positions and which ones are <m>\cP</m>-posititions.
+
+
+<me>
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+\cP \mbox{ or } \cN? &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
+</me>
+
+
+<!--solution>
+<p>
+<me>
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+\cP \mbox{ or } \cN?  &amp;\cP&amp;\cN&amp;\cN&amp;\cN&amp;\cN&amp;\cP&amp;\cN&amp;\cN&amp;\cN&amp;\cN&amp;\cP&amp;\cN&amp;\cN
+\end{array}
+</me>
+The <m>\cP</m>-positions are the multiples of 5.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Calculate  <m>g(\pile{n})</m> for the game <m>S(1,2,3,4)</m>.
+
+<me>
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+g(\pile{n}) &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
+</me>
+
+
+<!--solution>
+<p>
+<me>
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+g(\pile{n}) &amp;0&amp;1&amp;2&amp;3&amp;4&amp;0&amp;1&amp;2&amp;3&amp;4&amp;0&amp;1&amp;2
+\end{array}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Compare your answers to (a) and (b). What do you observe? Make a conjecture about the relationship of the Sprague-Grundy value to the winner of the game.
+
+<!--solution>
+<p>
+It looks like the <m>\cP</m>-positions correspond to <m>g(\pile{n})=0</m>.
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Subtraction <m>S(1,2,4)</m></title>
+			<idx><h>Subtraction <m>S(1,2,4)</m></h></idx>
+			<statement>
+				<p>
+
+			<ol>
+
+				<li>
+					<p>
+ Calculate  <m>g(\pile{n})</m> for the game <m>S(1,2,4)</m>.
+
+<me>
+S(1,2,4): \qquad
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+g(\pile{n}) &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
+</me>
+
+<!--solution>
+<p>
+<me>
+S(1,2,4): \qquad
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+g(\pile{n}) &amp;0&amp;1&amp;2&amp;0&amp;1&amp;2&amp;0&amp;1&amp;2&amp;0&amp;1&amp;2&amp;0
+\end{array}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Is <m>\pile{8}</m> an <m>\cN</m>-position or a <m>\cP</m>-position  in <m>S(1,2,4)</m>? If it is an <m>\cN</m>-position, list every winning move.
+
+<!--solution>
+<p>
+<m>\pile{8}</m> an <m>\cN</m>-position. The winning move is to subtract 2 to reach <m>\pile{6}</m>.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Is <m>\pile{9}</m> an <m>\cN</m>-position or a <m>\cP</m>-position  in <m>S(1,2,4)</m>? If it is an <m>\cN</m>-position, list every winning move.
+
+<!--solution>
+<p>
+<m>\pile{9}</m> a <m>\cP</m>-position. The Sprague-Grundy value is 0.
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Subtraction <m>S(3,4)</m></title>
+			<idx><h>Subtraction <m>S(3,4)</m></h></idx>
+			<statement>
+				<p>
+
+			<ol>
+
+				<li>
+					<p>
+ Calculate  <m>g(\pile{n})</m> for the game <m>S(3,4)</m> Note that there is no legal move for a pile of size 1 or of size 2, so <m>g(\pile{1})=0</m> and <m>g(\pile{2})=0</m>.
+
+<me>
+S(3,4): \qquad
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+g(\pile{n}) &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
+</me>
+
+<!--solution>
+<p>
+<me>
+S(3,4): \qquad
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+g(\pile{n}) &amp;0&amp;0&amp;0&amp;1&amp;1&amp;1&amp;2&amp;0&amp;0&amp;0&amp;1&amp;1&amp;1
+\end{array}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Is <m>\pile{8}</m> an <m>\cN</m>-position or a <m>\cP</m>-position  in <m>S(3,4)</m>? If it is an <m>\cN</m>-position, list every winning move.
+
+<!--solution>
+<p>
+<m>\pile{8}</m> a <m>\cP</m>-position. The Sprague-Grundy value is 0.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Is <m>\pile{10}</m> an <m>\cN</m>-position or a <m>\cP</m>-position  in <m>S(3,4)</m>? If it is an <m>\cN</m>-position, list every winning move.
+
+<!--solution>
+<p>
+<m>\pile{10}</m> a <m>\cN</m>-position. The Sprague-Grundy value is 1. The winning move is to subtract 3 to reach <m>\pile{7}</m>.
+</p>
+</solution-->
+
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Subtraction <m>S(3,5)</m></title>
+			<idx><h>Subtraction <m>S(3,5)</m></h></idx>
+			<statement>
+				<p>
+Here is the table of Sprague-Grundy values for <m>S(3,5)</m>
+<me>
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 &amp; 13 &amp; 14 &amp; 15 &amp;16 &amp; 17 &amp; 18 &amp; 19 &amp; 20 \\
+\hline
+\hline
+g(\pile{n}) &amp;0&amp;0&amp;0&amp;1&amp;1&amp;1&amp;2&amp;2&amp;0&amp;0&amp;0&amp;1&amp;1&amp;1&amp;2&amp;2&amp;0&amp;0&amp;0&amp;1&amp;1
+\end{array}
+</me>
+
+Who wins the following games of <m>S(3,5)</m>?
+			<ol>
+
+				<li>
+					<p>
+ <m>\pile{4}</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\pile{10}</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\pile{14}</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\pile{20}</m>
+					</p>
+				</li>
+			</ol>
+
+<!--solution>
+<p>
+			<ol>
+				<li>
+					<p>
+ <m>\pile{4}</m> is an <m>\cN</m>-position
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\pile{10}</m> is a <m>\cP</m>-position
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\pile{14}</m> is an <m>\cN</m>-position
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\pile{20}</m> is an <m>\cN</m>-position
+					</p>
+				</li>
+			</ol>
+</p>
+</solution-->
+
+
+			</p><p>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Two-Heap Subtraction <m>S(3,5)</m></title>
+			<idx><h>Two-Heap Subtraction <m>S(3,5)</m></h></idx>
+			<statement>
+				<p>
+Now let's play 2-heap <m>S(3,5)</m>. Just like 2-heap nim, you choose one pile and then make a valid move in that pile.
+
+
+			<ol>
+
+				<li>
+					<p>
+ Play the following <m>S(3,5)</m> games to determine whether each one is an <m>\cN</m>-position or a <m>\cP</m>-position.
+
+
+			<ol>
+
+				<li>
+					<p>
+ <m>( \pile{4} , \pile{4})</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>(\pile{4} , \pile{5})</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>(\pile{5} , \pile{6})</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>( \pile{6} , \pile{7})</m>
+					</p>
+				</li>
+			</ol>
+
+<!--solution>
+<p>
+			<ol>
+				<li>
+					<p>
+ <m>( \pile{4} , \pile{4})</m> is a <m>\cP</m>-position
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>(\pile{4} , \pile{5})</m> is a <m>\cP</m>-position
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>(\pile{5} , \pile{6})</m>  is an <m>\cN</m>-position
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>( \pile{6} , \pile{7})</m> is a <m>\cP</m>-position
+					</p>
+				</li>
+			</ol>
+</p>
+</solution-->
+
+
+
+			</p><p>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Now calculate the following nim sums <m>g(\pile{n}) \oplus g(\pile{m})</m> for the <m>S(3,5)</m> positions that you just played. What do you notice?
+
+
+			<ol>
+				<li>
+					<p>
+ <m>( \pile{4} , \pile{4})</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>(\pile{4} , \pile{5})</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>(\pile{5} , \pile{6})</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>( \pile{6} , \pile{7})</m>
+					</p>
+				</li>
+			</ol>
+
+<!--solution>
+<p>
+			<ol>
+				<li>
+					<p>
+ <m>g(\pile{4}) \oplus, g(\pile{4}) = 1 \oplus 1 = 0</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>g(\pile{4}) \oplus, g(\pile{5}) = 1 \oplus 1 = 0</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>g(\pile{5}) \oplus, g(\pile{6}) = 1 \oplus 2 = 3</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>g(\pile{6}) \oplus, g(\pile{7}) = 2 \oplus 2 = 0</m>
+					</p>
+				</li>
+			</ol>
+</p>
+</solution-->
+
+
+
+
+			</p><p>
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Decide whether the following <m>S(3,5)</m> positions are <m>\cN</m>-positions or <m>\cP</m>-positions. If it is an <m>\cN</m>-position, give the list of winning moves.
+
+
+			<ol>
+				<li>
+					<p>
+ <m>( \pile{4} , \pile{11})</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>(\pile{7} , \pile{13})</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>(\pile{7} , \pile{14})</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>( \pile{13} , \pile{18})</m>
+					</p>
+				</li>
+			</ol>
+
+<!--solution>
+<p>
+			<ol>
+				<li>
+					<p>
+ <m>g(\pile{4}) \oplus, g(\pile{11}) = 1 \oplus 1 = 0</m> so this is a <m>\cP</m>-position.
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>g(\pile{7}) \oplus, g(\pile{13}) = 2 \oplus 1 = 3</m> so this is an <m>\cN</m>-position.
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>g(\pile{7}) \oplus, g(\pile{14}) = 2 \oplus 2 = 0</m> so this is a <m>\cP</m>-position.
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>g(\pile{13}) \oplus, g(\pile{18}) = 1 \oplus 0 = 1</m> so this is an <m>\cN</m>-position.
+					</p>
+				</li>
+			</ol>
+</p>
+</solution-->
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>The Sprague-Grundy Value for Nim</title>
+			<idx><h>The Sprague-Grundy Value for Nim</h></idx>
+			<statement>
+				<p>
+Recall that we use <m>*n</m> to denote a heap of <m>n</m> beans in nim.
+
+			<ol>
+				<li>
+					<p>
+ What is <m>g(*n)</m>, the Sprague-Grundy value of a nim heap of size <m>n</m>? Start with <m>n=0,1,2,3,\ldots</m> until you see the pattern.
+
+<!--solution>
+<p>
+<me>
+\begin{array}{rcl}
+g(*0) &amp;=&amp; \mex \{ \} = 0 \\
+g(*1) &amp;=&amp; \mex \{ g(*0) \} = \mex \{ 0 \}= 1 \\
+g(*2) &amp;=&amp; \mex \{ g(*0), g(*1) \} = \mex \{ 0,1 \}= 2 \\
+g(*3) &amp;=&amp; \mex \{ g(*0), g(*1), g(*2) \} = \mex \{ 0,1,2 \}= 3 \\
+\\
+g(*n) &amp;=&amp; \mex \{ g(*0), g(*1), \ldots , g(*(n-1)) \} = \mex \{ 0,1, \ldots , n-1 \}= n \\
+\end{array}
+</me>
+</p>
+</solution-->
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Calculate the Sprague-Grundy values of the following two-heap nim positions
+
+
+
+<me>
+\begin{array}{c|c|c|c|c|c}
+g(*n \oplus *m) &amp; *0 &amp; *1 &amp; *2 &amp; *3 &amp; *4 \\
+\hline
+\hline
+*0 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*1 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*2 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*3 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*4 &amp;&amp;&amp;&amp;  &amp; \\
+
+\end{array}
+</me>
+
+<!--solution>
+<p>
+<me>
+\begin{array}{c|c|c|c|c|c}
+g(*n \oplus *m) &amp; *0 &amp; *1 &amp; *2 &amp; *3 &amp; *4 \\
+\hline
+\hline
+*0 &amp;0&amp;1&amp;2&amp; 3 &amp; 4\\
+\hline
+*1 &amp;1&amp;0&amp;3&amp;2 &amp; 5 \\
+\hline
+*2 &amp;2&amp;3&amp;0&amp;1 &amp; 6 \\
+\hline
+*3 &amp;3&amp;2&amp;1&amp;0&amp;7 \\
+\hline
+*4 &amp;4&amp;5&amp;6&amp;7&amp;0 \\
+
+\end{array}
+</me>
+</p>
+</solution-->
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Calculate the nim sum <m>n \oplus m</m>
+
+
+<me>
+\begin{array}{c|c|c|c|c|c}
+n \oplus m &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+\hline
+\hline
+0 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+1 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+2 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+3 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+4 &amp;&amp;&amp;&amp; &amp; \\
+
+\end{array}
+</me>
+
+
+<!--solution>
+<p>
+<me>
+\begin{array}{c|c|c|c|c|c}
+n \oplus m &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+\hline
+\hline
+0 &amp;0&amp;1&amp;2&amp; 3 &amp; 4\\
+\hline
+1 &amp;1&amp;0&amp;3&amp;2 &amp; 5 \\
+\hline
+2 &amp;2&amp;3&amp;0&amp;1 &amp; 6 \\
+\hline
+3 &amp;3&amp;2&amp;1&amp;0&amp;7 \\
+\hline
+4 &amp;4&amp;5&amp;6&amp;7&amp;0 \\
+
+\end{array}
+</me>
+</p>
+</solution-->
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Compare your answers to problems 2 and 3. What do you observe?
+
+<!--solution>
+<p>
+
+They are the same. It looks like the Sprague-Grundy value satisfies:
+<me>
+g(*n \oplus *m) = g(*n) \oplus g(*m).
+</me>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+
+
+</chapter>

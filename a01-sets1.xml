@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="sets1" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Sets</title>
+	<introduction>
+		<p>
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+		<exercise>
+			<title>Element, Subset or Neither?</title>
+			<idx><h>Element, Subset or Neither?</h></idx>
+			<statement>
+				<p>
+Mark each of the following statements as <em> true</em> or <em> false</em>
+
+
+			<ol>
+				<li>
+					<p>
+ Let <m>A = \{ 1, \{ 1 \} \}</m>.
+
+			<ol>
+				<li>
+					<p>
+ <m> 1 \in A</m>
+<!--solution>
+<p>
+<em> true</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\{ 1 \} \in A</m>
+<!--solution>
+<p>
+<em> true</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\{ \{ 1 \} \} \in A</m>
+<!--solution>
+<p>
+<em> false</em>
+</p>
+</solution-->
+					</p>
+				</li>
+			</ol>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Let <m>B = \{ 1, 2, 3 \}</m>
+
+			<ol>
+
+				<li>
+					<p>
+ <m>3 \in B</m>
+<!--solution>
+<p>
+<em> true</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+  <m>\{ 3 \} \in B</m>
+<!--solution>
+<p>
+<em> false</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+  <m>\{ 3 \} \subseteq B</m>
+<!--solution>
+<p>
+<em> true</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>C = \{ \{1,2\}, \{ \emptyset \} \}</m>
+
+			<ol>
+
+				<li>
+					<p>
+ <m>\emptyset \in C </m>
+<!--solution>
+<p>
+<em> false</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+  <m>\emptyset \subseteq C </m>
+<!--solution>
+<p>
+<em> true</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+  <m>|C|=3</m>
+<!--solution>
+<p>
+<em> false</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>D = \{ \{1, 2 \}, \{ 3, 4, 5 \} \}</m>
+
+			<ol>
+
+
+				<li>
+					<p>
+ <m>|D|=5 </m>
+<!--solution>
+<p>
+<em> false</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>\{ 1, 2 \} \subseteq D </m>
+<!--solution>
+<p>
+<em> false</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+   <m>4 \in D</m>
+<!--solution>
+<p>
+<em> false</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m> E = \{ \emptyset, \{ \emptyset \} , 0 \}</m>
+
+			<ol>
+
+				<li>
+					<p>
+ <m>\emptyset \in E</m>
+<!--solution>
+<p>
+<em> true</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+  <m> \{ \{ \emptyset \} \}  \subseteq E </m>
+<!--solution>
+<p>
+<em> true</em>
+</p>
+</solution-->
+					</p>
+				</li>
+				<li>
+					<p>
+  <m>|E|=3</m>
+<!--solution>
+<p>
+<em> true</em>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise>
+			<title>Counting Subsets</title>
+			<idx><h>Counting Subsets</h></idx>
+			<statement>
+				<p>
+Let <m>A</m> be any set. In this problem, we will see why mathematicians decided that is it "right" to say that <m>\emptyset \subseteq A</m> and <m>A \subseteq A</m>.
+
+			<ol>
+				<li>
+					<p>
+ List all of the subsets of <m>\{ 1 \}</m>.
+
+<!--solution>
+<p>
+<m>\emptyset, \{ 1 \}</m>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ List all of the subsets of <m>\{ 1,2 \}</m>.
+
+<!--solution>
+<p>
+<m>\emptyset, \{ 1 \}, \{ 2 \} , \{ 1,2 \}</m>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ List all of the subsets of <m>\{ 1,2,3 \}</m>.
+
+<!--solution>
+<p>
+<m>\emptyset, \{ 1 \}, \{ 2 \}, \{ 3 \}, \{ 1,2 \}, \{ 1,3 \} , \{ 2,3 \}, \{ 1,2,3 \}</m>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Look at the pattern you see so far. Guess how many subsets are there of the set <m>\{ 1,2,3,4 \}</m>. How about the set <m>\{ 1,2,3, \ldots , 10 \}</m>?
+
+<!--solution>
+<p>
+<m>\{ 1,2,3,4 \}</m> has <m>2^4</m> subsets and <m>\{ 1,2,3, \ldots , 10 \}</m> has <m>2^{10}</m> subsets.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Your answers in part (d) are  very simple expressions. This is one reason why mathematicians defined "subset" to include the cases <m>\emptyset \subseteq A</m> and <m>A \subseteq A</m>.  The <em>power set</em> of a set <m>A</m> is the set of all subsets of <m>A</m>. This power set is denoted <m>\mathcal{P}(A)</m>. If <m>|A|=n</m>, what is  <m>| \mathcal{P}(A)|</m>? (You do not have to prove your answer.)
+
+<!--solution>
+<p>
+If <m>|A|=n</m> then  <m>| \mathcal{P}(A)|=2^n</m>
+</p>
+</solution-->
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise>
+			<title>Empty Sets All the Way Down</title>
+			<idx><h>Empty Sets All the Way Down</h></idx>
+			<statement>
+				<p>
+Consider the following sequence of sets
+
+\[
+\emptyset,  \{ \emptyset \},  \Big\{ \emptyset, \{ \emptyset \} \Big\},  \bigg\{  \emptyset , \{ \emptyset \} , \Big\{ \emptyset, \{ \emptyset \} \Big\} \bigg\}.
+\]
+
+			<ol>
+				<li>
+					<p>
+ What is the size of each of these sets?
+<!--solution>
+<p>
+In order, these set sizes are 0, 1, 2 and 3.
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ What is the next set in this series?
+
+<!--solution>
+<p>
+\[
+\bigg\{ \emptyset,
+\{ \emptyset \},
+\Big\{ \emptyset, \{ \emptyset \} \Big\},
+\bigg\{
+\emptyset , \{ \emptyset \} , \Big\{ \emptyset, \{ \emptyset \} \Big\} \bigg\}
+\bigg\}
+\]
+And here is the next one:
+\[
+\bigg\{ \emptyset,
+\{ \emptyset \},
+\Big\{ \emptyset, \{ \emptyset \} \Big\},
+\bigg\{
+\emptyset , \{ \emptyset \} , \Big\{ \emptyset, \{ \emptyset \} \Big\} \bigg\},
+\bigg\{ \emptyset,
+\{ \emptyset \},
+\Big\{ \emptyset, \{ \emptyset \} \Big\},
+\bigg\{
+\emptyset , \{ \emptyset \} , \Big\{ \emptyset, \{ \emptyset \} \Big\} \bigg\}
+\bigg\}
+\bigg\}
+\]
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Dr. Philomath says, "You can create the natural numbers from nothing." What does she mean by this statement? 
+ Do you think that this is a true statement or a false statement?
+
+
+
+<!--solution>
+<p>
+
+If you think of an empty set as a "nothing" then she is right. (But it's really a something that has nothing inside it.)
+
+			</p><p>
+
+We have constructed sets of sizes 0,1,2,3,4 and 5. We can keep going and get a set of size <m>n \in \N</m>. However, the elements are just sets of sets, and the ultimate sets are empty. All we have is a bunch of nested empty set.
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>The Barber Paradox</title>
+			<idx><h>The Barber Paradox</h></idx>
+			<statement>
+				<p>
+Consider the following classic paradox: "The barber is a man in town who shaves all those (and only those) men in town who do not shave themselves. Who shaves the barber?"
+
+			</p><p>
+
+Note that I've updated the classic phrasing  so that it is <em>actually</em> a paradox. Also, let us assume that every man shaves (even if it's just to clean up his beard).
+
+			<ol>
+				<li>
+					<p>
+ Explain the logical paradox of this description of the barber.
+
+
+<!--solution>
+<p>
+The barber is a man, and (1) he shaves all men who don't shave themselves and (2) he doesn't shave any man who shaves himself. So this is becomes an "if and only if" statement. This leads to the following:
+		<ul>
+			<li>
+			<p>
+ The barber cannot shave himself because (by definition), he only shaves men who do not shave themselves.
+			</p>
+			</li>
+			<li>
+			<p>
+ However, if the barber does not shave himself, then he is one of the men shaved by the barber.
+			</p>
+			</li>
+			<li>
+			<p>
+ But the barber only shaves men who don't shave themselves. This brings us back where we started.
+			</p>
+			</li>
+			<li>
+			<p>
+ This loop continues forever without resolution.
+			</p>
+			</li>
+		</ul>
+
+This is an example of how self-referential statements can lead to paradoxes. So this sentence is problematic. A mathematician would say that a paradox is NOT a mathematical statement, because it is neither true nor false.
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+  The classic formulation of the "barber paradox" is  actually: "The barber shaves every man in town who does not shave themselves. Who shaves the barber?" There are multiple reasons why this statement is NOT a paradox. Can you find at least one?
+
+<!--solution>
+<p>
+Here are four reasons why this phrasing is NOT a paradox. The first three tackle implicit (and possibly incorrect) assumptions about the barber. The last reason actually shows that the reader has actually made a logical mistake!
+
+		<ul>
+			<li>
+			<p>
+ The clearest way out is when <em>the barber is not a man</em>. The barber could be a woman or non-gender conforming. Ages ago, the word "barber" required that the person was male. But this is clearly not the case in our modern times. Therefore, we must update the "barber paradox" to explicitly state that the barber is man.
+
+			</p>
+			</li>
+			<li>
+			<p>
+ The second assumption is that <em>the barber is a person who shaves</em>. This assumption could be wrong, even if the barber is a man. (And there is nothing like a huge, unkept beard to inspire confidence in a barber's clients.)
+
+			</p>
+			</li>
+			<li>
+			<p>
+ The barber is a  man <em>in town</em>. Hundreds of years ago, you had to live in the same town in which you worked. What would "in town" mean in our modern times, when people commute to work?
+
+			</p>
+			</li>
+			<li>
+			<p>
+ But let's assume that the barber is male gendered,  that he shaves, and that he lives in town.  The classic phrasing actually <em>says NOTHING about men who shaves themselves</em>. A male barber is free to shave himself, since the statement does not preclude him doing so.
+
+			</p><p>
+
+Here is why. The statement is: "The barber  shaves all men who do not shave  themselves." This is equivalent to saying "If man <m>M</m> does not shave himself, then the barber shaves <m>M</m>." What if <m>M</m> does shave himself? The implication does not tell us anything at all about <m>M</m>.
+
+			</p><p>
+
+So the barber shaves himself, and that fact is logically consistent with the statement that "The barber  shaves all men who do not shave  themselves."
+
+
+
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>A Weird Set</title>
+			<idx><h>A Weird Set</h></idx>
+			<statement>
+				<p>
+Let <m>S</m> be the set of sets that do not contain themselves. Consider the following two statements:
+\[
+S \in S  \mbox{ and }  S \subseteq S.
+\]
+Which of these statements is true, and which of these statements is a paradox?
+
+<!--solution>
+<p>
+For any set <m>A</m>, we always have <m>A \subseteq A</m>. Therefore in this case <m>S \subseteq S</m>. However, if we try to resolve <m>S \in S</m>, we end up in a paradox.
+
+		<ul>
+			<li>
+			<p>
+ Suppose that <m>S \in S</m>. Then the set <m>S</m> contains itself. So actually <m>S</m> cannot be an element of <m>S</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ But if <m>S</m> does not contain itself, then <m>S</m> actually is an element of <m>S</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ This brings us back where we started, and we continue to loop forever without resolution.
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution-->
+
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	
+	</exercises>
+
+
+
+
+</chapter>

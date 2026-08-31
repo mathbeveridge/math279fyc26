@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="count-include-exclude" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Inclusion/Exclusion</title>
+	<introduction>
+		<p>
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Rolling 10 Dice</title>
+			<idx><h>Rolling 10 Dice</h></idx>
+			<statement>
+				<p>
+We roll 6-sided die 10 times, and then list the outcomes in order as <m>(x_1, x_2, \ldots , x_{10} )</m>. We are interested in counting the total number outcomes in which both  1 appears and 2 appears.  We break this process into multiple steps.
+
+			<ol>
+				<li>
+					<p>
+ Let <m>X</m> be the set of all possible outcomes <m>(x_1, x_2, \ldots , x_{10} )</m>. What is <m>|X|</m>?
+
+<!--solution>
+<p>
+For each <m>x_i</m>, we have 6 possible rolls. By the product principle, the answer is
+<me>
+|X| = 6^{10}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Let <m>X_1</m> be the set of outcomes that <em>do not </em> contain any 1's. I would call <m>X_1</m> the set of "bad outcomes for 1." What is <m>|X_1|</m>?
+
+<!--solution>
+<p>
+For each <m>x_i</m>, we have 5 possible rolls since rolling a 1 is forbidden. By the product principle, the answer is
+<me>
+|X_1| = 5^{10}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Define <m>X_2</m> in the same way as in part (b), where <m>X_2</m> is the set of "bad outcomes for 2." What is <m>|X_2|</m>?
+
+<!--solution>
+<p>
+As in the previous problem the answer is
+<me>
+|X_2| = 5^{10}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ How many outcomes are there in which neither 1 or 2 appears? How would you describe this set using the symbols <m>X_1</m> and <m>X_2</m>?
+
+<!--solution>
+<p>
+The set described is <m>X_1 \cap X_2</m>. This time, there are 4 numbers allowed for each role, so
+<me>
+|X_1 \cap X_2| = 4^{10}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Use inclusion-exclusion to find the number of outcomes in which either 1 does not appear or 2 does not appear (or both do not appear). This account for all the "bad outcomes."
+
+<!--solution>
+<p>
+<me>
+|X_1 \cup X_2 | = |X_1| + | X_2| - |X_1 \cap X_2| = 5^{10} + 5^{10}  - 4^{10}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Now use your answer from part (d) to find the number of "good  outcomes." Namely, how many outcomes contain both 1 and 2?
+
+<!--solution>
+<p>
+<me>
+6^{10} - \left( 5^{10} + 5^{10}  - 4^{10}  \right) = 6^{10} - 2 \cdot 5^{10} + 4^{10}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>I Hate 2, 5, and 7</title>
+			<idx><h>I Hate 2, 5, and 7</h></idx>
+			<statement>
+				<p>
+In this question, you will determine how many numbers between 1 and 140 are <em>not</em> divisible by any of 2, 5 or 7. As in the previous question, we  start by counting the complement of the set we are interested in (because it is easier to count).
+
+			<ol>
+				<li>
+					<p>
+ Negate the statement "<m>n</m> is not divisible by any of 2, 5 and 7."
+
+<!--solution>
+<p>
+<m>n</m> is divisible by at least one of 2, 5 or 7
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ The set of numbers that you described in part (a) can be found using inclusion-exclusion. Do so.
+
+<!--solution>
+<p>
+Let <m>A_2</m>, <m>A_5</m> and <m>A_7</m> be the set of numbers divisible by 2, 5, and 7, respectively. We have
+
+<me>
+\begin{array}{ccc}
+|A_2| = 70 &amp; |A_5| = 28 &amp; |A_7| = 20 \\
+|A_2 \cap A_5| = 14 &amp; |A_2 \cap A_7| = 10 &amp; |A_5 \cap A_7| = 4 \\
+&amp;|A_2 \cap A_5 \cap A_7| = 2 \\
+\end{array}
+</me>
+
+By inclusion-exclusion the answer is
+<me>
+70+28+20 - 14 - 10 - 4 + 2 = 92
+</me>
+</p>
+</solution-->
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Use your answer to (b) to find how many numbers in [140] are <em>not</em> divisible by any of 2, 5 and 7.
+
+<!--solution>
+<p>
+We use the useful theorem "good = all - bad" to find that
+<me>
+140 -92 = 48
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+				</p>
+			</statement>
+		</exercise>
+<exercise>
+			<title>Sharing French Fries</title>
+			<idx><h>Sharing French Fries</h></idx>
+			<statement>
+				<p>
+Anna, Boris, Clyde and Denise are sharing a basket of 50 french fries. How many ways
+are there for them to share the fries, assuming nobody gets more than 15 fries?
+<ol>
+<li>
+<p>How many ways are there, with no restrictions, to distribute 50 identical french fries
+among 4 distinct friends?
+<!--solution>
+<p>
+We have 50 identical fries (balls) to give to 4 distinct friends (boxes). Repetition is allowed
+and boxes can be empty. The number of ways is <m>{50+4-1 \choose 50} = {53 \choose 50}</m>.
+</p>
+</solution-->
+</p>
+</li>
+<li>
+<p>Let <m>A</m> be the set of outcomes in which Anna gets 16 or more fries. What is <m>|A|</m>? 
+(Hint: first give away 16 fries to Anna, 
+then distribute the rest freely among the 4 friends.)
+Define similar sets <m>B,C,D</m> for Boris, Clyde and Denise. Find <m>|A|+|B|+|C|+|D|</m>.
+<!--solution>
+After reserving 16 fries for Anna, we have 34 fries left over, to distribute any way we like.
+The number of ways is <m>{34+4-1 \choose 50} = {37 \choose 34}</m>. 
+The same argument holds for Boris, Clyde and Denise. so
+<me>
+|A|+|B|+|C|+|D| = 4 {37 \choose 34}.
+</me>
+</solution-->
+</p> 
+</li>
+<li>
+<p>What is <m>|A \cap B|</m>? (Hint: first give away 16 fries to Anna and 16 more to Boris, 
+then distribute the rest freely.) What is <m>| A \cap B| + | A \cap C| + | A \cap D| +
+| B \cap C| + | B \cap D| + | C \cap D|</m>?
+<!--solution>
+After reserving 16 fries for Anna, and 16 fries for Boris, we have 18 fries left over, to distribute any way we like.
+The number of ways is <m>{18+4-1 \choose 18} = {21 \choose 18}</m>. 
+The same argument holds for any pair of friends, so 
+<me>
+| A \cap B| + | A \cap C| + | A \cap D| +
+| B \cap C| + | B \cap D| + | C \cap D|= 6 {21 \choose 18}.
+</me>
+</solution-->
+</p> 
+</li>
+<li>
+<p>Use similar reasoning to part (c) to find the sum of the sizes of all intersections involving 3 of
+the sets <m>A,B,C,D</m>.
+<!--solution>
+After reserving 16 fries for Anna, and 16 fries for Boris, and 16 fries for Clyde, we have 2 fries left over, 
+to distribute any way we like.
+The number of ways is <m>{2+4-1 \choose 18} = {5 \choose 2}</m>. 
+The same argument holds for any triple of friends, so 
+<me>
+| A \cap B \cap C| + | A \cap B \cap D| + | A \cap C \cap D| +
+| B \cap C \cap D| = 4 {5 \choose 3}.
+</me>
+</solution-->
+</p> 
+</li>
+<li>
+<p>Find <m>|A \cap B \cap C \cap D|</m>.
+<!--solution>
+There are not enough fries to give 16 fries to each of 4 people. So <m>|A \cap B \cap C \cap D|=0</m>
+</solution-->
+</p> 
+</li>
+<li>
+<p>Use inclusion-exclusion to find the total number of ways for the friends to share 50 fries where
+no one gets more than 15 fries. 
+<!--solution>
+Our final answer is
+<me>
+{53 \choose 50} - 4 {37 \choose 34} + 6 {21 \choose 18} - 4 {5 \choose 3} + 0.
+</me>
+</solution-->
+</p> 
+</li>
+</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+
+	</exercises>
+
+
+
+
+</chapter>
