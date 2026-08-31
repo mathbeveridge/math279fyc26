@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dm Graphs</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+    \def\W{\mathbb W}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cN{\mathcal N}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+    \def\cF{\mathcal F}
+    \def\cX{\mathcal X}
+
+    \def\nimsum{\, \oplus \,}
+    \def\mex{{\mathrm{mex}}}
+    \newcommand{\pile}[1]{\bullet{#1}}
+    \def\g{g}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+  
+
+     
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="dm.html"><span class="title">Discrete Mathematics:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="part-gi.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-gi.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="graph2.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="part-gi.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-gi.html" title="Up">Up</a><a class="next-button button toolbar-item" href="graph2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-slf.html" data-scroll="part-slf"><span class="codenumber">I</span> <span class="title">Sets, Logic and Functions</span></a></li>
+<li class="link"><a href="sets1.html" data-scroll="sets1"><span class="codenumber">1</span> <span class="title">Sets</span></a></li>
+<li class="link"><a href="sets2.html" data-scroll="sets2"><span class="codenumber">2</span> <span class="title">Unions and Intersections</span></a></li>
+<li class="link"><a href="logic1.html" data-scroll="logic1"><span class="codenumber">3</span> <span class="title">Logical Connectors</span></a></li>
+<li class="link"><a href="logic2.html" data-scroll="logic2"><span class="codenumber">4</span> <span class="title">Logical Arguments</span></a></li>
+<li class="link"><a href="quantifiers.html" data-scroll="quantifiers"><span class="codenumber">5</span> <span class="title">Quantifiers</span></a></li>
+<li class="link"><a href="proof1.html" data-scroll="proof1"><span class="codenumber">6</span> <span class="title">Proofs</span></a></li>
+<li class="link"><a href="function1.html" data-scroll="function1"><span class="codenumber">7</span> <span class="title">Functions</span></a></li>
+<li class="link"><a href="function2.html" data-scroll="function2"><span class="codenumber">8</span> <span class="title">Injections and Surjections</span></a></li>
+<li class="link"><a href="function3.html" data-scroll="function3"><span class="codenumber">9</span> <span class="title">Fun with Functions</span></a></li>
+<li class="link part"><a href="part-count.html" data-scroll="part-count"><span class="codenumber">II</span> <span class="title">Induction and Counting</span></a></li>
+<li class="link"><a href="induction1.html" data-scroll="induction1"><span class="codenumber">10</span> <span class="title">Induction</span></a></li>
+<li class="link"><a href="induction2.html" data-scroll="induction2"><span class="codenumber">11</span> <span class="title">Strong Induction</span></a></li>
+<li class="link"><a href="recursive.html" data-scroll="recursive"><span class="codenumber">12</span> <span class="title">Recursive Sequences</span></a></li>
+<li class="link"><a href="count-warmup.html" data-scroll="count-warmup"><span class="codenumber">13</span> <span class="title">Basic Counting Problems</span></a></li>
+<li class="link"><a href="add-mult.html" data-scroll="add-mult"><span class="codenumber">14</span> <span class="title">Addition Principle and Multiplication Principle</span></a></li>
+<li class="link"><a href="count-perm-comb.html" data-scroll="count-perm-comb"><span class="codenumber">15</span> <span class="title">Permutations and Combinations</span></a></li>
+<li class="link"><a href="count-balls-in-boxes1.html" data-scroll="count-balls-in-boxes1"><span class="codenumber">16</span> <span class="title">Balls in Boxes Part 1</span></a></li>
+<li class="link"><a href="count-balls-in-boxes2.html" data-scroll="count-balls-in-boxes2"><span class="codenumber">17</span> <span class="title">Balls in Boxes Part 2</span></a></li>
+<li class="link"><a href="count-include-exclude.html" data-scroll="count-include-exclude"><span class="codenumber">18</span> <span class="title">Inclusion/Exclusion</span></a></li>
+<li class="link"><a href="count-pigeonhole.html" data-scroll="count-pigeonhole"><span class="codenumber">19</span> <span class="title">Pigeonhole Principle</span></a></li>
+<li class="link"><a href="combproof.html" data-scroll="combproof"><span class="codenumber">20</span> <span class="title">Combinatorial Proof</span></a></li>
+<li class="link"><a href="count-binomial.html" data-scroll="count-binomial"><span class="codenumber">21</span> <span class="title">Binomial Theorem</span></a></li>
+<li class="link part"><a href="part-gi.html" data-scroll="part-gi"><span class="codenumber">III</span> <span class="title">Graphs, and Trees</span></a></li>
+<li class="link active"><a href="graph1.html" data-scroll="graph1"><span class="codenumber">22</span> <span class="title">Graphs</span></a></li>
+<li class="link"><a href="graph2.html" data-scroll="graph2"><span class="codenumber">23</span> <span class="title">Graph Isomorphisms</span></a></li>
+<li class="link"><a href="tree1.html" data-scroll="tree1"><span class="codenumber">24</span> <span class="title">Trees</span></a></li>
+<li class="link"><a href="mst.html" data-scroll="mst"><span class="codenumber">25</span> <span class="title">Minimum Spanning Trees</span></a></li>
+<li class="link"><a href="eulerian.html" data-scroll="eulerian"><span class="codenumber">26</span> <span class="title">Eulerian Graphs</span></a></li>
+<li class="link"><a href="matching.html" data-scroll="matching"><span class="codenumber">27</span> <span class="title">Bipartite Matchings</span></a></li>
+<li class="link"><a href="planar.html" data-scroll="planar"><span class="codenumber">28</span> <span class="title">Planar Graphs</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="graph1"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">22</span> <span class="title">Graphs</span>
+</h2>
+<section class="introduction" id="introduction-22"><p id="p-340"></p></section><section class="exercises" id="exercises-22"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-100"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Our First Graph.</span>
+</h6>
+<p id="p-341">A  <em class="emphasis">graph</em> is a set \(V\) of vertices and a set \(E\) of edges  connecting pairs of points. By convention, we denote the number of vertices by \(n=|V|\) and the number of edges by \(m = |E|\text{.}\)</p>
+<p id="p-342">Here is an example. The vertices are points and the edges are lines connecting pairs of points. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/first-graph.png" class="contained"></div> This graph \(G\) has \(|V|=6\) and \(|E|=8\text{.}\)</p>
+<ul class="disc">
+<li id="li-208"><p id="p-343">\((u,v)\) is an edge that is <em class="emphasis">incident</em> with both \(u\) and \(v\text{.}\) Therefore, \(u\) and \(v\) are <em class="emphasis">adjacent</em>.</p></li>
+<li id="li-209"><p id="p-344">\((x,w)\) is <em class="emphasis">not</em> an edge</p></li>
+<li id="li-210"><p id="p-345">\(w\) is incident with 3 edges, so its <em class="emphasis">degree</em> is \(\deg(w)=3\text{.}\)</p></li>
+</ul>
+<ol class="lower-alpha">
+<li id="li-211"><p id="p-346">What are the degrees of  the vertices of \(G\text{?}\) </p></li>
+<li id="li-212"><p id="p-347">The graph \(G\) is drawn so that some of the edges are <em class="emphasis">crossing</em>, meaning that they intersect. For example, edge \(e_1 = (x,v)\) crosses edge \(e_2 = (y,w)\text{.}\) Create another drawing of the graph \(G\) so that none of the edges are crossing. </p></li>
+<li id="li-213"><p id="p-348">The <em class="emphasis">complement</em> \(\overline{G}\) of graph \(G\) is the "graph of edges missing in \(G\text{.}\)"  It has the same vertices as \(G\text{.}\) But the edge \((u,v) \in E(\overline{G})\) if and only if \((u,v) \notin E(G)\text{.}\) Draw the complement \(\overline{G}\) of the graph \(G\text{.}\)  Can you draw \(\overline{G}\) so that none of its edges are crossing? </p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-101"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Families of Graphs.</span>
+</h6>
+<ol id="p-349" class="lower-alpha">
+<li id="li-214"><p id="p-350"><em class="emphasis">Paths.</em> The path \(P_n\) is the graph consisting of a path on \(n\) vertices. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-graph13.svg" role="img" class="contained"></div> How many edges are there in \(P_n\) for \(n \geq 2\text{?}\) </p></li>
+<li id="li-215"><p id="p-351"><em class="emphasis">Cycles.</em> The cycle \(C_n\) is the graph corresponding to a closed walk on \(n\) vertices whose only repetition is the first/last vertex. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-graph14.svg" role="img" class="contained"></div> How many edges are there is the cycle \(C_n\) for \(n \geq 3\text{?}\) </p></li>
+<li id="li-216"><p id="p-352"><em class="emphasis">Wheels.</em> The wheel \(W_n\) is the graph consisting of a cycle \(C_{n-1}\) along with a single hub node that is adjacent with each node in that cycle. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-graph15.svg" role="img" class="contained"></div> How many edges are there in the wheel \(W_n\) for \(n \geq 4\text{?}\) </p></li>
+<li id="li-217"><p id="p-353"><em class="emphasis">Complete Graphs.</em> The complete graph \(K_n\) is the graph on \(n\) vertices with every possible edge. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-graph16.svg" role="img" class="contained"></div> How many edges are there in the complete graph \(K_n\) for \(n \geq 2\text{?}\) </p></li>
+<li id="li-218"><p id="p-354"><em class="emphasis">Complete Bipartite Graphs.</em> The complete bipartite graph \(K_{r,s}\) is the graph whose vertices are divided into sets \(A\) and \(B\text{,}\) where \(|A|=r\) and \(|B|=s\text{.}\) Every vertex in \(A\) is adjacent to every vertex in \(B\text{.}\) There are no other edges. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-graph17.svg" role="img" class="contained"></div> How many edges are there in the complete bipartite graph \(K_{r,s}\) for \(r \geq 1\) and \(s \geq 1\text{?}\) </p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-102"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Counting edges and degrees.</span>
+</h6>
+<p id="p-355">Let \(G = (V,E)\) be a graph on \(n\) vertices with \(m\) edges.</p>
+<ol class="lower-alpha">
+<li id="li-219">
+<p id="p-356"><em class="emphasis">The Handshaking Lemma.</em> Prove that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{v \in V} \deg(v) = 2|E|.
+\end{equation*}
+</div>
+<p class="continuation">This is our first example of a "combinatorial identity": you are counting the same set in two different ways. This equality is known as "the handshaking lemma." </p>
+</li>
+<li id="li-220"><p id="p-357">Prove that the number of vertices of odd degree is even. First, partition \(V\) into two sets: the vertices of odd degree and the vertices of even degree. Then use the handshaking lemma (from the previous problem). </p></li>
+<li id="li-221"><p id="p-358">Prove that if \(G\) is a <em class="emphasis">connected</em> graph on \(n\) vertices then \(G\) contains two vertices that have the same degree. Hint: what are the possible values for \(\deg(v)\) for \(v \in V(G)\text{?}\) </p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-103"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Connected Graphs.</span>
+</h6>
+<p id="p-359">A graph is <em class="emphasis">connected</em> when every pair of vertices are connected by a path in the graph. Any graph is made up of connected <em class="emphasis">components</em>. In other words, we can view any graph as the union of its components, which are themselves connected graphs. Below, we see an example of a connected graph and example of a graph with three components. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-graph18.svg" role="img" class="contained"></div></p>
+<ol class="lower-alpha"><li id="li-222">
+<p id="p-360">Let \(G\) be a graph with \(|V|=n\text{.}\)</p>
+<ol class="lower-roman">
+<li id="li-223"><p id="p-361">Suppose \(G\) is connected. Find a lower bound on \(|E|\text{.}\) Start by exploring examples for \(n=2,3,4,5\text{.}\) You do NOT have to prove your answer is correct. </p></li>
+<li id="li-224"><p id="p-362">Suppose that \(G\) is disconnected. Find an upper bound on \(|E|\text{.}\) Start by exploring examples for \(n=2,3,4,5\text{.}\) You do NOT have to prove your answer is correct. </p></li>
+</ol>
+</li></ol></article><article class="exercise exercise-like" id="exercise-104"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Bipartite Graphs.</span>
+</h6>
+<p id="p-363">A graph \(G=(V,E)\) is <em class="emphasis">bipartite</em> if its vertex set can be partitioned into two sets \(A\) and \(B\) such that the only edges in \(G\) run between these two sets. Equivalently: we can color the vertices of a bipartite graph with two colors, red and black, so that adjacent vertices receive different colors. The complete bipartite graph \(K_{n,m}\) is an example of a bipartite graph. Here are some more examples of bipartite graphs. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-graph19.svg" role="img" class="contained"></div></p>
+<ol class="lower-alpha">
+<li id="li-225"><p id="p-364">For which values of \(n\) is \(P_{n}\) a bipartite graph? </p></li>
+<li id="li-226"><p id="p-365">For which values of \(n\) is \(C_{n}\) a bipartite graph? </p></li>
+<li id="li-227"><p id="p-366">For which values of \(n\) is \(W_{n}\) a bipartite graph? </p></li>
+<li id="li-228"><p id="p-367">For which values of \(n\) is \(K_{n}\) a bipartite graph? </p></li>
+<li id="li-229"><p id="p-368">Suppose that \(G\) is a bipartite graph on \(n\) vertices. Find an upper bound on \(|E|\text{.}\) Start by exploring examples for \(n=2,3,4,5\text{.}\) You do not need to prove your answer is correct. </p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

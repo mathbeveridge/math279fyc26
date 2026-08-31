@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">true.</em> We give two proofs. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">First, we prove the contrapositive:</em> If \(g\) is not surjective then \(g \circ f\) is not surjective. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Know:</em> There exists \(z \in Z\) such that for all \(y \in Y\text{,}\) \(g(y) \neq z\text{.}\) <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Show:</em> There exists \(z \in Z\) such that for all \(x \in X\text{,}\) \(g \circ f (x) \neq z\text{.}\)</p>
+<ul class="disc">
+<li><p>Let \(f(X) = \{ f(x) \mid x \in X \}\) be the image of \(f\text{.}\)</p></li>
+<li><p>Obviously \(f(X)\) is a subset of \(Y\text{.}\) So for all \(y \in f(X)\text{,}\) we know that \(f(y) \neq z\text{.}\)</p></li>
+<li><p>Pick any \(x \in X\text{.}\) Then \(g \circ f(x) = g(f(x))\text{.}\) We have \(f(x) \in Y\text{,}\) and therefore \(g(f(x)) \neq z\text{.}\)</p></li>
+<li><p>This proves that \(g \circ f: X \rightarrow Z\) is not surjective.</p></li>
+</ul>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Next, we prove the original statement:</em> <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Know:</em> For all  \(z \in Z\) there exists \(x \in X\) such that \(g \circ f(x) = z\text{.}\) <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Show:</em> For all  \(z \in Z\) there exists \(y \in Y\) such that \(g (y) = z\text{.}\)</p>
+<ul class="disc">
+<li><p>Pick any \(z \in Z\text{.}\)</p></li>
+<li><p>There is an \(x \in X\) such that \(g \circ f(x) = z\text{.}\)</p></li>
+<li><p>Let \(y= f(x)\text{.}\)</p></li>
+<li><p>Then \(g(y) = g(f(x)) = g \circ f(x) =z\text{.}\)</p></li>
+<li><p>We found a \(y \in Y\) such that \(g(y)=z\text{.}\)</p></li>
+<li><p>Therefore \(g\) is surjective.</p></li>
+</ul>
+</div></body>
+</html>

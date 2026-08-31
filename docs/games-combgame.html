@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dm Combinatorial Games</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+    \def\W{\mathbb W}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cN{\mathcal N}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+    \def\cF{\mathcal F}
+    \def\cX{\mathcal X}
+
+    \def\nimsum{\, \oplus \,}
+    \def\mex{{\mathrm{mex}}}
+    \newcommand{\pile}[1]{\bullet{#1}}
+    \def\g{g}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+  
+
+     
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="dm.html"><span class="title">Discrete Mathematics:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="games-nimble.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-games.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="games-nimsum.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="games-nimble.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-games.html" title="Up">Up</a><a class="next-button button toolbar-item" href="games-nimsum.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-slf.html" data-scroll="part-slf"><span class="codenumber">I</span> <span class="title">Sets, Logic and Functions</span></a></li>
+<li class="link"><a href="sets1.html" data-scroll="sets1"><span class="codenumber">1</span> <span class="title">Sets</span></a></li>
+<li class="link"><a href="sets2.html" data-scroll="sets2"><span class="codenumber">2</span> <span class="title">Unions and Intersections</span></a></li>
+<li class="link"><a href="logic1.html" data-scroll="logic1"><span class="codenumber">3</span> <span class="title">Logical Connectors and Quantifiers</span></a></li>
+<li class="link"><a href="logic2.html" data-scroll="logic2"><span class="codenumber">4</span> <span class="title">Logical Arguments</span></a></li>
+<li class="link"><a href="function1.html" data-scroll="function1"><span class="codenumber">5</span> <span class="title">Functions</span></a></li>
+<li class="link"><a href="function2.html" data-scroll="function2"><span class="codenumber">6</span> <span class="title">Injections and Surjections</span></a></li>
+<li class="link"><a href="function3.html" data-scroll="function3"><span class="codenumber">7</span> <span class="title">Fun with Functions</span></a></li>
+<li class="link part"><a href="part-gi.html" data-scroll="part-gi"><span class="codenumber">II</span> <span class="title">Graphs, Trees, Induction</span></a></li>
+<li class="link"><a href="graph1.html" data-scroll="graph1"><span class="codenumber">8</span> <span class="title">Graphs</span></a></li>
+<li class="link"><a href="graph2.html" data-scroll="graph2"><span class="codenumber">9</span> <span class="title">Graph Isomorphisms</span></a></li>
+<li class="link"><a href="tree1.html" data-scroll="tree1"><span class="codenumber">10</span> <span class="title">Trees</span></a></li>
+<li class="link"><a href="induction1.html" data-scroll="induction1"><span class="codenumber">11</span> <span class="title">Induction</span></a></li>
+<li class="link"><a href="induction2.html" data-scroll="induction2"><span class="codenumber">12</span> <span class="title">Strong Induction</span></a></li>
+<li class="link"><a href="planar.html" data-scroll="planar"><span class="codenumber">13</span> <span class="title">Planar Graphs</span></a></li>
+<li class="link"><a href="eulerian.html" data-scroll="eulerian"><span class="codenumber">14</span> <span class="title">Eulerian Graphs</span></a></li>
+<li class="link part"><a href="part-count.html" data-scroll="part-count"><span class="codenumber">III</span> <span class="title">Counting</span></a></li>
+<li class="link"><a href="count-warmup.html" data-scroll="count-warmup"><span class="codenumber">15</span> <span class="title">Basic Counting Problems</span></a></li>
+<li class="link"><a href="add-mult.html" data-scroll="add-mult"><span class="codenumber">16</span> <span class="title">Addition Principle and Multiplication Principle</span></a></li>
+<li class="link"><a href="count-include-exclude.html" data-scroll="count-include-exclude"><span class="codenumber">17</span> <span class="title">Inclusion/Exclusion</span></a></li>
+<li class="link"><a href="count-pigeonhole.html" data-scroll="count-pigeonhole"><span class="codenumber">18</span> <span class="title">Pigeonhole Principle</span></a></li>
+<li class="link"><a href="count-perm-comb.html" data-scroll="count-perm-comb"><span class="codenumber">19</span> <span class="title">Permutations and Combinations</span></a></li>
+<li class="link"><a href="count-binomial.html" data-scroll="count-binomial"><span class="codenumber">20</span> <span class="title">Binomial Theorem</span></a></li>
+<li class="link"><a href="count-balls-in-boxes1.html" data-scroll="count-balls-in-boxes1"><span class="codenumber">21</span> <span class="title">Balls in Boxes Part 1</span></a></li>
+<li class="link"><a href="count-balls-in-boxes2.html" data-scroll="count-balls-in-boxes2"><span class="codenumber">22</span> <span class="title">Balls in Boxes Part 2</span></a></li>
+<li class="link part"><a href="part-games.html" data-scroll="part-games"><span class="codenumber">IV</span> <span class="title">Games</span></a></li>
+<li class="link"><a href="games-nimble.html" data-scroll="games-nimble"><span class="codenumber">23</span> <span class="title">The Game of Nimble</span></a></li>
+<li class="link active"><a href="games-combgame.html" data-scroll="games-combgame"><span class="codenumber">24</span> <span class="title">Combinatorial Games</span></a></li>
+<li class="link"><a href="games-nimsum.html" data-scroll="games-nimsum"><span class="codenumber">25</span> <span class="title">Nim Sums</span></a></li>
+<li class="link"><a href="games-subtract.html" data-scroll="games-subtract"><span class="codenumber">26</span> <span class="title">Subtraction Games</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="games-combgame"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">24</span> <span class="title">Combinatorial Games</span>
+</h2>
+<section class="introduction" id="introduction-24"><p id="p-439"></p></section><section class="exercises" id="exercises-24"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-118"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-440">We use the terms \(\cN\)-position (<em class="emphasis">next</em> player win)  and \(\cP\)-position (<em class="emphasis">previous</em> player win) to describe a winning position and a losing position, respectively. In other words,</p>
+<ul class="disc">
+<li id="li-241"><p id="p-441">An \(\cN\)-position has <em class="emphasis">at least one</em> winning move.</p></li>
+<li id="li-242"><p id="p-442">A \(\cP\)-position has <em class="emphasis">no</em> winning moves.</p></li>
+</ul>
+<p class="continuation">Keep in mind, that after a player's turn, the "next" and "previous" roles switch! On Alice's turn, Alice is the <em class="emphasis">next</em> player (that is, she is about to move). On Bob's turn, Alice is the <em class="emphasis">previous</em> player, (that is, she just moved). Finally, note that we are partitioning  the set \(\cX\) of game positions into two sets named \(\cN\) and \(\cP\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-243"><p id="p-443">Rule #1 says that "an \(\cN\)-position must have at least one follower that is a \(\cP\)-position." Restate this rule incorporating "for all" and/or "there exists" quantifiers. Then prove Rule #1 by contradiction. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like">
+<div class="displaymath" id="p-444">
+\begin{equation*}
+X \in \cN \Longleftrightarrow \exists Y \in \cF(X) \mbox{ such that } Y \in \cP.
+\end{equation*}
+</div>
+<p id="p-445">AFSOC that  \(X\) does not have a follower \(Y\) such that \(Y \in \cP\text{.}\) Let Alice be the "next player" and Bob be the "previous player." Since every follower is an \(\cN\)-position, Alice must move to a \(\cN\)-position. However, now Bob becomes is the "next player" and therefore Bob has a winning strategy, no matter what Alice's first move was. Therefore Alice does not have a winning strategy, a contradiction.</p>
+</div></div></p></li>
+<li id="li-244"><p id="p-446">Rule #2 says that "every follower of a \(\cP\)-position must be an \(\cN\)-position." Restate this rule incorporating "for all" and/or "there exists" quantifiers. Then prove Rule # 2 by contradiction. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like">
+<p id="p-447">We have</p>
+<div class="displaymath">
+\begin{equation*}
+X \in \cP \Longleftrightarrow \forall Y \in \cF(X), \mbox{ we have } Y \in \cN,
+\end{equation*}
+</div>
+<p class="continuation">or equivalently</p>
+<div class="displaymath">
+\begin{equation*}
+X \in \cP \Longleftrightarrow  \cF(X) \subset \cN.
+\end{equation*}
+</div>
+<p id="p-448">ASFOC that \(X\) has a follower \(Y\) that is a \(\cP\) position. Let Alice be the "next player" and Bob be the "previous player." Then Alice can move from \(X\) to \(Y\text{.}\) It is now Bob's turn, so he becomes the "next" player, and he is a losing postion. So this move from \(X\) to \(Y\) was a winning move for Alice, a contradiction.</p>
+</div></div></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-119"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-449">If we can partition the set \(\cX\) of game  positions into sets \(\cA\) and \(\cB\) such that</p>
+<ul class="disc">
+<li id="li-245"><p id="p-450">If \(Y \in \cB\) then \(\exists Z \in \cF(Y)\) such that \(Z \in \cA\text{.}\)</p></li>
+<li id="li-246"><p id="p-451">If \(Z \in \cA\) then \(\cF(Z) \subset \cB\)</p></li>
+</ul>
+<p class="continuation">then \(\cA\) is the set of \(\cP\)-positions and \(\cB\) is the set of \(\cN\)-positions. Consider a one coin game of nimble, where you are only allowed to move an <em class="emphasis">odd</em> number of squares. For example, \(\cF(\{3 \}) = \{ \emptyset, \{2\} \}\) and \(\cF(\{6 \}) = \{  \{1\}, \{3\}, \{5\} \}\) Find sets \(\cA\) and \(\cB\) that satisfy the properties above. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><p id="p-452">Let \(\cA\) be all of the even squares and \(\emptyset\) and let \(\cB\) be all of the odd squares. Note that \(\cA\) satisfies Rule 2 and \(\cB\) satisfies Rule 1.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-120"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-453">Play these games of Nim, and decide whether each is an \(\cN\)-position or a \(\cP\)-position. Write \(\cN\) or \(\cP\) next to each game, as appropriate. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-games-combgame0.svg" role="img" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><ol id="p-454" class="lower-alpha">
+<li id="li-247"><p id="p-455">\(\cN\)-position</p></li>
+<li id="li-248"><p id="p-456">\(\cN\)-position</p></li>
+<li id="li-249"><p id="p-457">\(\cP\)-position</p></li>
+<li id="li-250"><p id="p-458">\(\cN\)-position</p></li>
+<li id="li-251"><p id="p-459">\(\cP\)-position</p></li>
+<li id="li-252"><p id="p-460">\(\cN\)-position</p></li>
+</ol></div></div></p>
+<p id="p-461"></p></article><article class="exercise exercise-like" id="exercise-121"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-462">There is an exact correspondence between games of Nim and games of Nimble (the game we played last time). Can you figure out what the relationship is? Draw the corresponding Nimble games for each of the size Nim games above. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><p id="p-463">A nim heap of size \(k\) corresponds to a coin on square \(k\text{.}\)</p></div></div></p></article></section></section></div></main>
+</div>
+</body>
+</html>

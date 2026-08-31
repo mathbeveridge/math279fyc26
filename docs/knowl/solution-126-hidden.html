@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><ul class="disc">
+<li><p>We start with an odd number of \(H\) in our game.</p></li>
+<li><p>Find the leftmost \(H\text{.}\) There are zero heads to the left of this coin, and an even number to the right of it.</p></li>
+<li><p>When you remove this coin, it creates two disjoint games (unless \(H\) is the first or last coin, in which case there is only one game after your move). The left game has a single \(H\) (because the rightmost coin changed from \(T\) to \(H\text{.}\) The right game has an odd number of \(H\) since the leftmost coin changed state.</p></li>
+<li><p>Both of these games are smaller than the original game. By the induction hypothesis, both of these games are winning configurations. Therefore the original game has a winning strategy.</p></li>
+</ul></div></body>
+</html>

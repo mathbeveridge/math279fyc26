@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><ul class="disc">
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Base Case:</em> \(n=1\text{.}\) We have \(1 = 2^0 \cdot 1\text{.}\)</p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Hypothesis:</em> Assume that for \(1 \leq k &lt; n\text{,}\) the positive integer \(k \geq 1\) can be written as \(k=2^s \ell\) where \(\ell\) is an odd integer (possibly \(\ell=1\)) and \(s \geq 0\text{.}\)</p></li>
+<li>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Step:</em> Prove that  \(n \geq 1\) can be written as \(n=2^r m\) where \(m\) is an odd integer (possibly \(m=1\)) and \(r \geq 0\text{.}\)</p>
+<p>There are two cases. If \(n\) is odd then \(n=2^0 \cdot n\text{,}\) and we are done (taking \(r=0\) and \(m=n\)). If \(n\) is even then \(n=2k\text{.}\) By induction, \(k=2^s \ell\) where \(\ell\) is an odd integer (possibly \(\ell=1\)) and \(s \geq 0\text{.}\) Therefore \(n=2^{s+1} \ell\text{.}\) Taking \(r=s+1\) and \(m=\ell\text{,}\) we are done.</p>
+</li>
+</ul></div></body>
+</html>

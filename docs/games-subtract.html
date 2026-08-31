@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dm Subtraction Games</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+    \def\W{\mathbb W}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cN{\mathcal N}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+    \def\cF{\mathcal F}
+    \def\cX{\mathcal X}
+
+    \def\nimsum{\, \oplus \,}
+    \def\mex{{\mathrm{mex}}}
+    \newcommand{\pile}[1]{\bullet{#1}}
+    \def\g{g}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+  
+
+     
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="dm.html"><span class="title">Discrete Mathematics:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="games-nimsum.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-games.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="games-nimsum.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-games.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-slf.html" data-scroll="part-slf"><span class="codenumber">I</span> <span class="title">Sets, Logic and Functions</span></a></li>
+<li class="link"><a href="sets1.html" data-scroll="sets1"><span class="codenumber">1</span> <span class="title">Sets</span></a></li>
+<li class="link"><a href="sets2.html" data-scroll="sets2"><span class="codenumber">2</span> <span class="title">Unions and Intersections</span></a></li>
+<li class="link"><a href="logic1.html" data-scroll="logic1"><span class="codenumber">3</span> <span class="title">Logical Connectors and Quantifiers</span></a></li>
+<li class="link"><a href="logic2.html" data-scroll="logic2"><span class="codenumber">4</span> <span class="title">Logical Arguments</span></a></li>
+<li class="link"><a href="function1.html" data-scroll="function1"><span class="codenumber">5</span> <span class="title">Functions</span></a></li>
+<li class="link"><a href="function2.html" data-scroll="function2"><span class="codenumber">6</span> <span class="title">Injections and Surjections</span></a></li>
+<li class="link"><a href="function3.html" data-scroll="function3"><span class="codenumber">7</span> <span class="title">Fun with Functions</span></a></li>
+<li class="link part"><a href="part-gi.html" data-scroll="part-gi"><span class="codenumber">II</span> <span class="title">Graphs, Trees, Induction</span></a></li>
+<li class="link"><a href="graph1.html" data-scroll="graph1"><span class="codenumber">8</span> <span class="title">Graphs</span></a></li>
+<li class="link"><a href="graph2.html" data-scroll="graph2"><span class="codenumber">9</span> <span class="title">Graph Isomorphisms</span></a></li>
+<li class="link"><a href="tree1.html" data-scroll="tree1"><span class="codenumber">10</span> <span class="title">Trees</span></a></li>
+<li class="link"><a href="induction1.html" data-scroll="induction1"><span class="codenumber">11</span> <span class="title">Induction</span></a></li>
+<li class="link"><a href="induction2.html" data-scroll="induction2"><span class="codenumber">12</span> <span class="title">Strong Induction</span></a></li>
+<li class="link"><a href="planar.html" data-scroll="planar"><span class="codenumber">13</span> <span class="title">Planar Graphs</span></a></li>
+<li class="link"><a href="eulerian.html" data-scroll="eulerian"><span class="codenumber">14</span> <span class="title">Eulerian Graphs</span></a></li>
+<li class="link part"><a href="part-count.html" data-scroll="part-count"><span class="codenumber">III</span> <span class="title">Counting</span></a></li>
+<li class="link"><a href="count-warmup.html" data-scroll="count-warmup"><span class="codenumber">15</span> <span class="title">Basic Counting Problems</span></a></li>
+<li class="link"><a href="add-mult.html" data-scroll="add-mult"><span class="codenumber">16</span> <span class="title">Addition Principle and Multiplication Principle</span></a></li>
+<li class="link"><a href="count-include-exclude.html" data-scroll="count-include-exclude"><span class="codenumber">17</span> <span class="title">Inclusion/Exclusion</span></a></li>
+<li class="link"><a href="count-pigeonhole.html" data-scroll="count-pigeonhole"><span class="codenumber">18</span> <span class="title">Pigeonhole Principle</span></a></li>
+<li class="link"><a href="count-perm-comb.html" data-scroll="count-perm-comb"><span class="codenumber">19</span> <span class="title">Permutations and Combinations</span></a></li>
+<li class="link"><a href="count-binomial.html" data-scroll="count-binomial"><span class="codenumber">20</span> <span class="title">Binomial Theorem</span></a></li>
+<li class="link"><a href="count-balls-in-boxes1.html" data-scroll="count-balls-in-boxes1"><span class="codenumber">21</span> <span class="title">Balls in Boxes Part 1</span></a></li>
+<li class="link"><a href="count-balls-in-boxes2.html" data-scroll="count-balls-in-boxes2"><span class="codenumber">22</span> <span class="title">Balls in Boxes Part 2</span></a></li>
+<li class="link part"><a href="part-games.html" data-scroll="part-games"><span class="codenumber">IV</span> <span class="title">Games</span></a></li>
+<li class="link"><a href="games-nimble.html" data-scroll="games-nimble"><span class="codenumber">23</span> <span class="title">The Game of Nimble</span></a></li>
+<li class="link"><a href="games-combgame.html" data-scroll="games-combgame"><span class="codenumber">24</span> <span class="title">Combinatorial Games</span></a></li>
+<li class="link"><a href="games-nimsum.html" data-scroll="games-nimsum"><span class="codenumber">25</span> <span class="title">Nim Sums</span></a></li>
+<li class="link active"><a href="games-subtract.html" data-scroll="games-subtract"><span class="codenumber">26</span> <span class="title">Subtraction Games</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="games-subtract"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">26</span> <span class="title">Subtraction Games</span>
+</h2>
+<section class="introduction" id="introduction-26"><p id="p-506"><em class="emphasis">Calculating the mex of a set of whole numbers.</em></p>
+<p id="p-507">Recall that \(\W = \{ 0,1,2,3, \ldots \}\text{.}\) For a subset \(S \subset \W\) the <em class="emphasis">mex</em> of \(S\) is the <em class="emphasis">minimum excluded value</em></p>
+<div class="displaymath">
+\begin{equation*}
+\mex (S) = \min \{ i \in \W \mid i \notin S\}.
+\end{equation*}
+</div>
+<p id="p-508"><em class="emphasis">Calculating the Sprague-Grundy value of a game position.</em></p>
+<p id="p-509">Given a position \(X\) of a game with followers \(\cF(X) = \{ Y_1, Y_2, \ldots , Y_k \}\) The <em class="emphasis">Sprague-Grundy value</em> of the position is</p>
+<div class="displaymath">
+\begin{equation*}
+g(X) = \mex  \{ g(Y_1), g (Y_2), \ldots g(Y_k) \} \big\}.
+\end{equation*}
+</div>
+<p class="continuation">This formula for the Sprague-Grundy value recursive: you is calculate the value for \(X\) by looking at the values of the followers.  This is a lot like working your way back up a game tree to figure out whether \(X\) is an \(\cN\)-position or a \(\cP\)-position.</p>
+<p id="p-510"><em class="emphasis">Subtraction Games.</em></p>
+<p id="p-511">A subtraction game \(S(k_1, k_2, \ldots , k_r)\) is a nim game with a single heap in which you are only allowed to remove \(k_1, k_2, \ldots , k_r\) beans on any given turn. We will use</p>
+<div class="displaymath">
+\begin{equation*}
+\pile{n}
+\end{equation*}
+</div>
+<p class="continuation">to denote a heap of \(n\) beans. It will be helpful to be able to differentiate between the number \(n\) and the pile \(\pile{n}\text{.}\)</p></section><section class="exercises" id="exercises-26"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-126"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Subtraction \(S(1,2,3,4)\).</span>
+</h6>
+<ol id="p-512" class="lower-alpha">
+<li id="li-273">
+<p id="p-513">Play \(S(1,2,3, 4)\) with pile sizes \(n=1,2,3, \ldots\text{.}\) Determine which pile sizes are \(\cP\)-positions and which ones are \(\cP\)-posititions.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+\cP \mbox{ or } \cN? &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li id="li-274">
+<p id="p-514">Calculate  \(g(\pile{n})\) for the game \(S(1,2,3,4)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+g(\pile{n}) &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li id="li-275"><p id="p-515">Compare your answers to (a) and (b). What do you observe? Make a conjecture about the relationship of the Sprague-Grundy value to the winner of the game. </p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-127"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Subtraction \(S(1,2,4)\).</span>
+</h6>
+<ol id="p-516" class="lower-alpha">
+<li id="li-276">
+<p id="p-517">Calculate  \(g(\pile{n})\) for the game \(S(1,2,4)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+S(1,2,4): \qquad
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+g(\pile{n}) &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li id="li-277"><p id="p-518">Is \(\pile{8}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(1,2,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
+<li id="li-278"><p id="p-519">Is \(\pile{9}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(1,2,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-128"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Subtraction \(S(3,4)\).</span>
+</h6>
+<ol id="p-520" class="lower-alpha">
+<li id="li-279">
+<p id="p-521">Calculate  \(g(\pile{n})\) for the game \(S(3,4)\) Note that there is no legal move for a pile of size 1 or of size 2, so \(g(\pile{1})=0\) and \(g(\pile{2})=0\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+S(3,4): \qquad
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+g(\pile{n}) &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li id="li-280"><p id="p-522">Is \(\pile{8}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(3,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
+<li id="li-281"><p id="p-523">Is \(\pile{10}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(3,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-129"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Subtraction \(S(3,5)\).</span>
+</h6>
+<p id="p-524">Here is the table of Sprague-Grundy values for \(S(3,5)\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 &amp; 13 &amp; 14 &amp; 15 &amp;16 &amp; 17 &amp; 18 &amp; 19 &amp; 20 \\
+\hline
+\hline
+g(\pile{n}) &amp;0&amp;0&amp;0&amp;1&amp;1&amp;1&amp;2&amp;2&amp;0&amp;0&amp;0&amp;1&amp;1&amp;1&amp;2&amp;2&amp;0&amp;0&amp;0&amp;1&amp;1
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">Who wins the following games of \(S(3,5)\text{?}\)</p>
+<ol class="lower-alpha">
+<li id="li-282"><p id="p-525">\(\displaystyle \pile{4}\)</p></li>
+<li id="li-283"><p id="p-526">\(\displaystyle \pile{10}\)</p></li>
+<li id="li-284"><p id="p-527">\(\displaystyle \pile{14}\)</p></li>
+<li id="li-285"><p id="p-528">\(\displaystyle \pile{20}\)</p></li>
+</ol>
+<p id="p-529"></p></article><article class="exercise exercise-like" id="exercise-130"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Two-Heap Subtraction \(S(3,5)\).</span>
+</h6>
+<p id="p-530">Now let's play 2-heap \(S(3,5)\text{.}\) Just like 2-heap nim, you choose one pile and then make a valid move in that pile.</p>
+<ol class="lower-alpha">
+<li id="li-286">
+<p id="p-531">Play the following \(S(3,5)\) games to determine whether each one is an \(\cN\)-position or a \(\cP\)-position.</p>
+<ol class="lower-roman">
+<li id="li-287"><p id="p-532">\(\displaystyle ( \pile{4} , \pile{4})\)</p></li>
+<li id="li-288"><p id="p-533">\(\displaystyle (\pile{4} , \pile{5})\)</p></li>
+<li id="li-289"><p id="p-534">\(\displaystyle (\pile{5} , \pile{6})\)</p></li>
+<li id="li-290"><p id="p-535">\(\displaystyle ( \pile{6} , \pile{7})\)</p></li>
+</ol>
+<p id="p-536"></p>
+</li>
+<li id="li-291">
+<p id="p-537">Now calculate the following nim sums \(g(\pile{n}) \oplus g(\pile{m})\) for the \(S(3,5)\) positions that you just played. What do you notice?</p>
+<ol class="lower-roman">
+<li id="li-292"><p id="p-538">\(\displaystyle ( \pile{4} , \pile{4})\)</p></li>
+<li id="li-293"><p id="p-539">\(\displaystyle (\pile{4} , \pile{5})\)</p></li>
+<li id="li-294"><p id="p-540">\(\displaystyle (\pile{5} , \pile{6})\)</p></li>
+<li id="li-295"><p id="p-541">\(\displaystyle ( \pile{6} , \pile{7})\)</p></li>
+</ol>
+<p id="p-542"></p>
+</li>
+<li id="li-296">
+<p id="p-543">Decide whether the following \(S(3,5)\) positions are \(\cN\)-positions or \(\cP\)-positions. If it is an \(\cN\)-position, give the list of winning moves.</p>
+<ol class="lower-roman">
+<li id="li-297"><p id="p-544">\(\displaystyle ( \pile{4} , \pile{11})\)</p></li>
+<li id="li-298"><p id="p-545">\(\displaystyle (\pile{7} , \pile{13})\)</p></li>
+<li id="li-299"><p id="p-546">\(\displaystyle (\pile{7} , \pile{14})\)</p></li>
+<li id="li-300"><p id="p-547">\(\displaystyle ( \pile{13} , \pile{18})\)</p></li>
+</ol>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-131"><h6 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">The Sprague-Grundy Value for Nim.</span>
+</h6>
+<p id="p-548">Recall that we use \(*n\) to denote a heap of \(n\) beans in nim.</p>
+<ol class="lower-alpha">
+<li id="li-301"><p id="p-549">What is \(g(*n)\text{,}\) the Sprague-Grundy value of a nim heap of size \(n\text{?}\) Start with \(n=0,1,2,3,\ldots\) until you see the pattern. </p></li>
+<li id="li-302">
+<p id="p-550">Calculate the Sprague-Grundy values of the following two-heap nim positions</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c|c}
+g(*n \oplus *m) &amp; *0 &amp; *1 &amp; *2 &amp; *3 &amp; *4 \\
+\hline
+\hline
+*0 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*1 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*2 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*3 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*4 &amp;&amp;&amp;&amp;  &amp; \\
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li id="li-303">
+<p id="p-551">Calculate the nim sum \(n \oplus m\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c|c}
+n \oplus m &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+\hline
+\hline
+0 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+1 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+2 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+3 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+4 &amp;&amp;&amp;&amp; &amp; \\
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li id="li-304"><p id="p-552">Compare your answers to problems 2 and 3. What do you observe? </p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

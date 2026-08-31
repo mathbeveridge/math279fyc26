@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dm Strong Induction</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+    \def\W{\mathbb W}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cN{\mathcal N}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+    \def\cF{\mathcal F}
+    \def\cX{\mathcal X}
+
+    \def\nimsum{\, \oplus \,}
+    \def\mex{{\mathrm{mex}}}
+    \newcommand{\pile}[1]{\bullet{#1}}
+    \def\g{g}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+  
+
+     
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="dm.html"><span class="title">Discrete Mathematics:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="induction1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-count.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="recursive.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="induction1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-count.html" title="Up">Up</a><a class="next-button button toolbar-item" href="recursive.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-slf.html" data-scroll="part-slf"><span class="codenumber">I</span> <span class="title">Sets, Logic and Functions</span></a></li>
+<li class="link"><a href="sets1.html" data-scroll="sets1"><span class="codenumber">1</span> <span class="title">Sets</span></a></li>
+<li class="link"><a href="sets2.html" data-scroll="sets2"><span class="codenumber">2</span> <span class="title">Unions and Intersections</span></a></li>
+<li class="link"><a href="logic1.html" data-scroll="logic1"><span class="codenumber">3</span> <span class="title">Logical Connectors</span></a></li>
+<li class="link"><a href="logic2.html" data-scroll="logic2"><span class="codenumber">4</span> <span class="title">Logical Arguments</span></a></li>
+<li class="link"><a href="quantifiers.html" data-scroll="quantifiers"><span class="codenumber">5</span> <span class="title">Quantifiers</span></a></li>
+<li class="link"><a href="proof1.html" data-scroll="proof1"><span class="codenumber">6</span> <span class="title">Proofs</span></a></li>
+<li class="link"><a href="function1.html" data-scroll="function1"><span class="codenumber">7</span> <span class="title">Functions</span></a></li>
+<li class="link"><a href="function2.html" data-scroll="function2"><span class="codenumber">8</span> <span class="title">Injections and Surjections</span></a></li>
+<li class="link"><a href="function3.html" data-scroll="function3"><span class="codenumber">9</span> <span class="title">Fun with Functions</span></a></li>
+<li class="link part"><a href="part-count.html" data-scroll="part-count"><span class="codenumber">II</span> <span class="title">Induction and Counting</span></a></li>
+<li class="link"><a href="induction1.html" data-scroll="induction1"><span class="codenumber">10</span> <span class="title">Induction</span></a></li>
+<li class="link active"><a href="induction2.html" data-scroll="induction2"><span class="codenumber">11</span> <span class="title">Strong Induction</span></a></li>
+<li class="link"><a href="recursive.html" data-scroll="recursive"><span class="codenumber">12</span> <span class="title">Recursive Sequences</span></a></li>
+<li class="link"><a href="count-warmup.html" data-scroll="count-warmup"><span class="codenumber">13</span> <span class="title">Basic Counting Problems</span></a></li>
+<li class="link"><a href="add-mult.html" data-scroll="add-mult"><span class="codenumber">14</span> <span class="title">Addition Principle and Multiplication Principle</span></a></li>
+<li class="link"><a href="count-perm-comb.html" data-scroll="count-perm-comb"><span class="codenumber">15</span> <span class="title">Permutations and Combinations</span></a></li>
+<li class="link"><a href="count-balls-in-boxes1.html" data-scroll="count-balls-in-boxes1"><span class="codenumber">16</span> <span class="title">Balls in Boxes Part 1</span></a></li>
+<li class="link"><a href="count-balls-in-boxes2.html" data-scroll="count-balls-in-boxes2"><span class="codenumber">17</span> <span class="title">Balls in Boxes Part 2</span></a></li>
+<li class="link"><a href="count-include-exclude.html" data-scroll="count-include-exclude"><span class="codenumber">18</span> <span class="title">Inclusion/Exclusion</span></a></li>
+<li class="link"><a href="count-pigeonhole.html" data-scroll="count-pigeonhole"><span class="codenumber">19</span> <span class="title">Pigeonhole Principle</span></a></li>
+<li class="link"><a href="combproof.html" data-scroll="combproof"><span class="codenumber">20</span> <span class="title">Combinatorial Proof</span></a></li>
+<li class="link"><a href="count-binomial.html" data-scroll="count-binomial"><span class="codenumber">21</span> <span class="title">Binomial Theorem</span></a></li>
+<li class="link part"><a href="part-gi.html" data-scroll="part-gi"><span class="codenumber">III</span> <span class="title">Graphs, and Trees</span></a></li>
+<li class="link"><a href="graph1.html" data-scroll="graph1"><span class="codenumber">22</span> <span class="title">Graphs</span></a></li>
+<li class="link"><a href="graph2.html" data-scroll="graph2"><span class="codenumber">23</span> <span class="title">Graph Isomorphisms</span></a></li>
+<li class="link"><a href="tree1.html" data-scroll="tree1"><span class="codenumber">24</span> <span class="title">Trees</span></a></li>
+<li class="link"><a href="mst.html" data-scroll="mst"><span class="codenumber">25</span> <span class="title">Minimum Spanning Trees</span></a></li>
+<li class="link"><a href="eulerian.html" data-scroll="eulerian"><span class="codenumber">26</span> <span class="title">Eulerian Graphs</span></a></li>
+<li class="link"><a href="matching.html" data-scroll="matching"><span class="codenumber">27</span> <span class="title">Bipartite Matchings</span></a></li>
+<li class="link"><a href="planar.html" data-scroll="planar"><span class="codenumber">28</span> <span class="title">Planar Graphs</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="induction2"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">11</span> <span class="title">Strong Induction</span>
+</h2>
+<section class="introduction" id="introduction-11"><p id="p-184"></p></section><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-53"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Splitting a Chocolate Bar.</span>
+</h6>
+<p id="p-185">We have a \(r \times s\) chocolate bar that has \(n=rs\) squares of chocolate. Here is an example for \(r=4\) and \(s=9\text{:}\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-induction20.svg" role="img" class="contained"></div> I can <em class="emphasis">break</em> a chocolate bar by splitting it along between any adjacent  rows or any adjacent columns. For example, here are two possibilities: <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-induction21.svg" role="img" class="contained"></div> Making one break at a time, I want to split the chocolate bar into its \(n=rs\) squares.</p>
+<ol class="lower-alpha">
+<li id="li-119"><p id="p-186">Start with a \(3 \times 2\) chocolate bar. Convince yourself that <em class="emphasis">regardless of the sequence of breaks that you choose</em>, it will take you exactly 5 breaks to split the chocolate bar into its squares.</p></li>
+<li id="li-120">
+<p id="p-187">Now use <em class="emphasis">strong induction</em> on \(n \geq 1\) to show that a rectangular chocolate bar with \(n\) squares requires \(n-1\) breaks to split it into \(n\) pieces, no matter what order of breaks you choose. <em class="emphasis">Fill in the details of this proof.</em></p>
+<ol class="lower-roman">
+<li id="li-121"><p id="p-188"><em class="emphasis">Base Case:</em>  \(n=1\text{.}\) The base case is a chocolate bar with \(n=1\) squares. (So it must be \(1 \times 1\text{.}\)) </p></li>
+<li id="li-122"><p id="p-189"><em class="emphasis">Inductive Hypothesis:</em> Assume the statement is true for \(1 \leq k &lt; n\text{.}\) Explicitly  write down this statement. </p></li>
+<li id="li-123"><p id="p-190"><em class="emphasis">Inductive Step:</em> Use \((\star)\) to prove true for \(n\text{.}\) </p></li>
+</ol>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-54"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Splitting Squares.</span>
+</h6>
+<p id="p-191">Given a square, you can cut the square into smaller squares by cutting along lines parallel to the sides of the original square (these lines do not need to travel the entire side length of the original square). For example, by cutting along the lines below, you will divide a square into 6 smaller squares: <div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="images/fig-img-induction22.svg" role="img" class="contained"></div> Using strong induction to prove that you can  cut a square into \(n\) smaller squares for any  \(n \geq 6\text{.}\) <em class="emphasis">Hint</em>: You will need three base cases. This is a very good hint actually, as it suggests that to prove \(P(n)\)  is true, you would want to use the fact that \(P(n-3)\) is true. So somehow you need to increase the number of squares by 3. </p></article><article class="exercise exercise-like" id="exercise-55"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Angles of a Polygon.</span>
+</h6>
+<p id="p-192">So a 3-gon is a triangle,  a 4-gon is a square, a 5-gon is a pentagon, and so on.</p>
+<p id="p-193">Use <em class="emphasis">strong induction</em> to prove that the sum of the angles in an \(n\)-gon is equal to \(180 (n-2)\text{.}\) Here is how to start your inductive step:</p>
+<ul class="disc">
+<li id="li-124"><p id="p-194">Label the vertices as \(1,2, \ldots, n\text{.}\)</p></li>
+<li id="li-125"><p id="p-195">Pick some vertex \(k\) where \(3 \leq k \leq n-1\text{.}\)</p></li>
+<li id="li-126"><p id="p-196">Draw the diagonal connecting vertex 1 to vertex \(k\text{.}\)</p></li>
+<li id="li-127"><p id="p-197">Break the polygon apart along this diagonal to create two smaller polygons, and now use strong induction.</p></li>
+</ul></article><article class="exercise exercise-like" id="exercise-56"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Factoring a Number.</span>
+</h6>
+<p id="p-198">Use <em class="emphasis">strong induction</em> to prove that any integer \(n \geq 1\) can be written as \(n=2^r m\) where \(m\) is an odd integer (possibly \(m=1\)) and \(r \geq 0\text{.}\) Your inductive step will have two cases, depending on whether \(n\) is odd or even. </p></article><article class="exercise exercise-like" id="exercise-57"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Coin Removal Problem.</span>
+</h6>
+<p id="p-199">Let's play a coin flipping game. Start with \(n\) coins arranged in a row. Some show heads and some show tails. On each move, you must:</p>
+<ul class="disc">
+<li id="li-128"><p id="p-200">Pick a heads-up coin and remove it.</p></li>
+<li id="li-129"><p id="p-201">Then flip the coins still present in the (at most) two neighbor spots surrounding it.</p></li>
+</ul>
+<p class="continuation">This diagram shows all three valid moves from this starting postion: <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-induction24.svg" role="img" class="contained"></div> Note that <em class="emphasis">removing a coin leaves an empty space</em>. So that coin is now missing, so the coins you flipped are now missing a neighbor.</p>
+<p id="p-202"><em class="emphasis">The Question:</em> For which arrangements of heads and tails can we remove all coins?</p>
+<ol class="lower-alpha">
+<li id="li-130"><p id="p-203">Play the coin removal game with \(n\) coins for \(n=1,2,3\text{.}\) For each \(n\text{,}\) list the starting configurations that are winning and losing. Can you see the pattern? </p></li>
+<li id="li-131"><p id="p-204">Now play some games on \(n=4,5,6\) coins. Make a conjecture about which starting positions are winning and which ones are losing. </p></li>
+<li id="li-132">
+<p id="p-205">We now prove this by induction.</p>
+<p id="p-206"><em class="emphasis">Base Case:</em> Your answers from part (a) are your base case for \(n=1,2,3\) (of course, you only need the base case \(n=1\) for a full proof).</p>
+<p id="p-207"><em class="emphasis">Inductive Hypothesis:</em> When \(k &lt; n\text{,}\) the winning positions and losing positions are as described in part (b).</p>
+<p id="p-208"><em class="emphasis">Inductive Step:</em> Consider a starting position with \(n&gt;1\) coins.</p>
+<ol class="lower-roman">
+<li id="li-133"><p id="p-209"><em class="emphasis">Case 1:</em> You start with an odd number of heads. Remove the leftmost heads up coin and flip its neighbors. This leaves two smaller lists of coins, \(L\) and \(R\text{,}\) which are to the left and right of the coin you removed. One of these sets could be empty; why? What can you say about the configuration of coins in each of \(L\) and \(R\text{?}\) Explain why this proves that the original configuration was winning/losing. </p></li>
+<li id="li-134"><p id="p-210"><em class="emphasis">Case 2:</em> You start with an even number of heads. Pick any heads-up coin, remove it and flip its neighbors. Once again, this leaves two smaller lists of coins, \(L\) and \(R\text{.}\) Explain why one of these sets must contain an even number of heads-up coins. Explain why this proves that the original configuration was winning/losing. </p></li>
+</ol>
+</li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>
