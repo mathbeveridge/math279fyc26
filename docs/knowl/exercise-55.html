@@ -12,15 +12,40 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Angles of a Polygon.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Equivalent Statements.</span>
 </h6>
-<p>So a 3-gon is a triangle,  a 4-gon is a square, a 5-gon is a pentagon, and so on.</p>
-<p>Use <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">strong induction</em> to prove that the sum of the angles in an \(n\)-gon is equal to \(180 (n-2)\text{.}\) Here is how to start your inductive step:</p>
-<ul class="disc">
-<li><p>Label the vertices as \(1,2, \ldots, n\text{.}\)</p></li>
-<li><p>Pick some vertex \(k\) where \(3 \leq k \leq n-1\text{.}\)</p></li>
-<li><p>Draw the diagonal connecting vertex 1 to vertex \(k\text{.}\)</p></li>
-<li><p>Break the polygon apart along this diagonal to create two smaller polygons, and now use strong induction.</p></li>
-</ul></article><span class="incontext"><a href="exercises-11.html#exercise-55">in-context</a></span>
+<ol class="lower-alpha">
+<li>
+<p>Use a truth table to show that \(\neg (P \Rightarrow Q)\) is equivalent to \(P \wedge \neg Q\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{c|c||c|c|c|c}
+P &amp; Q &amp; P \Rightarrow Q &amp; \neg(P \Rightarrow Q)  &amp; \neg Q &amp; P \wedge \neg Q \\
+\hline
+T &amp; T &amp;  &amp;  &amp; &amp; \\
+T &amp; F &amp;  &amp; &amp; &amp; \\
+F &amp; T &amp;  &amp; &amp; &amp;\\
+F &amp; F &amp;  &amp; &amp;  &amp;\\
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Use a truth table to show that \(P \Leftrightarrow Q\) is equivalent to \((P \wedge Q) \vee (\neg P \wedge \neg Q)\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{c|c||c|c|c|c|c}
+P &amp; Q &amp; P \Leftrightarrow Q  
+&amp; \neg P &amp; \neg Q &amp; P \wedge  Q  &amp; \neg P \wedge \neg Q &amp; (P \wedge Q) \vee (\neg P \wedge \neg Q)\\
+\hline
+T &amp; T &amp;  &amp;  &amp; &amp; &amp; &amp;  \\
+T &amp; F &amp;  &amp; &amp; &amp; &amp;  &amp; \\
+F &amp; T &amp;  &amp; &amp; &amp; &amp; &amp; \\
+F &amp; F &amp;  &amp; &amp;  &amp; &amp; &amp; \\
+\end{array}
+\end{equation*}
+</div>
+</li>
+</ol></article><span class="incontext"><a href="exercises-13.html#exercise-55">in-context</a></span>
 </body>
 </html>

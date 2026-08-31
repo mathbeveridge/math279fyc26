@@ -12,19 +12,53 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Ask a volunteer (or your worst enemy) to lay out the cards into a grid of 4 rows and 13 columns. Show that you can <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">always</em> pick out 13 cards, one from each column of the grid, so that you end up with a card for every possible value \(A, 2, 3, \ldots , 10 , J, Q, K\text{.}\) Wow!!! Here is an example. The 13 cards I've chosen are highlighted. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-matching8.svg" role="img" class="contained"></div></p>
 <ol class="lower-alpha">
 <li>
-<p>You can model this trick using a bipartite graph \(G\)  with \(|A| = |B| = 13\text{.}\)</p>
-<ul class="disc">
-<li><p>Let \(A\) be the set of 13 card values \(\{A, 2, 3, \ldots, 10, J, Q, K \}\)</p></li>
-<li><p>Let \(B\) be the set of columns \(\{1, 2, 3, \ldots, 13\}\text{.}\)</p></li>
-</ul>
-<p class="continuation">When should a card in set \(A\) have an edge to a column in set \(B\text{?}\) What is the degree of a vertex in \(A\text{?}\) What is the degree of a vertex in \(B\text{?}\)</p>
-<p></p>
+<p>We calculate</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{r}
+1100 \\
+1010 \\
+\oplus 1000 \\
+\hline
+0110
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">which is \(6\)</p>
 </li>
-<li><p>Use a  previous problem from this activity to show that your graph \(G\) always has a perfect matching. Then explain why this matching finds 13 cards with distinct values spread among the 13 columns. </p></li>
-<li><p>Are you guaranteed to be able to do it again? That is, from the remaining 39 cards, can you find \(A, 2, \ldots, K\text{,}\) one card in each column? Why or why not? </p></li>
+<li>
+<p>We calculate</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{r}
+10100 \\
+01111 \\
+\oplus 01010 \\
+\hline
+10001
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">which is 17.</p>
+</li>
+<li>
+<p>We calculate</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{r}
+10111 \\
+10001 \\
+01010 \\
+\oplus 00100 \\
+\hline
+01000
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">which is 8.</p>
+</li>
 </ol>
 <span class="incontext"><a href="exercises-27.html#p-460">in-context</a></span>
 </body>

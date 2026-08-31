@@ -56,23 +56,10 @@ pull the name of the problem from the first line  of  the \item
     <!-- Parts are optional, included here for testing            -->
     <!-- In "bookinfo.xml" set to "structural" for maximum effect -->
 
-    <part xml:id="part-slf">
-        <title>Sets, Logic and Functions</title>
-            <xi:include href="./a01-sets1.xml" />   
-            <xi:include href="./a01-sets2.xml" />        
-            <xi:include href="./a01-logic1.xml" />   
-            <xi:include href="./a01-logic2.xml" />         
-            <xi:include href="./a01-quantifiers.xml" />
-            <xi:include href="./a01-proof1.xml" />
-            <xi:include href="./a01-function1.xml" /> 
-            <xi:include href="./a01-function2.xml" />     
-            <xi:include href="./a01-function3.xml" />                                 
-    </part> 
     <part xml:id="part-count">
-        <title>Induction and Counting</title>
-            <xi:include href="./b01-induction1.xml" />  
-            <xi:include href="./b01-induction2.xml" />     
-            <xi:include href="./b01-recursive.xml" />   
+        <title>Sets and Counting</title>
+            <xi:include href="./a01-sets1.xml" />   
+            <xi:include href="./a01-sets2.xml" />   
             <xi:include href="./c01-warmup.xml" />    
             <xi:include href="./c01-add-mult.xml" />     
             <xi:include href="./c01-permcomb.xml" />  
@@ -81,31 +68,48 @@ pull the name of the problem from the first line  of  the \item
             <xi:include href="./c01-inclusion-exclusion.xml" />      
             <xi:include href="./c01-pigeonhole.xml" />               
             <xi:include href="./c01-combproof.xml" />   
-            <xi:include href="./c01-binomial.xml" />  
+            <xi:include href="./c01-binomial.xml" />                                              
+    </part> 
+
+    <part xml:id="part-logic">
+        <title>Logic and Induction</title>
+              
+            
+            <xi:include href="./a01-logic1.xml" />   
+            <xi:include href="./a01-logic2.xml" />         
+            <xi:include href="./a01-quantifiers.xml" />
+            <xi:include href="./a01-proof1.xml" />
+            <xi:include href="./a01-function1.xml" /> 
+            <xi:include href="./a01-function2.xml" />     
+            <xi:include href="./a01-function3.xml" />                                 
+            <xi:include href="./b01-induction1.xml" />  
+            <xi:include href="./b01-induction2.xml" />     
+            <xi:include href="./b01-recursive.xml" />   
+
             
     </part> 
-    <part xml:id="part-gi">
+    <part xml:id="part-graphs">
         <title>Graphs, and Trees</title>
             <xi:include href="./b01-graph1.xml" />
             <xi:include href="./b01-graph2.xml" />
             <xi:include href="./b01-tree1.xml" />   
-            <xi:include href="./b01-mst.xml" />   
+            <!--xi:include href="./b01-mst.xml" />   
              <xi:include href="./b01-eulerian.xml" /> 
              <xi:include href="./b01-matching.xml" />              
-            <xi:include href="./b01-planar.xml" />               
+            <xi:include href="./b01-planar.xml" /-->               
   
 
              
             <!--xi:include href="./ex01-counting.xml" /-->                       
     </part>     
 
-    <!--part xml:id="part-games">
+    <part xml:id="part-games">
         <title>Games</title>         
             <xi:include href="./d01-nimble.xml" />    
             <xi:include href="./d01-combgame.xml" />    
             <xi:include href="./d01-nimsum.xml" />   
             <xi:include href="./d01-subtraction.xml" />      
-    </part--> 
+    </part> 
 
     </book>
 

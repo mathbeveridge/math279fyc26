@@ -12,8 +12,20 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Midpoint Madness.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Nearest Neighbor Pie Fight.</span>
 </h6>
-<p>Suppose that we have  5 points \((x,y)\) in \(\R^2\) with integer coordinates. This means that both the \(x\)-coordinate and the \(y\)-coordinate are integers. Prove that the midpoint of the segment joining some pair of points also has integer coordinates. (Hint: this is a pigeonhole problem. The five "pigeons" are the points. What are the four "pigeonholes?") </p></article><span class="incontext"><a href="exercises-19.html#exercise-91">in-context</a></span>
+<p>Consider a pie fight between an odd number of people in which everyone throws a pie at her nearest neighbor. Assume that all pairwise distances are distinct. Prove that in such a pie fight between \(2r+1\) people with \(r \geq 1\text{,}\) there is at least one person who is not hit by a pie.</p>
+<ol class="lower-alpha">
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Base Case:</em> (Check for \(r=1\text{.}\)) Hint: Start by considering the two people who are the smallest distance from one another. </p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Hypothesis:</em> Write down your inductive hypothesis for \(k\text{.}\) </p></li>
+<li>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Step:</em> Write down what you want to SHOW for \(k+1\text{.}\)</p>
+<p>As in your base case,  start by considering the two people (Alice and Bob) who are the smallest distance from one another. There are 2 cases to consider</p>
+<ul class="disc">
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Case 1:</em> Suppose that someone else throws a pie at Alice or Bob. In this case, you can immediately find a person who is not hit by a pie. Why?</p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Case 2:</em> No one else throws a pie at Alice or Bob. In this case, you need to use the induction hypothesis!</p></li>
+</ul>
+</li>
+</ol></article><span class="incontext"><a href="exercises-19.html#exercise-91">in-context</a></span>
 </body>
 </html>

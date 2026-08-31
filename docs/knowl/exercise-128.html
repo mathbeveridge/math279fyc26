@@ -12,28 +12,25 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Bipartite Graphs and Neighborhoods.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Subtraction \(S(3,4)\).</span>
 </h6>
-<p>A graph \(G = (V,E)\) is bipartite if \(V= A \cup B\) where \(A \cap B = \emptyset\) and every edge \(e \in E\)  runs between these two sets. Equivalently: we can color the vertices  with two colors, (red and blue) so that adjacent vertices receive different colors.</p>
 <ol class="lower-alpha">
 <li>
-<p>Let \(G\) be any bipartite graph on vertices \(V = A \cup B\text{.}\) Explain why</p>
+<p>Calculate  \(g(\pile{n})\) for the game \(S(3,4)\) Note that there is no legal move for a pile of size 1 or of size 2, so \(g(\pile{1})=0\) and \(g(\pile{2})=0\text{.}\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\sum_{v \in A} \deg (v) = \sum_{w \in B} \deg(w).
+S(3,4): \qquad
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+g(\pile{n}) &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
 \end{equation*}
 </div>
 </li>
-<li><p>Recall that a graph is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">\(d\)-regular</em> when every vertex has degree \(d\text{.}\) Let \(G\) be a \(d\)-regular bipartite graph on partite sets \(A,B\text{.}\) Prove that  \(|A|=|B|\text{.}\) (Hint: use part (a).) </p></li>
-<li>
-<p>Let \(G=(V,E)\) be a bipartite graph on vertices \(V=A \cup B\text{.}\) Given a set of vertices \(S \subset A\text{,}\) we define the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">neighborhood</em> \(N(S) \subset B\) to be the set of vertices that are adjacent to some vertex in \(S\text{.}\) That is,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\mbox{if } S \subset A \mbox{ then } N(S) = \{ b \in B : \exists a \in S, (a,b) \in E \} .
-\end{equation*}
-</div>
-<p class="continuation">For each  of the examples  below, find the neighborhood \(N(S) \subset B\text{:}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-matching0.svg" role="img" class="contained"></div> </p>
-</li>
-</ol></article><span class="incontext"><a href="exercises-27.html#exercise-128">in-context</a></span>
+<li><p>Is \(\pile{8}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(3,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
+<li><p>Is \(\pile{10}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(3,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
+</ol></article><span class="incontext"><a href="exercises-28.html#exercise-128">in-context</a></span>
 </body>
 </html>

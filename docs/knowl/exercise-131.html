@@ -12,22 +12,54 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">A Mathematical Card Trick.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">The Sprague-Grundy Value for Nim.</span>
 </h6>
-<p>Here is a mathematical card trick whose secret uses a perfect matching in a bipartite graph! In a standard deck of 52 cards, each card has a suit and a value. There are 4 suits (clubs, diamonds, hearts, spades) and 13 values (A, 2, 3, . . . , 10, J, Q, K).</p>
-<p>Ask a volunteer (or your worst enemy) to lay out the cards into a grid of 4 rows and 13 columns. Show that you can <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">always</em> pick out 13 cards, one from each column of the grid, so that you end up with a card for every possible value \(A, 2, 3, \ldots , 10 , J, Q, K\text{.}\) Wow!!! Here is an example. The 13 cards I've chosen are highlighted. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-matching8.svg" role="img" class="contained"></div></p>
+<p>Recall that we use \(*n\) to denote a heap of \(n\) beans in nim.</p>
 <ol class="lower-alpha">
+<li><p>What is \(g(*n)\text{,}\) the Sprague-Grundy value of a nim heap of size \(n\text{?}\) Start with \(n=0,1,2,3,\ldots\) until you see the pattern. </p></li>
 <li>
-<p>You can model this trick using a bipartite graph \(G\)  with \(|A| = |B| = 13\text{.}\)</p>
-<ul class="disc">
-<li><p>Let \(A\) be the set of 13 card values \(\{A, 2, 3, \ldots, 10, J, Q, K \}\)</p></li>
-<li><p>Let \(B\) be the set of columns \(\{1, 2, 3, \ldots, 13\}\text{.}\)</p></li>
-</ul>
-<p class="continuation">When should a card in set \(A\) have an edge to a column in set \(B\text{?}\) What is the degree of a vertex in \(A\text{?}\) What is the degree of a vertex in \(B\text{?}\)</p>
-<p></p>
+<p>Calculate the Sprague-Grundy values of the following two-heap nim positions</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c|c}
+g(*n \oplus *m) &amp; *0 &amp; *1 &amp; *2 &amp; *3 &amp; *4 \\
+\hline
+\hline
+*0 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*1 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*2 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*3 &amp;&amp;&amp;&amp;  &amp; \\
+\hline
+*4 &amp;&amp;&amp;&amp;  &amp; \\
+\end{array}
+\end{equation*}
+</div>
 </li>
-<li><p>Use a  previous problem from this activity to show that your graph \(G\) always has a perfect matching. Then explain why this matching finds 13 cards with distinct values spread among the 13 columns. </p></li>
-<li><p>Are you guaranteed to be able to do it again? That is, from the remaining 39 cards, can you find \(A, 2, \ldots, K\text{,}\) one card in each column? Why or why not? </p></li>
-</ol></article><span class="incontext"><a href="exercises-27.html#exercise-131">in-context</a></span>
+<li>
+<p>Calculate the nim sum \(n \oplus m\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c|c}
+n \oplus m &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+\hline
+\hline
+0 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+1 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+2 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+3 &amp;&amp;&amp;&amp; &amp; \\
+\hline
+4 &amp;&amp;&amp;&amp; &amp; \\
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li><p>Compare your answers to problems 2 and 3. What do you observe? </p></li>
+</ol></article><span class="incontext"><a href="exercises-28.html#exercise-131">in-context</a></span>
 </body>
 </html>
