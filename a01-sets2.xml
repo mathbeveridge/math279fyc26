@@ -85,7 +85,7 @@ A \cap \overline{C} = \{ x \mid 1 &lt;  x  \leq 2 \} \
 			</statement>
 		</exercise>		
 
-		<exercise>
+		<!--exercise>
 			<title>Union and Intersection</title>
 			<idx><h>Union and Intersection</h></idx>
 			<statement>
@@ -95,7 +95,7 @@ Let's make this more concrete. Let <m>P(x)</m> and <m>Q(x)</m> be statements, an
 <m>A = \{ x \mid P(x) \mbox{ is true} \}</m> and <m>B = \{ x \mid Q(x) \mbox{ is true} \}</m>.
 Find a simple way to write each of  <m>A \cup B</m> and <m>A \cap B</m> using set builder notation.
 Next, how would you write <m>A \backslash B</m>?
-<!--solution>
+<solution>
 <p>
 <me>
 \begin{array}{rcl}
@@ -105,11 +105,11 @@ A \backslash B &amp;=&amp; \{ x \mid P(x) \wedge  \neg Q(x) \, \mbox{ is true} \
 \end{array}
 </me>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
-		</exercise>
+		</exercise-->
 
 		<exercise>
 			<title>DeMorgan's Law</title>

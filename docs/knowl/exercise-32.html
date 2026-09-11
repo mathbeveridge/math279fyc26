@@ -12,22 +12,16 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Rolling 10 Dice.</span>
 </h6>
-<p>In this problem, you will count sets of functions from \([r]\) to \([s]\text{.}\) You will map each one  to a balls-in-boxes problem. Decide each of the following questions (and write down your answers):</p>
-<ul class="disc">
-<li><p>Are the balls distinct?</p></li>
-<li><p>Are the boxes distinct?</p></li>
-<li><p>Can boxes be empty?</p></li>
-<li><p>Is repetition allowed?</p></li>
-<li><p>What is the constraint on \(r\) and \(s\text{?}\)</p></li>
-</ul>
-<p class="continuation">Then write down the formula for the size of the set of functions.</p>
+<p>We roll 6-sided die 10 times, and then list the outcomes in order as \((x_1, x_2, \ldots , x_{10} )\text{.}\) We are interested in counting the total number outcomes in which both  1 appears and 2 appears.  We break this process into multiple steps.</p>
 <ol class="lower-alpha">
-<li><p>\(\mathcal{A} = \{ \) all possible functions from \([r]\) to \([s] \}\text{.}\) </p></li>
-<li><p>\(\mathcal{B} = \{ \) all injective functions from \([r]\) to \([s] \}\text{.}\) </p></li>
-<li><p>\(\mathcal{C} = \{ \) all surjective functions from \([r]\) to \([s] \}\text{.}\) </p></li>
-<li><p>\(\mathcal{D} = \{ \) all bijective functions from \([r]\) to \([s] \}\text{.}\) </p></li>
-</ol></article><span class="incontext"><a href="exercises-7.html#exercise-32">in-context</a></span>
+<li><p>Let \(X\) be the set of all possible outcomes \((x_1, x_2, \ldots , x_{10} )\text{.}\) What is \(|X|\text{?}\) </p></li>
+<li><p>Let \(X_1\) be the set of outcomes that <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">do not</em> contain any 1's. I would call \(X_1\) the set of "bad outcomes for 1." What is \(|X_1|\text{?}\) </p></li>
+<li><p>Define \(X_2\) in the same way as in part (b), where \(X_2\) is the set of "bad outcomes for 2." What is \(|X_2|\text{?}\) </p></li>
+<li><p>How many outcomes are there in which neither 1 or 2 appears? How would you describe this set using the symbols \(X_1\) and \(X_2\text{?}\) </p></li>
+<li><p>Use inclusion-exclusion to find the number of outcomes in which either 1 does not appear or 2 does not appear (or both do not appear). This account for all the "bad outcomes." </p></li>
+<li><p>Now use your answer from part (d) to find the number of "good  outcomes." Namely, how many outcomes contain both 1 and 2? </p></li>
+</ol></article><span class="incontext"><a href="exercises-8.html#exercise-32">in-context</a></span>
 </body>
 </html>

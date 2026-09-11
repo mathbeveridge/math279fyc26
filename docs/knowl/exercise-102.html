@@ -12,21 +12,15 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Counting edges and degrees.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Connected Graphs.</span>
 </h6>
-<p>Let \(G = (V,E)\) be a graph on \(n\) vertices with \(m\) edges.</p>
-<ol class="lower-alpha">
-<li>
-<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">The Handshaking Lemma.</em> Prove that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\sum_{v \in V} \deg(v) = 2|E|.
-\end{equation*}
-</div>
-<p class="continuation">This is our first example of a "combinatorial identity": you are counting the same set in two different ways. This equality is known as "the handshaking lemma." </p>
-</li>
-<li><p>Prove that the number of vertices of odd degree is even. First, partition \(V\) into two sets: the vertices of odd degree and the vertices of even degree. Then use the handshaking lemma (from the previous problem). </p></li>
-<li><p>Prove that if \(G\) is a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">connected</em> graph on \(n\) vertices then \(G\) contains two vertices that have the same degree. Hint: what are the possible values for \(\deg(v)\) for \(v \in V(G)\text{?}\) </p></li>
-</ol></article><span class="incontext"><a href="exercises-22.html#exercise-102">in-context</a></span>
+<p>A graph is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">connected</em> when every pair of vertices are connected by a path in the graph. Any graph is made up of connected <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">components</em>. In other words, we can view any graph as the union of its components, which are themselves connected graphs. Below, we see an example of a connected graph and example of a graph with three components. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-graph18.svg" role="img" class="contained"></div></p>
+<ol class="lower-alpha"><li>
+<p>Let \(G\) be a graph with \(|V|=n\text{.}\)</p>
+<ol class="lower-roman">
+<li><p>Suppose \(G\) is connected. Find a lower bound on \(|E|\text{.}\) Start by exploring examples for \(n=2,3,4,5\text{.}\) You do NOT have to prove your answer is correct. </p></li>
+<li><p>Suppose that \(G\) is disconnected. Find an upper bound on \(|E|\text{.}\) Start by exploring examples for \(n=2,3,4,5\text{.}\) You do NOT have to prove your answer is correct. </p></li>
+</ol>
+</li></ol></article><span class="incontext"><a href="exercises-22.html#exercise-102">in-context</a></span>
 </body>
 </html>

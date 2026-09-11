@@ -12,7 +12,20 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Complete Bipartite Graphs.</em> The complete bipartite graph \(K_{r,s}\) is the graph whose vertices are divided into sets \(A\) and \(B\text{,}\) where \(|A|=r\) and \(|B|=s\text{.}\) Every vertex in \(A\) is adjacent to every vertex in \(B\text{.}\) There are no other edges. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-graph17.svg" role="img" class="contained"></div> How many edges are there in the complete bipartite graph \(K_{r,s}\) for \(r \geq 1\) and \(s \geq 1\text{?}\) </p>
+<p>Let \(G = (V,E)\) be a graph on \(n\) vertices with \(m\) edges.</p>
+<ol class="lower-alpha">
+<li>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">The Handshaking Lemma.</em> Prove that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{v \in V} \deg(v) = 2|E|.
+\end{equation*}
+</div>
+<p class="continuation">This is our first example of a "combinatorial identity": you are counting the same set in two different ways. This equality is known as "the handshaking lemma." </p>
+</li>
+<li><p>Prove that the number of vertices of odd degree is even. First, partition \(V\) into two sets: the vertices of odd degree and the vertices of even degree. Then use the handshaking lemma (from the previous problem). </p></li>
+<li><p>Prove that if \(G\) is a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">connected</em> graph on \(n\) vertices then \(G\) contains two vertices that have the same degree. Hint: what are the possible values for \(\deg(v)\) for \(v \in V(G)\text{?}\) </p></li>
+</ol>
 <span class="incontext"><a href="exercises-22.html#p-354">in-context</a></span>
 </body>
 </html>
