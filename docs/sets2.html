@@ -227,27 +227,86 @@
 </h6>
 <p id="p-79">Let \(A= \{ x \mid 1 &lt; x &lt; 5 \}\text{,}\) \(B = \{ x \mid 5 \leq x \leq 7 \}\) and \(C= \{ x \mid 2 &lt; x &lt; 8 \}\text{,}\) where \(x\) represents a real number. Write the following sets in "set builder" notation.</p>
 <ol class="lower-alpha">
-<li id="li-42"><p id="p-80">\(A \cup C \text{.}\) </p></li>
-<li id="li-43"><p id="p-81">\(A \cap B\text{.}\) </p></li>
-<li id="li-44"><p id="p-82">\((A \cup B ) \cap C\text{.}\) </p></li>
-<li id="li-45"><p id="p-83">\(A \cap \overline{C}\text{.}\) </p></li>
+<li id="li-42"><p id="p-80">\(A \cup C \text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like"><p id="p-81">\[ A \cup C = \{ x \mid 1 &lt; x &lt; 8 \} \]</p></div></div></p></li>
+<li id="li-43"><p id="p-82">\(A \cap B\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like"><p id="p-83">\[ A \cap B = \emptyset \ \]</p></div></div></p></li>
+<li id="li-44"><p id="p-84">\((A \cup B ) \cap C\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like"><p id="p-85">\[ (A \cup B) \cap C = \{ x \mid 2 &lt; x &lt; 8 \} \]</p></div></div></p></li>
+<li id="li-45"><p id="p-86">\(A \cap \overline{C}\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-30" id="solution-30"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-30"><div class="solution solution-like"><p id="p-87">\[ A \cap \overline{C} = \{ x \mid 1 &lt;  x  \leq 2 \} \ \]</p></div></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-7"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">DeMorgan's Law.</span>
 </h6>
-<p id="p-84">Consider the following DeMorgan Law: \[ \overline{(A \cap B)} = \overline{A} \cup \overline{B}. \]</p>
+<p id="p-88">Consider the following DeMorgan Law: \[ \overline{(A \cap B)} = \overline{A} \cup \overline{B}. \]</p>
 <ol class="lower-alpha">
 <li id="li-46">
-<p id="p-85">Prove this law using a Venn diagram</p>
-<p id="p-86"></p>
+<p id="p-89">Prove this law using a Venn diagram</p>
+<p id="p-90"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like"><p id="p-91">Both of your Venn diagrams will look  like this: <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-sets10.svg" role="img" class="contained"></div></p></div></div></p>
 </li>
-<li id="li-47"><p id="p-87">Prove this law using a carefully argued double inclusion proof. </p></li>
+<li id="li-47"><p id="p-92">Prove this law using a carefully argued double inclusion proof. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like">
+<p id="p-93">First, we prove that if \(x \in \overline{(A \cap B)}\) then \(x \in \overline{A} \cup \overline{B}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+x \in \overline{(A \cap B)}
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \cap B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \mbox{ AND } x \in  B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } (  x \in A) \mbox{ OR } \mbox{NOT } ( x \in  B) \\
+&amp; \Rightarrow &amp;   x \in \overline{A} \mbox{ OR }  x \in  \overline{B} \\
+&amp; \Rightarrow &amp;   x \in \overline{A}  \cup  \overline{B} \\
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">Let's talk about that third step, since this is a new idea. We know that the statement "\(x  \in A\) AND \(x \in B\)" is FALSE. So (at least) one of these statements is FALSE. In other words, either \(x \notin A\) or \(x \notin B\text{.}\)</p>
+<p id="p-94">Next, we prove that if \(x \in \overline{A} \cup \overline{B}\) then \(x \in \overline{(A \cap B)}\text{.}\) If you look carefully, this is just the previous argument in reverse. (This happens for simpler problems.)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+x \in \overline{A}  \cup  \overline{B}  &amp; \Rightarrow &amp;   x \in \overline{A} \mbox{ OR }  x \in  \overline{B} \\
+&amp; \Rightarrow &amp; \mbox{ NOT } (  x \in A) \mbox{ OR } \mbox{NOT } ( x \in  B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \mbox{ AND } x \in  B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \cap B) \\
+&amp; \Rightarrow &amp;  x \in \overline{(A \cap B)}  \\
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">Let's talk about the third step in this case. We know that either \(x \notin A\) or \(x \notin B\text{.}\) Therefore is is NOT true that "\(x \in A\) and \(x \in B\) are both true".</p>
+</div></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-8"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Distributive Laws.</span>
 </h6>
-<p id="p-88">Prove the following <em class="emphasis">distributive laws</em> in two ways. First, using a Venn diagram, and then using a double inclusion proof.</p>
+<p id="p-95">Prove the following <em class="emphasis">distributive laws</em> in two ways. First, using a Venn diagram, and then using a double inclusion proof.</p>
 <ol class="lower-alpha">
-<li id="li-48"><p id="p-89">\(\displaystyle A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\) </p></li>
-<li id="li-49"><p id="p-90">\(\displaystyle A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\) </p></li>
+<li id="li-48"><p id="p-96">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-33"><div class="solution solution-like">
+<p id="p-97">This argument works backwards and forward. So this proves the double inclusion of these sets.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+x \in A \cap (B \cup C)
+&amp;\Longleftrightarrow&amp;
+x \in A \mbox{ AND } (x \in B \mbox{ OR } x \in C)  \\
+&amp;\Longleftrightarrow&amp;
+x \in A \cap B  \mbox{ OR } x \in A \cap C  \\
+&amp;\Longleftrightarrow&amp;
+x \in (A \cap B) \cup ( A \cap C)  \\
+\end{array}
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-49"><p id="p-98">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like">
+<p id="p-99">Once again, this argument works backwards and forward. So this proves the double inclusion of these sets.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+x \in A \cup (B \cap C)
+&amp;\Longleftrightarrow&amp;
+x \in A \mbox{ OR }   ( x \in B \mbox{ AND } x \in C)  \\
+&amp;\Longleftrightarrow&amp;
+(x \in  A \mbox{ OR }    x \in B) \mbox{ AND }  (x \in  A \mbox{ OR }   x \in C)  \\
+&amp;\Longleftrightarrow&amp;
+x \in (A \cup B) \cap (A \cup C)
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">This argument does work, but it does have one subtlety. If \(x \notin A\) then each condition forces \(x\) to be an element of both \(B\) and \(C\text{.}\)</p>
+</div></div></p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

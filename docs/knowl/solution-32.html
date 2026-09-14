@@ -15,8 +15,34 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>Let \(\cA\) be all of the even squares and \(\emptyset\) and let \(\cB\) be all of the odd squares. Note that \(\cA\) satisfies Rule 2 and \(\cB\) satisfies Rule 1.</p>
+<p>First, we prove that if \(x \in \overline{(A \cap B)}\) then \(x \in \overline{A} \cup \overline{B}\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+x \in \overline{(A \cap B)}
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \cap B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \mbox{ AND } x \in  B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } (  x \in A) \mbox{ OR } \mbox{NOT } ( x \in  B) \\
+&amp; \Rightarrow &amp;   x \in \overline{A} \mbox{ OR }  x \in  \overline{B} \\
+&amp; \Rightarrow &amp;   x \in \overline{A}  \cup  \overline{B} \\
+\end{array}
+\end{equation*}
 </div>
-<span class="incontext"><a href="exercises-26.html#solution-32">in-context</a></span>
+<p class="continuation">Let's talk about that third step, since this is a new idea. We know that the statement "\(x  \in A\) AND \(x \in B\)" is FALSE. So (at least) one of these statements is FALSE. In other words, either \(x \notin A\) or \(x \notin B\text{.}\)</p>
+<p>Next, we prove that if \(x \in \overline{A} \cup \overline{B}\) then \(x \in \overline{(A \cap B)}\text{.}\) If you look carefully, this is just the previous argument in reverse. (This happens for simpler problems.)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+x \in \overline{A}  \cup  \overline{B}  &amp; \Rightarrow &amp;   x \in \overline{A} \mbox{ OR }  x \in  \overline{B} \\
+&amp; \Rightarrow &amp; \mbox{ NOT } (  x \in A) \mbox{ OR } \mbox{NOT } ( x \in  B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \mbox{ AND } x \in  B) \\
+&amp; \Rightarrow &amp; \mbox{ NOT } ( x \in A \cap B) \\
+&amp; \Rightarrow &amp;  x \in \overline{(A \cap B)}  \\
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">Let's talk about the third step in this case. We know that either \(x \notin A\) or \(x \notin B\text{.}\) Therefore is is NOT true that "\(x \in A\) and \(x \in B\) are both true".</p>
+</div>
+<span class="incontext"><a href="exercises-2.html#solution-32">in-context</a></span>
 </body>
 </html>

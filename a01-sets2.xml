@@ -25,13 +25,13 @@ Let <m>A= \{ x \mid 1 &lt; x &lt; 5 \}</m>, <m>B = \{ x \mid 5 \leq x \leq 7 \}<
 					<p>
  <m>A \cup C </m>.
 
-<!--solution>
+<solution>
 <p>
 \[
 A \cup C = \{ x \mid 1 &lt; x &lt; 8 \}
 \]
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -39,13 +39,13 @@ A \cup C = \{ x \mid 1 &lt; x &lt; 8 \}
 					<p>
  <m>A \cap B</m>.
 
-<!--solution>
+<solution>
 <p>
 \[
 A \cap B = \emptyset \
 \]
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>				
@@ -53,13 +53,13 @@ A \cap B = \emptyset \
 					<p>
  <m>(A \cup B ) \cap C</m>.
 
-<!--solution>
+<solution>
 <p>
 \[
 (A \cup B) \cap C = \{ x \mid 2 &lt; x &lt; 8 \} 
 \]
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -67,13 +67,13 @@ A \cap B = \emptyset \
 					<p>
  <m>A \cap \overline{C}</m>.
 
-<!--solution>
+<solution>
 <p>
 \[
 A \cap \overline{C} = \{ x \mid 1 &lt;  x  \leq 2 \} \
 \]
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -129,7 +129,7 @@ Consider the following DeMorgan Law:
 
 			</p><p>
 
-<!--solution>
+<solution>
 <p>
 
 Both of your Venn diagrams will look  like this:
@@ -164,7 +164,7 @@ Both of your Venn diagrams will look  like this:
 
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -173,7 +173,7 @@ Both of your Venn diagrams will look  like this:
 					<p>
  Prove this law using a carefully argued double inclusion proof.
 
-<!--solution>
+<solution>
 <p>
 First, we prove that if <m>x \in \overline{(A \cap B)}</m> then <m>x \in \overline{A} \cup \overline{B}</m>.
 
@@ -208,7 +208,7 @@ Let's talk about the third step in this case. We know that either <m>x \notin A<
 
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -235,7 +235,7 @@ Prove the following <em>distributive laws</em> in two ways. First, using a Venn 
 					<p>
  <m>A \cap (B \cup C) = (A \cap B) \cup (A \cap C)</m>
 
-<!--solution>
+<solution>
 <p>
 This argument works backwards and forward. So this proves the double inclusion of these sets.
 
@@ -251,7 +251,7 @@ x \in (A \cap B) \cup ( A \cap C)  \\
 \end{array}
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -259,7 +259,7 @@ x \in (A \cap B) \cup ( A \cap C)  \\
 					<p>
  <m>A \cup (B \cap C) = (A \cup B) \cap (A \cup C)</m>
 
-<!--solution>
+<solution>
 <p>
 Once again, this argument works backwards and forward. So this proves the double inclusion of these sets.
 
@@ -277,7 +277,7 @@ x \in (A \cup B) \cap (A \cup C)
 
 This argument does work, but it does have one subtlety. If <m>x \notin A</m> then each condition forces <m>x</m> to be an element of both <m>B</m> and <m>C</m>.
 </p>
-</solution-->
+</solution>
 
 
 					</p>
