@@ -219,16 +219,16 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="induction1"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">19</span> <span class="title">Induction</span>
 </h2>
-<section class="introduction" id="introduction-19"><p id="p-275"></p>
-<p id="p-276"></p></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-19"><p id="p-315"></p>
+<p id="p-316"></p></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-86"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Patterns.</span>
 </h6>
-<p id="p-277">Use summation notation to write a formula for the \(n\)th equation for the given pattern.</p>
+<p id="p-317">Use summation notation to write a formula for the \(n\)th equation for the given pattern.</p>
 <ol class="lower-alpha">
-<li id="li-166"><p id="p-derived-li-166"><div class="displaymath">
+<li id="li-177"><p id="p-derived-li-177"><div class="displaymath">
 \begin{equation*}
 \begin{array}{ccr}
 1 &amp;=&amp; 1 \cdot 1 \\
@@ -238,7 +238,7 @@
 \end{array}	
 \end{equation*}
 </div></p></li>
-<li id="li-167"><p id="p-derived-li-167"><div class="displaymath">
+<li id="li-178"><p id="p-derived-li-178"><div class="displaymath">
 \begin{equation*}
 \begin{array}{rccr}
 (n=2) &amp; \dfrac{1}{1 \cdot 2} &amp;=&amp; \dfrac{1}{2} \\
@@ -251,7 +251,7 @@
 </ol></article><article class="exercise exercise-like" id="exercise-87"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">A Formula for a Sum.</span>
 </h6>
-<p id="p-278">Use induction to prove that</p>
+<p id="p-318">Use induction to prove that</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{i=0}^{n} 2^i = 2^{n+1} -1
@@ -259,54 +259,54 @@
 </div>
 <p class="continuation">for all \(n \geq 0\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-168"><p id="p-279"><em class="emphasis">Base Case:</em> Check for \(n=0,1,2\) to make sure you believe it. You actually only need to check for \(n=0\text{.}\) </p></li>
-<li id="li-169"><p id="p-280"><em class="emphasis">Inductive Hypothesis:</em> Write down your inductive hypothesis for \(k\text{.}\) </p></li>
-<li id="li-170"><p id="p-281"><em class="emphasis">Inductive Step:</em> Write down what you want to SHOW for \(k+1\text{.}\) Then try to find "a copy of the size \(n\) problem" in the size \(n+1\) problem. Rearrange and use your inductive hypothesis to prove the result! </p></li>
+<li id="li-179"><p id="p-319"><em class="emphasis">Base Case:</em> Check for \(n=0,1,2\) to make sure you believe it. You actually only need to check for \(n=0\text{.}\) </p></li>
+<li id="li-180"><p id="p-320"><em class="emphasis">Inductive Hypothesis:</em> Write down your inductive hypothesis for \(k\text{.}\) </p></li>
+<li id="li-181"><p id="p-321"><em class="emphasis">Inductive Step:</em> Write down what you want to SHOW for \(k+1\text{.}\) Then try to find "a copy of the size \(n\) problem" in the size \(n+1\) problem. Rearrange and use your inductive hypothesis to prove the result! </p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-88"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">A Divisibility Problem.</span>
 </h6>
-<p id="p-282">Use induction to prove that \(4\) divides \((5^n -1)\) for \(n \geq 1\text{.}\)</p>
+<p id="p-322">Use induction to prove that \(4\) divides \((5^n -1)\) for \(n \geq 1\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-171"><p id="p-283"><em class="emphasis">Base Case:</em> (Check for \(n=1,2,3\) to make sure you believe it. You actually only need to check for \(n=1\text{.}\)) </p></li>
-<li id="li-172">
-<p id="p-284"><em class="emphasis">Inductive Hypothesis:</em> Write down your inductive hypothesis for \(k\text{.}\)</p>
-<p id="p-285">Pro Tip: A nice way to write "4 divides \((5^k-1)\)" is the statement "\(5^k-1 = 4r\) for some \(r\text{.}\)" </p>
+<li id="li-182"><p id="p-323"><em class="emphasis">Base Case:</em> (Check for \(n=1,2,3\) to make sure you believe it. You actually only need to check for \(n=1\text{.}\)) </p></li>
+<li id="li-183">
+<p id="p-324"><em class="emphasis">Inductive Hypothesis:</em> Write down your inductive hypothesis for \(k\text{.}\)</p>
+<p id="p-325">Pro Tip: A nice way to write "4 divides \((5^k-1)\)" is the statement "\(5^k-1 = 4r\) for some \(r\text{.}\)" </p>
 </li>
-<li id="li-173">
-<p id="p-286"><em class="emphasis">Inductive Step:</em> Write down what you want to SHOW for \(k+1\text{.}\) Then try to find "a copy of the size \(k\) problem" in the size \(k+1\) problem. Rearrange and use your inductive hypothesis to prove the result!</p>
-<p id="p-287">Hint: For this problem, the easiest thing to do is "add 0 in a smart way." Namely, add \((5^k - 5^k)\) and then rearrange. </p>
+<li id="li-184">
+<p id="p-326"><em class="emphasis">Inductive Step:</em> Write down what you want to SHOW for \(k+1\text{.}\) Then try to find "a copy of the size \(k\) problem" in the size \(k+1\) problem. Rearrange and use your inductive hypothesis to prove the result!</p>
+<p id="p-327">Hint: For this problem, the easiest thing to do is "add 0 in a smart way." Namely, add \((5^k - 5^k)\) and then rearrange. </p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-89"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Tiling with \(L\)-Shaped Triominos.</span>
 </h6>
-<p id="p-288">An \(L\)-shaped triomino is a \(2 \times 2\) tile with one square missing. It looks like this: <div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="images/fig-img-induction10.svg" role="img" class="contained"></div></p>
+<p id="p-328">An \(L\)-shaped triomino is a \(2 \times 2\) tile with one square missing. It looks like this: <div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="images/fig-img-induction10.svg" role="img" class="contained"></div></p>
 <ol class="lower-alpha">
-<li id="li-174"><p id="p-289">Consider the following \(4 \times 4\) checkerboards with one square missing (shown in black). For each board, show that you can cover the rest of the squares using \(L\)-shaped triominoes. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-induction11.svg" role="img" class="contained"></div> </p></li>
-<li id="li-175"><p id="p-290">Now consider the following \(8 \times 8\) checkerboard with one square missing (shown in black). Show that you can cover the rest of the squares using \(L\)-shaped triominoes as follows (and shown in the right diagram below). (1) Place your first triomino in the gray squares as shown. (2) Use part (a) to fill in the four \(4 \times 4\) sub-boards. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-induction13.svg" role="img" class="contained"></div> </p></li>
-<li id="li-176"><p id="p-291">Reflect on how you solved the \(8 \times 8\) problem by  turning it into four instances of \(4 \times 4\) problems. Then go back to your answers in part (a) and show how you solved each \(4 \times 4\) problem by turning it into four instances of \(2 \times 2\) problems. </p></li>
-<li id="li-177"><p id="p-292">If I gave you a \(16 \times 16\) checkerboard with one square missing, could you cover the rest with \(L\)-shaped triominoes? How would you do it? </p></li>
-<li id="li-178">
-<p id="p-293">Use induction to prove the following statement:</p>
-<p id="p-294">For \(n \geq 1\text{,}\) any \(2^n \times 2^n\) checkerboard with one square missing can be covered by \(L\)-shaped dominoes.</p>
-<ol id="p-295" class="lower-roman">
-<li id="li-179"><p id="p-296"><em class="emphasis">Base Case:</em> What is your base case? </p></li>
-<li id="li-180"><p id="p-297"><em class="emphasis">Inductive Hypothesis:</em> State your inductive hypothesis for \(k\text{.}\) </p></li>
-<li id="li-181"><p id="p-298"><em class="emphasis">Inductive Step:</em>  Write down what you want to SHOW for \(k+1\text{.}\) Then try to find "a copy of the size \(k\) problem" in the size \(k+1\) problem. Rearrange and use your inductive hypothesis to prove the result! </p></li>
+<li id="li-185"><p id="p-329">Consider the following \(4 \times 4\) checkerboards with one square missing (shown in black). For each board, show that you can cover the rest of the squares using \(L\)-shaped triominoes. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-induction11.svg" role="img" class="contained"></div> </p></li>
+<li id="li-186"><p id="p-330">Now consider the following \(8 \times 8\) checkerboard with one square missing (shown in black). Show that you can cover the rest of the squares using \(L\)-shaped triominoes as follows (and shown in the right diagram below). (1) Place your first triomino in the gray squares as shown. (2) Use part (a) to fill in the four \(4 \times 4\) sub-boards. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-induction13.svg" role="img" class="contained"></div> </p></li>
+<li id="li-187"><p id="p-331">Reflect on how you solved the \(8 \times 8\) problem by  turning it into four instances of \(4 \times 4\) problems. Then go back to your answers in part (a) and show how you solved each \(4 \times 4\) problem by turning it into four instances of \(2 \times 2\) problems. </p></li>
+<li id="li-188"><p id="p-332">If I gave you a \(16 \times 16\) checkerboard with one square missing, could you cover the rest with \(L\)-shaped triominoes? How would you do it? </p></li>
+<li id="li-189">
+<p id="p-333">Use induction to prove the following statement:</p>
+<p id="p-334">For \(n \geq 1\text{,}\) any \(2^n \times 2^n\) checkerboard with one square missing can be covered by \(L\)-shaped dominoes.</p>
+<ol id="p-335" class="lower-roman">
+<li id="li-190"><p id="p-336"><em class="emphasis">Base Case:</em> What is your base case? </p></li>
+<li id="li-191"><p id="p-337"><em class="emphasis">Inductive Hypothesis:</em> State your inductive hypothesis for \(k\text{.}\) </p></li>
+<li id="li-192"><p id="p-338"><em class="emphasis">Inductive Step:</em>  Write down what you want to SHOW for \(k+1\text{.}\) Then try to find "a copy of the size \(k\) problem" in the size \(k+1\) problem. Rearrange and use your inductive hypothesis to prove the result! </p></li>
 </ol>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-90"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Nearest Neighbor Pie Fight.</span>
 </h6>
-<p id="p-299">Consider a pie fight between an odd number of people in which everyone throws a pie at her nearest neighbor. Assume that all pairwise distances are distinct. Prove that in such a pie fight between \(2r+1\) people with \(r \geq 1\text{,}\) there is at least one person who is not hit by a pie.</p>
+<p id="p-339">Consider a pie fight between an odd number of people in which everyone throws a pie at her nearest neighbor. Assume that all pairwise distances are distinct. Prove that in such a pie fight between \(2r+1\) people with \(r \geq 1\text{,}\) there is at least one person who is not hit by a pie.</p>
 <ol class="lower-alpha">
-<li id="li-182"><p id="p-300"><em class="emphasis">Base Case:</em> (Check for \(r=1\text{.}\)) Hint: Start by considering the two people who are the smallest distance from one another. </p></li>
-<li id="li-183"><p id="p-301"><em class="emphasis">Inductive Hypothesis:</em> Write down your inductive hypothesis for \(k\text{.}\) </p></li>
-<li id="li-184">
-<p id="p-302"><em class="emphasis">Inductive Step:</em> Write down what you want to SHOW for \(k+1\text{.}\)</p>
-<p id="p-303">As in your base case,  start by considering the two people (Alice and Bob) who are the smallest distance from one another. There are 2 cases to consider</p>
+<li id="li-193"><p id="p-340"><em class="emphasis">Base Case:</em> (Check for \(r=1\text{.}\)) Hint: Start by considering the two people who are the smallest distance from one another. </p></li>
+<li id="li-194"><p id="p-341"><em class="emphasis">Inductive Hypothesis:</em> Write down your inductive hypothesis for \(k\text{.}\) </p></li>
+<li id="li-195">
+<p id="p-342"><em class="emphasis">Inductive Step:</em> Write down what you want to SHOW for \(k+1\text{.}\)</p>
+<p id="p-343">As in your base case,  start by considering the two people (Alice and Bob) who are the smallest distance from one another. There are 2 cases to consider</p>
 <ul class="disc">
-<li id="li-185"><p id="p-304"><em class="emphasis">Case 1:</em> Suppose that someone else throws a pie at Alice or Bob. In this case, you can immediately find a person who is not hit by a pie. Why?</p></li>
-<li id="li-186"><p id="p-305"><em class="emphasis">Case 2:</em> No one else throws a pie at Alice or Bob. In this case, you need to use the induction hypothesis!</p></li>
+<li id="li-196"><p id="p-344"><em class="emphasis">Case 1:</em> Suppose that someone else throws a pie at Alice or Bob. In this case, you can immediately find a person who is not hit by a pie. Why?</p></li>
+<li id="li-197"><p id="p-345"><em class="emphasis">Case 2:</em> No one else throws a pie at Alice or Bob. In this case, you need to use the induction hypothesis!</p></li>
 </ul>
 </li>
 </ol></article></section></section></div></main>

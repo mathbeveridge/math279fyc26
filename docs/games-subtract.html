@@ -219,23 +219,23 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="games-subtract"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">28</span> <span class="title">Subtraction Games</span>
 </h2>
-<section class="introduction" id="introduction-28"><p id="p-478"><em class="emphasis">Calculating the mex of a set of whole numbers.</em></p>
-<p id="p-479">Recall that \(\W = \{ 0,1,2,3, \ldots \}\text{.}\) For a subset \(S \subset \W\) the <em class="emphasis">mex</em> of \(S\) is the <em class="emphasis">minimum excluded value</em></p>
+<section class="introduction" id="introduction-28"><p id="p-518"><em class="emphasis">Calculating the mex of a set of whole numbers.</em></p>
+<p id="p-519">Recall that \(\W = \{ 0,1,2,3, \ldots \}\text{.}\) For a subset \(S \subset \W\) the <em class="emphasis">mex</em> of \(S\) is the <em class="emphasis">minimum excluded value</em></p>
 <div class="displaymath">
 \begin{equation*}
 \mex (S) = \min \{ i \in \W \mid i \notin S\}.
 \end{equation*}
 </div>
-<p id="p-480"><em class="emphasis">Calculating the Sprague-Grundy value of a game position.</em></p>
-<p id="p-481">Given a position \(X\) of a game with followers \(\cF(X) = \{ Y_1, Y_2, \ldots , Y_k \}\) The <em class="emphasis">Sprague-Grundy value</em> of the position is</p>
+<p id="p-520"><em class="emphasis">Calculating the Sprague-Grundy value of a game position.</em></p>
+<p id="p-521">Given a position \(X\) of a game with followers \(\cF(X) = \{ Y_1, Y_2, \ldots , Y_k \}\) The <em class="emphasis">Sprague-Grundy value</em> of the position is</p>
 <div class="displaymath">
 \begin{equation*}
 g(X) = \mex  \{ g(Y_1), g (Y_2), \ldots g(Y_k) \} \big\}.
 \end{equation*}
 </div>
 <p class="continuation">This formula for the Sprague-Grundy value recursive: you is calculate the value for \(X\) by looking at the values of the followers.  This is a lot like working your way back up a game tree to figure out whether \(X\) is an \(\cN\)-position or a \(\cP\)-position.</p>
-<p id="p-482"><em class="emphasis">Subtraction Games.</em></p>
-<p id="p-483">A subtraction game \(S(k_1, k_2, \ldots , k_r)\) is a nim game with a single heap in which you are only allowed to remove \(k_1, k_2, \ldots , k_r\) beans on any given turn. We will use</p>
+<p id="p-522"><em class="emphasis">Subtraction Games.</em></p>
+<p id="p-523">A subtraction game \(S(k_1, k_2, \ldots , k_r)\) is a nim game with a single heap in which you are only allowed to remove \(k_1, k_2, \ldots , k_r\) beans on any given turn. We will use</p>
 <div class="displaymath">
 \begin{equation*}
 \pile{n}
@@ -247,9 +247,9 @@ g(X) = \mex  \{ g(Y_1), g (Y_2), \ldots g(Y_k) \} \big\}.
 <article class="exercise exercise-like" id="exercise-125"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Subtraction \(S(1,2,3,4)\).</span>
 </h6>
-<ol id="p-484" class="lower-alpha">
-<li id="li-278">
-<p id="p-485">Play \(S(1,2,3, 4)\) with pile sizes \(n=1,2,3, \ldots\text{.}\) Determine which pile sizes are \(\cP\)-positions and which ones are \(\cP\)-posititions.</p>
+<ol id="p-524" class="lower-alpha">
+<li id="li-289">
+<p id="p-525">Play \(S(1,2,3, 4)\) with pile sizes \(n=1,2,3, \ldots\text{.}\) Determine which pile sizes are \(\cP\)-positions and which ones are \(\cP\)-posititions.</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
@@ -261,8 +261,8 @@ n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&
 \end{equation*}
 </div>
 </li>
-<li id="li-279">
-<p id="p-486">Calculate  \(g(\pile{n})\) for the game \(S(1,2,3,4)\text{.}\)</p>
+<li id="li-290">
+<p id="p-526">Calculate  \(g(\pile{n})\) for the game \(S(1,2,3,4)\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
@@ -274,13 +274,13 @@ g(\pile{n}) &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
 \end{equation*}
 </div>
 </li>
-<li id="li-280"><p id="p-487">Compare your answers to (a) and (b). What do you observe? Make a conjecture about the relationship of the Sprague-Grundy value to the winner of the game. </p></li>
+<li id="li-291"><p id="p-527">Compare your answers to (a) and (b). What do you observe? Make a conjecture about the relationship of the Sprague-Grundy value to the winner of the game. </p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-126"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Subtraction \(S(1,2,4)\).</span>
 </h6>
-<ol id="p-488" class="lower-alpha">
-<li id="li-281">
-<p id="p-489">Calculate  \(g(\pile{n})\) for the game \(S(1,2,4)\text{.}\)</p>
+<ol id="p-528" class="lower-alpha">
+<li id="li-292">
+<p id="p-529">Calculate  \(g(\pile{n})\) for the game \(S(1,2,4)\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 S(1,2,4): \qquad
@@ -293,14 +293,14 @@ g(\pile{n}) &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
 \end{equation*}
 </div>
 </li>
-<li id="li-282"><p id="p-490">Is \(\pile{8}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(1,2,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
-<li id="li-283"><p id="p-491">Is \(\pile{9}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(1,2,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
+<li id="li-293"><p id="p-530">Is \(\pile{8}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(1,2,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
+<li id="li-294"><p id="p-531">Is \(\pile{9}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(1,2,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-127"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Subtraction \(S(3,4)\).</span>
 </h6>
-<ol id="p-492" class="lower-alpha">
-<li id="li-284">
-<p id="p-493">Calculate  \(g(\pile{n})\) for the game \(S(3,4)\) Note that there is no legal move for a pile of size 1 or of size 2, so \(g(\pile{1})=0\) and \(g(\pile{2})=0\text{.}\)</p>
+<ol id="p-532" class="lower-alpha">
+<li id="li-295">
+<p id="p-533">Calculate  \(g(\pile{n})\) for the game \(S(3,4)\) Note that there is no legal move for a pile of size 1 or of size 2, so \(g(\pile{1})=0\) and \(g(\pile{2})=0\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 S(3,4): \qquad
@@ -313,12 +313,12 @@ g(\pile{n}) &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
 \end{equation*}
 </div>
 </li>
-<li id="li-285"><p id="p-494">Is \(\pile{8}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(3,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
-<li id="li-286"><p id="p-495">Is \(\pile{10}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(3,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
+<li id="li-296"><p id="p-534">Is \(\pile{8}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(3,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
+<li id="li-297"><p id="p-535">Is \(\pile{10}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(3,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-128"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Subtraction \(S(3,5)\).</span>
 </h6>
-<p id="p-496">Here is the table of Sprague-Grundy values for \(S(3,5)\)</p>
+<p id="p-536">Here is the table of Sprague-Grundy values for \(S(3,5)\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
@@ -331,53 +331,53 @@ g(\pile{n}) &amp;0&amp;0&amp;0&amp;1&amp;1&amp;1&amp;2&amp;2&amp;0&amp;0&amp;0&a
 </div>
 <p class="continuation">Who wins the following games of \(S(3,5)\text{?}\)</p>
 <ol class="lower-alpha">
-<li id="li-287"><p id="p-497">\(\displaystyle \pile{4}\)</p></li>
-<li id="li-288"><p id="p-498">\(\displaystyle \pile{10}\)</p></li>
-<li id="li-289"><p id="p-499">\(\displaystyle \pile{14}\)</p></li>
-<li id="li-290"><p id="p-500">\(\displaystyle \pile{20}\)</p></li>
+<li id="li-298"><p id="p-537">\(\displaystyle \pile{4}\)</p></li>
+<li id="li-299"><p id="p-538">\(\displaystyle \pile{10}\)</p></li>
+<li id="li-300"><p id="p-539">\(\displaystyle \pile{14}\)</p></li>
+<li id="li-301"><p id="p-540">\(\displaystyle \pile{20}\)</p></li>
 </ol>
-<p id="p-501"></p></article><article class="exercise exercise-like" id="exercise-129"><h6 class="heading">
+<p id="p-541"></p></article><article class="exercise exercise-like" id="exercise-129"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Two-Heap Subtraction \(S(3,5)\).</span>
 </h6>
-<p id="p-502">Now let's play 2-heap \(S(3,5)\text{.}\) Just like 2-heap nim, you choose one pile and then make a valid move in that pile.</p>
+<p id="p-542">Now let's play 2-heap \(S(3,5)\text{.}\) Just like 2-heap nim, you choose one pile and then make a valid move in that pile.</p>
 <ol class="lower-alpha">
-<li id="li-291">
-<p id="p-503">Play the following \(S(3,5)\) games to determine whether each one is an \(\cN\)-position or a \(\cP\)-position.</p>
+<li id="li-302">
+<p id="p-543">Play the following \(S(3,5)\) games to determine whether each one is an \(\cN\)-position or a \(\cP\)-position.</p>
 <ol class="lower-roman">
-<li id="li-292"><p id="p-504">\(\displaystyle ( \pile{4} , \pile{4})\)</p></li>
-<li id="li-293"><p id="p-505">\(\displaystyle (\pile{4} , \pile{5})\)</p></li>
-<li id="li-294"><p id="p-506">\(\displaystyle (\pile{5} , \pile{6})\)</p></li>
-<li id="li-295"><p id="p-507">\(\displaystyle ( \pile{6} , \pile{7})\)</p></li>
+<li id="li-303"><p id="p-544">\(\displaystyle ( \pile{4} , \pile{4})\)</p></li>
+<li id="li-304"><p id="p-545">\(\displaystyle (\pile{4} , \pile{5})\)</p></li>
+<li id="li-305"><p id="p-546">\(\displaystyle (\pile{5} , \pile{6})\)</p></li>
+<li id="li-306"><p id="p-547">\(\displaystyle ( \pile{6} , \pile{7})\)</p></li>
 </ol>
-<p id="p-508"></p>
+<p id="p-548"></p>
 </li>
-<li id="li-296">
-<p id="p-509">Now calculate the following nim sums \(g(\pile{n}) \oplus g(\pile{m})\) for the \(S(3,5)\) positions that you just played. What do you notice?</p>
+<li id="li-307">
+<p id="p-549">Now calculate the following nim sums \(g(\pile{n}) \oplus g(\pile{m})\) for the \(S(3,5)\) positions that you just played. What do you notice?</p>
 <ol class="lower-roman">
-<li id="li-297"><p id="p-510">\(\displaystyle ( \pile{4} , \pile{4})\)</p></li>
-<li id="li-298"><p id="p-511">\(\displaystyle (\pile{4} , \pile{5})\)</p></li>
-<li id="li-299"><p id="p-512">\(\displaystyle (\pile{5} , \pile{6})\)</p></li>
-<li id="li-300"><p id="p-513">\(\displaystyle ( \pile{6} , \pile{7})\)</p></li>
+<li id="li-308"><p id="p-550">\(\displaystyle ( \pile{4} , \pile{4})\)</p></li>
+<li id="li-309"><p id="p-551">\(\displaystyle (\pile{4} , \pile{5})\)</p></li>
+<li id="li-310"><p id="p-552">\(\displaystyle (\pile{5} , \pile{6})\)</p></li>
+<li id="li-311"><p id="p-553">\(\displaystyle ( \pile{6} , \pile{7})\)</p></li>
 </ol>
-<p id="p-514"></p>
+<p id="p-554"></p>
 </li>
-<li id="li-301">
-<p id="p-515">Decide whether the following \(S(3,5)\) positions are \(\cN\)-positions or \(\cP\)-positions. If it is an \(\cN\)-position, give the list of winning moves.</p>
+<li id="li-312">
+<p id="p-555">Decide whether the following \(S(3,5)\) positions are \(\cN\)-positions or \(\cP\)-positions. If it is an \(\cN\)-position, give the list of winning moves.</p>
 <ol class="lower-roman">
-<li id="li-302"><p id="p-516">\(\displaystyle ( \pile{4} , \pile{11})\)</p></li>
-<li id="li-303"><p id="p-517">\(\displaystyle (\pile{7} , \pile{13})\)</p></li>
-<li id="li-304"><p id="p-518">\(\displaystyle (\pile{7} , \pile{14})\)</p></li>
-<li id="li-305"><p id="p-519">\(\displaystyle ( \pile{13} , \pile{18})\)</p></li>
+<li id="li-313"><p id="p-556">\(\displaystyle ( \pile{4} , \pile{11})\)</p></li>
+<li id="li-314"><p id="p-557">\(\displaystyle (\pile{7} , \pile{13})\)</p></li>
+<li id="li-315"><p id="p-558">\(\displaystyle (\pile{7} , \pile{14})\)</p></li>
+<li id="li-316"><p id="p-559">\(\displaystyle ( \pile{13} , \pile{18})\)</p></li>
 </ol>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-130"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">The Sprague-Grundy Value for Nim.</span>
 </h6>
-<p id="p-520">Recall that we use \(*n\) to denote a heap of \(n\) beans in nim.</p>
+<p id="p-560">Recall that we use \(*n\) to denote a heap of \(n\) beans in nim.</p>
 <ol class="lower-alpha">
-<li id="li-306"><p id="p-521">What is \(g(*n)\text{,}\) the Sprague-Grundy value of a nim heap of size \(n\text{?}\) Start with \(n=0,1,2,3,\ldots\) until you see the pattern. </p></li>
-<li id="li-307">
-<p id="p-522">Calculate the Sprague-Grundy values of the following two-heap nim positions</p>
+<li id="li-317"><p id="p-561">What is \(g(*n)\text{,}\) the Sprague-Grundy value of a nim heap of size \(n\text{?}\) Start with \(n=0,1,2,3,\ldots\) until you see the pattern. </p></li>
+<li id="li-318">
+<p id="p-562">Calculate the Sprague-Grundy values of the following two-heap nim positions</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{c|c|c|c|c|c}
@@ -397,8 +397,8 @@ g(*n \oplus *m) &amp; *0 &amp; *1 &amp; *2 &amp; *3 &amp; *4 \\
 \end{equation*}
 </div>
 </li>
-<li id="li-308">
-<p id="p-523">Calculate the nim sum \(n \oplus m\)</p>
+<li id="li-319">
+<p id="p-563">Calculate the nim sum \(n \oplus m\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{c|c|c|c|c|c}
@@ -418,7 +418,7 @@ n \oplus m &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
 \end{equation*}
 </div>
 </li>
-<li id="li-309"><p id="p-524">Compare your answers to problems 2 and 3. What do you observe? </p></li>
+<li id="li-320"><p id="p-564">Compare your answers to problems 2 and 3. What do you observe? </p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

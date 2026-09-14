@@ -12,7 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>What is \(g(*n)\text{,}\) the Sprague-Grundy value of a nim heap of size \(n\text{?}\) Start with \(n=0,1,2,3,\ldots\) until you see the pattern. </p>
-<span class="incontext"><a href="exercises-28.html#p-521">in-context</a></span>
+<p>Given a position \(X\) of a game with followers \(\cF(X) = \{ Y_1, Y_2, \ldots , Y_k \}\) The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Sprague-Grundy value</em> of the position is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+g(X) = \mex  \{ g(Y_1), g (Y_2), \ldots g(Y_k) \} \big\}.
+\end{equation*}
+</div>
+<p class="continuation">This formula for the Sprague-Grundy value recursive: you is calculate the value for \(X\) by looking at the values of the followers.  This is a lot like working your way back up a game tree to figure out whether \(X\) is an \(\cN\)-position or a \(\cP\)-position.</p>
+<span class="incontext"><a href="games-subtract.html#p-521">in-context</a></span>
 </body>
 </html>

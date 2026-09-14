@@ -30,33 +30,33 @@ Mark each of the following statements as <em> true</em> or <em> false</em>
 				<li>
 					<p>
  <m> 1 \in A</m>
-<!--solution>
+<solution>
 <p>
 <em> true</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
 				<li>
 					<p>
  <m>\{ 1 \} \in A</m>
-<!--solution>
+<solution>
 <p>
 <em> true</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
 				<li>
 					<p>
  <m>\{ \{ 1 \} \} \in A</m>
-<!--solution>
+<solution>
 <p>
 <em> false</em>
 </p>
-</solution-->
+</solution>
 					</p>
 				</li>
 			</ol>
@@ -72,33 +72,33 @@ Mark each of the following statements as <em> true</em> or <em> false</em>
 				<li>
 					<p>
  <m>3 \in B</m>
-<!--solution>
+<solution>
 <p>
 <em> true</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
 				<li>
 					<p>
   <m>\{ 3 \} \in B</m>
-<!--solution>
+<solution>
 <p>
 <em> false</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
 				<li>
 					<p>
   <m>\{ 3 \} \subseteq B</m>
-<!--solution>
+<solution>
 <p>
 <em> true</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -115,33 +115,33 @@ Mark each of the following statements as <em> true</em> or <em> false</em>
 				<li>
 					<p>
  <m>\emptyset \in C </m>
-<!--solution>
+<solution>
 <p>
 <em> false</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
 				<li>
 					<p>
   <m>\emptyset \subseteq C </m>
-<!--solution>
+<solution>
 <p>
 <em> true</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
 				<li>
 					<p>
   <m>|C|=3</m>
-<!--solution>
+<solution>
 <p>
 <em> false</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -159,33 +159,33 @@ Mark each of the following statements as <em> true</em> or <em> false</em>
 				<li>
 					<p>
  <m>|D|=5 </m>
-<!--solution>
+<solution>
 <p>
 <em> false</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
 				<li>
 					<p>
  <m>\{ 1, 2 \} \subseteq D </m>
-<!--solution>
+<solution>
 <p>
 <em> false</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
 				<li>
 					<p>
    <m>4 \in D</m>
-<!--solution>
+<solution>
 <p>
 <em> false</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -203,32 +203,32 @@ Mark each of the following statements as <em> true</em> or <em> false</em>
 				<li>
 					<p>
  <m>\emptyset \in E</m>
-<!--solution>
+<solution>
 <p>
 <em> true</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
 				<li>
 					<p>
   <m> \{ \{ \emptyset \} \}  \subseteq E </m>
-<!--solution>
+<solution>
 <p>
 <em> true</em>
 </p>
-</solution-->
+</solution>
 					</p>
 				</li>
 				<li>
 					<p>
   <m>|E|=3</m>
-<!--solution>
+<solution>
 <p>
 <em> true</em>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -258,11 +258,11 @@ Let <m>A</m> be any set. In this problem, we will see why mathematicians decided
 					<p>
  List all of the subsets of <m>\{ 1 \}</m>.
 
-<!--solution>
+<solution>
 <p>
 <m>\emptyset, \{ 1 \}</m>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -270,11 +270,11 @@ Let <m>A</m> be any set. In this problem, we will see why mathematicians decided
 					<p>
  List all of the subsets of <m>\{ 1,2 \}</m>.
 
-<!--solution>
+<solution>
 <p>
 <m>\emptyset, \{ 1 \}, \{ 2 \} , \{ 1,2 \}</m>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -282,11 +282,11 @@ Let <m>A</m> be any set. In this problem, we will see why mathematicians decided
 					<p>
  List all of the subsets of <m>\{ 1,2,3 \}</m>.
 
-<!--solution>
+<solution>
 <p>
 <m>\emptyset, \{ 1 \}, \{ 2 \}, \{ 3 \}, \{ 1,2 \}, \{ 1,3 \} , \{ 2,3 \}, \{ 1,2,3 \}</m>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -294,11 +294,11 @@ Let <m>A</m> be any set. In this problem, we will see why mathematicians decided
 					<p>
  Look at the pattern you see so far. Guess how many subsets are there of the set <m>\{ 1,2,3,4 \}</m>. How about the set <m>\{ 1,2,3, \ldots , 10 \}</m>?
 
-<!--solution>
+<solution>
 <p>
 <m>\{ 1,2,3,4 \}</m> has <m>2^4</m> subsets and <m>\{ 1,2,3, \ldots , 10 \}</m> has <m>2^{10}</m> subsets.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -306,11 +306,11 @@ Let <m>A</m> be any set. In this problem, we will see why mathematicians decided
 					<p>
  Your answers in part (d) are  very simple expressions. This is one reason why mathematicians defined "subset" to include the cases <m>\emptyset \subseteq A</m> and <m>A \subseteq A</m>.  The <em>power set</em> of a set <m>A</m> is the set of all subsets of <m>A</m>. This power set is denoted <m>\mathcal{P}(A)</m>. If <m>|A|=n</m>, what is  <m>| \mathcal{P}(A)|</m>? (You do not have to prove your answer.)
 
-<!--solution>
+<solution>
 <p>
 If <m>|A|=n</m> then  <m>| \mathcal{P}(A)|=2^n</m>
 </p>
-</solution-->
+</solution>
 					</p>
 				</li>
 			</ol>
@@ -336,11 +336,11 @@ Consider the following sequence of sets
 				<li>
 					<p>
  What is the size of each of these sets?
-<!--solution>
+<solution>
 <p>
 In order, these set sizes are 0, 1, 2 and 3.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -348,7 +348,7 @@ In order, these set sizes are 0, 1, 2 and 3.
 					<p>
  What is the next set in this series?
 
-<!--solution>
+<solution>
 <p>
 \[
 \bigg\{ \emptyset,
@@ -374,7 +374,7 @@ And here is the next one:
 \bigg\}
 \]
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -385,7 +385,7 @@ And here is the next one:
 
 
 
-<!--solution>
+<solution>
 <p>
 
 If you think of an empty set as a "nothing" then she is right. (But it's really a something that has nothing inside it.)
@@ -395,7 +395,7 @@ If you think of an empty set as a "nothing" then she is right. (But it's really 
 We have constructed sets of sizes 0,1,2,3,4 and 5. We can keep going and get a set of size <m>n \in \N</m>. However, the elements are just sets of sets, and the ultimate sets are empty. All we have is a bunch of nested empty set.
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -422,7 +422,7 @@ Note that I've updated the classic phrasing  so that it is <em>actually</em> a p
  Explain the logical paradox of this description of the barber.
 
 
-<!--solution>
+<solution>
 <p>
 The barber is a man, and (1) he shaves all men who don't shave themselves and (2) he doesn't shave any man who shaves himself. So this is becomes an "if and only if" statement. This leads to the following:
 		<ul>
@@ -451,7 +451,7 @@ The barber is a man, and (1) he shaves all men who don't shave themselves and (2
 This is an example of how self-referential statements can lead to paradoxes. So this sentence is problematic. A mathematician would say that a paradox is NOT a mathematical statement, because it is neither true nor false.
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -459,7 +459,7 @@ This is an example of how self-referential statements can lead to paradoxes. So 
 					<p>
   The classic formulation of the "barber paradox" is  actually: "The barber shaves every man in town who does not shave themselves. Who shaves the barber?" There are multiple reasons why this statement is NOT a paradox. Can you find at least one?
 
-<!--solution>
+<solution>
 <p>
 Here are four reasons why this phrasing is NOT a paradox. The first three tackle implicit (and possibly incorrect) assumptions about the barber. The last reason actually shows that the reader has actually made a logical mistake!
 
@@ -501,7 +501,7 @@ So the barber shaves himself, and that fact is logically consistent with the sta
 		</ul>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -521,7 +521,7 @@ S \in S  \mbox{ and }  S \subseteq S.
 \]
 Which of these statements is true, and which of these statements is a paradox?
 
-<!--solution>
+<solution>
 <p>
 For any set <m>A</m>, we always have <m>A \subseteq A</m>. Therefore in this case <m>S \subseteq S</m>. However, if we try to resolve <m>S \in S</m>, we end up in a paradox.
 
@@ -544,7 +544,7 @@ For any set <m>A</m>, we always have <m>A \subseteq A</m>. Therefore in this cas
 		</ul>
 
 </p>
-</solution-->
+</solution>
 
 
 
