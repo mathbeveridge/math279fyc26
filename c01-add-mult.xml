@@ -64,7 +64,7 @@ License plates in the Netherlands consist of three groups of two characters (eit
 AB-12-CD, 12-34-AB, 12-AB-34
 How many possible license plates are there?
 
-<!--solution>
+<solution>
 <p>
 There are 6 different cases to consider:
 <me>
@@ -81,7 +81,7 @@ Therefore, by the addition principle, the total number of license plates is
 3 \cdot (26^4)(10^2) + 3 \cdot (26^2)(10^4)
 </me>
 </p>
-</solution-->
+</solution>
 
 
 
@@ -100,13 +100,13 @@ I have three favorite restaurants in St Paul. Each of them has a choice of 3 kin
 					<p>
  At <em>The Crunchy Frog</em>, you get a choice of soup or salad with your entree (choose one, not both). How many different meals can I order at <em>The Crunchy Frog</em>?
 
-<!--solution>
+<solution>
 <p>
 
 We use the addition principle to show that there are <m>3+4=7</m> ways to choose your appetizer. Next, we choose one of 7  entrees. By the product principle, the total number of ways to order our meal is <m>7 \times 7 = 49</m>.
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -114,12 +114,12 @@ We use the addition principle to show that there are <m>3+4=7</m> ways to choose
 					<p>
  At <em>The Grey Duck</em>, you get a choice of soup <em>and</em> a choice of salad with your entree. How many different meals can I order at <em>The Grey Duck</em>?
 
-<!--solution>
+<solution>
 <p>
 We are ordering a 3-course meal. So we use the product principle twice to find that the total number of possible meals is <m>3 \times 4 \times 7 = 84</m>.
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -127,7 +127,7 @@ We are ordering a 3-course meal. So we use the product principle twice to find t
 					<p>
  I go to <em>The Loon and Spoon</em> for special occasions because they have 5 desserts. At this restaurant, an entree comes with your choice of 2 out of 3 of:  soup, salad and dessert.  (You are limited to at most one from each category: you cannot order 2 desserts!). How many different meals can I order at  <em>The Loon and Spoon</em>?
 
-<!--solution>
+<solution>
 <p>
 Okay, this one is more complicated than the others. But we can combine the product and addition principles to  deal with choosing 2 out of the 3 choices.
 
@@ -142,7 +142,7 @@ Here, we have <m>|A \times B|=12</m> and <m>|A \times C| = 15</m> and <m>|B \tim
 Next, we must choose our entree (7 choices), so the total number of meals that we can order is <m>47 \times 7 = 329</m>.
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -162,13 +162,13 @@ Recall that  <em>subset</em> <m>B</m> of a set <m>A</m> is a subcollection of th
 
 Suppose that <m>B \subseteq A</m>. Formulate a natural <em>subtraction principle</em> for the size of <m>A \backslash B</m>.
 
-<!--solution>
+<solution>
 <p>
 
 <em>The Subtraction Principle:</em> Suppose that <m>B \subseteq A</m>. Then <m>| A \backslash B| = |A| - |B|</m>.
 
 </p>
-</solution-->
+</solution>
 
 
 				</p>
@@ -181,14 +181,14 @@ Suppose that <m>B \subseteq A</m>. Formulate a natural <em>subtraction principle
 				<p>
 A computer system requires an alphanumeric (letters and numbers) password of length 8. At least one of these characters must be a number. Use your Subtraction Principle to count the number of  passwords.
 
-<!--solution>
+<solution>
 <p>
 
 Let <m>A</m> be the set of all alphanumeric passwords of length 8, with no further restrictions. Clearly, <m>|A_8| = (36)^8</m> by the product principle. Let <m>B</m> be the subset of all "bad" passwords. Namely, the passwords that have no numbers. We have <m>|B|= (26)^8</m>.  Therefore the set of all good passwords is <m>A \backslash B</m>, which has size <m>36^8 - 26^8</m>.
 
 
 </p>
-</solution-->
+</solution>
 
 
 

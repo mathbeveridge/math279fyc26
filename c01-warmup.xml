@@ -23,7 +23,7 @@
 A healthy lunch box contains a sandwich, a piece of fruit and a drink.
 There are  six different types of sandwiches,   five kinds of fruit, and three drink flavors. How many different possible lunch boxes are there?
 
-<!--solution>
+<solution>
 <p>
 We are making three independent decisions. We need to multiply the number of options for each decision.
 <me>
@@ -32,7 +32,7 @@ We are making three independent decisions. We need to multiply the number of opt
 \underbrace{3}_{\mbox{drink}}  = 90
 </me>
 </p>
-</solution-->
+</solution>
 
 
 				</p>
@@ -50,13 +50,13 @@ An ice cream store has five flavors of ice cream: vanilla, chocolate, strawberry
 					<p>
   What is the total number of ways to order a single-scoop ice cream cone?
 
-<!--solution>
+<solution>
 <p>
 <me>
 \underbrace{3}_{\mbox{cone}} \times \underbrace{5}_{\mbox{scoop}} = 15
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -64,7 +64,7 @@ An ice cream store has five flavors of ice cream: vanilla, chocolate, strawberry
 					<p>
  Suppose that we want to order a triple-scoop cone at this ice cream store. Stacking scoops of ice cream is important: a peppermint-vanilla-vanilla cone tastes different from a vanilla-peppermint-vanilla cone. What is the total number of ways to order a triple-scoop ice cream cone?
 
-<!--solution>
+<solution>
 <p>
 <me>
 \underbrace{3}_{\mbox{cone}} \times
@@ -73,7 +73,7 @@ An ice cream store has five flavors of ice cream: vanilla, chocolate, strawberry
 \underbrace{5}_{\mbox{third scoop}} = 3 \times 5^3
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -88,11 +88,11 @@ How many ways can you buy two quarts of ice cream when ...
 					<p>
  Both quarts are the same flavor?
 
-<!--solution>
+<solution>
 <p>
 There are 5 ways to do this.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -100,7 +100,7 @@ There are 5 ways to do this.
 					<p>
  The quarts are different flavors? (Remember that the order of the flavors doesn't matter!)
 
-<!--solution>
+<solution>
 <p>
 There are 5 ways choose the the first quart, and then 4 ways to choose the last quart. So there are
 <m>5 \times 4 = 20</m> ways. To do this.
@@ -113,7 +113,7 @@ as "strawberry and peppermint." So we have to divide by 2 because we just counte
 </me>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -148,7 +148,7 @@ Four teams attend an Ultimate frisbee tournament.
  If each team plays each other team exactly once, how many games are played?
 
 
-<!--solution>
+<solution>
 <p>
 
 How many ways can we choose two teams to play a game? My recipe for setting up a game will be: "choose the first team and then choose the second team." The total number of ways to do this is
@@ -161,7 +161,7 @@ However, we <em>double count</em> each game, since choosing (Team A,Team B) is t
 </me>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -174,11 +174,11 @@ However, we <em>double count</em> each game, since choosing (Team A,Team B) is t
 					<p>
  How many armbands must be grabbed to ensure that one of the teams has two players?
 
-<!--solution>
+<solution>
 <p>
 This must happen on or before the fifth armband. You have four categories (red, blue, yellow and green) and five armbands. So one category must have at least 2. Note that this is the smallest number for which this is true: if we only pull out 4 armbands, then we could possibly have one of each color.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -186,11 +186,11 @@ This must happen on or before the fifth armband. You have four categories (red, 
 					<p>
  How many armbands must be grabbed to ensure that one of the teams has five players?
 
-<!--solution>
+<solution>
 <p>
 This must happen on or before the 17th arm band. Again, you have 4 categories, so one category must have 5 or more arm bands. This is the smallest number for which this is true: if you only have 16 armbands, we could have 4 red and 4 blue and 4 yellow and 4 green.
 </p>
-</solution-->
+</solution>
 					</p>
 				</li>
 			</ol>

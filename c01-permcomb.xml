@@ -54,13 +54,13 @@ Four adults and seven children are waiting at a bus stop.
 					<p>
  How many ways can they sit in a row?
 
-<!--solution>
+<solution>
 <p>
 <me>
 11!
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -68,14 +68,14 @@ Four adults and seven children are waiting at a bus stop.
 					<p>
  How many ways can they sit in a row if the adults must sit together and the children must sit together?
 
-<!--solution>
+<solution>
 <p>
 <me>
 2 \times 4! \times 7!
 </me>
 The factor of 2 comes from the fact that the children can be to the left or the right of the adults.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -83,14 +83,14 @@ The factor of 2 comes from the fact that the children can be to the left or the 
 					<p>
  How many ways can they sit in a row if the the children must sit together?
 
-<!--solution>
+<solution>
 <p>
 <me>
 7! \times 5!
 </me>
 We seat the children in <m>7!</m> ways and them treat them as one "person" who must be seated with the four adults.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -98,14 +98,14 @@ We seat the children in <m>7!</m> ways and them treat them as one "person" who m
 					<p>
  How many ways can they sit in a row if <em>just</em> the children are sitting together (and the adults must not sit together)?
 
-<!--solution>
+<solution>
 <p>
 Let's use "good = all - bad." We count the ways that the children can sit together and subtract the number of ways that both the children and the adults are sitting together.
 <me>
 7! \times 5! - 2 \times 4! \times 7!
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -121,14 +121,14 @@ Let's use "good = all - bad." We count the ways that the children can sit togeth
 				<p>
 How many ways can 10 adults and 5 children stand in a line so that no two children are standing next to each other? (Hint: place the adults first, and then the children.)
 
-<!--solution>
+<solution>
 <p>
 First we line up the adults, and there are <m>10!</m> ways to do so. Now there are 11 spots to place the 5 children: at the front of the line, or behind the <m>k</m>th adult, where <m>1 \leq k \leq 10</m>. Therefore there are <m>(11)_5</m> ways to place the children. So the final answer is
 <me>
 10! \times (11)_5 = 10! \, P(11,5).
 </me>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -140,7 +140,7 @@ First we line up the adults, and there are <m>10!</m> ways to do so. Now there a
 				<p>
 In how many ways can <m>n</m> people stand in a circle? (How is this problem different from standing in a line?)
 
-<!--solution>
+<solution>
 <p>
 When standing in the circle, we have a rotational symmetry that does not appear when standing a line. For <m>0 \leq k \leq n-1</m>, everyone can move counterclockwise by <m>k</m> spots, and we still have the same configuration. Therefore the total number of circular configurations is
 
@@ -148,7 +148,7 @@ When standing in the circle, we have a rotational symmetry that does not appear 
 \frac{n!}{n} = (n-1)!
 </me>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -163,13 +163,13 @@ When standing in the circle, we have a rotational symmetry that does not appear 
 					<p>
  How many 5-digit numbers are there where no digit repeats and only the digits 1-9 appear?
 
-<!--solution>
+<solution>
 <p>
 <me>
 (9)_5 = P(9,5)
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -177,7 +177,7 @@ When standing in the circle, we have a rotational symmetry that does not appear 
 					<p>
  How many numbers in part (a) contain a 3 or a 6 (or both)? (Hint: you will need to use "good = all - bad.")
 
-<!--solution>
+<solution>
 <p>
 The bad numbers are the ones that don't contain a 3 or a 6. There are
 <m>
@@ -189,7 +189,7 @@ bad numbers. Therefore we have
 </me>
 good numbers.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -211,13 +211,13 @@ A coin is tossed 10 times and a sequence of heads and tails is observed.
 					<p>
  How many different sequences are possible?
 
-<!--solution>
+<solution>
 <p>
 <me>
 2^{10}
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -225,13 +225,13 @@ A coin is tossed 10 times and a sequence of heads and tails is observed.
 					<p>
  In how how many of these sequences are there exactly 4 heads?
 
-<!--solution>
+<solution>
 <p>
 <me>
 {10 \choose 4}
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -253,13 +253,13 @@ A woman has 9 close friends.
 					<p>
  In how many ways can she invite 6 of them to dinner?
 
-<!--solution>
+<solution>
 <p>
 <me>
 {9 \choose 6}
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -267,7 +267,7 @@ A woman has 9 close friends.
 					<p>
  Repeat (a) if two of her friends don't get along and will not attend together.
 
-<!--solution>
+<solution>
 <p>
 We give three solutions.
 
@@ -305,7 +305,7 @@ corresponding to   <m>|A \cup B|  = |A| + |B| - |A \cap B|</m> where <m>A</m> is
 		</ul>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -313,14 +313,14 @@ corresponding to   <m>|A \cup B|  = |A| + |B| - |A \cap B|</m> where <m>A</m> is
 					<p>
  Repeat (a) if her friends consist of 3 single people and 3 married couples, so that she must invite both spouses, or neither of them.
 
-<!--solution>
+<solution>
 <p>
 We must invite two or three couples, which gives:
 <me>
 {3 \choose 2} {3 \choose 2} + {3 \choose 3} = 3 \times 3 + 1 = 10.
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -343,13 +343,13 @@ Ten points in a plane, no three colinear, are given.
 					<p>
  Every pair of points determines a unique line. So how many different lines are formed by joining pairs of these points?
 
-<!--solution>
+<solution>
 <p>
 <me>
 {10 \choose 2}
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -358,14 +358,14 @@ Ten points in a plane, no three colinear, are given.
  Assume that none of the lines in  part (a)  are parallel and no three lines intersect at a single point.  How many different triangles are formed by these lines? (Note that the corners of  many of these triangles
 are at points other than the original 10 points!)
 
-<!--solution>
+<solution>
 <p>
 <me>
 {{10 \choose 2} \choose 3}
 </me>
 We need to choose a 3-set of the lines.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -381,14 +381,14 @@ We need to choose a 3-set of the lines.
 				<p>
 How many ways can a club with 20 members choose an executive board consisting of a president, a secretary, a treasurer, and two other members?
 
-<!--solution>
+<solution>
 <p>
 <me>
 {20 \choose 1} {19 \choose 1} {18 \choose 1} {17 \choose 2}
 </me>
 corresponding to choosing the president, then the secretary, then the treasurer, and finally the last two members.
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>

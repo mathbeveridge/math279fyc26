@@ -225,31 +225,72 @@
 <article class="exercise exercise-like" id="exercise-9"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Packing a Lunch.</span>
 </h6>
-<p id="p-101">A healthy lunch box contains a sandwich, a piece of fruit and a drink. There are  six different types of sandwiches,   five kinds of fruit, and three drink flavors. How many different possible lunch boxes are there? </p></article><article class="exercise exercise-like" id="exercise-10"><h6 class="heading">
+<p id="p-101">A healthy lunch box contains a sandwich, a piece of fruit and a drink. There are  six different types of sandwiches,   five kinds of fruit, and three drink flavors. How many different possible lunch boxes are there? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like">
+<p id="p-102">We are making three independent decisions. We need to multiply the number of options for each decision.</p>
+<div class="displaymath">
+\begin{equation*}
+\underbrace{6}_{\mbox{sandwich}} \times
+\underbrace{5}_{\mbox{fruit}} \times
+\underbrace{3}_{\mbox{drink}}  = 90
+\end{equation*}
+</div>
+</div></div></p></article><article class="exercise exercise-like" id="exercise-10"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Buying Ice Cream.</span>
 </h6>
-<p id="p-102">An ice cream store has five flavors of ice cream: vanilla, chocolate, strawberry, peppermint and bubble gum. When you order a cone, your options are sugar cone, waffle cone and cake cone.</p>
+<p id="p-103">An ice cream store has five flavors of ice cream: vanilla, chocolate, strawberry, peppermint and bubble gum. When you order a cone, your options are sugar cone, waffle cone and cake cone.</p>
 <ol class="lower-alpha">
-<li id="li-50"><p id="p-103">What is the total number of ways to order a single-scoop ice cream cone? </p></li>
-<li id="li-51"><p id="p-104">Suppose that we want to order a triple-scoop cone at this ice cream store. Stacking scoops of ice cream is important: a peppermint-vanilla-vanilla cone tastes different from a vanilla-peppermint-vanilla cone. What is the total number of ways to order a triple-scoop ice cream cone? </p></li>
+<li id="li-50"><p id="p-104">What is the total number of ways to order a single-scoop ice cream cone? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like"><div class="displaymath" id="p-105">
+\begin{equation*}
+\underbrace{3}_{\mbox{cone}} \times \underbrace{5}_{\mbox{scoop}} = 15
+\end{equation*}
+</div></div></div></p></li>
+<li id="li-51"><p id="p-106">Suppose that we want to order a triple-scoop cone at this ice cream store. Stacking scoops of ice cream is important: a peppermint-vanilla-vanilla cone tastes different from a vanilla-peppermint-vanilla cone. What is the total number of ways to order a triple-scoop ice cream cone? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like"><div class="displaymath" id="p-107">
+\begin{equation*}
+\underbrace{3}_{\mbox{cone}} \times
+\underbrace{5}_{\mbox{first scoop}} \times
+\underbrace{5}_{\mbox{second scoop}} \times
+\underbrace{5}_{\mbox{third scoop}} = 3 \times 5^3
+\end{equation*}
+</div></div></div></p></li>
 <li id="li-52">
-<p id="p-105">The ice cream store also sells quarts of ice cream. When you buy quarts of ice cream, the order that you buy the quarts does not matter: they just go into your shopping bag anyway! How many ways can you buy two quarts of ice cream when ...</p>
+<p id="p-108">The ice cream store also sells quarts of ice cream. When you buy quarts of ice cream, the order that you buy the quarts does not matter: they just go into your shopping bag anyway! How many ways can you buy two quarts of ice cream when ...</p>
 <ol class="lower-roman">
-<li id="li-53"><p id="p-106">Both quarts are the same flavor? </p></li>
-<li id="li-54"><p id="p-107">The quarts are different flavors? (Remember that the order of the flavors doesn't matter!) </p></li>
+<li id="li-53"><p id="p-109">Both quarts are the same flavor? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like"><p id="p-110">There are 5 ways to do this.</p></div></div></p></li>
+<li id="li-54"><p id="p-111">The quarts are different flavors? (Remember that the order of the flavors doesn't matter!) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
+<p id="p-112">There are 5 ways choose the the first quart, and then 4 ways to choose the last quart. So there are \(5 \times 4 = 20\) ways. To do this.</p>
+<p id="p-113">However, the order that we choose the flavors doesn't matter: "peppermint  and strawberry" is the same as "strawberry and peppermint." So we have to divide by 2 because we just counted each option twice! So the answer is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{5 \cdot 4}{2} = 10.
+\end{equation*}
+</div>
+</div></div></p></li>
 </ol>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-11"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Ultimate Frisbee Tournament.</span>
 </h6>
-<p id="p-108">Four teams attend an Ultimate frisbee tournament.</p>
+<p id="p-114">Four teams attend an Ultimate frisbee tournament.</p>
 <ol class="lower-alpha">
-<li id="li-55"><p id="p-109">If each team plays each other team exactly once, how many games are played? </p></li>
+<li id="li-55"><p id="p-115">If each team plays each other team exactly once, how many games are played? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like">
+<p id="p-116">How many ways can we choose two teams to play a game? My recipe for setting up a game will be: "choose the first team and then choose the second team." The total number of ways to do this is</p>
+<div class="displaymath">
+\begin{equation*}
+4 \times 3.
+\end{equation*}
+</div>
+<p class="continuation">However, we <em class="emphasis">double count</em> each game, since choosing (Team A,Team B) is the same as choosing (Team B, Team A). Therefore we must divide our answer above by 2. The final answer is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{4 \times 3}{2}.
+\end{equation*}
+</div>
+</div></div></p></li>
 <li id="li-56">
-<p id="p-110">These four Ultimate teams decide to play a game for fun by mixing up the teams. They put red, blue, yellow and green armbands into a bag, and each player closes her eyes and grabs an armband to determine her team.</p>
+<p id="p-117">These four Ultimate teams decide to play a game for fun by mixing up the teams. They put red, blue, yellow and green armbands into a bag, and each player closes her eyes and grabs an armband to determine her team.</p>
 <ol class="lower-roman">
-<li id="li-57"><p id="p-111">How many armbands must be grabbed to ensure that one of the teams has two players? </p></li>
-<li id="li-58"><p id="p-112">How many armbands must be grabbed to ensure that one of the teams has five players? </p></li>
+<li id="li-57"><p id="p-118">How many armbands must be grabbed to ensure that one of the teams has two players? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like"><p id="p-119">This must happen on or before the fifth armband. You have four categories (red, blue, yellow and green) and five armbands. So one category must have at least 2. Note that this is the smallest number for which this is true: if we only pull out 4 armbands, then we could possibly have one of each color.</p></div></div></p></li>
+<li id="li-58"><p id="p-120">How many armbands must be grabbed to ensure that one of the teams has five players? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><p id="p-121">This must happen on or before the 17th arm band. Again, you have 4 categories, so one category must have 5 or more arm bands. This is the smallest number for which this is true: if you only have 16 armbands, we could have 4 red and 4 blue and 4 yellow and 4 green.</p></div></div></p></li>
 </ol>
 </li>
 </ol></article></section></section></div></main>

@@ -12,12 +12,21 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>A \(k\)<em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">-set</em> of \([n]\) (also called a \(k\)<em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">-combination</em>) is a subset containing \(k\) elements of \([n]\text{.}\) The number of \(k\)-sets of \([n]\) is</p>
+<p>There are 6 different cases to consider:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-C(n,k) = {n \choose k} = \frac{n!}{k! (n-k)!}.
+\begin{array}{ccc}
+XX-XX-## &amp; XX-##-XX &amp; ##-XX-XX  \\
+XX-##-## &amp; ##-##-XX &amp; ##-XX-##
+\end{array}
 \end{equation*}
 </div>
-<span class="incontext"><a href="count-perm-comb.html#p-128">in-context</a></span>
+<p class="continuation">For each of the first three types, the product principle tells us that the number of license plates of that type is \((26^4)(10^2)\text{.}\) For each of the second three types, the product principle tells us that the number of license plates of that type is \((26)^2(10^4)\text{.}\) Therefore, by the addition principle, the total number of license plates is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+3 \cdot (26^4)(10^2) + 3 \cdot (26^2)(10^4)
+\end{equation*}
+</div>
+<span class="incontext"><a href="exercises-4.html#p-128">in-context</a></span>
 </body>
 </html>

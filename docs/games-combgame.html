@@ -219,27 +219,27 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="games-combgame"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">26</span> <span class="title">Combinatorial Games</span>
 </h2>
-<section class="introduction" id="introduction-26"><p id="p-460"></p></section><section class="exercises" id="exercises-26"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-26"><p id="p-495"></p></section><section class="exercises" id="exercises-26"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-117"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-461">We use the terms \(\cN\)-position (<em class="emphasis">next</em> player win)  and \(\cP\)-position (<em class="emphasis">previous</em> player win) to describe a winning position and a losing position, respectively. In other words,</p>
+<p id="p-496">We use the terms \(\cN\)-position (<em class="emphasis">next</em> player win)  and \(\cP\)-position (<em class="emphasis">previous</em> player win) to describe a winning position and a losing position, respectively. In other words,</p>
 <ul class="disc">
-<li id="li-257"><p id="p-462">An \(\cN\)-position has <em class="emphasis">at least one</em> winning move.</p></li>
-<li id="li-258"><p id="p-463">A \(\cP\)-position has <em class="emphasis">no</em> winning moves.</p></li>
+<li id="li-260"><p id="p-497">An \(\cN\)-position has <em class="emphasis">at least one</em> winning move.</p></li>
+<li id="li-261"><p id="p-498">A \(\cP\)-position has <em class="emphasis">no</em> winning moves.</p></li>
 </ul>
 <p class="continuation">Keep in mind, that after a player's turn, the "next" and "previous" roles switch! On Alice's turn, Alice is the <em class="emphasis">next</em> player (that is, she is about to move). On Bob's turn, Alice is the <em class="emphasis">previous</em> player, (that is, she just moved). Finally, note that we are partitioning  the set \(\cX\) of game positions into two sets named \(\cN\) and \(\cP\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-259"><p id="p-464">Rule #1 says that "an \(\cN\)-position must have at least one follower that is a \(\cP\)-position." Restate this rule incorporating "for all" and/or "there exists" quantifiers. Then prove Rule #1 by contradiction. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like">
-<div class="displaymath" id="p-465">
+<li id="li-262"><p id="p-499">Rule #1 says that "an \(\cN\)-position must have at least one follower that is a \(\cP\)-position." Restate this rule incorporating "for all" and/or "there exists" quantifiers. Then prove Rule #1 by contradiction. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-68" id="solution-68"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-68"><div class="solution solution-like">
+<div class="displaymath" id="p-500">
 \begin{equation*}
 X \in \cN \Longleftrightarrow \exists Y \in \cF(X) \mbox{ such that } Y \in \cP.
 \end{equation*}
 </div>
-<p id="p-466">AFSOC that  \(X\) does not have a follower \(Y\) such that \(Y \in \cP\text{.}\) Let Alice be the "next player" and Bob be the "previous player." Since every follower is an \(\cN\)-position, Alice must move to a \(\cN\)-position. However, now Bob becomes is the "next player" and therefore Bob has a winning strategy, no matter what Alice's first move was. Therefore Alice does not have a winning strategy, a contradiction.</p>
+<p id="p-501">AFSOC that  \(X\) does not have a follower \(Y\) such that \(Y \in \cP\text{.}\) Let Alice be the "next player" and Bob be the "previous player." Since every follower is an \(\cN\)-position, Alice must move to a \(\cN\)-position. However, now Bob becomes is the "next player" and therefore Bob has a winning strategy, no matter what Alice's first move was. Therefore Alice does not have a winning strategy, a contradiction.</p>
 </div></div></p></li>
-<li id="li-260"><p id="p-467">Rule #2 says that "every follower of a \(\cP\)-position must be an \(\cN\)-position." Restate this rule incorporating "for all" and/or "there exists" quantifiers. Then prove Rule # 2 by contradiction. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
-<p id="p-468">We have</p>
+<li id="li-263"><p id="p-502">Rule #2 says that "every follower of a \(\cP\)-position must be an \(\cN\)-position." Restate this rule incorporating "for all" and/or "there exists" quantifiers. Then prove Rule # 2 by contradiction. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-69" id="solution-69"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-69"><div class="solution solution-like">
+<p id="p-503">We have</p>
 <div class="displaymath">
 \begin{equation*}
 X \in \cP \Longleftrightarrow \forall Y \in \cF(X), \mbox{ we have } Y \in \cN,
@@ -251,25 +251,25 @@ X \in \cP \Longleftrightarrow \forall Y \in \cF(X), \mbox{ we have } Y \in \cN,
 X \in \cP \Longleftrightarrow  \cF(X) \subset \cN.
 \end{equation*}
 </div>
-<p id="p-469">ASFOC that \(X\) has a follower \(Y\) that is a \(\cP\) position. Let Alice be the "next player" and Bob be the "previous player." Then Alice can move from \(X\) to \(Y\text{.}\) It is now Bob's turn, so he becomes the "next" player, and he is a losing postion. So this move from \(X\) to \(Y\) was a winning move for Alice, a contradiction.</p>
+<p id="p-504">ASFOC that \(X\) has a follower \(Y\) that is a \(\cP\) position. Let Alice be the "next player" and Bob be the "previous player." Then Alice can move from \(X\) to \(Y\text{.}\) It is now Bob's turn, so he becomes the "next" player, and he is a losing postion. So this move from \(X\) to \(Y\) was a winning move for Alice, a contradiction.</p>
 </div></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-118"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-470">If we can partition the set \(\cX\) of game  positions into sets \(\cA\) and \(\cB\) such that</p>
+<p id="p-505">If we can partition the set \(\cX\) of game  positions into sets \(\cA\) and \(\cB\) such that</p>
 <ul class="disc">
-<li id="li-261"><p id="p-471">If \(Y \in \cB\) then \(\exists Z \in \cF(Y)\) such that \(Z \in \cA\text{.}\)</p></li>
-<li id="li-262"><p id="p-472">If \(Z \in \cA\) then \(\cF(Z) \subset \cB\)</p></li>
+<li id="li-264"><p id="p-506">If \(Y \in \cB\) then \(\exists Z \in \cF(Y)\) such that \(Z \in \cA\text{.}\)</p></li>
+<li id="li-265"><p id="p-507">If \(Z \in \cA\) then \(\cF(Z) \subset \cB\)</p></li>
 </ul>
-<p class="continuation">then \(\cA\) is the set of \(\cP\)-positions and \(\cB\) is the set of \(\cN\)-positions. Consider a one coin game of nimble, where you are only allowed to move an <em class="emphasis">odd</em> number of squares. For example, \(\cF(\{3 \}) = \{ \emptyset, \{2\} \}\) and \(\cF(\{6 \}) = \{  \{1\}, \{3\}, \{5\} \}\) Find sets \(\cA\) and \(\cB\) that satisfy the properties above. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like"><p id="p-473">Let \(\cA\) be all of the even squares and \(\emptyset\) and let \(\cB\) be all of the odd squares. Note that \(\cA\) satisfies Rule 2 and \(\cB\) satisfies Rule 1.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-119"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-474">Play these games of Nim, and decide whether each is an \(\cN\)-position or a \(\cP\)-position. Write \(\cN\) or \(\cP\) next to each game, as appropriate. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-games-combgame0.svg" role="img" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like"><ol id="p-475" class="lower-alpha">
-<li id="li-263"><p id="p-476">\(\cN\)-position</p></li>
-<li id="li-264"><p id="p-477">\(\cN\)-position</p></li>
-<li id="li-265"><p id="p-478">\(\cP\)-position</p></li>
-<li id="li-266"><p id="p-479">\(\cN\)-position</p></li>
-<li id="li-267"><p id="p-480">\(\cP\)-position</p></li>
-<li id="li-268"><p id="p-481">\(\cN\)-position</p></li>
+<p class="continuation">then \(\cA\) is the set of \(\cP\)-positions and \(\cB\) is the set of \(\cN\)-positions. Consider a one coin game of nimble, where you are only allowed to move an <em class="emphasis">odd</em> number of squares. For example, \(\cF(\{3 \}) = \{ \emptyset, \{2\} \}\) and \(\cF(\{6 \}) = \{  \{1\}, \{3\}, \{5\} \}\) Find sets \(\cA\) and \(\cB\) that satisfy the properties above. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-70" id="solution-70"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-70"><div class="solution solution-like"><p id="p-508">Let \(\cA\) be all of the even squares and \(\emptyset\) and let \(\cB\) be all of the odd squares. Note that \(\cA\) satisfies Rule 2 and \(\cB\) satisfies Rule 1.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-119"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-509">Play these games of Nim, and decide whether each is an \(\cN\)-position or a \(\cP\)-position. Write \(\cN\) or \(\cP\) next to each game, as appropriate. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-games-combgame0.svg" role="img" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-71" id="solution-71"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-71"><div class="solution solution-like"><ol id="p-510" class="lower-alpha">
+<li id="li-266"><p id="p-511">\(\cN\)-position</p></li>
+<li id="li-267"><p id="p-512">\(\cN\)-position</p></li>
+<li id="li-268"><p id="p-513">\(\cP\)-position</p></li>
+<li id="li-269"><p id="p-514">\(\cN\)-position</p></li>
+<li id="li-270"><p id="p-515">\(\cP\)-position</p></li>
+<li id="li-271"><p id="p-516">\(\cN\)-position</p></li>
 </ol></div></div></p>
-<p id="p-482"></p></article><article class="exercise exercise-like" id="exercise-120"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-483">There is an exact correspondence between games of Nim and games of Nimble (the game we played last time). Can you figure out what the relationship is? Draw the corresponding Nimble games for each of the size Nim games above. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><p id="p-484">A nim heap of size \(k\) corresponds to a coin on square \(k\text{.}\)</p></div></div></p></article></section></section></div></main>
+<p id="p-517"></p></article><article class="exercise exercise-like" id="exercise-120"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-518">There is an exact correspondence between games of Nim and games of Nimble (the game we played last time). Can you figure out what the relationship is? Draw the corresponding Nimble games for each of the size Nim games above. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-72" id="solution-72"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-72"><div class="solution solution-like"><p id="p-519">A nim heap of size \(k\) corresponds to a coin on square \(k\text{.}\)</p></div></div></p></article></section></section></div></main>
 </div>
 </body>
 </html>

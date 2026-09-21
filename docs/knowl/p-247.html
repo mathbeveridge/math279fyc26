@@ -12,20 +12,22 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Use a truth table to show that \(P \Leftrightarrow Q\) is equivalent to \((P \wedge Q) \vee (\neg P \wedge \neg Q)\text{.}\)</p>
+<p>In this problem, you will prove the following identity in two different ways</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{c|c||c|c|c|c|c}
-P &amp; Q &amp; P \Leftrightarrow Q  
-&amp; \neg P &amp; \neg Q &amp; P \wedge  Q  &amp; \neg P \wedge \neg Q &amp; (P \wedge Q) \vee (\neg P \wedge \neg Q)\\
-\hline
-T &amp; T &amp;  &amp;  &amp; &amp; &amp; &amp;  \\
-T &amp; F &amp;  &amp; &amp; &amp; &amp;  &amp; \\
-F &amp; T &amp;  &amp; &amp; &amp; &amp; &amp; \\
-F &amp; F &amp;  &amp; &amp;  &amp; &amp; &amp; \\
-\end{array}
+3^n = \sum_{k=0}^n 2^k { n \choose k}
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercises-13.html#p-247">in-context</a></span>
+<ol class="lower-alpha">
+<li><p>Prove this equation using the binomial theorem. </p></li>
+<li>
+<p>Give a combinatorial proof of this equation by showing that each side counts the number of ways to choose sets \(A,B\) where \(\emptyset \subseteq A \subseteq B \subseteq [n]\text{.}\)</p>
+<ol class="lower-roman">
+<li><p>The left hand side is \(3^n\text{.}\) Explain why there are three choices for where to place every element of \([n]\text{.}\) </p></li>
+<li><p>The right hand is \(\sum_{k=0}^n 2^k { n \choose k}.\) This time, we create the sets \(A \subseteq B\) in a different way. Namely, first we decide what the size of \(B\) will be, and use \(k\) to denote this size. With this in mind, interpret the right hand side of this equation. </p></li>
+</ol>
+</li>
+</ol>
+<span class="incontext"><a href="exercises-11.html#p-247">in-context</a></span>
 </body>
 </html>
