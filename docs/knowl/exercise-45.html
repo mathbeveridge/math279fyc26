@@ -12,23 +12,14 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Nested Sets.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span>
 </h6>
-<p>In this problem, you will prove the following identity in two different ways</p>
+<p>Give a combinatorial proof for the identity</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-3^n = \sum_{k=0}^n 2^k { n \choose k}
+{k \choose k} + {k+1 \choose k} + {k+2 \choose k} + \cdots + {n \choose k} = {n+1 \choose k+1}.
 \end{equation*}
 </div>
-<ol class="lower-alpha">
-<li><p>Prove this equation using the binomial theorem. </p></li>
-<li>
-<p>Give a combinatorial proof of this equation by showing that each side counts the number of ways to choose sets \(A,B\) where \(\emptyset \subseteq A \subseteq B \subseteq [n]\text{.}\)</p>
-<ol class="lower-roman">
-<li><p>The left hand side is \(3^n\text{.}\) Explain why there are three choices for where to place every element of \([n]\text{.}\) </p></li>
-<li><p>The right hand is \(\sum_{k=0}^n 2^k { n \choose k}.\) This time, we create the sets \(A \subseteq B\) in a different way. Namely, first we decide what the size of \(B\) will be, and use \(k\) to denote this size. With this in mind, interpret the right hand side of this equation. </p></li>
-</ol>
-</li>
-</ol></article><span class="incontext"><a href="exercises-11.html#exercise-45">in-context</a></span>
+<p class="continuation">Hint: For the LHS, we have split into cases according to the LARGEST ELEMENT in our \((k+1)\)-set of \([n+1]\text{.}\)</p></article><span class="incontext"><a href="exercises-10.html#exercise-45">in-context</a></span>
 </body>
 </html>

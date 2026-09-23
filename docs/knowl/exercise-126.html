@@ -12,14 +12,26 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Subtraction \(S(1,2,4)\).</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Subtraction \(S(1,2,3,4)\).</span>
 </h6>
 <ol class="lower-alpha">
 <li>
-<p>Calculate  \(g(\pile{n})\) for the game \(S(1,2,4)\text{.}\)</p>
+<p>Play \(S(1,2,3, 4)\) with pile sizes \(n=1,2,3, \ldots\text{.}\) Determine which pile sizes are \(\cP\)-positions and which ones are \(\cP\)-posititions.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-S(1,2,4): \qquad
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
+\hline
+\hline
+\cP \mbox{ or } \cN? &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Calculate  \(g(\pile{n})\) for the game \(S(1,2,3,4)\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
 \begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c}
 n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4&amp; 5 &amp; 6 &amp; 7 &amp; 8&amp; 9&amp; 10  &amp; 11 &amp; 12 \\
 \hline
@@ -29,8 +41,7 @@ g(\pile{n}) &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
 \end{equation*}
 </div>
 </li>
-<li><p>Is \(\pile{8}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(1,2,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
-<li><p>Is \(\pile{9}\) an \(\cN\)-position or a \(\cP\)-position  in \(S(1,2,4)\text{?}\) If it is an \(\cN\)-position, list every winning move. </p></li>
+<li><p>Compare your answers to (a) and (b). What do you observe? Make a conjecture about the relationship of the Sprague-Grundy value to the winner of the game. </p></li>
 </ol></article><span class="incontext"><a href="exercises-28.html#exercise-126">in-context</a></span>
 </body>
 </html>

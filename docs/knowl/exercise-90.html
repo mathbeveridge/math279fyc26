@@ -12,19 +12,22 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Nearest Neighbor Pie Fight.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Tiling with \(L\)-Shaped Triominos.</span>
 </h6>
-<p>Consider a pie fight between an odd number of people in which everyone throws a pie at her nearest neighbor. Assume that all pairwise distances are distinct. Prove that in such a pie fight between \(2r+1\) people with \(r \geq 1\text{,}\) there is at least one person who is not hit by a pie.</p>
+<p>An \(L\)-shaped triomino is a \(2 \times 2\) tile with one square missing. It looks like this: <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="images/fig-img-induction10.svg" role="img" class="contained"></div></p>
 <ol class="lower-alpha">
-<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Base Case:</em> (Check for \(r=1\text{.}\)) Hint: Start by considering the two people who are the smallest distance from one another. </p></li>
-<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Hypothesis:</em> Write down your inductive hypothesis for \(k\text{.}\) </p></li>
+<li><p>Consider the following \(4 \times 4\) checkerboards with one square missing (shown in black). For each board, show that you can cover the rest of the squares using \(L\)-shaped triominoes. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-induction11.svg" role="img" class="contained"></div> </p></li>
+<li><p>Now consider the following \(8 \times 8\) checkerboard with one square missing (shown in black). Show that you can cover the rest of the squares using \(L\)-shaped triominoes as follows (and shown in the right diagram below). (1) Place your first triomino in the gray squares as shown. (2) Use part (a) to fill in the four \(4 \times 4\) sub-boards. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-induction13.svg" role="img" class="contained"></div> </p></li>
+<li><p>Reflect on how you solved the \(8 \times 8\) problem by  turning it into four instances of \(4 \times 4\) problems. Then go back to your answers in part (a) and show how you solved each \(4 \times 4\) problem by turning it into four instances of \(2 \times 2\) problems. </p></li>
+<li><p>If I gave you a \(16 \times 16\) checkerboard with one square missing, could you cover the rest with \(L\)-shaped triominoes? How would you do it? </p></li>
 <li>
-<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Step:</em> Write down what you want to SHOW for \(k+1\text{.}\)</p>
-<p>As in your base case,  start by considering the two people (Alice and Bob) who are the smallest distance from one another. There are 2 cases to consider</p>
-<ul class="disc">
-<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Case 1:</em> Suppose that someone else throws a pie at Alice or Bob. In this case, you can immediately find a person who is not hit by a pie. Why?</p></li>
-<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Case 2:</em> No one else throws a pie at Alice or Bob. In this case, you need to use the induction hypothesis!</p></li>
-</ul>
+<p>Use induction to prove the following statement:</p>
+<p>For \(n \geq 1\text{,}\) any \(2^n \times 2^n\) checkerboard with one square missing can be covered by \(L\)-shaped dominoes.</p>
+<ol class="lower-roman">
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Base Case:</em> What is your base case? </p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Hypothesis:</em> State your inductive hypothesis for \(k\text{.}\) </p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Step:</em>  Write down what you want to SHOW for \(k+1\text{.}\) Then try to find "a copy of the size \(k\) problem" in the size \(k+1\) problem. Rearrange and use your inductive hypothesis to prove the result! </p></li>
+</ol>
 </li>
 </ol></article><span class="incontext"><a href="exercises-19.html#exercise-90">in-context</a></span>
 </body>

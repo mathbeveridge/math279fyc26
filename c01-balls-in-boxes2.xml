@@ -203,114 +203,52 @@ Some more details: the number <m>S(k,n)</m> counts the number of ways to put <m>
 		<exercise>
 			<statement>
 				<p>
- In this problem, you will count sets of functions from <m>[r]</m> to <m>[s]</m>. You will map each one  to a balls-in-boxes problem. Decide each of the following questions (and write down your answers):
-
-		<ul>
-			<li>
-			<p>
- Are the balls distinct?
-			</p>
-			</li>
-			<li>
-			<p>
- Are the boxes distinct?
-			</p>
-			</li>
-			<li>
-			<p>
- Can boxes be empty?
-			</p>
-			</li>
-			<li>
-			<p>
- Is repetition allowed?
-			</p>
-			</li>
-			<li>
-			<p>
- What is the constraint on <m>r</m> and <m>s</m>?
-			</p>
-			</li>
-		</ul>
-Then write down the formula for the size of the set of functions.
-
-			<ol>
-				<li>
-					<p>
- <m>\mathcal{A} = \{ </m> all possible functions from <m>[r]</m> to <m>[s] \}</m>.
-
-
-<!--solution>
-<p>
-<me>
-| \mathcal{A}| =  s^r
-</me>
-</p>
-</solution-->
-
-
-
-
-					</p>
-				</li>
-				<li>
-					<p>
- <m>\mathcal{B} = \{ </m> all injective functions from <m>[r]</m> to <m>[s] \}</m>.
-
-
-
-<!--solution>
-<p>
-<me>
-| \mathcal{B}| =  (s)_r
-</me>
-</p>
-</solution-->
-
-
-
-
-					</p>
-				</li>
-				<li>
-					<p>
- <m>\mathcal{C} = \{ </m> all surjective functions from <m>[r]</m> to <m>[s] \}</m>.
-
-
-<!--solution>
-<p>
-<me>
-| \mathcal{C}| =  r! S(s,r)
-</me>
-</p>
-</solution-->
-
-
-
-
-					</p>
-				</li>
-				<li>
-					<p>
- <m>\mathcal{D} = \{ </m> all bijective functions from <m>[r]</m> to <m>[s] \}</m>.
-
-
-<!--solution>
-<p>
-<me>
-| \mathcal{D}| = s!=r!
-</me>
-</p>
-</solution-->
-
-
-					</p>
-				</li>
-			</ol>
-
+You want to give away 20 identical baseballs to 10 baseball fans. How many ways can this be done when <m>\ldots</m>
+				<ol>
+					<li>
+						<p>
+							There are no restrictions on how you give them away.
+						</p>
+					</li>
+					<li>
+						<p>
+							Every fan must get at least one baseball.
+						</p>
+					</li>					
+					<li>
+						<p>
+							Every fan must get exactly two baseballs.
+						</p>
+					</li>
+				</ol>
 				</p>
 			</statement>
 		</exercise>
+		<exercise>
+			<statement>
+				<p>
+You want to give away 20 distinct baseball caps (from different teams) to 10 fans. How many ways can this be done when <m>\ldots</m>
+				<ol>
+					<li>
+						<p>
+							There are no restrictions on how you give them away.
+						</p>
+					</li>
+					<li>
+						<p>
+							Every fan must get at least one baseball cap.
+						</p>
+					</li>					
+					<li>
+						<p>
+							Every fan must get exactly two baseball caps.
+						</p>
+					</li>
+				</ol>
+				</p>
+			</statement>
+		</exercise>
+
 	</exercises>
 
 

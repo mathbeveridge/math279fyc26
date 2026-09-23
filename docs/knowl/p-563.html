@@ -12,12 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Recall that \(\W = \{ 0,1,2,3, \ldots \}\text{.}\) For a subset \(S \subset \W\) the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">mex</em> of \(S\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">minimum excluded value</em></p>
+<p>Given a position \(X\) of a game with followers \(\cF(X) = \{ Y_1, Y_2, \ldots , Y_k \}\) The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Sprague-Grundy value</em> of the position is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\mex (S) = \min \{ i \in \W \mid i \notin S\}.
+g(X) = \mex  \{ g(Y_1), g (Y_2), \ldots g(Y_k) \} \big\}.
 \end{equation*}
 </div>
+<p class="continuation">This formula for the Sprague-Grundy value recursive: you is calculate the value for \(X\) by looking at the values of the followers.  This is a lot like working your way back up a game tree to figure out whether \(X\) is an \(\cN\)-position or a \(\cP\)-position.</p>
 <span class="incontext"><a href="games-subtract.html#p-563">in-context</a></span>
 </body>
 </html>
