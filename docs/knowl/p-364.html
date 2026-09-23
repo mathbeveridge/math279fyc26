@@ -12,18 +12,24 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Use induction to prove that \(4\) divides \((5^n -1)\) for \(n \geq 1\text{.}\)</p>
+<p>Let \(f : X \rightarrow Y\) be a function. Let \(A \subseteq X\) and \(B \subseteq X\text{.}\) For a subset \(S \subseteq X\text{,}\) define the subset \(f(S) \subseteq Y\) by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(S) = \{ y \in Y \mid \exists s \in S, f(s) = y \}
+\end{equation*}
+</div>
 <ol class="lower-alpha">
-<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Base Case:</em> (Check for \(n=1,2,3\) to make sure you believe it. You actually only need to check for \(n=1\text{.}\)) </p></li>
 <li>
-<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Hypothesis:</em> Write down your inductive hypothesis for \(k\text{.}\)</p>
-<p>Pro Tip: A nice way to write "4 divides \((5^k-1)\)" is the statement "\(5^k-1 = 4r\) for some \(r\text{.}\)" </p>
+<p>Prove that if \(A \subseteq B\) then \(f(A) \subseteq f(B)\) </p>
+<p></p>
 </li>
+<li><p>Draw an example for which \(A \not\subseteq B\text{,}\) but \(f(A) \subseteq f(B)\text{.}\) </p></li>
 <li>
-<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Step:</em> Write down what you want to SHOW for \(k+1\text{.}\) Then try to find "a copy of the size \(k\) problem" in the size \(k+1\) problem. Rearrange and use your inductive hypothesis to prove the result!</p>
-<p>Hint: For this problem, the easiest thing to do is "add 0 in a smart way." Namely, add \((5^k - 5^k)\) and then rearrange. </p>
+<p>Prove that \(f(A \cap B) \subseteq f(A) \cap f(B)\text{.}\) </p>
+<p></p>
 </li>
+<li><p>Draw an example for which \(f(A \cap B) \neq f(A) \cap f(B)\) </p></li>
 </ol>
-<span class="incontext"><a href="exercises-19.html#p-364">in-context</a></span>
+<span class="incontext"><a href="exercises-18.html#p-364">in-context</a></span>
 </body>
 </html>

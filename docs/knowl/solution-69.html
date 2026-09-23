@@ -15,20 +15,15 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>We have</p>
+<p>There are two cases, depending on which type of pie is left over: pumpkin or apple.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-X \in \cP \Longleftrightarrow \forall Y \in \cF(X), \mbox{ we have } Y \in \cN,
+{9 \choose 4} + {9 \choose 6}
 \end{equation*}
 </div>
-<p class="continuation">or equivalently</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-X \in \cP \Longleftrightarrow  \cF(X) \subset \cN.
-\end{equation*}
+<p class="continuation">In the first term, we pick the 4 people who will get apple pie. The remaining 5 get pumpkin pie. The left over slice is the sixth slice of pumpkin pie.</p>
+<p>In the second term, we pick the 6 people who will get pumpkin pie. The remaining 3 get apple pie. The left over slice is the fourth slice of apple pie.</p>
 </div>
-<p>ASFOC that \(X\) has a follower \(Y\) that is a \(\cP\) position. Let Alice be the "next player" and Bob be the "previous player." Then Alice can move from \(X\) to \(Y\text{.}\) It is now Bob's turn, so he becomes the "next" player, and he is a losing postion. So this move from \(X\) to \(Y\) was a winning move for Alice, a contradiction.</p>
-</div>
-<span class="incontext"><a href="exercises-26.html#solution-69">in-context</a></span>
+<span class="incontext"><a href="exercises-6.html#solution-69">in-context</a></span>
 </body>
 </html>

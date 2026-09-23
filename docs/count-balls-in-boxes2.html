@@ -219,13 +219,13 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="count-balls-in-boxes2"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">7</span> <span class="title">Balls in Boxes Part 2</span>
 </h2>
-<section class="introduction" id="introduction-7"><p id="p-196"></p></section><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-7"><p id="p-205"></p></section><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-30"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-197">Last class, we filled in the following table:</p>
-<p id="p-198"><em class="emphasis">\(n\) distinct boxes, \(k\) balls, boxes <em class="emphasis">CAN</em> be empty</em></p>
-<p id="p-199"></p>
+<p id="p-206">Last class, we filled in the following table:</p>
+<p id="p-207"><em class="emphasis">\(n\) distinct boxes, \(k\) balls, boxes <em class="emphasis">CAN</em> be empty</em></p>
+<p id="p-208"></p>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r1 l1 t1 lines"></td>
@@ -246,10 +246,10 @@
 <td class="l m b1 r1 l0 t0 lines">none</td>
 </tr>
 </table></div>
-<p id="p-200"></p>
-<p id="p-201">We consider another variation on this problem: now the boxes cannot be empty. Try to fill in the following table. You will be able to determine 3 out of 4 of the answers. We will talk about the last one as a group.</p>
-<p id="p-202"><em class="emphasis">\(n\) distinct boxes, \(k\) balls, boxes CANNOT be empty</em></p>
-<p id="p-203"></p>
+<p id="p-209"></p>
+<p id="p-210">We consider another variation on this problem: now the boxes cannot be empty. Try to fill in the following table. You will be able to determine 3 out of 4 of the answers. We will talk about the last one as a group.</p>
+<p id="p-211"><em class="emphasis">\(n\) distinct boxes, \(k\) balls, boxes CANNOT be empty</em></p>
+<p id="p-212"></p>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r1 l1 t1 lines"></td>
@@ -270,18 +270,79 @@
 <td class="l m b1 r1 l0 t0 lines">\(\phantom{\displaystyle{{a+b+c \choose d}}}\)</td>
 </tr>
 </table></div>
-<p id="p-204"></p></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-205">You want to give away 20 identical baseballs to 10 baseball fans. How many ways can this be done when \(\ldots\)</p>
+<p id="p-213"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-73" id="solution-73"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-73"><div class="solution solution-like">
+<p id="p-214"></p>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r1 l1 t1 lines"></td>
+<td class="l m b1 r1 l0 t1 lines">balls identical</td>
+<td class="l m b1 r1 l0 t1 lines">balls distinct</td>
+<td class="l m b1 r1 l0 t1 lines">conditions?</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">no repetition</td>
+<td class="l m b1 r1 l0 t0 lines">\(\displaystyle{\phantom{{ a \choose b}}}\)  \(1\) \(\displaystyle{\phantom{{ a \choose b}}}\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(n!=k!\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(n=k\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">with repetition</td>
+<td class="l m b1 r1 l0 t0 lines">\(\displaystyle{{ k -1 \choose n-1}}\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(n! S(k,n)\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(k \geq n\)</td>
+</tr>
+</table></div>
+<p id="p-215">The formula \(n! S(k,n)\) uses the number \(S(k,n)\) which is called the <em class="emphasis">Stirling Number of the Second Kind</em>. It turns out that we've asked a very hard problem!</p>
+<p id="p-216">We do have the tools at our disposal to give and understand the formula for \(S(k,n)\text{.}\) However, the argument is a little more abstract than I usually like to cover in MATH 279. So you can just write down "\(n! S(k,n)\)" as the answer to this question (when it comes up) without knowing the particular formula for \(S(k,n)\text{.}\)</p>
+<p id="p-217">Some more details: the number \(S(k,n)\) counts the number of ways to put \(n\) <em class="emphasis">distinct balls</em> into \(k\) <em class="emphasis">identical boxes</em> where <em class="emphasis">boxes cannot be empty</em> and <em class="emphasis">repetition is allowed</em>. Can you explain why we must multiply by \(n!\) in order to get the number of ways to use \(\) instead?</p>
+</div></div></p></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-218">You want to give away 20 identical baseballs to 10 baseball fans. How many ways can this be done when \(\ldots\)</p>
 <ol class="lower-alpha">
-<li id="li-89"><p id="p-206">There are no restrictions on how you give them away.</p></li>
-<li id="li-90"><p id="p-207">Every fan must get at least one baseball.</p></li>
-<li id="li-91"><p id="p-208">Every fan must get exactly two baseballs.</p></li>
+<li id="li-89"><p id="p-219">There are no restrictions on how you give them away. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-74" id="solution-74"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-74"><div class="solution solution-like">
+<p id="p-220">The 20 identical baseballs are the balls. The 10 fans are the distict boxes. Repetition is allowed and boxes can be empty.</p>
+<div class="displaymath">
+\begin{equation*}
+{20+10-1 \choose 20} = {29 \choose 20}
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-90"><p id="p-221">Every fan must get at least one baseball. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-75" id="solution-75"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-75"><div class="solution solution-like">
+<p id="p-222">The 20 identical baseballs are the balls. The 10 fans are the distict boxes. Repetition is allowed and boxes cannot be empty.</p>
+<div class="displaymath">
+\begin{equation*}
+{20-1 \choose 10-1} = {19 \choose 9}
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-91"><p id="p-223">Every fan must get exactly two baseballs. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-76" id="solution-76"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-76"><div class="solution solution-like"><p id="p-224">There is 1 way to do this: everyone gets 2 baseballs.</p></div></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-32"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-209">You want to give away 20 distinct baseball caps (from different teams) to 10 fans. How many ways can this be done when \(\ldots\)</p>
+<p id="p-225">You want to give away 20 distinct baseball caps (from different teams) to 10 fans. How many ways can this be done when \(\ldots\)</p>
 <ol class="lower-alpha">
-<li id="li-92"><p id="p-210">There are no restrictions on how you give them away.</p></li>
-<li id="li-93"><p id="p-211">Every fan must get at least one baseball cap.</p></li>
-<li id="li-94"><p id="p-212">Every fan must get exactly two baseball caps.</p></li>
+<li id="li-92"><p id="p-226">There are no restrictions on how you give them away. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-77" id="solution-77"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-77"><div class="solution solution-like">
+<p id="p-227">The 20 distinct caps are the balls. The 10 fans are the distict boxes. Repetition is allowed and boxes can be empty.</p>
+<div class="displaymath">
+\begin{equation*}
+10^{20}
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-93"><p id="p-228">Every fan must get at least one baseball cap. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-78" id="solution-78"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-78"><div class="solution solution-like">
+<p id="p-229">The 20 distinct caps are the balls. The 10 fans are the distict boxes. Repetition is allowed and boxes cannot be empty.</p>
+<div class="displaymath">
+\begin{equation*}
+10! S(20, 10)
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-94"><p id="p-230">Every fan must get exactly two baseball caps. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-79" id="solution-79"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-79"><div class="solution solution-like">
+<p id="p-231">Every fan must get 2 caps. The number of ways to do this is</p>
+<div class="displaymath">
+\begin{equation*}
+{20 \choose 2} { 18 \choose 2} {16 \choose 2} {14 \choose 2} {12 \choose 2} {10 \choose 2} 
+{8 \choose 2} {6 \choose 2} {4 \choose 2} {2 \choose 2} 
+\end{equation*}
+</div>
+</div></div></p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

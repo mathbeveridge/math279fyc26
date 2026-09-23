@@ -11,11 +11,11 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
+<p>The distinct boxes are the 4 types of fruit. We place 10 identical balls into these boxes: the number of balls in a box is the number of pieces of that type of fruit. Boxes can be empty and repetition is allowed. The number of ways to do this is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-X \in \cN \Longleftrightarrow \exists Y \in \cF(X) \mbox{ such that } Y \in \cP.
+{ 10 + 4 - 1 \choose 10} = {13 \choose 10}.
 \end{equation*}
 </div>
-<p>AFSOC that  \(X\) does not have a follower \(Y\) such that \(Y \in \cP\text{.}\) Let Alice be the "next player" and Bob be the "previous player." Since every follower is an \(\cN\)-position, Alice must move to a \(\cN\)-position. However, now Bob becomes is the "next player" and therefore Bob has a winning strategy, no matter what Alice's first move was. Therefore Alice does not have a winning strategy, a contradiction.</p>
 </div></body>
 </html>

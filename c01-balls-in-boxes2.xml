@@ -130,7 +130,7 @@ with repetition
 <p>
 
 
-<!--solution>
+<solution>
 <p>
 
 
@@ -195,7 +195,7 @@ Some more details: the number <m>S(k,n)</m> counts the number of ways to put <m>
 
 
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -208,16 +208,37 @@ You want to give away 20 identical baseballs to 10 baseball fans. How many ways 
 					<li>
 						<p>
 							There are no restrictions on how you give them away.
+							<solution>
+<p>
+The 20 identical baseballs are the balls. The 10 fans are the distict boxes. Repetition is allowed and boxes can be empty.
+<me>
+{20+10-1 \choose 20} = {29 \choose 20}
+</me>
+</p>
+</solution>
 						</p>
 					</li>
 					<li>
 						<p>
 							Every fan must get at least one baseball.
+							<solution>
+<p>
+The 20 identical baseballs are the balls. The 10 fans are the distict boxes. Repetition is allowed and boxes cannot be empty.
+<me>
+{20-1 \choose 10-1} = {19 \choose 9}
+</me>
+</p>
+</solution>							
 						</p>
 					</li>					
 					<li>
 						<p>
 							Every fan must get exactly two baseballs.
+							<solution>
+<p>
+There is 1 way to do this: everyone gets 2 baseballs.
+</p>
+</solution>								
 						</p>
 					</li>
 				</ol>
@@ -232,16 +253,41 @@ You want to give away 20 distinct baseball caps (from different teams) to 10 fan
 					<li>
 						<p>
 							There are no restrictions on how you give them away.
+							<solution>
+<p>
+The 20 distinct caps are the balls. The 10 fans are the distict boxes. Repetition is allowed and boxes can be empty.
+<me>
+10^{20}
+</me>
+</p>
+</solution>
 						</p>
 					</li>
 					<li>
 						<p>
 							Every fan must get at least one baseball cap.
+							<solution>
+<p>
+The 20 distinct caps are the balls. The 10 fans are the distict boxes. Repetition is allowed and boxes cannot be empty.
+<me>
+10! S(20, 10)
+</me>
+</p>
+</solution>							
 						</p>
 					</li>					
 					<li>
 						<p>
 							Every fan must get exactly two baseball caps.
+							<solution>
+<p>
+Every fan must get 2 caps. The number of ways to do this is 
+<me>
+{20 \choose 2} { 18 \choose 2} {16 \choose 2} {14 \choose 2} {12 \choose 2} {10 \choose 2} 
+{8 \choose 2} {6 \choose 2} {4 \choose 2} {2 \choose 2} 
+</me>
+</p>
+</solution>							
 						</p>
 					</li>
 				</ol>
@@ -250,8 +296,5 @@ You want to give away 20 distinct baseball caps (from different teams) to 10 fan
 		</exercise>
 
 	</exercises>
-
-
-
 
 </chapter>

@@ -12,7 +12,11 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Paths.</em> The path \(P_n\) is the graph consisting of a path on \(n\) vertices. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-graph13.svg" role="img" class="contained"></div> How many edges are there in \(P_n\) for \(n \geq 2\text{?}\) </p>
-<span class="incontext"><a href="exercises-22.html#p-431">in-context</a></span>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Step:</em> Consider a starting position with \(n&gt;1\) coins.</p>
+<ol class="lower-roman">
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Case 1:</em> You start with an odd number of heads. Remove the leftmost heads up coin and flip its neighbors. This leaves two smaller lists of coins, \(L\) and \(R\text{,}\) which are to the left and right of the coin you removed. One of these sets could be empty; why? What can you say about the configuration of coins in each of \(L\) and \(R\text{?}\) Explain why this proves that the original configuration was winning/losing. </p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Case 2:</em> You start with an even number of heads. Pick any heads-up coin, remove it and flip its neighbors. Once again, this leaves two smaller lists of coins, \(L\) and \(R\text{.}\) Explain why one of these sets must contain an even number of heads-up coins. Explain why this proves that the original configuration was winning/losing. </p></li>
+</ol>
+<span class="incontext"><a href="exercises-20.html#p-431">in-context</a></span>
 </body>
 </html>

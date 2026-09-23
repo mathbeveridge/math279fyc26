@@ -226,27 +226,88 @@
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Puppies!</span>
 </h6>
 <ol id="p-186" class="lower-alpha">
-<li id="li-85"><p id="p-187">How many ways are there to give four doggie treats to six puppies, with no more than one doggie treat to each puppy? </p></li>
-<li id="li-86"><p id="p-188">How many ways are there to give four doggie treats to six puppies when you can give multiple treats to the same puppy? </p></li>
+<li id="li-85"><p id="p-187">How many ways are there to give four doggie treats to six puppies, with no more than one doggie treat to each puppy? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-65" id="solution-65"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-65"><div class="solution solution-like">
+<p id="p-188">This time, the distinct boxes are the puppies. The identical balls are the doggie treats. Boxes can be empty and repetition is not allowed. So the answer is:</p>
+<div class="displaymath">
+\begin{equation*}
+{6 \choose 4}
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-86"><p id="p-189">How many ways are there to give four doggie treats to six puppies when you can give multiple treats to the same puppy? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-66" id="solution-66"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-66"><div class="solution solution-like">
+<p id="p-190">This time, the distinct boxes are the puppies. The identical balls are the doggie treats. Boxes can be empty and repetition is allowed. So the answer is:</p>
+<div class="displaymath">
+\begin{equation*}
+{6+4-1 \choose 6} = {9 \choose 6}
+\end{equation*}
+</div>
+</div></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-25"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Stars.</span>
 </h6>
-<p id="p-189">How many ways are there to put a star sticker (they come in gold, silver, red, green, and blue) on every student's paper in a class of 30 students? </p></article><article class="exercise exercise-like" id="exercise-26"><h6 class="heading">
+<p id="p-191">How many ways are there to put a star sticker (they come in gold, silver, red, green, and blue) on every student's paper in a class of 30 students? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-67" id="solution-67"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-67"><div class="solution solution-like">
+<p id="p-192">We have to make 30 decisions, and we have 5 options for each. The  number of ways to do this is</p>
+<div class="displaymath">
+\begin{equation*}
+5^{30}.
+\end{equation*}
+</div>
+<p class="continuation">Here the colors of the stars are the 5 distinct boxes. The students are 30 distinct balls. Repetition is allowed and boxes can be empty.</p>
+</div></div></p></article><article class="exercise exercise-like" id="exercise-26"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Fruit Selection.</span>
 </h6>
-<p id="p-190">How many ways are there to buy 10 pieces of fruit, when you can choose between four kinds: apples, bananas, oranges and pears? (Note: if we buy 2 apples, we treat the apples as "the same.") </p></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading">
+<p id="p-193">How many ways are there to buy 10 pieces of fruit, when you can choose between four kinds: apples, bananas, oranges and pears? (Note: if we buy 2 apples, we treat the apples as "the same.") <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-68" id="solution-68"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-68"><div class="solution solution-like">
+<p id="p-194">The distinct boxes are the 4 types of fruit. We place 10 identical balls into these boxes: the number of balls in a box is the number of pieces of that type of fruit. Boxes can be empty and repetition is allowed. The number of ways to do this is</p>
+<div class="displaymath">
+\begin{equation*}
+{ 10 + 4 - 1 \choose 10} = {13 \choose 10}.
+\end{equation*}
+</div>
+</div></div></p></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">An Extra Slice of Pie.</span>
 </h6>
-<p id="p-191">How many ways are there to give 4 slices of apple pie and 6 slices of pumpkin pie to nine hungry diners, where each diner gets exactly one slice of pie. (So there is one slice left over!) </p></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading">
+<p id="p-195">How many ways are there to give 4 slices of apple pie and 6 slices of pumpkin pie to nine hungry diners, where each diner gets exactly one slice of pie. (So there is one slice left over!) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-69" id="solution-69"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-69"><div class="solution solution-like">
+<p id="p-196">There are two cases, depending on which type of pie is left over: pumpkin or apple.</p>
+<div class="displaymath">
+\begin{equation*}
+{9 \choose 4} + {9 \choose 6}
+\end{equation*}
+</div>
+<p class="continuation">In the first term, we pick the 4 people who will get apple pie. The remaining 5 get pumpkin pie. The left over slice is the sixth slice of pumpkin pie.</p>
+<p id="p-197">In the second term, we pick the 6 people who will get pumpkin pie. The remaining 3 get apple pie. The left over slice is the fourth slice of apple pie.</p>
+</div></div></p></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Spooky Minifigs.</span>
 </h6>
-<ol id="p-192" class="lower-alpha">
-<li id="li-87"><p id="p-193">How many ways are there to arrange 6 identical ghost figurines and 9 identical zombie figurines on a shelf? </p></li>
-<li id="li-88"><p id="p-194">How many ways are there to arrange 6 distinct ghost figurines and 9 distinct zombie figurines on a shelf? </p></li>
+<ol id="p-198" class="lower-alpha">
+<li id="li-87"><p id="p-199">How many ways are there to arrange 6 identical ghost figurines and 9 identical zombie figurines on a shelf? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-70" id="solution-70"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-70"><div class="solution solution-like">
+<p id="p-200">We must choose the 6 spots for the ghosts. The zombies go in the other spots. The number of ways is</p>
+<div class="displaymath">
+\begin{equation*}
+{15 \choose 9}
+\end{equation*}
+</div>
+<p class="continuation">Here the 15 spots (from left to right) are the distinct boxes. We use 6 identical balls to indicate the ghosts. Boxes can be empty and repetition is not allowed.</p>
+</div></div></p></li>
+<li id="li-88"><p id="p-201">How many ways are there to arrange 6 distinct ghost figurines and 9 distinct zombie figurines on a shelf? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-71" id="solution-71"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-71"><div class="solution solution-like">
+<p id="p-202">In this case, all 15 figurines are distinct, and we must line them up. The number of ways is</p>
+<div class="displaymath">
+\begin{equation*}
+15!
+\end{equation*}
+</div>
+<p class="continuation">Here the distinct boxes are the 15  possible positions. The 15 distinct balls are the figurines. Repetition is not allowed and boxes cannot be empty.</p>
+</div></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Toys for Tots.</span>
 </h6>
-<p id="p-195">How many ways are there to give three distinct toys to three out of five children, such that no child gets more than one toy? </p></article></section></section></div></main>
+<p id="p-203">How many ways are there to give three distinct toys to three out of five children, such that no child gets more than one toy? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-72" id="solution-72"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-72"><div class="solution solution-like">
+<p id="p-204">The distinct boxes are the 5 children. The distinct balls are the 3 toys. Repetition is not allowed and empty boxes are okay. The number of ways is</p>
+<div class="displaymath">
+\begin{equation*}
+(5)_3
+\end{equation*}
+</div>
+</div></div></p></article></section></section></div></main>
 </div>
 </body>
 </html>
