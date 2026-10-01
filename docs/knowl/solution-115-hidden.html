@@ -11,8 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>Use \((\star)\) to prove that any \(2^{k+1} \times 2^{k+1}\) board that is missing one square can be covered by triominoes.</p>
-<p>By splitting the board down the middle (both horizontally and vertically), we now have the option to think of this one board as four independent \(2^k \times 2^k\) boards. In particular, if we place a triomino in the middle so that it has one square in each of the three smaller boards that have  no missing square, then we end up with 4 independent instances of the problem using  \(2^k \times 2^k\) boards  (each missing one square).</p>
-<p>By \((\star)\text{,}\) we can cover each of these four boards using triominoes. When we put them all together, we get a covering of the \(2^{k+1} \times 2^{k+1}\) board that is missing one square.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{r}
+001 \\
+011 \\
+100 \\
+\oplus 101 \\
+\hline
+011
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">There is one  winning move: \((1,0,4,5)\text{.}\)</p>
 </div></body>
 </html>

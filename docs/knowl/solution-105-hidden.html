@@ -11,17 +11,11 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>We must show that  \(\sum_{i=0}^{k+1} 2^i = 2^{k+2} -1\text{.}\)</p>
-<p>Starting with the left hand side, we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{rcl}
-\sum_{i=0}^{k+1} 2^i &amp;=&amp; \sum_{i=0}^{k} 2^i + 2^{k+1} \\
-&amp;=&amp; \left( 2^{k+1}  -1 \right) + 2^{k+1}   \mbox{by} \,  (\star)\\
-&amp;=&amp; 2 \cdot 2^{k+1} - 1 \\
-&amp;=&amp; 2^{k+2} -1.
-\end{array}
+X \in \cN \Longleftrightarrow \exists Y \in \cF(X) \mbox{ such that } Y \in \cP.
 \end{equation*}
 </div>
+<p>AFSOC that  \(X\) does not have a follower \(Y\) such that \(Y \in \cP\text{.}\) Let Alice be the "next player" and Bob be the "previous player." Since every follower is an \(\cN\)-position, Alice must move to a \(\cN\)-position. However, now Bob becomes is the "next player" and therefore Bob has a winning strategy, no matter what Alice's first move was. Therefore Alice does not have a winning strategy, a contradiction.</p>
 </div></body>
 </html>

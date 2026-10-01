@@ -10,9 +10,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><ul class="disc">
-<li><p>For \(n=1\) we have \(5^1-1=4\) is divisible by 4.</p></li>
-<li><p>For \(n=2\) we have \(5^2-1=24= 4 \times 6\) is divisible by 4.</p></li>
-<li><p>For \(n=3\) we have \(5^3-1=124 = 4 \times 31\) is divisible by 4.</p></li>
-</ul></div></body>
+<body><div class="solution solution-like">
+<p>We have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X \in \cP \Longleftrightarrow \forall Y \in \cF(X), \mbox{ we have } Y \in \cN,
+\end{equation*}
+</div>
+<p class="continuation">or equivalently</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X \in \cP \Longleftrightarrow  \cF(X) \subset \cN.
+\end{equation*}
+</div>
+<p>ASFOC that \(X\) has a follower \(Y\) that is a \(\cP\) position. Let Alice be the "next player" and Bob be the "previous player." Then Alice can move from \(X\) to \(Y\text{.}\) It is now Bob's turn, so he becomes the "next" player, and he is a losing postion. So this move from \(X\) to \(Y\) was a winning move for Alice, a contradiction.</p>
+</div></body>
 </html>

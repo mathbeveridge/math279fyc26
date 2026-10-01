@@ -10,16 +10,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>First, we prove that if \(n=2k\) is even then \(g: \Z_{n} \rightarrow \Z_{n}\)  is not injective and not surjective</p>
-<ul class="disc">
-<li><p>We have \(g(0) = 0\) and \(g(k) = 2k \mbox{ mod } (2k) = 0\text{.}\) Therefore \(g\) is not injective.</p></li>
-<li><p>If \(m\) is odd, \(g(i) \neq m\) for all \(i \in \Z_n\) because \(g(i)\) is always even. Therefore \(g\) is not surjective.</p></li>
-</ul>
-<p class="continuation">Next, we prove that if \(n=2k+1\) is odd, then \(g: \Z_{n} \rightarrow \Z_{n}\) is bijective.</p>
-<ul class="disc">
-<li><p>First, we show that \(g\) is surjective. If \(m=2r\) is even (where \(0 \leq r \leq k\)), then \(g(r)=2r=m\text{.}\) If \(m=2r+1 \in \Z_n\) is odd (where \(0 \leq r \leq k\)) then \​begin{eqnarray*} g(k+r+1) &amp;=&amp; 2(k+r+1) \mbox{ mod } (2k+1) \\ &amp;=&amp; \left( ( 2k+1) + (2r+1) \right) \mbox{ mod } (2k+1) \\ &amp;=&amp; 2r+1. \end{eqnarray*}</p></li>
-<li><p>We now know that \(g\) is surjective. Since both the domain and the target (codomain) have the same size, the function \(g\) must also be bijective. We prove this by contradiction. Suppose that the function is not injective. This means that there are \(k_1 \neq k_2\) such that \(g(k_1)=g(k_2)\text{.}\)  But this would mean that the size of the image \(g([n])\) must be smaller than the size of \([n]\text{.}\) Therefore the function is not surjective. But this contradicts the fact that we already know: \(g\) is surjective. Therefore \(g\) must also be injective.</p></li>
-</ul>
-</div></body>
+<body><div class="solution solution-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c|c|c} %mathbook tabular
+P &amp; Q &amp; P \vee Q &amp; \neg (P \vee Q)  &amp; \neg P &amp; \neg Q &amp; \neg P \wedge \neg Q \\
+\hline
+T &amp; T &amp; T &amp; F &amp; F &amp; F &amp; F \\
+T&amp; F &amp; T&amp; F &amp; F &amp; T&amp; F \\
+F &amp; T&amp; T&amp; F &amp; T &amp; F &amp; F \\
+F &amp; F &amp; F &amp; T &amp; T &amp; T &amp; T \\
+\end{array}
+\end{equation*}
+</div></div></body>
 </html>

@@ -56,7 +56,7 @@ Express the following statements in words.
 </ol>
 				
 
-<!--solution>
+<solution>
 <p>
 <ol>
 	<li>
@@ -80,7 +80,7 @@ Express the following statements in words.
 		</p>		
 	</li>
 </ol></p>
-</solution-->
+</solution>
 
 
 
@@ -132,7 +132,7 @@ may help you to imagine what it would mean for each of these statements to be fa
 </ol>
 				
 
-<!--solution>
+<solution>
 <p>
 <ol>
 	<li>
@@ -161,7 +161,7 @@ may help you to imagine what it would mean for each of these statements to be fa
 		</p>		
 	</li>
 </ol></p>
-</solution-->
+</solution>
 
 
 
@@ -192,7 +192,7 @@ F &amp; F &amp;  &amp; \\
 \end{array}
 </me>
 
-<!--solution>
+<solution>
 <p>
 
 <me>
@@ -207,7 +207,7 @@ F &amp; F &amp; F &amp; T\\
 </me>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -227,7 +227,7 @@ F &amp; F &amp; &amp; &amp;  \\
 </me>
 
 
-<!--solution>
+<solution>
 <p>
 <me>
 \begin{array}{c|c|c|c|c}
@@ -242,7 +242,7 @@ F &amp; F &amp; T &amp;  T &amp; T \\
 
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -251,7 +251,7 @@ F &amp; F &amp; T &amp;  T &amp; T \\
 					<p>
  Look at the last column of each of the two tables above. What do you conclude? Write a mathematical statement (using symbols) that summarizes your observation.
 
-<!--solution>
+<solution>
 <p>
 
 These two statements are equivalent. In other words,
@@ -260,7 +260,7 @@ These two statements are equivalent. In other words,
 \]
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -289,7 +289,7 @@ F &amp; F &amp;  &amp;   \\
 \end{array}
 </me>
 
-<!--solution>
+<solution>
 <p>
 
 <me>
@@ -304,7 +304,7 @@ F &amp; F &amp; F &amp; T &amp; T &amp; T &amp; T \\
 </me>
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -318,11 +318,11 @@ F &amp; F &amp; F &amp; T &amp; T &amp; T &amp; T \\
 				<p>
 Look back at the last two problems. What is the effect of <em>negation</em> on the AND operator? The OR operator?
 
-<!--solution>
+<solution>
 <p>
 Under negation, AND becomes OR, while OR becomes AND.
 </p>
-</solution-->
+</solution>
 
 
 
