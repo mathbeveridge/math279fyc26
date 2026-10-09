@@ -10,9 +10,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><ul class="disc">
-<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Base Cases:</em> \(n=6,7,8\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-induction23.svg" role="img" class="contained"></div></p></li>
-<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Hypothesis</em>. For \(6 \leq k &lt; n\text{,}\) a square can be split into \(k\) smaller squares.</p></li>
-<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Inductive Step:</em> We want to split the square into \(n\) smaller squares. First, we split it into \(n-3\) smaller squares (which works by the inductive hypothesis). Next, pick any square and split it into 4 smaller squares by drawing the horizontal and vertical bisectors.</p></li>
-</ul></div></body>
+<body><div class="solution solution-like">
+<p>We have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X \in \cP \Longleftrightarrow \forall Y \in \cF(X), \mbox{ we have } Y \in \cN,
+\end{equation*}
+</div>
+<p class="continuation">or equivalently</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X \in \cP \Longleftrightarrow  \cF(X) \subset \cN.
+\end{equation*}
+</div>
+<p>ASFOC that \(X\) has a follower \(Y\) that is a \(\cP\) position. Let Alice be the "next player" and Bob be the "previous player." Then Alice can move from \(X\) to \(Y\text{.}\) It is now Bob's turn, so he becomes the "next" player, and he is a losing postion. So this move from \(X\) to \(Y\) was a winning move for Alice, a contradiction.</p>
+</div></body>
 </html>

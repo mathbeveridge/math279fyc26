@@ -28,7 +28,7 @@ In each of the following problems, give an example of a function <m>f: [n] \righ
  Create a function <m>f: [n] \rightarrow [m]</m> that is injective (one-to-one) but NOT surjective (onto). What is the required relationship between <m>n</m> and <m>m</m>? (One of: <m>n  &gt;m</m> or <m>n &lt; m</m> or <m>n = m</m> or "none.")
 
 
-<!--solution>
+<solution>
 <p>
 
 			<image width="50%" xml:id="fig-img-function10">
@@ -54,9 +54,9 @@ In each of the following problems, give an example of a function <m>f: [n] \righ
 
 
 
-\draw[arrows={-latex}, very thick] (.25,1) -!- (3.8,.6);
-\draw[arrows={-latex}, very thick] (.25,0) -!- (3.8,-.4);
-\draw[arrows={-latex}, very thick] (.25,-1) -!- (3.75,-1.5);
+\draw[arrows={-latex}, very thick] (.25,1) -- (3.8,.6);
+\draw[arrows={-latex}, very thick] (.25,0) -- (3.8,-.4);
+\draw[arrows={-latex}, very thick] (.25,-1) -- (3.75,-1.5);
 
 \draw (4,-2.75) node {<m>Y= [4]</m>};
 
@@ -67,7 +67,7 @@ In each of the following problems, give an example of a function <m>f: [n] \righ
 {Required Relationship: <m>n &lt; m</m>}
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -76,7 +76,7 @@ In each of the following problems, give an example of a function <m>f: [n] \righ
  Create a function <m>f: [n] \rightarrow [m]</m> that is injective (one-to-one) and surjective (onto). What is the required relationship between <m>n</m> and <m>m</m>? (One of: <m>n  &gt;m</m> or <m>n &lt; m</m> or <m>n = m</m> or "none.")
 
 
-<!--solution>
+<solution>
 <p>
 			<image width="50%" xml:id="fig-img-function11">
 				<latex-image>
@@ -101,9 +101,9 @@ In each of the following problems, give an example of a function <m>f: [n] \righ
 
 
 
-\draw[arrows={-latex}, very thick] (.25,1) -!- (3.8,1);
-\draw[arrows={-latex}, very thick] (.25,0) -!- (3.8,0);
-\draw[arrows={-latex}, very thick] (.25,-1) -!- (3.75,-1);
+\draw[arrows={-latex}, very thick] (.25,1) -- (3.8,1);
+\draw[arrows={-latex}, very thick] (.25,0) -- (3.8,0);
+\draw[arrows={-latex}, very thick] (.25,-1) -- (3.75,-1);
 
 \draw (4,-2.75) node {<m>Y= [3]</m>};
 
@@ -115,7 +115,7 @@ Required Relationship:  <m>n = m</m>
 			</p><p>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -124,7 +124,7 @@ Required Relationship:  <m>n = m</m>
  Create a function <m>f: [n] \rightarrow [m]</m> that is NOT injective (one-to-one) but is surjective (onto). What is the required relationship between <m>n</m> and <m>m</m>? (One of: <m>n  &gt;m</m> or <m>n &lt; m</m> or <m>n = m</m> or "none.")
 
 
-<!--solution>
+<solution>
 <p>
 			<image width="50%" xml:id="fig-img-function12">
 				<latex-image>
@@ -150,10 +150,10 @@ Required Relationship:  <m>n = m</m>
 
 
 
-\draw[arrows={-latex}, very thick] (.25,1) -!- (3.8,1);
-\draw[arrows={-latex}, very thick] (.25,0) -!- (3.8,0);
-\draw[arrows={-latex}, very thick] (.25,-1) -!- (3.75,-.8);
-\draw[arrows={-latex}, very thick] (.25,-2) -!- (3.75,-1.2);
+\draw[arrows={-latex}, very thick] (.25,1) -- (3.8,1);
+\draw[arrows={-latex}, very thick] (.25,0) -- (3.8,0);
+\draw[arrows={-latex}, very thick] (.25,-1) -- (3.75,-.8);
+\draw[arrows={-latex}, very thick] (.25,-2) -- (3.75,-1.2);
 
 \draw (4,-2.75) node {<m>Y= [3]</m>};
 
@@ -166,7 +166,7 @@ Required Relationship:  <m>n = m</m>
 Required Relationship: <m> n &gt; m</m>
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -175,7 +175,7 @@ Required Relationship: <m> n &gt; m</m>
 					<p>
  Create a function <m>f: [n] \rightarrow [m]</m> that is NOT injective (one-to-one) and NOT surjective (onto). What is the required relationship between <m>n</m> and <m>m</m>? (One of: <m>n  &gt;m</m> or <m>n &lt; m</m> or <m>n = m</m> or "none.")
 
-<!--solution>
+<solution>
 <p>
 			<image width="50%" xml:id="fig-img-function13">
 				<latex-image>
@@ -201,10 +201,10 @@ Required Relationship: <m> n &gt; m</m>
 
 
 
-\draw[arrows={-latex}, very thick] (.25,1) -!- (3.8,.2);
-\draw[arrows={-latex}, very thick] (.25,0) -!- (3.8,-.2);
-\draw[arrows={-latex}, very thick] (.25,-1) -!- (3.75,-.8);
-\draw[arrows={-latex}, very thick] (.25,-2) -!- (3.75,-1.2);
+\draw[arrows={-latex}, very thick] (.25,1) -- (3.8,.2);
+\draw[arrows={-latex}, very thick] (.25,0) -- (3.8,-.2);
+\draw[arrows={-latex}, very thick] (.25,-1) -- (3.75,-.8);
+\draw[arrows={-latex}, very thick] (.25,-2) -- (3.75,-1.2);
 
 \draw (4,-2.75) node {<m>Y= [3]</m>};
 
@@ -215,7 +215,7 @@ Required Relationship: <m> n &gt; m</m>
 Required Relationship: none
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -245,7 +245,7 @@ For each of the functions below, decide whether it is injective and/or surjectiv
  <m>f: \Z \rightarrow \Z</m> given by <m>\displaystyle{f(n) = \left\lfloor \frac{n}{2} \right\rfloor}</m> where
 <m>\left\lfloor x \right\rfloor</m> is the floor function, which "rounds down" to the nearest integer.
 
-<!--solution>
+<solution>
 <p>
 		<ul>
 
@@ -263,7 +263,7 @@ For each of the functions below, decide whether it is injective and/or surjectiv
 			</li>
 		</ul>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -271,7 +271,7 @@ For each of the functions below, decide whether it is injective and/or surjectiv
 					<p>
  <m>g: \Z \rightarrow \Z</m> given by <m>g(n) = 4n -1</m>
 
-<!--solution>
+<solution>
 <p>
 		<ul>
 
@@ -289,7 +289,7 @@ For each of the functions below, decide whether it is injective and/or surjectiv
 			</li>
 		</ul>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -307,7 +307,7 @@ For each of the functions below, decide whether it is injective and/or surjectiv
 				<p>
 Let <m>f: \R \times \R \rightarrow \R \times \R</m> be defined by <m>f(x,y) = (2y, x-y)</m>. Is <m>f</m> injective? surjective? Justify your answer with either a proof or a counterexample.
 
-<!--solution>
+<solution>
 <p>
 
 <em>The function <m>f</m> is injective.</em> Suppose that <m>f(x_1, y_1) = f(x_2, y_2)</m>. This means that <m>(2y_1, x_1-y_1) = (2y_2, x_2 - y_2)</m>. We  find that
@@ -335,7 +335,7 @@ f \left(b+ \frac{a}{2},  \frac{a}{2} \right) = \left( 2 \cdot \frac{a}{2}, b+ \f
 </me>
 
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -347,13 +347,13 @@ f \left(b+ \frac{a}{2},  \frac{a}{2} \right) = \left( 2 \cdot \frac{a}{2}, b+ \f
 				<p>
 Let <m>f: \R \times \R \rightarrow \R \times \R</m> be defined by <m>f(x,y) = (5x+5y, x+y)</m>. Is <m>f</m> injective? surjective? Justify your answer with either a proof or a counterexample.
 
-<!--solution>
+<solution>
 <p>
 <em>The function <m>f</m> is not injective.</em> We just need to find two different points in the domain that map to the same point in the target. There are lots of choices here. One example is <m>f(1,0) = (5,1)</m> and <m>f(1/2, 1/2) = (5,1)</m>.
 
 <em>The function <m>f</m> is not surjective.</em> We can see that every point in the image is of the form <m>(5b, b)</m> where <m>b \in \R</m>. So there are lots of points in the target <m>\R \times \R</m> that are missed. For example, no point maps to <m>(1,0)</m>.
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -370,13 +370,13 @@ Let <m>f: \R \times \R \rightarrow \R \times \R</m> be defined by <m>f(x,y) = (5
 					<p>
  Create a function <m>f: \Z \rightarrow \Z</m> that is bijective.
 
-<!--solution>
+<solution>
 <p>
 <me>
 f(x) = x
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -384,13 +384,13 @@ f(x) = x
 					<p>
  Create a function <m>f: \Z \rightarrow \Z</m> that is injective but not surjective.
 
-<!--solution>
+<solution>
 <p>
 <me>
 f(x) = 2x
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -398,13 +398,13 @@ f(x) = 2x
 					<p>
  Create a function <m>f: \Z \rightarrow \Z</m> that is surjective but not injective.
 
-<!--solution>
+<solution>
 <p>
 <me>
 f(x) = \left\lfloor \frac{x}{2} \right\rfloor
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -412,13 +412,13 @@ f(x) = \left\lfloor \frac{x}{2} \right\rfloor
 					<p>
  Create a function <m>f: \Z \rightarrow \Z</m> that is not injective and not surjective.
 
-<!--solution>
+<solution>
 <p>
 <me>
 f(x) = x^2
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -441,40 +441,40 @@ Consider the function <m>\mathcal{C}:\mathcal{E} \to \mathcal{O}</m> defined by 
 <ol>
 <li>
 Give an example of an element <m>S</m> of the domain of this function, then compute <m>\mathcal{C}(S)</m>.
-<!--solution>
+<solution>
 One example is <m>S = \{ 1,2,3 \}</m> and <m>\mathcal{C}(S) = \{4,5,6,7\}</m>.
-</solution-->
+</solution>
 </li>
 
 <li>
 How do we know that <m>\mathcal{C}</m> is well-defined; that is, given <m>S \in \mathcal{E}</m>, 
 how do we know <m>\mathcal{C}(S) \in \mathcal{O}</m>? Is there anything special about the 
 choice of the number <m>7</m> in this problem?
-<!--solution>
+<solution>
 Since <m>S \in \mathcal{E}</m>, we know that <m>|S|</m> is an even number. 
 So the size of <m>\overline{S} = 7 - |S|</m> is an odd number. This means that the function is well defined.
 What is special about 7 is that it is odd. This mapping from odd subsets to even subsets will work for any
 set <m>[2k+1]</m>.
-</solution-->
+</solution>
 </li>
 <li>
 What are the steps to prove that <m>\mathcal{C}</m> is injective?
-<!--solution>
+<solution>
 Let's prove the contrapositive. Suppose that <m>A,B \in \mathcal{E}</m>, and that 
 <m>A \neq B</m>. Without loss of generality, there exists <m>a \in A</m> such that <m>a \notin B</m>.
 Equivalently, we have <m>a \notin \overline{A}</m> and <m>a \in \overline{B}</m>. Therefore 
 <m>\overline{A} \neq \overline{B}</m>. We can now conclude that when
 <m>A \neq B</m>, we have <m>\mathcal{C}(A) = \overline{A} \neq \overline{B}  = \mathcal{C}(B)</m>.
 This shows that <m>\mathcal{C}</m> is injective.
-</solution-->
+</solution>
 </li>
 <li>
 What are the steps to prove that <m>\mathcal{C}</m> is surjective? 
-<!--solution>
+<solution>
 Pick any set <m>B \in \mathcal{O}</m>, so that <m>|B|</m> is odd. Then <m>|\overline{B}|</m> is even, 
 and therefore <m>\overline{B} \in \mathcal{E}</m>. Finally, we have
 <m>\mathcal{C}(\overline{B}) = B</m>. This proves that  <m>\mathcal{C}</m> is surjective.
-</solution-->
+</solution>
 </li>
 </ol>
 

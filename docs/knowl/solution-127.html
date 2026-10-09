@@ -15,14 +15,55 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<ul class="disc">
-<li><p>We start with an even number of \(H\) in our game.</p></li>
-<li><p>Pick any \(H\text{.}\) Since the total number of \(H\)'s is even, there must be an odd number \(H's\) either to the left or to the right of this coin.</p></li>
-<li><p>When you remove this coin, it creates two disjoint games (unless \(H\) is the first or last coin, in which case there is only one game after your move). One of these two games now has an even number of heads.</p></li>
-<li><p>The game with an even number of heads is smaller than \(n\text{.}\) By induction, this configuration is losing.</p></li>
-<li><p>So no matter what coin we remove, we are sure to lose.</p></li>
-</ul>
+<ol class="lower-alpha">
+<li>
+<p>We calculate</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{r}
+1100 \\
+1010 \\
+\oplus 1000 \\
+\hline
+0110
+\end{array}
+\end{equation*}
 </div>
-<span class="incontext"><a href="exercises-11.html#solution-127">in-context</a></span>
+<p class="continuation">which is \(6\)</p>
+</li>
+<li>
+<p>We calculate</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{r}
+10100 \\
+01111 \\
+\oplus 01010 \\
+\hline
+10001
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">which is 17.</p>
+</li>
+<li>
+<p>We calculate</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{r}
+10111 \\
+10001 \\
+01010 \\
+\oplus 00100 \\
+\hline
+01000
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">which is 8.</p>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="exercises-24.html#solution-127">in-context</a></span>
 </body>
 </html>
