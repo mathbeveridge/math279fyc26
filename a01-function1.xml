@@ -11,103 +11,6 @@
 	<exercises>
 		<title>Practice Problems</title>
 
-		<exercise>
-			<title>Listing all functions</title>
-			<idx><h>Listing all functions</h></idx>
-			<statement>
-				<p>
-List all the functions from <m>\{a,b,c \}</m> to <m>\{ x,y \}</m>. For example, one function <m>f_1</m> is given by <m>f_1(a)=x</m> and <m>f_1(b)=y</m> and <m>f_1(c)=y</m>.
-
-<!--solution>
-<p>
-There are 8 such functions. Here they are, where each row corresponds to one function.
-<me>
-\begin{array}{c|c|c}
-a  &amp; b &amp; c \\
-\hline
-x &amp; x &amp; x  \\
-x &amp; x &amp;  y \\
-x  &amp; y  &amp; x  \\
-y &amp; x &amp; x  \\
-x &amp;  y &amp; y \\
-y  &amp;  x &amp; y \\
-y &amp; y &amp; x \\
-y &amp; y &amp; y
-\end{array}
-</me>
-</p>
-</solution-->
-
-				</p>
-			</statement>
-		</exercise>
-		<exercise>
-			<title>Counting  functions</title>
-			<idx><h>Counting  functions</h></idx>
-			<statement>
-				<p>
-How many functions are there from <m>\{a,b,c,d \}</m> to <m>\{x,y,z \}</m>? This time, justify your answer with an argument rather than listing all possible functions.
-
-<!--solution>
-<p>
-There are <m>3^4</m> functions. Each of the four elements in the domain can map to any of the three elements in the target. The result follows from the product principle.
-</p>
-</solution-->
-
-				</p>
-			</statement>
-		</exercise>
-		<exercise>
-			<title>More counting functions</title>
-			<idx><h>More counting functions</h></idx>
-			<statement>
-				<p>
-Without making lists or drawing pictures, how many functions are there <m>\ldots</m>
-
-			<ol>
-				<li>
-					<p>
- from a four-element set to a ten-element set?
-
-<!--solution>
-<p>
-<m>10^4</m>
-</p>
-</solution-->
-
-					</p>
-				</li>
-				<li>
-					<p>
- 	from a ten-element set to a four-element set?
-
-<!--solution>
-<p>
-<m>4^{10}</m>
-</p>
-</solution-->
-
-					</p>
-				</li>
-				<li>
-					<p>
-  from an <m>r</m>-element set to an <m>s</m>-element set?
-
-<!--solution>
-<p>
-<m>s^r</m>
-</p>
-</solution-->
-
-					</p>
-				</li>
-			</ol>
-
-
-
-				</p>
-			</statement>
-		</exercise>
 
 		<exercise>
 			<title>Different Kinds of Functions</title>
@@ -390,55 +293,197 @@ For each of the functions below, decide whether it is injective and/or surjectiv
 
 					</p>
 				</li>
-				<li>
-					<p>
- <m>h: \R \backslash \{ 0 \} \rightarrow \R</m> given by <m>\displaystyle{h(x) = \frac{x+1}{x}}</m>.
 
-<!--solution>
-<p>
-		<ul>
-
-			<li>
-			<p>
- The function is  injective. This function is equivalent to <m>\displaystyle{h(x) = 1+\frac{1}{x}}</m>. Suppose that <m>f(a) = f(b)</m>. This means that
-<me>
-\begin{array}{rcl}
-1+\frac{1}{a} &amp;=&amp; 1+\frac{1}{b} \\
-\frac{1}{a} &amp;=&amp; \frac{1}{b} \\
-a &amp;=&amp; b.
-\end{array}
-</me>
-
-			</p>
-			</li>
-			<li>
-			<p>
- The function is not surjective. It misses the point <m>y=1</m>. Indeed, if <m>h(x)=1</m> then
-<me>
-\begin{array}{rcl}
-1 &amp;=&amp; 1+\frac{1}{x} \\
-0 &amp;=&amp; \frac{1}{x}, \\
-\end{array}
-</me>
-which is impossible.
-
-			</p>
-			</li>
-		</ul>
-
-</p>
-</solution-->
-
-
-
-
-					</p>
-				</li>
 			</ol>
 
 				</p>
 			</statement>
 		</exercise>
+
+		<exercise>
+			<title>A function from <m>\R^2</m> to <m>\R^2</m></title>
+			<idx><h>A function from <m>\R^2</m> to <m>\R^2</m></h></idx>
+			<statement>
+				<p>
+Let <m>f: \R \times \R \rightarrow \R \times \R</m> be defined by <m>f(x,y) = (2y, x-y)</m>. Is <m>f</m> injective? surjective? Justify your answer with either a proof or a counterexample.
+
+<!--solution>
+<p>
+
+<em>The function <m>f</m> is injective.</em> Suppose that <m>f(x_1, y_1) = f(x_2, y_2)</m>. This means that <m>(2y_1, x_1-y_1) = (2y_2, x_2 - y_2)</m>. We  find that
+\begin{eqnarray*}
+2y_1 &amp;=&amp; 2y_2 \\
+y_1 &amp;=&amp; y_2
+\end{eqnarray*}
+and then
+\begin{eqnarray*}
+x_1 - y_1 &amp;=&amp; x_2 - y_2 \\
+x_1 - y_1 &amp;=&amp; x_2 - y_1 \\
+x_1 &amp;=&amp; x_2
+\end{eqnarray*}
+Therefore <m>(x_1, y_1) = (x_2, y_2)</m>.
+
+			</p><p>
+<em>The function <m>f</m> is surjective.</em> Pick any <m>(a,b) \in \R \times \R)</m>. We must find <m>(x,y) \in \R \times \R</m> such that <m>f(x,y)=(a,b)</m>. In order for this to hold, we need
+\begin{eqnarray*}
+2y &amp;=&amp; a \\
+x-y &amp;=&amp; b
+\end{eqnarray*}
+Solving this linear systems gives <m>x= b+ \frac{a}{2}</m> and <m>y=\frac{a}{2}</m>. We can then check that
+<me>
+f \left(b+ \frac{a}{2},  \frac{a}{2} \right) = \left( 2 \cdot \frac{a}{2}, b+ \frac{a}{2} - \frac{a}{2} \right) = (a,b).
+</me>
+
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Another function from <m>\R^2</m> to <m>\R^2</m></title>
+			<idx><h>Another function from <m>\R^2</m> to <m>\R^2</m></h></idx>
+			<statement>
+				<p>
+Let <m>f: \R \times \R \rightarrow \R \times \R</m> be defined by <m>f(x,y) = (5x+5y, x+y)</m>. Is <m>f</m> injective? surjective? Justify your answer with either a proof or a counterexample.
+
+<!--solution>
+<p>
+<em>The function <m>f</m> is not injective.</em> We just need to find two different points in the domain that map to the same point in the target. There are lots of choices here. One example is <m>f(1,0) = (5,1)</m> and <m>f(1/2, 1/2) = (5,1)</m>.
+
+<em>The function <m>f</m> is not surjective.</em> We can see that every point in the image is of the form <m>(5b, b)</m> where <m>b \in \R</m>. So there are lots of points in the target <m>\R \times \R</m> that are missed. For example, no point maps to <m>(1,0)</m>.
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+
+
+		<exercise>
+			<title>Functions from <m>\Z</m> to <m>\Z</m></title>
+			<idx><h>Functions from <m>\Z</m> to <m>\Z</m></h></idx>
+			<statement>
+				<p>
+			<ol>
+				<li>
+					<p>
+ Create a function <m>f: \Z \rightarrow \Z</m> that is bijective.
+
+<!--solution>
+<p>
+<me>
+f(x) = x
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Create a function <m>f: \Z \rightarrow \Z</m> that is injective but not surjective.
+
+<!--solution>
+<p>
+<me>
+f(x) = 2x
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Create a function <m>f: \Z \rightarrow \Z</m> that is surjective but not injective.
+
+<!--solution>
+<p>
+<me>
+f(x) = \left\lfloor \frac{x}{2} \right\rfloor
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Create a function <m>f: \Z \rightarrow \Z</m> that is not injective and not surjective.
+
+<!--solution>
+<p>
+<me>
+f(x) = x^2
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Even and Odd Subsets</title>
+			<idx><h>Even and Odd Subsets</h></idx>
+			<statement>
+				<p>
+Let <m>\mathcal{E} = \{S \subseteq [7] : |S| \text{ is even}\}</m> and let 
+<m>\mathcal{O} = \{S \subseteq [7] : |S| \text{ is odd}\}</m>. 
+Consider the function <m>\mathcal{C}:\mathcal{E} \to \mathcal{O}</m> defined by the rule 
+<m>\mathcal{C}(S) = \overline{S}</m>, the complement of <m>S</m>.
+<ol>
+<li>
+Give an example of an element <m>S</m> of the domain of this function, then compute <m>\mathcal{C}(S)</m>.
+<!--solution>
+One example is <m>S = \{ 1,2,3 \}</m> and <m>\mathcal{C}(S) = \{4,5,6,7\}</m>.
+</solution-->
+</li>
+
+<li>
+How do we know that <m>\mathcal{C}</m> is well-defined; that is, given <m>S \in \mathcal{E}</m>, 
+how do we know <m>\mathcal{C}(S) \in \mathcal{O}</m>? Is there anything special about the 
+choice of the number <m>7</m> in this problem?
+<!--solution>
+Since <m>S \in \mathcal{E}</m>, we know that <m>|S|</m> is an even number. 
+So the size of <m>\overline{S} = 7 - |S|</m> is an odd number. This means that the function is well defined.
+What is special about 7 is that it is odd. This mapping from odd subsets to even subsets will work for any
+set <m>[2k+1]</m>.
+</solution-->
+</li>
+<li>
+What are the steps to prove that <m>\mathcal{C}</m> is injective?
+<!--solution>
+Let's prove the contrapositive. Suppose that <m>A,B \in \mathcal{E}</m>, and that 
+<m>A \neq B</m>. Without loss of generality, there exists <m>a \in A</m> such that <m>a \notin B</m>.
+Equivalently, we have <m>a \notin \overline{A}</m> and <m>a \in \overline{B}</m>. Therefore 
+<m>\overline{A} \neq \overline{B}</m>. We can now conclude that when
+<m>A \neq B</m>, we have <m>\mathcal{C}(A) = \overline{A} \neq \overline{B}  = \mathcal{C}(B)</m>.
+This shows that <m>\mathcal{C}</m> is injective.
+</solution-->
+</li>
+<li>
+What are the steps to prove that <m>\mathcal{C}</m> is surjective? 
+<!--solution>
+Pick any set <m>B \in \mathcal{O}</m>, so that <m>|B|</m> is odd. Then <m>|\overline{B}|</m> is even, 
+and therefore <m>\overline{B} \in \mathcal{E}</m>. Finally, we have
+<m>\mathcal{C}(\overline{B}) = B</m>. This proves that  <m>\mathcal{C}</m> is surjective.
+</solution-->
+</li>
+</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>				
+
 	</exercises>
 
 

@@ -12,22 +12,39 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Definitions for a Tree.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Two-Heap Subtraction \(S(3,5)\).</span>
 </h6>
-<p>Here is a theorem that gives four different ways to describe a tree.</p>
-<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Theorem:</em> The following statements are equivalent for a graph \(G=(V,E)\) on \(n\) vertices</p>
+<p>Now let's play 2-heap \(S(3,5)\text{.}\) Just like 2-heap nim, you choose one pile and then make a valid move in that pile.</p>
 <ol class="lower-alpha">
-<li><p>\(G\) is connected and acyclic</p></li>
-<li><p>\(G\) is connected and \(|E|=n-1\)</p></li>
-<li><p>\(G\) is acyclic  and \(|E|=n-1\)</p></li>
-<li><p>There is a unique path between each pair of vertices in \(G\)</p></li>
-<li><p>\(G\) is connected but deleting any edge disconnects the graph.</p></li>
+<li>
+<p>Play the following \(S(3,5)\) games to determine whether each one is an \(\cN\)-position or a \(\cP\)-position.</p>
+<ol class="lower-roman">
+<li><p>\(\displaystyle ( \pile{4} , \pile{4})\)</p></li>
+<li><p>\(\displaystyle (\pile{4} , \pile{5})\)</p></li>
+<li><p>\(\displaystyle (\pile{5} , \pile{6})\)</p></li>
+<li><p>\(\displaystyle ( \pile{6} , \pile{7})\)</p></li>
 </ol>
-<p>We will focus on (d) \(\Rightarrow\) (a) and the equivalence (a) \(\Leftrightarrow\) (e).</p>
-<ol class="lower-alpha">
-<li><p>Prove that (d) \(\Rightarrow\) (a) using a proof by contradiction. Assuming that (d) holds, why must \(G\) be connected? Why must \(G\) be acyclic? </p></li>
-<li><p>Prove that (a) \(\Rightarrow\) (e) using a proof by contradiction. Assume that (a) holds, but there is an edge \(e\) such that the graph \(G-e\) obtained by removing \(e\) is connected. Why does this lead to a contradiction? </p></li>
-<li><p>Prove that (e) \(\Rightarrow\) (a) by proving the contrapositive statement "not (a) \(\Rightarrow\) not (e)." </p></li>
-</ol></article><span class="incontext"><a href="exercises-24.html#exercise-114">in-context</a></span>
+<p></p>
+</li>
+<li>
+<p>Now calculate the following nim sums \(g(\pile{n}) \oplus g(\pile{m})\) for the \(S(3,5)\) positions that you just played. What do you notice?</p>
+<ol class="lower-roman">
+<li><p>\(\displaystyle ( \pile{4} , \pile{4})\)</p></li>
+<li><p>\(\displaystyle (\pile{4} , \pile{5})\)</p></li>
+<li><p>\(\displaystyle (\pile{5} , \pile{6})\)</p></li>
+<li><p>\(\displaystyle ( \pile{6} , \pile{7})\)</p></li>
+</ol>
+<p></p>
+</li>
+<li>
+<p>Decide whether the following \(S(3,5)\) positions are \(\cN\)-positions or \(\cP\)-positions. If it is an \(\cN\)-position, give the list of winning moves.</p>
+<ol class="lower-roman">
+<li><p>\(\displaystyle ( \pile{4} , \pile{11})\)</p></li>
+<li><p>\(\displaystyle (\pile{7} , \pile{13})\)</p></li>
+<li><p>\(\displaystyle (\pile{7} , \pile{14})\)</p></li>
+<li><p>\(\displaystyle ( \pile{13} , \pile{18})\)</p></li>
+</ol>
+</li>
+</ol></article><span class="incontext"><a href="exercises-25.html#exercise-114">in-context</a></span>
 </body>
 </html>

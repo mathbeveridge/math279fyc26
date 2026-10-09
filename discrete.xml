@@ -78,10 +78,10 @@ pull the name of the problem from the first line  of  the \item
             <xi:include href="./a01-logic1.xml" />   
             <xi:include href="./a01-logic2.xml" />         
             <xi:include href="./a01-quantifiers.xml" />
-            <xi:include href="./a01-proof1.xml" />
+            <!--xi:include href="./a01-proof1.xml" /-->
             <xi:include href="./a01-function1.xml" /> 
-            <xi:include href="./a01-function2.xml" />     
-            <xi:include href="./a01-function3.xml" />                                 
+            <!--xi:include href="./a01-function2.xml" />     
+            <xi:include href="./a01-function3.xml" /-->                                 
             <xi:include href="./b01-induction1.xml" />  
             <xi:include href="./b01-induction2.xml" />     
             <xi:include href="./b01-recursive.xml" />   
