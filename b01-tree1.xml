@@ -19,7 +19,7 @@
 				<p>
 Draw all non-isomorphic trees on 4 vertices
 
-<!--solution>
+<solution>
 <p>
 			<image width="50%" xml:id="fig-img-tree10">
 				<latex-image>
@@ -30,7 +30,7 @@ Draw all non-isomorphic trees on 4 vertices
 \draw[fill]  (\x,0) circle (2pt);
 }
 
-\draw (0,0) -!- (3,0);
+\draw (0,0) -- (3,0);
 
 
 \draw[fill]  (5,0) circle (2pt);
@@ -38,14 +38,14 @@ Draw all non-isomorphic trees on 4 vertices
 \draw[fill]  (4,0) circle (2pt);
 \draw[fill]  (5,1) circle (2pt);
 
-\draw (4,0) -!- (6,0);
-\draw (5,0) -!- (5,1);
+\draw (4,0) -- (6,0);
+\draw (5,0) -- (5,1);
 
 \end{tikzpicture}
 				</latex-image>
 			</image>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -57,7 +57,7 @@ Draw all non-isomorphic trees on 4 vertices
 				<p>
 Draw all non-isomorphic trees on 5 vertices
 
-<!--solution>
+<solution>
 <p>
 			<image width="50%" xml:id="fig-img-tree11">
 				<latex-image>
@@ -68,7 +68,7 @@ Draw all non-isomorphic trees on 5 vertices
 \draw[fill]  (\x,0) circle (2pt);
 }
 
-\draw (0,0) -!- (4,0);
+\draw (0,0) -- (4,0);
 
 
 \begin{scope}[shift={(5,0)}]
@@ -79,8 +79,8 @@ Draw all non-isomorphic trees on 5 vertices
 \draw[fill]  (2.7,.5) circle (2pt);
 \draw[fill]  (2.7,-.5) circle (2pt);
 
-\draw (0,0) -!- (2,0);
-\draw (2.7,-.5) -!- (2,0) -!-  (2.7,.5);
+\draw (0,0) -- (2,0);
+\draw (2.7,-.5) -- (2,0) --  (2.7,.5);
 
 \end{scope}
 
@@ -92,8 +92,8 @@ Draw all non-isomorphic trees on 5 vertices
 \draw[fill]  (1,1) circle (2pt);
 \draw[fill]  (1,-1) circle (2pt);
 
-\draw (0,0) -!- (2,0);
-\draw (1,-1) -!- (1,1);
+\draw (0,0) -- (2,0);
+\draw (1,-1) -- (1,1);
 
 \end{scope}
 
@@ -101,7 +101,7 @@ Draw all non-isomorphic trees on 5 vertices
 				</latex-image>
 			</image>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -113,7 +113,7 @@ Draw all non-isomorphic trees on 5 vertices
 				<p>
 More generally, consider the set of trees on <m>n \geq 3</m> vertices. Which tree has the fewest leaves? Which tree has the most leaves? Draw these trees and state how many leaves each has.
 
-<!--solution>
+<solution>
 <p>
 			<image width="50%" xml:id="fig-img-tree12">
 				<latex-image>
@@ -124,8 +124,8 @@ More generally, consider the set of trees on <m>n \geq 3</m> vertices. Which tre
 \draw[fill]  (\x,0) circle (2pt);
 }
 
-\draw (0,0) -!- (2.25,0);
-\draw (3.25,0) -!- (4.5,0);
+\draw (0,0) -- (2.25,0);
+\draw (3.25,0) -- (4.5,0);
 
 \foreach \x in {2.5, 2.75, 3}
 {
@@ -140,7 +140,7 @@ More generally, consider the set of trees on <m>n \geq 3</m> vertices. Which tre
 \foreach \t in {0,30, 60, 90, 120, 150, 180, 210, 240, 270, 300}
 {
 \draw[fill]  (\t:1) circle (2pt);
-\draw (0,0) -!- (\t:1);
+\draw (0,0) -- (\t:1);
 }
 
 \foreach \t in {320, 330, 340}
@@ -158,7 +158,7 @@ More generally, consider the set of trees on <m>n \geq 3</m> vertices. Which tre
 The path <m>P_n</m> has the fewest leaves: it has 2 of them. The star <m>S_n</m>, consisting of one central hub vertex and <m>n-1</m> leaves, has the most.
 
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -174,7 +174,7 @@ In this problem, you will give <em>another proof</em> that a tree on <m>n \geq 3
 
 How does this path <m>P</m> help us to find two leaves?
 
-<!--solution>
+<solution>
 <p>
 
 Let <m>P = (v_1, v_2, \ldots, v_k)</m> be a path of maximum length. We claim that the endpoints <m>v_1, v_k</m> of <m>P</m> are leaves. AFSOC that <m>v_1</m> is not a leaf. Then <m>v_1</m> has another neighbor <m>u</m> besides <m>v_2</m>. Since <m>G</m> is a tree, this neighbor is not already on the path <m>P</m> because this new edge would create a cycle. But then we can find a longer path by adding the edge from <m>v_1</m> to <m>u</m>, a contradiction.
@@ -183,7 +183,7 @@ The same argument applies to <m>v_k</m>. Therefore <m>v_1, v_k</m> are both leav
 
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -240,7 +240,7 @@ We will focus on (d) <m>\Rightarrow</m> (a) and the equivalence (a) <m>\Leftrigh
 					<p>
  Prove that (d) <m>\Rightarrow</m> (a) using a proof by contradiction. Assuming that (d) holds, why must <m>G</m> be connected? Why must <m>G</m> be acyclic?
 
-<!--solution>
+<solution>
 <p>
 Assume that there is a unique path between each pair of vertices in <m>G</m>.
 		<ul>
@@ -256,7 +256,7 @@ Assume that there is a unique path between each pair of vertices in <m>G</m>.
 			</li>
 		</ul>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -264,11 +264,11 @@ Assume that there is a unique path between each pair of vertices in <m>G</m>.
 					<p>
  Prove that (a) <m>\Rightarrow</m> (e) using a proof by contradiction. Assume that (a) holds, but there is an edge <m>e</m> such that the graph <m>G-e</m> obtained by removing <m>e</m> is connected. Why does this lead to a contradiction?
 
-<!--solution>
+<solution>
 <p>
 Let <m>G</m> be connected and acyclic. AFSOC that  there is an edge <m>e=(u,v)</m> such that the graph <m>G-e</m> obtained by removing <m>e</m> is connected. This means that there is a <m>(u,v)</m>-path <m>P</m> in <m>G-e</m>. But then <m>P+e</m> is a cycle in <m>G</m>, a contradiction.
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -277,7 +277,7 @@ Let <m>G</m> be connected and acyclic. AFSOC that  there is an edge <m>e=(u,v)</
 					<p>
  Prove that (e) <m>\Rightarrow</m> (a) by proving the contrapositive statement "not (a) <m>\Rightarrow</m> not (e)."
 
-<!--solution>
+<solution>
 <p>
 Let <m>G</m> be a connected graph. We prove that if <m>G</m> contains a cycle then there exists an edge <m>e</m> such that <m>G-e</m> is connected.
 
@@ -285,7 +285,7 @@ Pick a cycle <m>C</m> in the graph and let <m>e=(u,v)</m> be an edge in <m>C</m>
 
 Let <m>x,y</m> be any two vertices. Since <m>G</m> is connected, there is a walk <m>Q</m> from <m>x</m> to <m>y</m>. If <m>e \notin Q</m> then <m>Q</m> is a walk in <m>G-e</m>. If <m>e \in Q</m>, then we can split <m>Q</m> into <m>Q_1 \cup e \cup Q_2</m> where <m>Q_1</m> and <m>Q_2</m> are walks. But then <m>Q_1 + P + Q_2</m> is an <m>(x,y)</m>-walk in <m>G-e</m>. Therefore, <m>G-e</m> is connected.
 </p>
-</solution-->
+</solution>
 
 
 					</p>

@@ -62,13 +62,13 @@ This graph <m>G</m> has <m>|V|=6</m> and <m>|E|=8</m>.
 					<p>
  What are the degrees of  the vertices of <m>G</m>?
 
-<!--solution>
+<solution>
 <p>
 <me>
 \deg(u)=3  \deg(v)=3  \deg(w)=3  \deg(x)=2  \deg(y)=3  \deg(z)=2
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -77,7 +77,7 @@ This graph <m>G</m> has <m>|V|=6</m> and <m>|E|=8</m>.
  The graph <m>G</m> is drawn so that some of the edges are <em>crossing</em>, meaning that they intersect. For example, edge <m>e_1 = (x,v)</m> crosses edge <m>e_2 = (y,w)</m>. Create another drawing of the graph <m>G</m> so that none of the edges are crossing.
 
 
-<!--solution>
+<solution>
 <p>
 			<image width="30%" xml:id="fig-img-graph11">
 				<latex-image>
@@ -93,13 +93,13 @@ inner sep=0pt]
 \node (X5) at (72:1.5)  [label=above:<m>y</m>] {};
 \node (X6) at (144:1.5)  [label=left:<m>z</m>] {};
 
-\draw[thick] (X1) -!- (X2) -!- (X3) -!- (X1);
+\draw[thick] (X1) -- (X2) -- (X3) -- (X1);
 
-\draw[thick] (X2) -!- (X4) -!- (X5) -!- (X6);
+\draw[thick] (X2) -- (X4) -- (X5) -- (X6);
 
-\draw[thick] (X6) -!- (X1);
+\draw[thick] (X6) -- (X1);
 
-\draw[thick] (X5) -!- (X3);
+\draw[thick] (X5) -- (X3);
 
 
 
@@ -107,7 +107,7 @@ inner sep=0pt]
 				</latex-image>
 			</image>
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -117,7 +117,7 @@ inner sep=0pt]
  The <em>complement</em> <m>\overline{G}</m> of graph <m>G</m> is the "graph of edges missing in <m>G</m>."  It has the same vertices as <m>G</m>. But the edge <m>(u,v) \in E(\overline{G})</m> if and only if <m>(u,v) \notin E(G)</m>. Draw the complement
 <m>\overline{G}</m> of the graph <m>G</m>.  Can you draw <m>\overline{G}</m> so that none of its edges are crossing?
 
-<!--solution>
+<solution>
 <p>
 			<image width="70%" xml:id="fig-img-graph12">
 				<latex-image>
@@ -133,7 +133,7 @@ inner sep=0pt]
 \node (X5) at (72:1.5)  [label=above:<m>y</m>] {};
 \node (X6) at (144:1.5)  [label=left:<m>z</m>] {};
 
-\draw[thick] (X6) -!- (X3) -!- (X4) -!- (X1) -!- (X5) -!- (X2) -!- (X6) -!- (X4);
+\draw[thick] (X6) -- (X3) -- (X4) -- (X1) -- (X5) -- (X2) -- (X6) -- (X4);
 
 
 
@@ -149,7 +149,7 @@ inner sep=0pt]
 \node (X5) at (240:1.5)  [label=below:<m>y</m>] {};
 \node (X6) at (120:1.5)  [label=above:<m>z</m>] {};
 
-\draw[thick] (X6) -!- (X3) -!- (X4) -!- (X1) -!- (X5) -!- (X2) -!- (X6) -!- (X4);
+\draw[thick] (X6) -- (X3) -- (X4) -- (X1) -- (X5) -- (X2) -- (X6) -- (X4);
 
 
 \end{scope}
@@ -161,7 +161,7 @@ inner sep=0pt]
 			</image>
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -205,7 +205,7 @@ inner sep=0pt]
 \begin{scope}[shift={(0,-1)}]
 
 
-\draw[thick] (0,0) -!- (1,0);
+\draw[thick] (0,0) -- (1,0);
 \draw[fill] (0,0) circle (3pt);
 \draw[fill] (1,0) circle (3pt);
 
@@ -221,7 +221,7 @@ inner sep=0pt]
 \foreach \x in {0,...,1}
 {
 {
-\draw[thick] (\x,0) -!- (\x+1,0);
+\draw[thick] (\x,0) -- (\x+1,0);
 \draw[fill] (\x,0) circle (3pt);
 }
 
@@ -240,7 +240,7 @@ inner sep=0pt]
 \foreach \x in {0,...,2}
 {
 {
-\draw[thick] (\x,0) -!- (\x+1,0);
+\draw[thick] (\x,0) -- (\x+1,0);
 \draw[fill] (\x,0) circle (3pt);
 }
 
@@ -257,7 +257,7 @@ inner sep=0pt]
 \foreach \x in {0,...,3}
 {
 {
-\draw[thick] (\x,0) -!- (\x+1,0);
+\draw[thick] (\x,0) -- (\x+1,0);
 \draw[fill] (\x,0) circle (3pt);
 }
 
@@ -279,11 +279,11 @@ inner sep=0pt]
 
 How many edges are there in <m>P_n</m> for <m>n \geq 2</m>?
 
-<!--solution>
+<solution>
 <p>
 <m>n-1</m>
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -305,7 +305,7 @@ How many edges are there in <m>P_n</m> for <m>n \geq 2</m>?
 \foreach \x in {0,...,2}
 {
 {
-\draw[thick] (120*\x  :1) -!- (120*\x+120 :1);
+\draw[thick] (120*\x  :1) -- (120*\x+120 :1);
 }
 
 \draw[fill] (120*\x: 1) circle (3pt);
@@ -321,7 +321,7 @@ How many edges are there in <m>P_n</m> for <m>n \geq 2</m>?
 \foreach \x in {0,...,3}
 {
 {
-\draw[thick] (90*\x  :1) -!- (90*\x + 90 :1);
+\draw[thick] (90*\x  :1) -- (90*\x + 90 :1);
 }
 
 \draw[fill] (90*\x: 1) circle (3pt);
@@ -338,7 +338,7 @@ How many edges are there in <m>P_n</m> for <m>n \geq 2</m>?
 \foreach \x in {0,...,4}
 {
 {
-\draw[thick] (72*\x  :1) -!- (72*\x + 72 :1);
+\draw[thick] (72*\x  :1) -- (72*\x + 72 :1);
 }
 
 \draw[fill] (72*\x: 1) circle (3pt);
@@ -355,7 +355,7 @@ How many edges are there in <m>P_n</m> for <m>n \geq 2</m>?
 \foreach \x in {0,...,5}
 {
 {
-\draw[thick] (60*\x  :1) -!- (60*\x + 60 :1);
+\draw[thick] (60*\x  :1) -- (60*\x + 60 :1);
 }
 
 \draw[fill] (60*\x: 1) circle (3pt);
@@ -380,11 +380,11 @@ How many edges are there in <m>P_n</m> for <m>n \geq 2</m>?
 
 How many edges are there is the cycle <m>C_n</m> for <m>n \geq 3</m>?
 
-<!--solution>
+<solution>
 <p>
 <m>n</m>
 </p>
-</solution-->
+</solution>
 
 
 
@@ -410,8 +410,8 @@ How many edges are there is the cycle <m>C_n</m> for <m>n \geq 3</m>?
 \foreach \x in {0,...,2}
 {
 {
-\draw[thick] (120*\x  :1) -!- (120*\x + 120 :1);
-\draw[thick] (0,0) -!- (120*\x  :1);
+\draw[thick] (120*\x  :1) -- (120*\x + 120 :1);
+\draw[thick] (0,0) -- (120*\x  :1);
 }
 
 \draw[fill] (120*\x: 1) circle (3pt);
@@ -431,8 +431,8 @@ How many edges are there is the cycle <m>C_n</m> for <m>n \geq 3</m>?
 \foreach \x in {0,...,3}
 {
 {
-\draw[thick] (90*\x  :1) -!- (90*\x + 90 :1);
-\draw[thick] (0,0) -!- (90*\x  :1);
+\draw[thick] (90*\x  :1) -- (90*\x + 90 :1);
+\draw[thick] (0,0) -- (90*\x  :1);
 }
 
 \draw[fill] (90*\x: 1) circle (3pt);
@@ -452,8 +452,8 @@ How many edges are there is the cycle <m>C_n</m> for <m>n \geq 3</m>?
 \foreach \x in {0,...,4}
 {
 {
-\draw[thick] (72*\x  :1) -!- (72*\x + 72 :1);
-\draw[thick] (0,0) -!- (72*\x  :1);
+\draw[thick] (72*\x  :1) -- (72*\x + 72 :1);
+\draw[thick] (0,0) -- (72*\x  :1);
 }
 
 \draw[fill] (72*\x: 1) circle (3pt);
@@ -471,8 +471,8 @@ How many edges are there is the cycle <m>C_n</m> for <m>n \geq 3</m>?
 \foreach \x in {0,...,5}
 {
 {
-\draw[thick] (60*\x  :1) -!- (60*\x + 60 :1);
-\draw[thick] (0,0) -!- (60*\x  :1);
+\draw[thick] (60*\x  :1) -- (60*\x + 60 :1);
+\draw[thick] (0,0) -- (60*\x  :1);
 }
 
 \draw[fill] (60*\x: 1) circle (3pt);
@@ -497,11 +497,11 @@ How many edges are there is the cycle <m>C_n</m> for <m>n \geq 3</m>?
 
 How many edges are there in the wheel <m>W_n</m> for <m>n \geq 4</m>?
 
-<!--solution>
+<solution>
 <p>
 <m>(n-1) + (n-1) = 2n-2</m>
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -527,7 +527,7 @@ How many edges are there in the wheel <m>W_n</m> for <m>n \geq 4</m>?
 {
 \foreach \y in {0, ..., \x}
 {
-\draw[thick] (180*\x  :1) -!- (180*\y :1);
+\draw[thick] (180*\x  :1) -- (180*\y :1);
 }
 
 \draw[fill] (180*\x: 1) circle (3pt);
@@ -544,7 +544,7 @@ How many edges are there in the wheel <m>W_n</m> for <m>n \geq 4</m>?
 {
 \foreach \y in {0, ..., \x}
 {
-\draw[thick] (120*\x  :1) -!- (120*\y :1);
+\draw[thick] (120*\x  :1) -- (120*\y :1);
 }
 
 \draw[fill] (120*\x: 1) circle (3pt);
@@ -561,7 +561,7 @@ How many edges are there in the wheel <m>W_n</m> for <m>n \geq 4</m>?
 {
 \foreach \y in {0, ..., \x}
 {
-\draw[thick] (90*\x  :1) -!- (90*\y :1);
+\draw[thick] (90*\x  :1) -- (90*\y :1);
 }
 
 \draw[fill] (90*\x: 1) circle (3pt);
@@ -579,7 +579,7 @@ How many edges are there in the wheel <m>W_n</m> for <m>n \geq 4</m>?
 {
 \foreach \y in {0, ..., \x}
 {
-\draw[thick] (72*\x  :1) -!- (72*\y :1);
+\draw[thick] (72*\x  :1) -- (72*\y :1);
 }
 
 \draw[fill] (72*\x: 1) circle (3pt);
@@ -602,11 +602,11 @@ How many edges are there in the wheel <m>W_n</m> for <m>n \geq 4</m>?
 
 How many edges are there in the complete graph <m>K_n</m> for <m>n \geq 2</m>?
 
-<!--solution>
+<solution>
 <p>
 <m>n(n-1)/2</m>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -629,7 +629,7 @@ How many edges are there in the complete graph <m>K_n</m> for <m>n \geq 2</m>?
 
 \foreach \y in {.5,1.5}
 {
-\draw[thick] (0, \x) -!- (2,\y);
+\draw[thick] (0, \x) -- (2,\y);
 \draw[fill] (2, \y) circle (3pt);
 }
 
@@ -650,7 +650,7 @@ How many edges are there in the complete graph <m>K_n</m> for <m>n \geq 2</m>?
 
 \foreach \y in {-1,0,1,2,3}
 {
-\draw[thick] (0, \x) -!- (2,\y);
+\draw[thick] (0, \x) -- (2,\y);
 \draw[fill] (2, \y) circle (3pt);
 }
 
@@ -669,11 +669,11 @@ How many edges are there in the complete graph <m>K_n</m> for <m>n \geq 2</m>?
 
 How many edges are there in the complete bipartite graph <m>K_{r,s}</m> for <m>r \geq 1</m> and <m>s \geq 1</m>?
 
-<!--solution>
+<solution>
 <p>
 <m>rs</m>
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -702,11 +702,11 @@ Let <m>G = (V,E)</m> be a graph on <m>n</m> vertices with <m>m</m> edges.
 </me>
 This is our first example of a "combinatorial identity": you are counting the same set in two different ways. This equality is known as "the handshaking lemma."
 
-<!--solution>
+<solution>
 <p>
 When we sum the degrees, we count each edge twice. So the left hand side is equal to 2 times the number of edges.
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -716,7 +716,7 @@ When we sum the degrees, we count each edge twice. So the left hand side is equa
  Prove that the number of vertices of odd degree is even. First, partition <m>V</m> into two sets: the vertices of odd degree and the vertices of even degree. Then use the handshaking lemma (from the previous problem).
 
 
-<!--solution>
+<solution>
 <p>
 
 Let <m>V_{odd}</m> be the set of vertices of odd degree and let <m>V_{even}</m> be the set of vertices of even degree. We have
@@ -726,7 +726,7 @@ Let <m>V_{odd}</m> be the set of vertices of odd degree and let <m>V_{even}</m> 
 By the previous problem, the Left Hand Side is even. Clearly <m>\sum_{v \in V_{even}} \deg(v) </m> must be even since it the sum of even numbers. This means that <m>\sum_{v \in V_{odd}} \deg(v)</m> must be even. This will only occur when <m>|V_{odd}|</m> is even.
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -734,7 +734,7 @@ By the previous problem, the Left Hand Side is even. Clearly <m>\sum_{v \in V_{e
 					<p>
  Prove that if <m>G</m> is a <em>connected</em> graph on <m>n</m> vertices then <m>G</m> contains two vertices that have the same degree. Hint: what are the possible values for <m>\deg(v)</m> for <m>v \in V(G)</m>?
 
-<!--solution>
+<solution>
 <p>
 For any vertex <m>v \in V</m>, we have <m>1 \leq \deg(v) \leq n-1</m>. Why? The graph is connected, so <m>deg(v) \geq 1</m> for each vertex. Meanwhile, the largest possible degree is <m>n-1</m>, which means that the vertex is adjacent to every  other vertex.
 
@@ -745,7 +745,7 @@ Now we have  <m>n</m> vertices. There are only <m>n-1</m> possible values for th
 			</p><p>
 This argument (<m>n</m> things with <m>n-1</m> different types) is an example of the <em>pigeonhole principle</em>. We'll see this kind of argument again!
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -772,10 +772,10 @@ Below, we see an example of a connected graph and example of a graph with three 
 
 \begin{scope}[shift={(0,0)}]
 
-\draw[thick] (0,0) -!- (1,0) -!- (1,1) -!- (0,1) -!- (0,0);
-\draw[thick] (0,1) -!- (1,0);
-\draw[thick] (1,1) -!- (1.5,1.5);
-\draw[thick] (1.5,1.5) -!- (2.25,2) -!- (2.25, 1) -!- (1.5,1.5);
+\draw[thick] (0,0) -- (1,0) -- (1,1) -- (0,1) -- (0,0);
+\draw[thick] (0,1) -- (1,0);
+\draw[thick] (1,1) -- (1.5,1.5);
+\draw[thick] (1.5,1.5) -- (2.25,2) -- (2.25, 1) -- (1.5,1.5);
 
 
 \draw[thick, fill] (0,0) circle (3pt);
@@ -794,10 +794,10 @@ Below, we see an example of a connected graph and example of a graph with three 
 
 \begin{scope}[shift={(6,0)}]
 
-\draw[thick]  (1,0) -!- (1,1);
-\draw[thick] (0,0) -!- (0,1);
+\draw[thick]  (1,0) -- (1,1);
+\draw[thick] (0,0) -- (0,1);
 
-\draw[thick] (1.5,1.5) -!- (2.25,2) -!- (2.25, 1) -!- (1.5,1.5);
+\draw[thick] (1.5,1.5) -- (2.25,2) -- (2.25, 1) -- (1.5,1.5);
 
 
 \draw[thick, fill] (0,0) circle (3pt);
@@ -828,13 +828,13 @@ Below, we see an example of a connected graph and example of a graph with three 
  Suppose <m>G</m> is connected. Find a lower bound on <m>|E|</m>. Start by exploring examples for <m>n=2,3,4,5</m>. You do NOT have to prove your answer is correct.
 
 
-<!--solution>
+<solution>
 <p>
 
 The graph must have at least <m>n-1</m> edges. (A connected tree with exactly <m>n-1</m> edges is called a tree.)
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -843,11 +843,11 @@ The graph must have at least <m>n-1</m> edges. (A connected tree with exactly <m
  Suppose that <m>G</m> is disconnected. Find an upper bound on <m>|E|</m>. Start by exploring examples for <m>n=2,3,4,5</m>. You do NOT have to prove your answer is correct.
 
 
-<!--solution>
+<solution>
 <p>
 A disconnected graph can have a most <m>(n-1)(n-2)/2</m> edges. This occurs when <m>G</m> is a complete graph on <m>n-1</m> vertices along with one isolated vertex.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -881,13 +881,13 @@ The complete bipartite graph <m>K_{n,m}</m> is an example of a bipartite graph. 
 \begin{tikzpicture}[scale=1.25] %mathbook width=80%
 
 
-\draw[thick] (0,0) -!- (-1,1);
-\draw[thick] (0,0) -!- (0,1);
-\draw[thick] (0,0) -!- (2,1);
+\draw[thick] (0,0) -- (-1,1);
+\draw[thick] (0,0) -- (0,1);
+\draw[thick] (0,0) -- (2,1);
 
-\draw[thick] (1,0) -!- (2,1);
-\draw[thick] (1,0) -!- (1,1);
-\draw[thick] (1,0) -!- (0,1);
+\draw[thick] (1,0) -- (2,1);
+\draw[thick] (1,0) -- (1,1);
+\draw[thick] (1,0) -- (0,1);
 
 
 \draw[thick, fill=red] (0,0) circle (3pt);
@@ -901,13 +901,13 @@ The complete bipartite graph <m>K_{n,m}</m> is an example of a bipartite graph. 
 
 \begin{scope}[shift={(4,0)}]
 
-\draw[thick] (0,0) -!- (0,.5) -!- (.5,.5) -!- (.5,0) -!- cycle;
-\draw[thick] (1,1) -!- (1,-.5) -!- (-.5,-.5) -!- (-.5,1) -!- cycle;
+\draw[thick] (0,0) -- (0,.5) -- (.5,.5) -- (.5,0) -- cycle;
+\draw[thick] (1,1) -- (1,-.5) -- (-.5,-.5) -- (-.5,1) -- cycle;
 
-\draw[thick] (0,0) -!- (-.5,-.5);
-\draw[thick] (0,.5) -!- (-.5,1);
-\draw[thick] (.5,0) -!- (1,-.5);
-\draw[thick] (.5,.5) -!- (1,1);
+\draw[thick] (0,0) -- (-.5,-.5);
+\draw[thick] (0,.5) -- (-.5,1);
+\draw[thick] (.5,0) -- (1,-.5);
+\draw[thick] (.5,.5) -- (1,1);
 
 \draw[thick, fill=red] (0,0) circle (3pt);
 \draw[thick,fill] (0,.5) circle (3pt);
@@ -926,16 +926,16 @@ The complete bipartite graph <m>K_{n,m}</m> is an example of a bipartite graph. 
 
 \begin{scope}[shift={(8,0)}]
 
-\draw[thick] (0,0) -!- (1,0);
-\draw[thick] (0,0) -!- (-1,0);
-\draw[thick] (0,0) -!- (-1,.66);
-\draw[thick] (0,0) -!- (-1,-.66);
-\draw[thick] (1,.66) -!- (1,-.66);
-\draw[thick] (1,0) -!- (2, .33);
-\draw[thick] (1,0) -!- (2, -.33);
-\draw[thick] (2, .33) -!- (3,.66);
-\draw[thick] (2, -.33) -!- (3,0);
-\draw[thick] (2, -.33) -!- (3,-.66);
+\draw[thick] (0,0) -- (1,0);
+\draw[thick] (0,0) -- (-1,0);
+\draw[thick] (0,0) -- (-1,.66);
+\draw[thick] (0,0) -- (-1,-.66);
+\draw[thick] (1,.66) -- (1,-.66);
+\draw[thick] (1,0) -- (2, .33);
+\draw[thick] (1,0) -- (2, -.33);
+\draw[thick] (2, .33) -- (3,.66);
+\draw[thick] (2, -.33) -- (3,0);
+\draw[thick] (2, -.33) -- (3,-.66);
 
 \draw[thick, fill=red] (0,0) circle (3pt);
 \draw[thick,fill] (1,0) circle (3pt);
@@ -969,11 +969,11 @@ The complete bipartite graph <m>K_{n,m}</m> is an example of a bipartite graph. 
 					<p>
  For which values of <m>n</m> is <m>P_{n}</m> a bipartite graph?
 
-<!--solution>
+<solution>
 <p>
 <m>P_n</m> is always bipartite.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -982,11 +982,11 @@ The complete bipartite graph <m>K_{n,m}</m> is an example of a bipartite graph. 
  For which values of <m>n</m> is <m>C_{n}</m> a bipartite graph?
 
 
-<!--solution>
+<solution>
 <p>
 <m>C_n</m> is bipartite if and only if <m>n</m> is even.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -994,11 +994,11 @@ The complete bipartite graph <m>K_{n,m}</m> is an example of a bipartite graph. 
 					<p>
  For which values of <m>n</m> is <m>W_{n}</m> a bipartite graph?
 
-<!--solution>
+<solution>
 <p>
 <m>W_n</m> is never bipartite. It has lots of 3-cycles.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -1006,11 +1006,11 @@ The complete bipartite graph <m>K_{n,m}</m> is an example of a bipartite graph. 
 					<p>
  For which values of <m>n</m> is <m>K_{n}</m> a bipartite graph?
 
-<!--solution>
+<solution>
 <p>
 <m>K_2</m> is  bipartite. If <m>n&gt;2</m> then <m>K_n</m> is not bipartite: it has 3-cycles.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -1019,14 +1019,14 @@ The complete bipartite graph <m>K_{n,m}</m> is an example of a bipartite graph. 
  Suppose that <m>G</m> is a bipartite graph on <m>n</m> vertices. Find an upper bound on <m>|E|</m>. Start by exploring examples for <m>n=2,3,4,5</m>. You do not need to prove your answer is correct.
 
 
-<!--solution>
+<solution>
 <p>
 You get the most edges when you split the edges as evenly as possible. So let <m>r = \lfloor n/2 \rfloor</m> and <m>s = \lceil n/2 \rceil</m>. The most number of edges that you get is
 <me>
 rs = \lfloor n/2 \rfloor \times  \lceil n/2 \rceil
 </me>
 </p>
-</solution-->
+</solution>
 
 
 
